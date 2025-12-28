@@ -1,0 +1,240 @@
+name: Deploy Hugo Site to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+# Default to bash
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  # Validation job for pull requests
+  validate:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    env:
+      HUGO_VERSION: 0.121.0
+      NODE_ENV: production
+    steps:
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+      - name: Install Dart Sass
+        run: sudo snap install dart-sass
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+          cache: "npm"
+      - name: Install Node.js dependencies
+        run: npm ci
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: "temurin"
+          java-version: "11"
+      - name: Build with Hugo
+        env:
+          HUGO_ENVIRONMENT: production
+          HUGO_ENV: production
+          TZ: America/Los_Angeles
+        run: |
+          hugo \
+            --gc \
+            --minify \
+            --cleanDestinationDir \
+            --environment production \
+            --config config.yaml,config.production.yaml \
+            --baseURL "https://example.com/"
+      - name: Validate HTML
+        run: |
+          echo "Running HTML validation..."
+          java -jar node_modules/vnu-jar/build/dist/vnu.jar --skip-non-html --also-check-css --format text ./public/ || {
+            echo "HTML validation failed. Check the output above for details."
+            exit 1
+          }
+          echo "HTML validation passed!"
+      - name: Check for broken links
+        run: |
+          # Start a local server to serve the built site
+          cd public
+          python3 -m http.server 8080 &
+          SERVER_PID=$!
+
+          # Wait for server to start
+          sleep 5
+
+          # Run broken link checker with error handling
+          echo "Running broken link checker..."
+          set +e  # Don't exit on error
+          npx broken-link-checker http://localhost:8080 --recursive --ordered --exclude-external --filter-level 3
+          LINK_CHECK_EXIT_CODE=$?
+          set -e  # Re-enable exit on error
+
+          # Clean up server
+          kill $SERVER_PID 2>/dev/null || true
+
+          # Check results - for validation job, we'll be more strict
+          if [ $LINK_CHECK_EXIT_CODE -ne 0 ]; then
+            echo "Broken link check found issues. Check the output above for details."
+            exit 1
+          else
+            echo "Broken link check passed!"
+          fi
+      - name: Run Lighthouse performance test
+        uses: treosh/lighthouse-ci-action@v10
+        with:
+          configPath: "./lighthouserc.json"
+          temporaryPublicStorage: true
+          uploadArtifacts: true
+          runs: 1
+
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    env:
+      HUGO_VERSION: 0.121.0
+      NODE_ENV: production
+    steps:
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+      - name: Install Dart Sass
+        run: sudo snap install dart-sass
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+          cache: "npm"
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: "temurin"
+          java-version: "11"
+      - name: Cache Hugo resources
+        uses: actions/cache@v3
+        with:
+          path: resources
+          key: ${{ runner.os }}-hugo-resources-${{ hashFiles('**/*.md', '**/*.html', 'config.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-hugo-resources-
+      - name: Install Node.js dependencies
+        run: npm ci
+      - name: Build with Hugo
+        env:
+          # For maximum backward compatibility with Hugo modules
+          HUGO_ENVIRONMENT: production
+          HUGO_ENV: production
+          TZ: America/Los_Angeles
+        run: |
+          hugo \
+            --gc \
+            --minify \
+            --cleanDestinationDir \
+            --environment production \
+            --config config.yaml,config.production.yaml \
+            --baseURL "${{ steps.pages.outputs.base_url }}/"
+      - name: Optimize assets (Post-build)
+        run: |
+          # Additional optimizations can be added here
+          echo "Build completed with optimizations"
+          # Show build stats
+          if [ -f "public/hugo_stats.json" ]; then
+            echo "Hugo build stats:"
+            cat public/hugo_stats.json
+          fi
+      - name: Validate HTML
+        run: |
+          echo "Running HTML validation..."
+          java -jar node_modules/vnu-jar/build/dist/vnu.jar --skip-non-html --also-check-css --format text ./public/ || {
+            echo "HTML validation failed. Check the output above for details."
+            exit 1
+          }
+          echo "HTML validation passed!"
+
+      - name: Check for broken links
+        run: |
+          # Start a local server to serve the built site
+          cd public
+          python3 -m http.server 8080 &
+          SERVER_PID=$!
+
+          # Wait for server to start
+          sleep 5
+
+          # Run broken link checker with error handling
+          echo "Running broken link checker..."
+          set +e  # Don't exit on error
+          npx broken-link-checker http://localhost:8080 --recursive --ordered --exclude-external --filter-level 3
+          LINK_CHECK_EXIT_CODE=$?
+          set -e  # Re-enable exit on error
+
+          # Clean up server
+          kill $SERVER_PID 2>/dev/null || true
+
+          # Check results - for production build, we'll warn but not fail
+          if [ $LINK_CHECK_EXIT_CODE -ne 0 ]; then
+            echo "Broken link check found issues. Check the output above for details."
+            echo "Note: Some broken links may be acceptable (e.g., RSS feeds, external redirects)"
+            echo "::warning::Broken links detected but not failing the build"
+          else
+            echo "Broken link check passed!"
+          fi
+
+      - name: Run Lighthouse performance test
+        uses: treosh/lighthouse-ci-action@v10
+        with:
+          configPath: "./lighthouserc.json"
+          temporaryPublicStorage: true
+          uploadArtifacts: true
+          runs: 3
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./public
+
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v3

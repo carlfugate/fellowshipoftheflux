@@ -1,0 +1,189 @@
+{{ define "main" }}
+<main class="container mx-auto px-4 py-8 max-w-6xl">
+    <header class="mb-12 text-center">
+        <h1 class="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+            {{ .Title }}
+        </h1>
+        {{ if .Content }}
+        <div class="prose prose-lg dark:prose-invert mx-auto">
+            {{ .Content }}
+        </div>
+        {{ end }}
+        
+        <!-- Post count -->
+        <p class="text-gray-600 dark:text-gray-400 mt-4">
+            {{ len .Pages }} {{ if eq (len .Pages) 1 }}post{{ else }}posts{{ end }} total
+        </p>
+    </header>
+    
+    {{ if .Pages }}
+    <!-- Filter/Sort options -->
+    <div class="mb-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+        <div class="flex flex-wrap gap-2">
+            <span class="text-sm text-gray-600 dark:text-gray-400">Filter by:</span>
+            <a href="/posts/" class="text-sm px-3 py-1 rounded-full bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200">
+                All Posts
+            </a>
+            {{ range .Site.Taxonomies.categories }}
+            <a href="/categories/{{ .Page.Title | urlize }}/" 
+               class="text-sm px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900 hover:text-primary-800 dark:hover:text-primary-200 transition-colors">
+                {{ .Page.Title }}
+            </a>
+            {{ end }}
+        </div>
+        
+        <div class="text-sm text-gray-600 dark:text-gray-400">
+            Sorted by date (newest first)
+        </div>
+    </div>
+    
+    <!-- Posts grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {{ range .Pages }}
+        <article class="card group">
+            {{ if .Params.featured_image }}
+            <div class="aspect-video overflow-hidden rounded-t-lg">
+                <img src="{{ .Params.featured_image }}" 
+                     alt="{{ .Title }}" 
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            {{ end }}
+            
+            <div class="card-body">
+                <!-- Post meta -->
+                <div class="flex items-center text-sm text-gray-600 dark:text-gray-400 mb-3">
+                    {{ if .Date }}
+                    <time datetime="{{ .Date.Format "2006-01-02" }}" class="mr-4">
+                        {{ .Date.Format "Jan 2, 2006" }}
+                    </time>
+                    {{ end }}
+                    
+                    {{ if .ReadingTime }}
+                    <span class="flex items-center">
+                        <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        {{ .ReadingTime }} min
+                    </span>
+                    {{ end }}
+                </div>
+                
+                <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                    <a href="{{ .RelPermalink }}" class="stretched-link">
+                        {{ .Title }}
+                    </a>
+                </h2>
+                
+                {{ if .Params.description }}
+                <p class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
+                    {{ .Params.description }}
+                </p>
+                {{ else if .Summary }}
+                <p class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
+                    {{ .Summary }}
+                </p>
+                {{ end }}
+                
+                <!-- Tags -->
+                {{ if .Params.tags }}
+                <div class="flex flex-wrap gap-1 mb-4">
+                    {{ range first 3 .Params.tags }}
+                    <span class="inline-block bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded text-xs">
+                        {{ . }}
+                    </span>
+                    {{ end }}
+                    {{ if gt (len .Params.tags) 3 }}
+                    <span class="inline-block text-gray-500 dark:text-gray-400 px-2 py-1 text-xs">
+                        +{{ sub (len .Params.tags) 3 }} more
+                    </span>
+                    {{ end }}
+                </div>
+                {{ end }}
+                
+                <div class="flex items-center justify-between">
+                    {{ if .Params.author }}
+                    <div class="flex items-center text-sm text-gray-600 dark:text-gray-400">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                        {{ .Params.author }}
+                    </div>
+                    {{ end }}
+                    
+                    <a href="{{ .RelPermalink }}" 
+                       class="inline-flex items-center text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium text-sm">
+                        Read more
+                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </article>
+        {{ end }}
+    </div>
+    
+    <!-- Pagination -->
+    {{ if gt .Paginator.TotalPages 1 }}
+    <nav class="flex justify-center mt-12" aria-label="Pagination">
+        <div class="flex items-center space-x-2">
+            {{ if .Paginator.HasPrev }}
+            <a href="{{ .Paginator.Prev.URL }}" 
+               class="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+                Previous
+            </a>
+            {{ end }}
+            
+            {{ range .Paginator.Pagers }}
+            {{ if eq . $.Paginator }}
+            <span class="px-4 py-2 text-sm font-medium text-white bg-primary-600 border border-primary-600 rounded-lg">
+                {{ .PageNumber }}
+            </span>
+            {{ else }}
+            <a href="{{ .URL }}" 
+               class="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+                {{ .PageNumber }}
+            </a>
+            {{ end }}
+            {{ end }}
+            
+            {{ if .Paginator.HasNext }}
+            <a href="{{ .Paginator.Next.URL }}" 
+               class="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+                Next
+            </a>
+            {{ end }}
+        </div>
+    </nav>
+    {{ end }}
+    
+    {{ else }}
+    <div class="text-center py-12">
+        <svg class="w-16 h-16 text-gray-400 dark:text-gray-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+        </svg>
+        <h2 class="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-2">No posts found</h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">There are no posts to display at the moment.</p>
+        <a href="/" class="btn-primary">
+            Back to Home
+        </a>
+    </div>
+    {{ end }}
+</main>
+
+<style>
+.stretched-link::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    content: "";
+}
+
+.card {
+    position: relative;
+}
+</style>
+{{ end }}

@@ -1,0 +1,59 @@
+{
+  "name": "hugo-tailbliss-site",
+  "version": "1.0.0",
+  "description": "Hugo static site with Tailbliss theme",
+  "main": "index.js",
+  "scripts": {
+    "dev": "hugo server --buildDrafts --buildFuture --disableFastRender --port 1313 --config config.yaml,config.dev.yaml",
+    "dev:fast": "hugo server --port 1313 --config config.yaml,config.dev.yaml",
+    "dev:network": "hugo server --buildDrafts --buildFuture --bind 0.0.0.0 --port 1313 --config config.yaml,config.dev.yaml",
+    "build": "NODE_ENV=production hugo --minify --gc --cleanDestinationDir --config config.yaml,config.production.yaml",
+    "build:preview": "hugo --buildDrafts --buildFuture --minify --gc --cleanDestinationDir",
+    "build:production": "NODE_ENV=production hugo --minify --gc --cleanDestinationDir --environment production --config config.yaml,config.production.yaml",
+    "build:css": "NODE_ENV=production postcss assets/css/main.css -o static/css/main.css",
+    "watch:css": "postcss assets/css/main.css -o static/css/main.css --watch",
+    "clean": "rm -rf public resources .hugo_build.lock",
+    "clean:all": "npm run clean && rm -rf node_modules package-lock.json",
+    "setup": "git submodule update --init --recursive && npm install",
+    "update:theme": "git submodule update --remote themes/tailbliss",
+    "update:deps": "npm update",
+    "serve": "npm run build && npx http-server public -p 8080 -c-1",
+    "serve:production": "npm run build:production && npx http-server public -p 8080 -g",
+    "validate": "hugo --printPathWarnings --printUnusedTemplates --environment production",
+    "validate:html": "npm run build:production && java -jar node_modules/vnu-jar/build/dist/vnu.jar --skip-non-html --also-check-css --format text ./public/",
+    "check:links": "npm run build:production && npm run serve & sleep 5 && npx broken-link-checker http://localhost:8080 --recursive --ordered --exclude-external --filter-level 3; kill %1 2>/dev/null || true",
+    "test:lighthouse": "npm run build:production && npx @lhci/cli@0.12.x autorun",
+    "lint": "echo 'Linting not configured - consider adding markdownlint or similar'",
+    "test": "npm run validate && npm run build:production && npm run validate:html",
+    "test:all": "npm run test && npm run check:links && npm run test:lighthouse",
+    "test:performance": "bash scripts/performance-test.sh",
+    "validate:deployment": "bash scripts/validate-deployment.sh",
+    "precommit": "npm run validate && npm run build:preview",
+    "deploy:test": "npm run build:production && npm run serve:production"
+  },
+  "keywords": [
+    "hugo",
+    "static-site",
+    "tailwind",
+    "tailbliss"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^5.0.0",
+    "@lhci/cli": "^0.12.0",
+    "@tailwindcss/typography": "^0.5.10",
+    "autoprefixer": "^10.4.16",
+    "broken-link-checker": "^0.7.8",
+    "cssnano": "^6.0.1",
+    "http-server": "^14.1.1",
+    "postcss": "^8.4.32",
+    "postcss-cli": "^11.0.0",
+    "tailwindcss": "^3.3.6",
+    "vnu-jar": "^23.4.11"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

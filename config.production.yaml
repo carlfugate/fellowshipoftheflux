@@ -1,0 +1,132 @@
+# Production-specific Hugo configuration
+# This file extends config.yaml for production builds
+
+# Production environment settings
+environment: "production"
+
+# Enhanced minification for production
+minify:
+  disableCSS: false
+  disableHTML: false
+  disableJS: false
+  disableJSON: false
+  disableSVG: false
+  disableXML: false
+  minifyOutput: true
+  tdewolff:
+    html:
+      keepDefaultAttrVals: false
+      keepDocumentTags: true
+      keepEndTags: true
+      keepQuotes: false
+      keepWhitespace: false
+    css:
+      version: 2
+      precision: 0
+    js:
+      keepVarNames: false
+      precision: 0
+    json:
+      precision: 0
+    svg:
+      precision: 0
+    xml:
+      keepWhitespace: false
+
+# Production build settings
+build:
+  writeStats: true
+  useResourceCacheWhen: always
+  noJSConfigInAssets: true
+
+# Enhanced caching for production
+caches:
+  assets:
+    dir: ":resourceDir/_gen"
+    maxAge: "24h"
+  getcsv:
+    maxAge: "1h"
+  getjson:
+    maxAge: "1h"
+  images:
+    dir: ":resourceDir/_gen"
+    maxAge: "24h"
+  modules:
+    maxAge: "24h"
+
+# Production image processing
+imaging:
+  resampleFilter: "CatmullRom"
+  quality: 80
+  anchor: "smart"
+  bgColor: "#ffffff"
+  hint: "photo"
+
+# Production-specific parameters
+params:
+  # Disable development features
+  development: false
+  debug: false
+
+  # Enable production optimizations
+  performance:
+    fingerprint: true
+    bundle: true
+    imageProcessing: true
+    lazyLoading: true
+
+  # Analytics and tracking (if needed)
+  analytics:
+    enabled: true
+
+  # SEO optimizations
+  seo:
+    enableJsonLd: true
+    enableOpenGraph: true
+    enableTwitterCards: true
+
+# Security settings for production
+security:
+  enableInlineShortcodes: false
+  funcs:
+    getenv:
+      - "^HUGO_"
+      - "^WC_"
+  http:
+    methods:
+      - "^GET$"
+    urls:
+      - ".*"
+
+# Disable unnecessary features in production
+disableKinds:
+  - "RSS" # Disable if not needed
+  - "404" # Enable if you want custom 404 pages
+
+# Production markup settings
+markup:
+  goldmark:
+    renderer:
+      unsafe: false # More secure for production
+      hardWraps: false
+    parser:
+      attribute:
+        block: true
+        title: true
+      autoHeadingID: true
+      autoHeadingIDType: "github"
+    extensions:
+      definitionList: true
+      footnote: true
+      linkify: true
+      strikethrough: true
+      table: true
+      taskList: true
+      typographer: true
+  highlight:
+    style: github
+    lineNos: false # Disable line numbers for better performance
+    codeFences: true
+    guessSyntax: false # Disable for better performance
+    noClasses: false
+    tabWidth: 2

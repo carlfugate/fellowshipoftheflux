@@ -1,0 +1,64 @@
+<!-- SEO and Meta Tags -->
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+
+<meta name="description" content="{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary }}{{ else }}{{ .Site.Params.description | default .Site.Title }}{{ end }}" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}" />
+<meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary }}{{ else }}{{ .Site.Params.description | default .Site.Title }}{{ end }}" />
+<meta property="og:site_name" content="{{ .Site.Title }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:locale" content="{{ .Site.Language.Lang | default "en" }}">
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
+
+{{ if .Params.featured_image }}
+<meta property="og:image" content="{{ .Params.featured_image | absURL }}" />
+<meta property="og:image:secure_url" content="{{ .Params.featured_image | absURL }}" />
+{{ else }}
+<meta property="og:image" content="{{ "/images/tailbliss-cover.png" | absURL }}" />
+<meta property="og:image:secure_url" content="{{ "/images/tailbliss-cover.png" | absURL }}" />
+{{ end }}
+
+{{ if .IsPage }}
+<meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}" />
+{{ if .Lastmod }}
+<meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}" />
+{{ end }}
+{{ if .Params.author }}
+<meta property="article:author" content="{{ .Params.author }}" />
+{{ end }}
+{{ range .Params.tags }}
+<meta property="article:tag" content="{{ . }}" />
+{{ end }}
+{{ end }}
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}" />
+<meta name="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary }}{{ else }}{{ .Site.Params.description | default .Site.Title }}{{ end }}" />
+{{ if .Params.featured_image }}
+<meta name="twitter:image" content="{{ .Params.featured_image | absURL }}" />
+{{ else }}
+<meta name="twitter:image" content="{{ "/images/tailbliss-cover.png" | absURL }}" />
+{{ end }}
+{{ if .Site.Params.social.twitter }}
+<meta name="twitter:site" content="@{{ .Site.Params.social.twitter }}" />
+<meta name="twitter:creator" content="@{{ .Site.Params.social.twitter }}" />
+{{ end }}
+
+<!-- Additional Meta -->
+<meta itemprop="name" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}" />
+<meta itemprop="description" content="{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary }}{{ else }}{{ .Site.Params.description | default .Site.Title }}{{ end }}" />
+{{ if .Params.featured_image }}
+<meta itemprop="image" content="{{ .Params.featured_image | absURL }}" />
+{{ end }}
+
+<meta name="application-name" content="{{ .Site.Title }}" />
+
+<!-- Canonical URL -->
+<link rel="canonical" href="{{ .Permalink }}" />
+
+<!-- RSS Feed -->
+{{ with .OutputFormats.Get "rss" }}
+<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}" title="{{ $.Site.Title }}" />
+{{ end }}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Open Source on Hugo Tailbliss Site</title><link>https://fellowshipoftheflux.com/categories/open-source/</link><description>Recent content in Open Source on Hugo Tailbliss Site</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Wed, 10 Jan 2024 14:30:00 +0000</lastBuildDate><atom:link href="https://fellowshipoftheflux.com/categories/open-source/index.xml" rel="self" type="application/rss+xml"/><item><title>Responsive Portfolio Template</title><link>https://fellowshipoftheflux.com/projects/responsive-portfolio/</link><pubDate>Wed, 10 Jan 2024 14:30:00 +0000</pubDate><guid>https://fellowshipoftheflux.com/projects/responsive-portfolio/</guid><description>&lt;h2 id="project-overview"&gt;Project Overview&lt;/h2&gt;
+&lt;p&gt;A modern, responsive portfolio template designed for developers and designers to showcase their work. Features smooth animations, optimized performance, and a clean, professional design that adapts to any content.&lt;/p&gt;
+&lt;h2 id="technologies-used"&gt;Technologies Used&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;HTML5&lt;/strong&gt;: Semantic markup with accessibility in mind&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CSS3&lt;/strong&gt;: Modern CSS features including Grid and Flexbox&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;JavaScript ES6+&lt;/strong&gt;: Modern JavaScript with module system&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GSAP&lt;/strong&gt;: Professional-grade animation library&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Webpack&lt;/strong&gt;: Module bundler for optimized builds&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="features"&gt;Features&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Fully responsive design for all screen sizes&lt;/li&gt;
+&lt;li&gt;Smooth scroll animations and micro-interactions&lt;/li&gt;
+&lt;li&gt;Optimized images with lazy loading&lt;/li&gt;
+&lt;li&gt;Contact form with validation&lt;/li&gt;
+&lt;li&gt;SEO optimized with proper meta tags&lt;/li&gt;
+&lt;li&gt;Cross-browser compatibility&lt;/li&gt;
+&lt;li&gt;Performance optimized with code splitting&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="challenges--solutions"&gt;Challenges &amp;amp; Solutions&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Animation Performance&lt;/strong&gt;: Needed smooth animations without impacting performance. Implemented GSAP with proper timeline management and hardware acceleration.&lt;/p&gt;</description></item></channel></rss>

@@ -1,0 +1,53 @@
+{{ define "main" }}
+<main class="container mx-auto px-4 py-8 max-w-4xl">
+    <article class="prose prose-lg dark:prose-invert mx-auto">
+        <header class="mb-8">
+            <h1 class="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+                {{ .Title }}
+            </h1>
+            
+            {{ if .Date }}
+            <div class="flex items-center text-gray-600 dark:text-gray-400 mb-4">
+                <time datetime="{{ .Date.Format "2006-01-02" }}" class="text-sm">
+                    {{ .Date.Format "January 2, 2006" }}
+                </time>
+                {{ if .Params.author }}
+                <span class="mx-2">•</span>
+                <span class="text-sm">{{ .Params.author }}</span>
+                {{ end }}
+            </div>
+            {{ end }}
+            
+            {{ if .Params.description }}
+            <p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
+                {{ .Params.description }}
+            </p>
+            {{ end }}
+        </header>
+        
+        {{ if .Params.featured_image }}
+        <div class="mb-8">
+            <img src="{{ .Params.featured_image }}" 
+                 alt="{{ .Title }}" 
+                 class="w-full h-auto rounded-lg shadow-lg">
+        </div>
+        {{ end }}
+        
+        <div class="content">
+            {{ .Content }}
+        </div>
+        
+        {{ if .Params.tags }}
+        <footer class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
+            <div class="flex flex-wrap gap-2">
+                {{ range .Params.tags }}
+                <span class="inline-block bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 px-3 py-1 rounded-full text-sm">
+                    {{ . }}
+                </span>
+                {{ end }}
+            </div>
+        </footer>
+        {{ end }}
+    </article>
+</main>
+{{ end }}

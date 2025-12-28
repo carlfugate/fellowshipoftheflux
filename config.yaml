@@ -1,0 +1,125 @@
+baseURL: "https://fellowshipoftheflux.com"
+languageCode: "en-us"
+title: "Hugo Tailbliss Site"
+theme: "tailbliss"
+
+# Performance and SEO optimizations
+enableRobotsTXT: true
+enableGitInfo: false
+enableEmoji: true
+
+# Minification settings for production
+minify:
+  disableCSS: false
+  disableHTML: false
+  disableJS: false
+  disableJSON: false
+  disableSVG: false
+  disableXML: false
+  minifyOutput: true
+  tdewolff:
+    html:
+      keepDefaultAttrVals: false
+      keepDocumentTags: true
+      keepEndTags: true
+      keepQuotes: false
+      keepWhitespace: false
+    css:
+      version: 2
+      precision: 0
+    js:
+      keepVarNames: false
+      precision: 0
+
+params:
+  # Custom parameters
+  description: "A modern, responsive website built with Hugo and Tailwind CSS"
+  brand:
+    name: "Hugo Tailbliss Site"
+    logo: "/images/site-logo.svg"
+  social:
+    github: "username"
+    twitter: "handle"
+  features:
+    darkMode: true
+    search: true
+
+  # Performance optimizations
+  performance:
+    # Enable asset fingerprinting for cache busting
+    fingerprint: true
+    # Enable resource bundling
+    bundle: true
+    # Enable image processing
+    imageProcessing: true
+
+menu:
+  main:
+    - name: "Home"
+      url: "/"
+      weight: 1
+    - name: "About"
+      url: "/about/"
+      weight: 2
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+    parser:
+      attribute:
+        block: true
+        title: true
+  highlight:
+    style: github
+    lineNos: true
+    codeFences: true
+    guessSyntax: true
+    noClasses: false
+
+# Build configuration for performance
+build:
+  writeStats: true
+  useResourceCacheWhen: fallback
+  noJSConfigInAssets: false
+
+# Caching configuration
+caches:
+  assets:
+    dir: ":resourceDir/_gen"
+    maxAge: "1h"
+  getcsv:
+    maxAge: "10s"
+  getjson:
+    maxAge: "10s"
+  images:
+    dir: ":resourceDir/_gen"
+    maxAge: "1h"
+  modules:
+    maxAge: "10m"
+
+# Output formats for RSS and sitemap
+outputs:
+  home: ["HTML", "RSS"]
+  page: ["HTML"]
+  section: ["HTML", "RSS"]
+
+# Image processing configuration
+imaging:
+  resampleFilter: "CatmullRom"
+  quality: 85
+  anchor: "smart"
+
+# Security configuration
+security:
+  enableInlineShortcodes: false
+  funcs:
+    getenv:
+      - "^HUGO_"
+      - "^WC_"
+  http:
+    methods:
+      - "^GET$"
+      - "^POST$"
+    urls:
+      - ".*"
