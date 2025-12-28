@@ -1,6 +1,6 @@
 baseURL: "https://fellowshipoftheflux.com"
 languageCode: "en-us"
-title: "Hugo Tailbliss Site"
+title: "Fellowship of the Flux"
 theme: "tailbliss"
 
 # Performance and SEO optimizations
@@ -32,17 +32,45 @@ minify:
       precision: 0
 
 params:
-  # Custom parameters
-  description: "A modern, responsive website built with Hugo and Tailwind CSS"
+  # Brand and site identity
+  description: "Fellowship of the Flux is a Kansas City-based volunteer organization advancing the art of learning to solder through community outreach, education, and resource sharing."
+  keywords:
+    [
+      "learn to solder",
+      "soldering workshops",
+      "electronics education",
+      "STEM outreach",
+      "maker education",
+      "Kansas City",
+      "community workshops",
+    ]
+
+  # Brand identity
   brand:
-    name: "Hugo Tailbliss Site"
-    logo: "/images/site-logo.svg"
+    name: "Fellowship of the Flux"
+    tagline: "Advancing the art of learning to solder"
+    logo: "/images/fellowship-logo.svg"
+    mission: "Community-driven electronics education through hands-on soldering workshops and resource sharing"
+
+  # Organization details
+  organization:
+    type: "Volunteer Organization"
+    location: "Kansas City, Missouri"
+    founded: "2020"
+    focus: "Soldering Education & STEM Outreach"
+
+  # Social media and contact
   social:
-    github: "username"
-    twitter: "handle"
+    github: "fellowshipoftheflux"
+    twitter: "fluxfellowship"
+    email: "info@fellowshipoftheflux.com"
+
+  # Site features
   features:
     darkMode: true
     search: true
+    progressTracking: true
+    communityFeatures: true
 
   # Performance optimizations
   performance:
@@ -53,26 +81,44 @@ params:
     # Enable image processing
     imageProcessing: true
 
+  # SEO and analytics
+  seo:
+    enableJsonLd: true
+    enableOpenGraph: true
+    enableTwitterCards: true
+
+  # Brand colors (for CSS custom properties)
+  colors:
+    primary: "#2563EB" # Flux Blue
+    secondary: "#64748B" # Solder Silver
+    accent: "#EA580C" # Copper Warm
+    success: "#059669" # Circuit Green
+    warning: "#F97316" # Heat Orange
+    neutral: "#374151" # Workshop Gray
+
 menu:
   main:
     - name: "Home"
       url: "/"
       weight: 1
-    - name: "Learn to Solder"
-      url: "/learn/"
-      weight: 2
-    - name: "Tutorials"
-      url: "/learn/tutorials/"
-      weight: 3
-    - name: "Guides"
-      url: "/learn/guides/"
-      weight: 4
-    - name: "Projects"
-      url: "/learn/projects/"
-      weight: 5
     - name: "About"
       url: "/about/"
+      weight: 2
+    - name: "Learn to Solder"
+      url: "/learn/"
+      weight: 3
+    - name: "Request Lab Services"
+      url: "/services/"
+      weight: 4
+    - name: "Build Your Own Lab"
+      url: "/lab-setup/"
+      weight: 5
+    - name: "Community"
+      url: "/community/"
       weight: 6
+    - name: "Get Involved"
+      url: "/get-involved/"
+      weight: 7
 
 markup:
   goldmark:
