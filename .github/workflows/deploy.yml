@@ -37,14 +37,31 @@ jobs:
           submodules: recursive
           fetch-depth: 0
 
+      - name: Clear Hugo cache
+        run: |
+          # Remove any cached Hugo installations
+          sudo rm -rf /usr/local/bin/hugo /usr/bin/hugo ~/.local/bin/hugo 2>/dev/null || true
+          # Clear any Hugo-related environment
+          unset HUGO_VERSION || true
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: "0.153.3"
           extended: true
 
-      - name: Verify Hugo version
-        run: hugo version
+      - name: Verify Hugo version and fail if wrong
+        run: |
+          hugo version
+          HUGO_VERSION_OUTPUT=$(hugo version)
+          echo "Hugo version output: $HUGO_VERSION_OUTPUT"
+          if [[ ! "$HUGO_VERSION_OUTPUT" == *"v0.153.3"* ]]; then
+            echo "ERROR: Wrong Hugo version detected!"
+            echo "Expected: v0.153.3"
+            echo "Got: $HUGO_VERSION_OUTPUT"
+            exit 1
+          fi
+          echo "✓ Correct Hugo version confirmed"
 
       - name: Verify theme checkout
         run: |

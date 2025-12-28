@@ -74,26 +74,20 @@
 </script>
 
 <!-- CSS Assets -->
-{{ $cssFiles := slice }}
 {{ $mainCSS := "" }}
 
-<!-- Try to read theme CSS directory, handle gracefully if it doesn't exist -->
-{{ if fileExists "themes/tailbliss/static/css" }}
-{{ $cssFiles = readDir "themes/tailbliss/static/css" }}
+<!-- Check if we have a processed main CSS file -->
+{{ $mainCSSResource := resources.Get "css/main.css" }}
+{{ if $mainCSSResource }}
+{{ $mainCSS = $mainCSSResource.RelPermalink }}
+{{ else }}
+<!-- Fallback: look for static CSS files -->
+{{ $mainCSS = "/css/main.css" }}
 {{ end }}
 
-<!-- Find the hashed main CSS file from theme -->
-{{ range $cssFiles }}
-{{ if strings.Contains .Name "main." }}
-{{ if strings.HasSuffix .Name ".css" }}
-{{ $mainCSS = .Name }}
-{{ end }}
-{{ end }}
-{{ end }}
-
+<!-- Load main CSS -->
 {{ if $mainCSS }}
-<!-- Load theme CSS with cache busting -->
-<link rel="stylesheet" href="/css/{{ $mainCSS }}">
+<link rel="stylesheet" href="{{ $mainCSS }}">
 {{ else }}
 <!-- Fallback to Hugo PostCSS processing -->
 {{ $styles := resources.Get "css/main.css" }}
