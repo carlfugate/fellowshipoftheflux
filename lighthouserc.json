@@ -9,7 +9,11 @@
                 "http://localhost/posts/",
                 "http://localhost/projects/",
                 "http://localhost/services/",
-                "http://localhost/contact/"
+                "http://localhost/contact/",
+                "http://localhost/learn/",
+                "http://localhost/learn/tutorials/",
+                "http://localhost/learn/guides/",
+                "http://localhost/learn/projects/"
             ]
         },
         "assert": {

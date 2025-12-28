@@ -1,0 +1,236 @@
+{{ define "main" }}
+<div class="container mx-auto px-4 py-8">
+    <!-- Tutorial Header -->
+    <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+        <div class="flex flex-wrap items-center justify-between mb-4">
+            <div class="flex items-center space-x-4">
+                {{ $difficultyColor := "green" }}
+                {{ if eq .Params.difficulty "intermediate" }}{{ $difficultyColor
+                = "yellow" }}{{ end }}
+                {{ if eq .Params.difficulty "advanced" }}{{ $difficultyColor =
+                "red" }}{{ end }}
+
+                <span
+                    class="px-3 py-1 bg-{{ $difficultyColor }}-100 text-{{ $difficultyColor }}-800 rounded-full text-sm font-medium">
+                    {{ .Params.difficulty | title }}
+                </span>
+                <span class="text-gray-600">
+                    <svg class="w-4 h-4 inline mr-1" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z">
+                        </path>
+                    </svg>
+                    {{ .Params.duration | default "30 minutes" }}
+                </span>
+            </div>
+            <div class="flex space-x-2">
+                {{ if .Params.progress_tracking }}
+                <button id="progress-btn"
+                    class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                    Track Progress
+                </button>
+                {{ end }}
+                <button
+                    class="bookmark-btn px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
+                    data-item-id="{{ .RelPermalink }}">
+                    Bookmark
+                </button>
+            </div>
+        </div>
+
+        <h1 class="text-3xl font-bold mb-4">{{ .Title }}</h1>
+        <p class="text-gray-600 text-lg">{{ .Description }}</p>
+    </div>
+
+    <div class="grid lg:grid-cols-4 gap-8">
+        <!-- Main Content -->
+        <div class="lg:col-span-3">
+            <!-- Learning Objectives -->
+            {{ if .Params.learning_objectives }}
+            <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
+                <h3 class="text-lg font-semibold text-blue-800 mb-2">Learning
+                    Objectives</h3>
+                <ul class="list-disc list-inside text-blue-700">
+                    {{ range .Params.learning_objectives }}
+                    <li>{{ . }}</li>
+                    {{ end }}
+                </ul>
+            </div>
+            {{ end }}
+
+            <!-- Prerequisites -->
+            {{ if .Params.prerequisites }}
+            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                <h3 class="text-lg font-semibold text-yellow-800 mb-2">
+                    Prerequisites</h3>
+                <ul class="list-disc list-inside text-yellow-700">
+                    {{ range .Params.prerequisites }}
+                    <li>{{ . }}</li>
+                    {{ end }}
+                </ul>
+            </div>
+            {{ end }}
+
+            <!-- Tutorial Content -->
+            <div class="prose max-w-none tutorial-content">
+                {{ .Content }}
+            </div>
+
+            <!-- Progress Tracking -->
+            {{ if .Params.progress_tracking }}
+            <div id="progress-tracker" class="mt-8 p-6 bg-gray-50 rounded-lg">
+                <h3 class="text-lg font-semibold mb-4">Tutorial Progress</h3>
+                <div class="w-full bg-gray-200 rounded-full h-2 mb-4">
+                    <div id="progress-bar"
+                        class="bg-blue-600 h-2 rounded-full transition-all duration-300"
+                        style="width: 0%"></div>
+                </div>
+                <div class="flex justify-between text-sm text-gray-600">
+                    <span>Progress: <span id="progress-text">0%</span></span>
+                    <span id="steps-completed">0 of 0 steps completed</span>
+                </div>
+            </div>
+            {{ end }}
+
+            <!-- Skill Assessment -->
+            {{ if .Params.skill_assessment }}
+            <div
+                class="mt-8 p-6 bg-green-50 border border-green-200 rounded-lg">
+                <h3 class="text-lg font-semibold text-green-800 mb-4">Test Your
+                    Knowledge</h3>
+                <p class="text-green-700 mb-4">Complete this quick assessment to
+                    verify your understanding of the tutorial.</p>
+                <button
+                    class="start-assessment px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+                    data-assessment-id="tutorial-{{ .File.BaseFileName }}">
+                    Start Assessment
+                </button>
+            </div>
+            {{ end }}
+        </div>
+
+        <!-- Sidebar -->
+        <div class="lg:col-span-1">
+            <!-- Tools Required -->
+            {{ if .Params.tools_required }}
+            <div class="bg-white rounded-lg shadow-md p-4 mb-6">
+                <h3 class="text-lg font-semibold mb-3">Tools Required</h3>
+                <ul class="space-y-2">
+                    {{ range .Params.tools_required }}
+                    <li class="flex items-center text-sm">
+                        <svg class="w-4 h-4 text-green-500 mr-2" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        {{ . }}
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+            {{ end }}
+
+            <!-- Materials Required -->
+            {{ if .Params.materials_required }}
+            <div class="bg-white rounded-lg shadow-md p-4 mb-6">
+                <h3 class="text-lg font-semibold mb-3">Materials Required</h3>
+                <ul class="space-y-2">
+                    {{ range .Params.materials_required }}
+                    <li class="flex items-center text-sm">
+                        <svg class="w-4 h-4 text-blue-500 mr-2" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4">
+                            </path>
+                        </svg>
+                        {{ . }}
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+            {{ end }}
+
+            <!-- Table of Contents -->
+            <div class="bg-white rounded-lg shadow-md p-4 mb-6">
+                <h3 class="text-lg font-semibold mb-3">Table of Contents</h3>
+                <div id="toc" class="text-sm space-y-1">
+                    <!-- Generated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Related Tutorials -->
+            <div class="bg-white rounded-lg shadow-md p-4">
+                <h3 class="text-lg font-semibold mb-3">Related Tutorials</h3>
+                <div class="space-y-3">
+                    {{ $related := .Site.RegularPages.Related . | first 3 }}
+                    {{ range $related }}
+                    <a href="{{ .Permalink }}"
+                        class="block p-3 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                        <h4 class="font-medium text-sm mb-1">{{ .Title }}</h4>
+                        <p class="text-xs text-gray-600">{{ .Params.difficulty |
+                            title }} • {{ .Params.duration | default "30 min" }}
+                        </p>
+                    </a>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Tutorial progress tracking
+    document.addEventListener('DOMContentLoaded', function () {
+        const progressBtn = document.getElementById('progress-btn');
+        const progressBar = document.getElementById('progress-bar');
+        const progressText = document.getElementById('progress-text');
+        const stepsCompleted = document.getElementById('steps-completed');
+
+        // Generate table of contents
+        const toc = document.getElementById('toc');
+        const headings = document.querySelectorAll('.tutorial-content h2, .tutorial-content h3');
+
+        headings.forEach((heading, index) => {
+            const id = `heading-${index}`;
+            heading.id = id;
+
+            const tocItem = document.createElement('a');
+            tocItem.href = `#${id}`;
+            tocItem.textContent = heading.textContent;
+            tocItem.className = `block py-1 text-gray-600 hover:text-blue-600 ${heading.tagName === 'H3' ? 'ml-4' : ''}`;
+            toc.appendChild(tocItem);
+        });
+
+        // Progress tracking functionality
+        if (progressBtn) {
+            let currentStep = 0;
+            const totalSteps = headings.length;
+
+            if (stepsCompleted) {
+                stepsCompleted.textContent = `${currentStep} of ${totalSteps} steps completed`;
+            }
+
+            progressBtn.addEventListener('click', function () {
+                currentStep = Math.min(currentStep + 1, totalSteps);
+                const progress = (currentStep / totalSteps) * 100;
+
+                progressBar.style.width = `${progress}%`;
+                progressText.textContent = `${Math.round(progress)}%`;
+                stepsCompleted.textContent = `${currentStep} of ${totalSteps} steps completed`;
+
+                if (currentStep === totalSteps) {
+                    progressBtn.textContent = 'Completed!';
+                    progressBtn.disabled = true;
+                    progressBtn.classList.add('bg-green-600');
+                    progressBtn.classList.remove('bg-blue-600');
+                } else {
+                    progressBtn.textContent = `Mark Step ${currentStep + 1} Complete`;
+                }
+            });
+        }
+    });
+</script>
+{{ end }}

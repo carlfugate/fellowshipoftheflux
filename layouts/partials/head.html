@@ -3,9 +3,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <!-- Favicon and App Icons -->
-<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180"
+  href="/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32"
+  href="/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16"
+  href="/favicon/favicon-16x16.png">
 <link rel="manifest" href="/favicon/site.webmanifest">
 <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#da532c">
@@ -23,28 +26,33 @@
 {{ $heroImage := resources.Get "images/pages/tailbliss-rocket-indigo.png" }}
 {{ if $heroImage }}
 {{ $heroWebP := $heroImage.Resize "576x576 webp q85" }}
-<link href="{{ $heroWebP.RelPermalink }}" rel="preload" as="image" fetchpriority="high" loading="eager">
+<link href="{{ $heroWebP.RelPermalink }}" rel="preload" as="image"
+  fetchpriority="high" loading="eager">
 {{ else }}
-<link as="image" href="/images/tailbliss-rocket-indigo.webp" rel="preload" fetchpriority="high" loading="eager">
+<link as="image" href="/images/tailbliss-rocket-indigo.webp" rel="preload"
+  fetchpriority="high" loading="eager">
 {{ end }}
 {{ end }}
 
 <!-- Preload site logo -->
 {{ if .Site.Params.brand.logo }}
-<link href="{{ .Site.Params.brand.logo }}" rel="preload" as="image" fetchpriority="high" loading="eager">
+<link href="{{ .Site.Params.brand.logo }}" rel="preload" as="image"
+  fetchpriority="high" loading="eager">
 {{ else }}
-<link href="/images/site-logo.svg" rel="preload" as="image" fetchpriority="high" loading="eager">
+<link href="/images/site-logo.svg" rel="preload" as="image" fetchpriority="high"
+  loading="eager">
 {{ end }}
 
 <!-- Alpine.js for interactive components -->
-<link href="https://cdn.jsdelivr.net/npm/alpinejs@3.14.9/dist/cdn.min.js" as="script" rel="preconnect" rel="dns-prefetch">
+<link href="https://cdn.jsdelivr.net/npm/alpinejs@3.14.9/dist/cdn.min.js"
+  as="script" rel="preconnect" rel="dns-prefetch">
 
 <!-- Hide Alpine.js [x-cloak] elements until Alpine initializes -->
 <style>
   [x-cloak] {
     display: none !important;
   }
-  
+
   /* Line clamp utility for text truncation */
   .line-clamp-3 {
     display: -webkit-box;
@@ -66,8 +74,13 @@
 </script>
 
 <!-- CSS Assets -->
-{{ $cssFiles := readDir "themes/tailbliss/static/css" }}
+{{ $cssFiles := slice }}
 {{ $mainCSS := "" }}
+
+<!-- Try to read theme CSS directory, handle gracefully if it doesn't exist -->
+{{ if fileExists "themes/tailbliss/static/css" }}
+{{ $cssFiles = readDir "themes/tailbliss/static/css" }}
+{{ end }}
 
 <!-- Find the hashed main CSS file from theme -->
 {{ range $cssFiles }}
@@ -98,7 +111,8 @@
 {{ if $customStyles }}
 {{ $customStyles := $customStyles | postCSS }}
 {{ if hugo.IsProduction }}
-{{ $customStyles := $customStyles | minify | fingerprint | resources.PostProcess }}
+{{ $customStyles := $customStyles | minify | fingerprint | resources.PostProcess
+}}
 {{ end }}
 <link rel="stylesheet" href="{{ $customStyles.RelPermalink }}" />
 {{ end }}

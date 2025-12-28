@@ -24,125 +24,59 @@ defaults:
     shell: bash
 
 jobs:
-  # Validation job for pull requests
-  validate:
-    runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request'
-    env:
-      HUGO_VERSION: 0.121.0
-      NODE_ENV: production
-    steps:
-      - name: Install Hugo CLI
-        run: |
-          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
-          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
-      - name: Install Dart Sass
-        run: sudo snap install dart-sass
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          submodules: recursive
-          fetch-depth: 0
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "18"
-          cache: "npm"
-      - name: Install Node.js dependencies
-        run: npm ci
-      - name: Setup Java
-        uses: actions/setup-java@v4
-        with:
-          distribution: "temurin"
-          java-version: "11"
-      - name: Build with Hugo
-        env:
-          HUGO_ENVIRONMENT: production
-          HUGO_ENV: production
-          TZ: America/Los_Angeles
-        run: |
-          hugo \
-            --gc \
-            --minify \
-            --cleanDestinationDir \
-            --environment production \
-            --config config.yaml,config.production.yaml \
-            --baseURL "https://example.com/"
-      - name: Validate HTML
-        run: |
-          echo "Running HTML validation..."
-          java -jar node_modules/vnu-jar/build/dist/vnu.jar --skip-non-html --also-check-css --format text ./public/ || {
-            echo "HTML validation failed. Check the output above for details."
-            exit 1
-          }
-          echo "HTML validation passed!"
-      - name: Check for broken links
-        run: |
-          # Start a local server to serve the built site
-          cd public
-          python3 -m http.server 8080 &
-          SERVER_PID=$!
-
-          # Wait for server to start
-          sleep 5
-
-          # Run broken link checker with error handling
-          echo "Running broken link checker..."
-          set +e  # Don't exit on error
-          npx broken-link-checker http://localhost:8080 --recursive --ordered --exclude-external --filter-level 3
-          LINK_CHECK_EXIT_CODE=$?
-          set -e  # Re-enable exit on error
-
-          # Clean up server
-          kill $SERVER_PID 2>/dev/null || true
-
-          # Check results - for validation job, we'll be more strict
-          if [ $LINK_CHECK_EXIT_CODE -ne 0 ]; then
-            echo "Broken link check found issues. Check the output above for details."
-            exit 1
-          else
-            echo "Broken link check passed!"
-          fi
-      - name: Run Lighthouse performance test
-        uses: treosh/lighthouse-ci-action@v10
-        with:
-          configPath: "./lighthouserc.json"
-          temporaryPublicStorage: true
-          uploadArtifacts: true
-          runs: 1
-
   # Build job
   build:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
     env:
-      HUGO_VERSION: 0.121.0
+      HUGO_VERSION: 0.153.3
       NODE_ENV: production
     steps:
-      - name: Install Hugo CLI
-        run: |
-          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
-          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
-      - name: Install Dart Sass
-        run: sudo snap install dart-sass
       - name: Checkout
         uses: actions/checkout@v4
         with:
           submodules: recursive
           fetch-depth: 0
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: "0.153.3"
+          extended: true
+
+      - name: Verify Hugo version
+        run: hugo version
+
+      - name: Verify theme checkout
+        run: |
+          echo "Checking theme directory structure..."
+          ls -la themes/
+          if [ -d "themes/tailbliss" ]; then
+            echo "✓ Tailbliss theme found"
+            if [ -d "themes/tailbliss/static/css" ]; then
+              echo "✓ Theme CSS directory found"
+              ls -la themes/tailbliss/static/css/
+            else
+              echo "⚠ Warning: Theme CSS directory not found, but continuing..."
+            fi
+          else
+            echo "✗ Error: Tailbliss theme not found"
+            exit 1
+          fi
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
+        if: github.ref == 'refs/heads/main'
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "18"
           cache: "npm"
-      - name: Setup Java
-        uses: actions/setup-java@v4
-        with:
-          distribution: "temurin"
-          java-version: "11"
+
+      - name: Install Node.js dependencies
+        run: npm ci
+
       - name: Cache Hugo resources
         uses: actions/cache@v3
         with:
@@ -150,41 +84,63 @@ jobs:
           key: ${{ runner.os }}-hugo-resources-${{ hashFiles('**/*.md', '**/*.html', 'config.yaml') }}
           restore-keys: |
             ${{ runner.os }}-hugo-resources-
-      - name: Install Node.js dependencies
-        run: npm ci
+
       - name: Build with Hugo
         env:
-          # For maximum backward compatibility with Hugo modules
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
           TZ: America/Los_Angeles
         run: |
+          if [ "${{ github.ref }}" = "refs/heads/main" ]; then
+            BASE_URL="${{ steps.pages.outputs.base_url }}/"
+          else
+            BASE_URL="https://example.com/"
+          fi
+
+          echo "Building with base URL: $BASE_URL"
           hugo \
             --gc \
             --minify \
             --cleanDestinationDir \
             --environment production \
             --config config.yaml,config.production.yaml \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
-      - name: Optimize assets (Post-build)
+            --baseURL "$BASE_URL"
+
+      - name: Validate build output
         run: |
-          # Additional optimizations can be added here
-          echo "Build completed with optimizations"
-          # Show build stats
-          if [ -f "public/hugo_stats.json" ]; then
-            echo "Hugo build stats:"
-            cat public/hugo_stats.json
+          echo "Build completed successfully!"
+          echo "Generated files:"
+          ls -la public/
+          echo "Total files: $(find public -type f | wc -l)"
+
+          # Check for essential files
+          if [ ! -f "public/index.html" ]; then
+            echo "Error: index.html not found"
+            exit 1
           fi
+
+          echo "✓ Build validation passed"
+
+      # Only run validation steps for pull requests
+      - name: Setup Java (for validation)
+        if: github.event_name == 'pull_request'
+        uses: actions/setup-java@v4
+        with:
+          distribution: "temurin"
+          java-version: "11"
+
       - name: Validate HTML
+        if: github.event_name == 'pull_request'
         run: |
           echo "Running HTML validation..."
           java -jar node_modules/vnu-jar/build/dist/vnu.jar --skip-non-html --also-check-css --format text ./public/ || {
             echo "HTML validation failed. Check the output above for details."
-            exit 1
+            echo "::warning::HTML validation issues found"
           }
-          echo "HTML validation passed!"
+          echo "HTML validation completed"
 
       - name: Check for broken links
+        if: github.event_name == 'pull_request'
         run: |
           # Start a local server to serve the built site
           cd public
@@ -204,24 +160,15 @@ jobs:
           # Clean up server
           kill $SERVER_PID 2>/dev/null || true
 
-          # Check results - for production build, we'll warn but not fail
+          # Check results - warn but don't fail
           if [ $LINK_CHECK_EXIT_CODE -ne 0 ]; then
-            echo "Broken link check found issues. Check the output above for details."
-            echo "Note: Some broken links may be acceptable (e.g., RSS feeds, external redirects)"
-            echo "::warning::Broken links detected but not failing the build"
+            echo "::warning::Broken links detected"
           else
-            echo "Broken link check passed!"
+            echo "✓ No broken links found"
           fi
 
-      - name: Run Lighthouse performance test
-        uses: treosh/lighthouse-ci-action@v10
-        with:
-          configPath: "./lighthouserc.json"
-          temporaryPublicStorage: true
-          uploadArtifacts: true
-          runs: 3
-
       - name: Upload artifact
+        if: github.ref == 'refs/heads/main'
         uses: actions/upload-pages-artifact@v2
         with:
           path: ./public

@@ -1,0 +1,388 @@
+{{ define "main" }}
+<div class="container mx-auto px-4 py-8">
+    <!-- Search Header -->
+    <div class="text-center mb-8">
+        <h1 class="text-4xl font-bold mb-4">Search Learning Content</h1>
+        <p class="text-xl text-gray-600">Find tutorials, guides, and projects to
+            advance your soldering skills</p>
+    </div>
+
+    <!-- Advanced Search Form -->
+    <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+            <!-- Search Input -->
+            <div class="lg:col-span-2">
+                <label
+                    class="block text-sm font-medium text-gray-700 mb-2">Search
+                    Terms</label>
+                <input type="text" id="search-input"
+                    placeholder="Enter keywords..."
+                    class="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+            </div>
+
+            <!-- Content Type Filter -->
+            <div>
+                <label
+                    class="block text-sm font-medium text-gray-700 mb-2">Content
+                    Type</label>
+                <select id="type-filter"
+                    class="filter-select w-full border border-gray-300 rounded-md px-3 py-2"
+                    data-filter="type">
+                    <option value="">All Types</option>
+                    <option value="tutorial">Tutorials</option>
+                    <option value="guide">Guides</option>
+                    <option value="project">Projects</option>
+                </select>
+            </div>
+
+            <!-- Difficulty Filter -->
+            <div>
+                <label
+                    class="block text-sm font-medium text-gray-700 mb-2">Difficulty</label>
+                <select id="difficulty-filter"
+                    class="filter-select w-full border border-gray-300 rounded-md px-3 py-2"
+                    data-filter="difficulty">
+                    <option value="">All Levels</option>
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-4">
+            <!-- Duration Filter -->
+            <div>
+                <label
+                    class="block text-sm font-medium text-gray-700 mb-2">Duration</label>
+                <select id="duration-filter"
+                    class="filter-select w-full border border-gray-300 rounded-md px-3 py-2"
+                    data-filter="duration">
+                    <option value="">Any Duration</option>
+                    <option value="short">Under 30 min</option>
+                    <option value="medium">30-60 min</option>
+                    <option value="long">Over 60 min</option>
+                </select>
+            </div>
+
+            <!-- Tags Filter -->
+            <div>
+                <label
+                    class="block text-sm font-medium text-gray-700 mb-2">Topic</label>
+                <select id="tags-filter"
+                    class="filter-select w-full border border-gray-300 rounded-md px-3 py-2"
+                    data-filter="tags">
+                    <option value="">All Topics</option>
+                    <option value="through-hole">Through-Hole</option>
+                    <option value="smd">Surface Mount</option>
+                    <option value="tools">Tools & Equipment</option>
+                    <option value="safety">Safety</option>
+                    <option value="troubleshooting">Troubleshooting</option>
+                    <option value="repair">Repair</option>
+                </select>
+            </div>
+
+            <!-- Sort Options -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Sort
+                    By</label>
+                <select id="sort-filter"
+                    class="w-full border border-gray-300 rounded-md px-3 py-2">
+                    <option value="relevance">Relevance</option>
+                    <option value="date">Newest First</option>
+                    <option value="difficulty">Difficulty</option>
+                    <option value="duration">Duration</option>
+                    <option value="title">Title A-Z</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="flex justify-between items-center mt-4">
+            <button id="clear-filters"
+                class="px-4 py-2 text-gray-600 hover:text-gray-800 transition-colors">
+                Clear All Filters
+            </button>
+            <div class="text-sm text-gray-600">
+                <span id="results-count">0</span> results found
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Results -->
+    <div id="search-results" class="space-y-6">
+        <!-- Results will be populated by JavaScript -->
+    </div>
+
+    <!-- No Results Message -->
+    <div id="no-results" class="text-center py-12 hidden">
+        <svg class="w-16 h-16 text-gray-400 mx-auto mb-4" fill="none"
+            stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+        <h3 class="text-lg font-medium text-gray-900 mb-2">No content found</h3>
+        <p class="text-gray-600 mb-4">Try adjusting your search terms or
+            filters.</p>
+        <button id="suggest-content"
+            class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+            Suggest New Content
+        </button>
+    </div>
+
+    <!-- Loading State -->
+    <div id="search-loading" class="text-center py-12 hidden">
+        <div
+            class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4">
+        </div>
+        <p class="text-gray-600">Searching content...</p>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Search functionality
+        const searchInput = document.getElementById('search-input');
+        const filterSelects = document.querySelectorAll('.filter-select');
+        const sortSelect = document.getElementById('sort-filter');
+        const clearFiltersBtn = document.getElementById('clear-filters');
+        const resultsContainer = document.getElementById('search-results');
+        const resultsCount = document.getElementById('results-count');
+        const noResults = document.getElementById('no-results');
+        const loading = document.getElementById('search-loading');
+
+        // Sample content data - in a real implementation, this would come from an API
+        const contentData = [
+            {
+                title: "Basic Through-Hole Soldering",
+                description: "Learn the fundamentals of through-hole soldering with this comprehensive step-by-step tutorial",
+                type: "tutorial",
+                difficulty: "beginner",
+                duration: "45 minutes",
+                tags: ["through-hole", "beginner", "fundamentals"],
+                url: "/learn/tutorials/basic-through-hole-soldering/",
+                date: "2024-01-01",
+                featured_image: "/images/tutorials/through-hole-soldering.jpg"
+            },
+            {
+                title: "Complete Soldering Tools Guide",
+                description: "Comprehensive guide to selecting, using, and maintaining soldering tools for every skill level",
+                type: "guide",
+                difficulty: "beginner",
+                duration: "reading",
+                tags: ["tools", "equipment", "maintenance"],
+                url: "/learn/guides/soldering-tools-guide/",
+                date: "2024-01-01",
+                featured_image: "/images/guides/soldering-tools.jpg"
+            },
+            {
+                title: "Simple LED Flasher Circuit",
+                description: "Build a simple LED flasher circuit - a perfect first soldering project for beginners",
+                type: "project",
+                difficulty: "beginner",
+                duration: "1.5 hours",
+                tags: ["project", "555-timer", "led", "circuit"],
+                url: "/learn/projects/simple-led-flasher/",
+                date: "2024-01-01",
+                featured_image: "/images/projects/led-flasher.jpg"
+            }
+            // More content would be added here
+        ];
+
+        let filteredResults = [...contentData];
+
+        function performSearch() {
+            loading.classList.remove('hidden');
+            resultsContainer.innerHTML = '';
+
+            // Simulate API delay
+            setTimeout(() => {
+                const searchTerm = searchInput.value.toLowerCase();
+                const filters = {};
+
+                // Collect filter values
+                filterSelects.forEach(select => {
+                    if (select.value) {
+                        filters[select.dataset.filter] = select.value;
+                    }
+                });
+
+                // Filter content
+                filteredResults = contentData.filter(item => {
+                    // Search term filter
+                    if (searchTerm) {
+                        const searchableText = (
+                            item.title + ' ' +
+                            item.description + ' ' +
+                            item.tags.join(' ')
+                        ).toLowerCase();
+
+                        if (!searchableText.includes(searchTerm)) {
+                            return false;
+                        }
+                    }
+
+                    // Category filters
+                    for (const [filterType, filterValue] of Object.entries(filters)) {
+                        if (filterType === 'tags') {
+                            if (!item.tags.includes(filterValue)) {
+                                return false;
+                            }
+                        } else if (filterType === 'duration') {
+                            const duration = item.duration;
+                            if (filterValue === 'short' && !duration.includes('min') ||
+                                (duration.includes('min') && parseInt(duration) >= 30)) {
+                                return false;
+                            } else if (filterValue === 'medium' &&
+                                (!duration.includes('min') ||
+                                    parseInt(duration) < 30 ||
+                                    parseInt(duration) > 60)) {
+                                return false;
+                            } else if (filterValue === 'long' &&
+                                (duration.includes('min') && parseInt(duration) <= 60)) {
+                                return false;
+                            }
+                        } else if (item[filterType] !== filterValue) {
+                            return false;
+                        }
+                    }
+
+                    return true;
+                });
+
+                // Sort results
+                const sortBy = sortSelect.value;
+                filteredResults.sort((a, b) => {
+                    switch (sortBy) {
+                        case 'date':
+                            return new Date(b.date) - new Date(a.date);
+                        case 'difficulty':
+                            const difficultyOrder = { beginner: 1, intermediate: 2, advanced: 3 };
+                            return difficultyOrder[a.difficulty] - difficultyOrder[b.difficulty];
+                        case 'duration':
+                            return a.duration.localeCompare(b.duration);
+                        case 'title':
+                            return a.title.localeCompare(b.title);
+                        default: // relevance
+                            return 0;
+                    }
+                });
+
+                displayResults();
+                loading.classList.add('hidden');
+            }, 300);
+        }
+
+        function displayResults() {
+            resultsCount.textContent = filteredResults.length;
+
+            if (filteredResults.length === 0) {
+                noResults.classList.remove('hidden');
+                resultsContainer.innerHTML = '';
+                return;
+            }
+
+            noResults.classList.add('hidden');
+
+            resultsContainer.innerHTML = filteredResults.map(item => `
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+        <div class="md:flex">
+          <div class="md:w-48 h-48 md:h-auto">
+            ${item.featured_image ?
+                    `<img src="${item.featured_image}" alt="${item.title}" class="w-full h-full object-cover">` :
+                    `<div class="w-full h-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
+                <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                </svg>
+              </div>`
+                }
+          </div>
+          <div class="p-6 flex-1">
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center space-x-2">
+                <span class="px-2 py-1 bg-${getTypeColor(item.type)}-100 text-${getTypeColor(item.type)}-800 rounded-full text-xs font-medium">
+                  ${item.type.charAt(0).toUpperCase() + item.type.slice(1)}
+                </span>
+                <span class="px-2 py-1 bg-${getDifficultyColor(item.difficulty)}-100 text-${getDifficultyColor(item.difficulty)}-800 rounded-full text-xs font-medium">
+                  ${item.difficulty.charAt(0).toUpperCase() + item.difficulty.slice(1)}
+                </span>
+              </div>
+              <span class="text-xs text-gray-500">${item.duration}</span>
+            </div>
+            
+            <h3 class="text-xl font-semibold mb-2">
+              <a href="${item.url}" class="hover:text-blue-600 transition-colors">${item.title}</a>
+            </h3>
+            
+            <p class="text-gray-600 mb-4">${item.description}</p>
+            
+            <div class="flex items-center justify-between">
+              <div class="flex flex-wrap gap-1">
+                ${item.tags.slice(0, 3).map(tag =>
+                    `<span class="px-2 py-1 bg-gray-100 text-gray-600 rounded text-xs">${tag}</span>`
+                ).join('')}
+                ${item.tags.length > 3 ? `<span class="text-xs text-gray-500">+${item.tags.length - 3} more</span>` : ''}
+              </div>
+              
+              <a href="${item.url}" class="text-blue-600 hover:text-blue-700 font-medium text-sm">
+                ${item.type === 'tutorial' ? 'Start Tutorial' :
+                    item.type === 'project' ? 'View Project' : 'Read Guide'} →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    `).join('');
+        }
+
+        function getTypeColor(type) {
+            const colors = {
+                tutorial: 'blue',
+                guide: 'green',
+                project: 'purple'
+            };
+            return colors[type] || 'gray';
+        }
+
+        function getDifficultyColor(difficulty) {
+            const colors = {
+                beginner: 'green',
+                intermediate: 'yellow',
+                advanced: 'red'
+            };
+            return colors[difficulty] || 'gray';
+        }
+
+        function clearAllFilters() {
+            searchInput.value = '';
+            filterSelects.forEach(select => select.value = '');
+            sortSelect.value = 'relevance';
+            performSearch();
+        }
+
+        // Event listeners
+        searchInput.addEventListener('input', debounce(performSearch, 300));
+        filterSelects.forEach(select => {
+            select.addEventListener('change', performSearch);
+        });
+        sortSelect.addEventListener('change', performSearch);
+        clearFiltersBtn.addEventListener('click', clearAllFilters);
+
+        // Utility function for debouncing
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Initial search
+        performSearch();
+    });
+</script>
+{{ end }}

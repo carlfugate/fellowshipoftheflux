@@ -58,9 +58,21 @@ menu:
     - name: "Home"
       url: "/"
       weight: 1
+    - name: "Learn to Solder"
+      url: "/learn/"
+      weight: 2
+    - name: "Tutorials"
+      url: "/learn/tutorials/"
+      weight: 3
+    - name: "Guides"
+      url: "/learn/guides/"
+      weight: 4
+    - name: "Projects"
+      url: "/learn/projects/"
+      weight: 5
     - name: "About"
       url: "/about/"
-      weight: 2
+      weight: 6
 
 markup:
   goldmark:

@@ -1,69 +1,16 @@
 # Development-specific Hugo configuration
-# This file extends config.yaml for local development
+# This file extends config.yaml for development builds
 
-# Development server settings
-server:
-  headers:
-    - for: "/**"
-      values:
-        Cache-Control: "no-cache, no-store, must-revalidate"
-        Pragma: "no-cache"
-        Expires: "0"
+# Development environment settings
+environment: "development"
 
-# Disable minification in development for faster builds
-minify:
-  disableCSS: true
-  disableHTML: true
-  disableJS: true
-  disableJSON: true
-  disableSVG: true
-  disableXML: true
-
-# Enable development features
-params:
-  # Development-specific parameters
-  development: true
-
-  # Enable debug information
-  debug: true
-
-  # Disable analytics in development
-  analytics:
-    enabled: false
-
-  # Disable performance optimizations for faster dev builds
-  performance:
-    fingerprint: false
-    bundle: false
-    imageProcessing: false
-
-# Development build settings - prioritize speed over optimization
+# Development build settings - faster builds
 build:
   writeStats: false
   useResourceCacheWhen: fallback
   noJSConfigInAssets: false
 
-# Enable template debugging
-templateMetrics: true
-templateMetricsHints: true
-
-# Development markup settings - more permissive
-markup:
-  goldmark:
-    renderer:
-      unsafe: true # Allow HTML in markdown for development
-    parser:
-      attribute:
-        block: true
-        title: true
-  highlight:
-    lineNos: true
-    style: "github"
-    tabWidth: 2
-    codeFences: true
-    guessSyntax: true
-
-# Fast caching for development
+# Relaxed caching for development
 caches:
   assets:
     dir: ":resourceDir/_gen"
@@ -78,8 +25,63 @@ caches:
   modules:
     maxAge: "10s"
 
-# Development image processing - faster, lower quality
+# Development image processing - faster
 imaging:
   resampleFilter: "Box"
   quality: 75
   anchor: "smart"
+
+# Development-specific parameters
+params:
+  # Enable development features
+  development: true
+  debug: true
+
+  # Disable heavy optimizations for faster builds
+  performance:
+    fingerprint: false
+    bundle: false
+    imageProcessing: false
+
+# Relaxed security for development
+security:
+  enableInlineShortcodes: true
+  funcs:
+    getenv:
+      - ".*"
+  http:
+    methods:
+      - ".*"
+    urls:
+      - ".*"
+
+# Enable all content types in development
+disableKinds: []
+
+# Development markup settings - more permissive
+markup:
+  goldmark:
+    renderer:
+      unsafe: true # Allow HTML in markdown for development
+      hardWraps: false
+    parser:
+      attribute:
+        block: true
+        title: true
+      autoHeadingID: true
+      autoHeadingIDType: "github"
+  highlight:
+    style: github
+    lineNos: true
+    codeFences: true
+    guessSyntax: true
+    noClasses: false
+
+# Development server settings
+server:
+  headers:
+    - for: "/**"
+      values:
+        X-Frame-Options: "SAMEORIGIN"
+        X-XSS-Protection: "1; mode=block"
+        X-Content-Type-Options: "nosniff"
