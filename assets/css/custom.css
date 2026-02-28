@@ -194,7 +194,11 @@
   
   /* Skip link for accessibility */
   .skip-link {
-    @apply absolute -top-10 left-6 bg-primary-600 text-white px-4 py-2 rounded-md z-50 focus:top-6 transition-all duration-200;
+    @apply absolute -top-16 left-6 bg-orange-600 text-white px-6 py-3 rounded-lg z-50 font-bold shadow-lg;
+  }
+  
+  .skip-link:focus {
+    @apply top-6;
   }
 }
   /* Compact prose for content pages */
