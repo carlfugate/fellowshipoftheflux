@@ -30,7 +30,7 @@ echo "  ✓ All critical files present"
 
 # Test 3: Check homepage content
 echo "✓ Checking homepage content..."
-if ! grep -q "Learn Electronics Through Hands-On Soldering Workshops" public/index.html; then
+if ! grep -q "From Beginner to Builder" public/index.html; then
     echo "  ✗ Homepage missing main heading"
     exit 1
 fi

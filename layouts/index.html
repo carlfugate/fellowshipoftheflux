@@ -2,96 +2,111 @@
 <!-- Skip Navigation for Accessibility -->
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<div class="bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-950">
-  <!-- Hero Section with Audience Segmentation -->
-  <section id="main-content" class="container mx-auto px-4 py-12 sm:py-16 max-w-6xl">
-    <h1 class="text-3xl sm:text-4xl lg:text-6xl font-bold text-center mb-4 sm:mb-6 text-gray-900 dark:text-white leading-tight">
-      Learn Electronics Through Hands-On Soldering Workshops
+<div class="bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-950 relative overflow-hidden">
+  <!-- Animated Circuit Background -->
+  <div class="circuit-bg absolute inset-0 opacity-5 dark:opacity-10 pointer-events-none"></div>
+  
+  <!-- Hero Section -->
+  <section id="main-content" class="container mx-auto px-4 py-12 sm:py-16 max-w-6xl relative z-10">
+    <h1 class="text-3xl sm:text-4xl lg:text-6xl font-bold text-center mb-4 sm:mb-6 text-gray-900 dark:text-white leading-tight animate-fade-in">
+      From Beginner to Builder in One Workshop
     </h1>
-    <p class="text-lg sm:text-xl text-center mb-8 sm:mb-12 text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-      Kansas City-based volunteer organization making soldering education accessible to everyone. Join 500+ makers who've learned with us.
+    <p class="text-lg sm:text-xl text-center mb-8 sm:mb-12 text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed animate-fade-in-delay">
+      Watch your first LED light up. Feel the satisfaction of creating something with your own hands. 
+      <span class="text-orange-600 dark:text-orange-400 font-semibold">Join Sarah, Mike, and 498 other makers who discovered their spark with us.</span>
     </p>
     
     <!-- Three-Column Audience Paths -->
     <div class="grid md:grid-cols-3 gap-6 mb-16">
       <!-- Primary CTA: Learn to Solder -->
-      <article class="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-xl shadow-md hover:shadow-xl transition-all transform hover:scale-105 border-2 border-orange-500 ring-2 ring-orange-200" role="region" aria-labelledby="learn-heading">
-        <svg class="w-12 h-12 mb-4 text-orange-500" aria-label="Education icon" fill="currentColor" viewBox="0 0 20 20">
+      <article class="card-spark bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-xl shadow-md hover:shadow-2xl transition-all transform hover:scale-105 border-2 border-orange-500 ring-2 ring-orange-200 relative overflow-hidden group" role="region" aria-labelledby="learn-heading">
+        <div class="spark-effect absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+        <svg class="w-12 h-12 mb-4 text-orange-500 relative z-10 transform group-hover:rotate-12 transition-transform" aria-label="Education icon" fill="currentColor" viewBox="0 0 20 20">
           <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
         </svg>
-        <h2 id="learn-heading" class="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Learn to Solder</h2>
-        <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">Build 3 real projects in your first workshop. Master electronics fundamentals with expert guidance.</p>
-        <a href="/learn/" class="inline-block w-full text-center bg-gradient-to-r from-orange-500 to-red-500 text-white font-bold px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all focus:outline-none focus:ring-4 focus:ring-orange-300 focus:ring-offset-2" aria-label="Start learning to solder">
-          Start Learning →
+        <h2 id="learn-heading" class="text-2xl font-bold mb-3 text-gray-900 dark:text-white relative z-10">Learn to Solder</h2>
+        <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed relative z-10"><strong>Build 3 real projects</strong> in your first workshop. Master electronics fundamentals with expert guidance.</p>
+        <div class="text-sm text-orange-600 dark:text-orange-400 font-semibold mb-6 relative z-10">✨ Next workshop: March 15th - 3 spots left</div>
+        <a href="/learn/" class="inline-block w-full text-center bg-gradient-to-r from-orange-500 to-red-500 text-white font-bold px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all focus:outline-none focus:ring-4 focus:ring-orange-300 focus:ring-offset-2 relative z-10 group" aria-label="Start learning to solder">
+          Reserve Your Spot <span class="inline-block group-hover:translate-x-1 transition-transform">→</span>
         </a>
       </article>
       
       <!-- Secondary: Host a Workshop -->
-      <article class="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-xl shadow-md hover:shadow-lg transition-all border border-blue-300" role="region" aria-labelledby="host-heading">
-        <svg class="w-12 h-12 mb-4 text-blue-500" aria-label="Workshop icon" fill="currentColor" viewBox="0 0 20 20">
+      <article class="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-xl shadow-md hover:shadow-xl transition-all transform hover:scale-105 border border-blue-300 group" role="region" aria-labelledby="host-heading">
+        <svg class="w-12 h-12 mb-4 text-blue-500 transform group-hover:rotate-6 transition-transform" aria-label="Workshop icon" fill="currentColor" viewBox="0 0 20 20">
           <path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd"/>
           <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"/>
         </svg>
         <h2 id="host-heading" class="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Host a Workshop</h2>
-        <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">Bring our portable lab to your next event. Professional equipment included.</p>
-        <a href="/services/" class="inline-block w-full text-center bg-blue-500 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg hover:bg-blue-600 transition-all focus:outline-none focus:ring-4 focus:ring-blue-300 focus:ring-offset-2" aria-label="Request workshop services">
-          Request Services
+        <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">Bring our <strong>portable lab</strong> to your next event. Professional equipment included.</p>
+        <div class="text-sm text-blue-600 dark:text-blue-400 font-semibold mb-6">🎪 Trusted by 20+ organizations</div>
+        <a href="/services/" class="inline-block w-full text-center bg-blue-500 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg hover:bg-blue-600 transition-all focus:outline-none focus:ring-4 focus:ring-blue-300 focus:ring-offset-2 group" aria-label="Request workshop services">
+          Request Services <span class="inline-block group-hover:translate-x-1 transition-transform">→</span>
         </a>
       </article>
       
       <!-- Tertiary: Join the Fellowship -->
-      <article class="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-xl shadow-md hover:shadow-lg transition-all border border-green-300" role="region" aria-labelledby="join-heading">
-        <svg class="w-12 h-12 mb-4 text-green-500" aria-label="Community icon" fill="currentColor" viewBox="0 0 20 20">
+      <article class="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-xl shadow-md hover:shadow-xl transition-all transform hover:scale-105 border border-green-300 group" role="region" aria-labelledby="join-heading">
+        <svg class="w-12 h-12 mb-4 text-green-500 transform group-hover:scale-110 transition-transform" aria-label="Community icon" fill="currentColor" viewBox="0 0 20 20">
           <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"/>
         </svg>
         <h2 id="join-heading" class="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Join the Fellowship</h2>
-        <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">Volunteer and help expand soldering education in your community.</p>
-        <a href="/get-involved/" class="inline-block w-full text-center bg-green-500 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg hover:bg-green-600 transition-all focus:outline-none focus:ring-4 focus:ring-green-300 focus:ring-offset-2" aria-label="Get involved as a volunteer">
-          Get Involved
+        <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">Volunteer and help <strong>expand soldering education</strong> in your community.</p>
+        <div class="text-sm text-green-600 dark:text-green-400 font-semibold mb-6">🤝 100+ active volunteers</div>
+        <a href="/get-involved/" class="inline-block w-full text-center bg-green-500 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg hover:bg-green-600 transition-all focus:outline-none focus:ring-4 focus:ring-green-300 focus:ring-offset-2 group" aria-label="Get involved as a volunteer">
+          Get Involved <span class="inline-block group-hover:translate-x-1 transition-transform">→</span>
         </a>
       </article>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="bg-gradient-to-r from-orange-500 to-red-500 py-12" aria-labelledby="testimonial-heading">
+    <div class="container mx-auto px-4 max-w-5xl">
+      <h2 id="testimonial-heading" class="sr-only">What Our Makers Say</h2>
+      <div class="text-center text-white">
+        <div class="text-5xl mb-4">⚡</div>
+        <blockquote class="text-xl md:text-2xl font-medium mb-4 italic">
+          "I went from being intimidated by electronics to building my own LED badge in just 2 hours!"
+        </blockquote>
+        <cite class="text-lg font-semibold not-italic">— Sarah M., First-Time Maker</cite>
+      </div>
     </div>
   </section>
 
   <!-- Mission Section -->
   <section class="bg-white dark:bg-gray-800 py-16" aria-labelledby="mission-heading">
     <div class="container mx-auto px-4 max-w-4xl">
-      <h2 id="mission-heading" class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">Our Mission</h2>
+      <h2 id="mission-heading" class="text-3xl font-bold text-center mb-4 text-gray-900 dark:text-white">Your Maker Journey</h2>
+      <p class="text-center text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto">From curious beginner to confident creator in four simple steps</p>
       <div class="grid md:grid-cols-2 gap-8">
-        <div class="flex items-start space-x-4">
-          <svg class="w-8 h-8 text-orange-500 flex-shrink-0" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd"/>
-          </svg>
+        <div class="flex items-start space-x-4 group">
+          <div class="flex-shrink-0 w-12 h-12 bg-orange-100 dark:bg-orange-900/30 rounded-full flex items-center justify-center text-orange-600 dark:text-orange-400 font-bold text-lg group-hover:scale-110 transition-transform">1</div>
           <div>
-            <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Community Workshops</h3>
-            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">At maker faires, conferences, and STEM events</p>
+            <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Discover at Community Workshops</h3>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">Join us at maker faires, conferences, and STEM events</p>
           </div>
         </div>
-        <div class="flex items-start space-x-4">
-          <svg class="w-8 h-8 text-blue-500 flex-shrink-0" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
-          </svg>
+        <div class="flex items-start space-x-4 group">
+          <div class="flex-shrink-0 w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center text-blue-600 dark:text-blue-400 font-bold text-lg group-hover:scale-110 transition-transform">2</div>
           <div>
-            <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Portable Soldering Labs</h3>
-            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">Professional-grade equipment ready to go</p>
+            <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Learn with Portable Labs</h3>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">Professional-grade equipment and expert guidance</p>
           </div>
         </div>
-        <div class="flex items-start space-x-4">
-          <svg class="w-8 h-8 text-green-500 flex-shrink-0" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
-          </svg>
+        <div class="flex items-start space-x-4 group">
+          <div class="flex-shrink-0 w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center text-green-600 dark:text-green-400 font-bold text-lg group-hover:scale-110 transition-transform">3</div>
           <div>
-            <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Educational Resources</h3>
-            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">For individuals and organizations</p>
+            <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Build with Educational Resources</h3>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">Access tutorials, guides, and projects</p>
           </div>
         </div>
-        <div class="flex items-start space-x-4">
-          <svg class="w-8 h-8 text-purple-500 flex-shrink-0" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"/>
-          </svg>
+        <div class="flex items-start space-x-4 group">
+          <div class="flex-shrink-0 w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center text-purple-600 dark:text-purple-400 font-bold text-lg group-hover:scale-110 transition-transform">4</div>
           <div>
-            <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Volunteer Training</h3>
-            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">Expanding our reach and impact</p>
+            <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Teach Through Volunteer Training</h3>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">Share your skills and help others discover their potential</p>
           </div>
         </div>
       </div>
@@ -100,34 +115,43 @@
 
   <!-- Community Impact -->
   <section class="container mx-auto px-4 py-16 max-w-6xl" aria-labelledby="impact-heading">
-    <h2 id="impact-heading" class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">Community Impact</h2>
+    <h2 id="impact-heading" class="text-3xl font-bold text-center mb-4 text-gray-900 dark:text-white">Growing the Maker Community</h2>
+    <p class="text-center text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto">Real people, real projects, real impact</p>
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-      <div class="bg-orange-50 dark:bg-gray-800 p-8 rounded-lg border border-orange-200">
+      <div class="bg-orange-50 dark:bg-gray-800 p-8 rounded-lg border border-orange-200 hover:border-orange-400 transition-all transform hover:scale-105">
         <div class="text-5xl font-bold text-orange-500 mb-2" aria-label="500 plus">500+</div>
-        <div class="text-gray-700 dark:text-gray-300 font-medium">People Taught</div>
+        <div class="text-gray-700 dark:text-gray-300 font-medium">Makers Empowered</div>
+        <div class="text-sm text-gray-500 dark:text-gray-400 mt-2">From first-timers to experts</div>
       </div>
-      <div class="bg-blue-50 dark:bg-gray-800 p-8 rounded-lg border border-blue-200">
+      <div class="bg-blue-50 dark:bg-gray-800 p-8 rounded-lg border border-blue-200 hover:border-blue-400 transition-all transform hover:scale-105">
         <div class="text-5xl font-bold text-blue-500 mb-2" aria-label="50 plus">50+</div>
-        <div class="text-gray-700 dark:text-gray-300 font-medium">Events Hosted</div>
+        <div class="text-gray-700 dark:text-gray-300 font-medium">Workshops Hosted</div>
+        <div class="text-sm text-gray-500 dark:text-gray-400 mt-2">Across Kansas City</div>
       </div>
-      <div class="bg-green-50 dark:bg-gray-800 p-8 rounded-lg border border-green-200">
+      <div class="bg-green-50 dark:bg-gray-800 p-8 rounded-lg border border-green-200 hover:border-green-400 transition-all transform hover:scale-105">
         <div class="text-5xl font-bold text-green-500 mb-2" aria-label="20 plus">20+</div>
-        <div class="text-gray-700 dark:text-gray-300 font-medium">Organizations Supported</div>
+        <div class="text-gray-700 dark:text-gray-300 font-medium">Partner Organizations</div>
+        <div class="text-sm text-gray-500 dark:text-gray-400 mt-2">Schools, libraries, makerspaces</div>
       </div>
-      <div class="bg-purple-50 dark:bg-gray-800 p-8 rounded-lg border border-purple-200">
+      <div class="bg-purple-50 dark:bg-gray-800 p-8 rounded-lg border border-purple-200 hover:border-purple-400 transition-all transform hover:scale-105">
         <div class="text-5xl font-bold text-purple-500 mb-2" aria-label="100 plus">100+</div>
         <div class="text-gray-700 dark:text-gray-300 font-medium">Active Volunteers</div>
+        <div class="text-sm text-gray-500 dark:text-gray-400 mt-2">Passionate about teaching</div>
       </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <section class="bg-gradient-to-r from-orange-500 to-red-500 py-16" aria-labelledby="cta-heading">
-    <div class="container mx-auto px-4 text-center max-w-3xl">
-      <h2 id="cta-heading" class="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">Ready to Join the Fellowship?</h2>
-      <p class="text-xl text-white/95 mb-8 leading-relaxed">Help us advance soldering education in your community</p>
-      <a href="/get-involved/" class="inline-block bg-white text-orange-600 font-bold px-10 py-4 rounded-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all text-lg focus:outline-none focus:ring-4 focus:ring-white focus:ring-offset-4 focus:ring-offset-orange-500" aria-label="Get involved with Fellowship of the Flux">
-        Get Involved Today →
+  <!-- Final CTA -->
+  <section class="bg-gradient-to-r from-orange-500 to-red-500 py-16 relative overflow-hidden" aria-labelledby="cta-heading">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-10 left-10 w-32 h-32 border-4 border-white rounded-full animate-pulse"></div>
+      <div class="absolute bottom-10 right-10 w-24 h-24 border-4 border-white rounded-full animate-pulse delay-1000"></div>
+    </div>
+    <div class="container mx-auto px-4 text-center max-w-3xl relative z-10">
+      <h2 id="cta-heading" class="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">Ready to Spark Your Maker Journey?</h2>
+      <p class="text-xl text-white/95 mb-8 leading-relaxed">Join our community and discover what you can create</p>
+      <a href="/get-involved/" class="inline-block bg-white text-orange-600 font-bold px-10 py-4 rounded-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all text-lg focus:outline-none focus:ring-4 focus:ring-white focus:ring-offset-4 focus:ring-offset-orange-500 group" aria-label="Get involved with Fellowship of the Flux">
+        Start Your Journey Today <span class="inline-block group-hover:translate-x-1 transition-transform">→</span>
       </a>
     </div>
   </section>
