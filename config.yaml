@@ -177,3 +177,5 @@ security:
       - "^POST$"
     urls:
       - ".*"
+ignoreFiles:
+  - 'themes/tailbliss/content/.*'
