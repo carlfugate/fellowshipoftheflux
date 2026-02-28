@@ -28,7 +28,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.153.3
+      HUGO_VERSION: 0.157.0
       NODE_ENV: production
     steps:
       - name: Checkout
@@ -47,7 +47,7 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: "0.153.3"
+          hugo-version: "0.157.0"
           extended: true
 
       - name: Verify Hugo version and fail if wrong
@@ -55,9 +55,9 @@ jobs:
           hugo version
           HUGO_VERSION_OUTPUT=$(hugo version)
           echo "Hugo version output: $HUGO_VERSION_OUTPUT"
-          if [[ ! "$HUGO_VERSION_OUTPUT" == *"v0.153.3"* ]]; then
+          if [[ ! "$HUGO_VERSION_OUTPUT" == *"v0.157.0"* ]]; then
             echo "ERROR: Wrong Hugo version detected!"
-            echo "Expected: v0.153.3"
+            echo "Expected: v0.157.0"
             echo "Got: $HUGO_VERSION_OUTPUT"
             exit 1
           fi

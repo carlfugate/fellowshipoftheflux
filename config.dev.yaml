@@ -15,10 +15,6 @@ caches:
   assets:
     dir: ":resourceDir/_gen"
     maxAge: "10s"
-  getcsv:
-    maxAge: "10s"
-  getjson:
-    maxAge: "10s"
   images:
     dir: ":resourceDir/_gen"
     maxAge: "10s"
