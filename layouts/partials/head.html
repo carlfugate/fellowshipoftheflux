@@ -101,12 +101,6 @@
 {{ end }}
 
 <!-- Custom CSS overrides -->
-{{ $customStyles := resources.Get "css/custom.css" }}
-{{ if $customStyles }}
-{{ $customStyles := $customStyles | postCSS }}
-{{ if hugo.IsProduction }}
-{{ $customStyles := $customStyles | minify | fingerprint | resources.PostProcess
-}}
-{{ end }}
-<link rel="stylesheet" href="{{ $customStyles.RelPermalink }}" />
+{{ with resources.Get "css/custom.css" }}
+<link rel="stylesheet" href="{{ .RelPermalink }}" />
 {{ end }}
