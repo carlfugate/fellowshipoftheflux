@@ -197,3 +197,36 @@
     @apply absolute -top-10 left-6 bg-primary-600 text-white px-4 py-2 rounded-md z-50 focus:top-6 transition-all duration-200;
   }
 }
+  /* Compact prose for content pages */
+  .prose {
+    @apply text-base leading-relaxed;
+  }
+  
+  .prose h2 {
+    @apply text-2xl mt-8 mb-4;
+  }
+  
+  .prose h3 {
+    @apply text-xl mt-6 mb-3;
+  }
+  
+  .prose p {
+    @apply mb-4;
+  }
+  
+  .prose ul, .prose ol {
+    @apply my-4 space-y-2;
+  }
+  
+  .prose table {
+    @apply w-full my-6 text-sm;
+  }
+  
+  .prose th {
+    @apply bg-gray-100 dark:bg-gray-800 px-4 py-2 text-left font-semibold;
+  }
+  
+  .prose td {
+    @apply border-t border-gray-200 dark:border-gray-700 px-4 py-2;
+  }
+}

@@ -28,25 +28,13 @@ Want to create your own portable soldering lab for educational workshops? Learn 
 
 ### Soldering Stations
 
-#### Professional Grade (Recommended)
-**Hakko FX-888D Digital Soldering Station**
-- **Price**: ~$100-120 per station
-- **Pros**: Reliable temperature control, fast heat-up, durable construction
-- **Cons**: Higher initial investment
-- **Quantity**: 1 per 1-2 participants (depending on workshop format)
+| Model | Price | Best For | Pros | Cons |
+|-------|-------|----------|------|------|
+| **Hakko FX-888D** | $100-120 | Professional labs | Reliable temp control, fast heat-up, durable | Higher cost |
+| **Weller WES51** | $80-100 | Budget labs | Simple operation, reliable | Less precise control |
+| **Hakko FX-600** | $25-35 | Starter/backup | Low cost, decent quality | No digital display |
 
-**Weller WES51 Analog Soldering Station**
-- **Price**: ~$80-100 per station  
-- **Pros**: Simple operation, reliable, good for beginners
-- **Cons**: Less precise temperature control
-- **Alternative**: Good budget option for smaller labs
-
-#### Budget Options
-**Hakko FX-600 Adjustable Temperature Iron**
-- **Price**: ~$25-35 per iron
-- **Pros**: Much lower cost, still decent quality
-- **Cons**: No digital display, less consistent temperature
-- **Use case**: Starter labs or backup equipment
+**Recommended quantity**: 1 station per 1-2 participants
 
 ### Essential Tools (Per Station)
 
