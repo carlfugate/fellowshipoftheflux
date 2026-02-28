@@ -20,7 +20,7 @@ echo "  ✓ Site accessible (200 OK)"
 # Test 2: Homepage has correct content
 echo "✓ Checking homepage content..."
 content=$(curl -s -L "$SITE_URL")
-if ! echo "$content" | grep -q "Advancing the Art of Learning to Solder"; then
+if ! echo "$content" | grep -q "From Beginner to Builder"; then
     echo "  ✗ Homepage missing main heading"
     exit 1
 fi
