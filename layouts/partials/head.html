@@ -22,18 +22,6 @@
 <link href="https://cdn.jsdelivr.net" rel="preconnect" crossorigin="anonymous">
 
 <!-- Preload critical resources -->
-{{ if .IsHome }}
-{{ $heroImage := resources.Get "images/pages/tailbliss-rocket-indigo.png" }}
-{{ if $heroImage }}
-{{ $heroWebP := $heroImage.Resize "576x576 webp q85" }}
-<link href="{{ $heroWebP.RelPermalink }}" rel="preload" as="image"
-  fetchpriority="high" loading="eager">
-{{ else }}
-<link as="image" href="/images/tailbliss-rocket-indigo.webp" rel="preload"
-  fetchpriority="high" loading="eager">
-{{ end }}
-{{ end }}
-
 <!-- Preload site logo -->
 {{ if .Site.Params.brand.logo }}
 <link href="{{ .Site.Params.brand.logo }}" rel="preload" as="image"
