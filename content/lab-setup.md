@@ -5,284 +5,234 @@ date: 2024-01-01T00:00:00Z
 draft: false
 ---
 
-# Build Your Own Soldering Lab
+<div class="bg-gradient-to-b from-purple-50 to-white dark:from-gray-900 dark:to-gray-950">
 
-Want to create your own portable soldering lab for educational workshops? Learn from our experience building and refining our mobile setup over years of community events.
+<!-- Hero Section -->
+<section class="container mx-auto px-4 py-16 max-w-6xl text-center">
+  <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
+    Build Your Own Portable Soldering Lab
+  </h1>
+  <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8">
+    Learn from our experience building and refining mobile setups for educational workshops. Complete equipment guide, setup tips, and lessons learned.
+  </p>
+</section>
 
-## Why Build a Portable Lab?
+<!-- Why Build a Lab -->
+<section class="container mx-auto px-4 py-16 max-w-6xl">
+  <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">Why Build a Portable Lab?</h2>
+  <div class="grid md:grid-cols-2 gap-8">
+    <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg border-l-4 border-green-500">
+      <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">✅ Advantages</h3>
+      <ul class="space-y-3 text-gray-600 dark:text-gray-300">
+        <li class="flex items-start"><span class="text-green-500 mr-2">•</span> Consistent professional quality</li>
+        <li class="flex items-start"><span class="text-green-500 mr-2">•</span> Efficient setup & teardown</li>
+        <li class="flex items-start"><span class="text-green-500 mr-2">•</span> Purpose-built for safety</li>
+        <li class="flex items-start"><span class="text-green-500 mr-2">•</span> Easily scalable</li>
+        <li class="flex items-start"><span class="text-green-500 mr-2">•</span> Professional appearance</li>
+      </ul>
+    </div>
+    <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg border-l-4 border-orange-500">
+      <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">💰 Investment</h3>
+      <ul class="space-y-3 text-gray-600 dark:text-gray-300">
+        <li class="flex items-start"><span class="text-orange-500 mr-2">•</span> <strong>Initial:</strong> $3,000-8,000 for 10-20 stations</li>
+        <li class="flex items-start"><span class="text-orange-500 mr-2">•</span> <strong>Ongoing:</strong> Consumables & maintenance</li>
+        <li class="flex items-start"><span class="text-orange-500 mr-2">•</span> <strong>Time:</strong> Setup, training, coordination</li>
+        <li class="flex items-start"><span class="text-orange-500 mr-2">•</span> <strong>Storage:</strong> Secure space needed</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-### Advantages of a Dedicated Setup
-- **Consistent quality** - Same professional equipment every time
-- **Efficient setup** - Organized systems reduce event preparation time
-- **Safety focus** - Purpose-built for educational environments
-- **Scalability** - Easily expand or adapt for different event sizes
-- **Professional appearance** - Builds confidence with event organizers
+<!-- Equipment Recommendations -->
+<section class="bg-white dark:bg-gray-800 py-16">
+  <div class="container mx-auto px-4 max-w-6xl">
+    <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">Equipment Recommendations</h2>
+    
+    <h3 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white">🔧 Soldering Stations</h3>
+    <div class="overflow-x-auto mb-12">
+      <table class="w-full bg-white dark:bg-gray-900 rounded-lg overflow-hidden">
+        <thead class="bg-purple-100 dark:bg-purple-900/30">
+          <tr>
+            <th class="px-6 py-4 text-left font-bold text-gray-900 dark:text-white">Model</th>
+            <th class="px-6 py-4 text-left font-bold text-gray-900 dark:text-white">Price</th>
+            <th class="px-6 py-4 text-left font-bold text-gray-900 dark:text-white">Best For</th>
+            <th class="px-6 py-4 text-left font-bold text-gray-900 dark:text-white">Pros</th>
+            <th class="px-6 py-4 text-left font-bold text-gray-900 dark:text-white">Cons</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+          <tr class="hover:bg-purple-50 dark:hover:bg-gray-800 transition-colors">
+            <td class="px-6 py-4 font-semibold text-purple-600 dark:text-purple-400">Hakko FX-888D</td>
+            <td class="px-6 py-4 text-gray-700 dark:text-gray-300">$100-120</td>
+            <td class="px-6 py-4 text-gray-700 dark:text-gray-300">Professional labs</td>
+            <td class="px-6 py-4 text-gray-700 dark:text-gray-300">Reliable temp control, fast heat-up, durable</td>
+            <td class="px-6 py-4 text-gray-700 dark:text-gray-300">Higher cost</td>
+          </tr>
+          <tr class="hover:bg-purple-50 dark:hover:bg-gray-800 transition-colors">
+            <td class="px-6 py-4 font-semibold text-purple-600 dark:text-purple-400">Weller WES51</td>
+            <td class="px-6 py-4 text-gray-700 dark:text-gray-300">$80-100</td>
+            <td class="px-6 py-4 text-gray-700 dark:text-gray-300">Budget labs</td>
+            <td class="px-6 py-4 text-gray-700 dark:text-gray-300">Simple operation, reliable</td>
+            <td class="px-6 py-4 text-gray-700 dark:text-gray-300">Less precise control</td>
+          </tr>
+          <tr class="hover:bg-purple-50 dark:hover:bg-gray-800 transition-colors">
+            <td class="px-6 py-4 font-semibold text-purple-600 dark:text-purple-400">Hakko FX-600</td>
+            <td class="px-6 py-4 text-gray-700 dark:text-gray-300">$25-35</td>
+            <td class="px-6 py-4 text-gray-700 dark:text-gray-300">Starter/backup</td>
+            <td class="px-6 py-4 text-gray-700 dark:text-gray-300">Low cost, decent quality</td>
+            <td class="px-6 py-4 text-gray-700 dark:text-gray-300">No digital display</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <div class="bg-purple-50 dark:bg-gray-900 p-6 rounded-lg mb-12">
+      <p class="text-lg font-semibold text-gray-900 dark:text-white">💡 Recommended: 1 station per 1-2 participants</p>
+    </div>
 
-### Investment Considerations
-- **Initial cost**: $3,000-8,000 for a 10-20 station lab
-- **Ongoing expenses**: Consumables, maintenance, storage
-- **Time investment**: Setup, training, event coordination
-- **Storage requirements**: Secure space for equipment between events
+    <h3 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white">🛠️ Essential Tools (Per Station)</h3>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-gradient-to-br from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 p-6 rounded-xl shadow-lg">
+        <h4 class="text-xl font-bold mb-4 text-blue-600 dark:text-blue-400">Cutting & Stripping</h4>
+        <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+          <li>• <strong>Flush cutters</strong> - Xuron 410 ($8-12)</li>
+          <li>• <strong>Wire strippers</strong> - 22-30 AWG ($10-15)</li>
+          <li>• <strong>Needle-nose pliers</strong> - Precision ($8-12)</li>
+        </ul>
+      </div>
+      <div class="bg-gradient-to-br from-green-50 to-white dark:from-gray-900 dark:to-gray-800 p-6 rounded-xl shadow-lg">
+        <h4 class="text-xl font-bold mb-4 text-green-600 dark:text-green-400">Soldering Aids</h4>
+        <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+          <li>• <strong>Solder dispenser pen</strong> ($3-5)</li>
+          <li>• <strong>Flux pen</strong> - Rosin flux ($4-6)</li>
+          <li>• <strong>Desoldering braid</strong> - 2-3mm ($3-5)</li>
+          <li>• <strong>Solder sucker</strong> - Manual pump ($5-8)</li>
+        </ul>
+      </div>
+      <div class="bg-gradient-to-br from-orange-50 to-white dark:from-gray-900 dark:to-gray-800 p-6 rounded-xl shadow-lg">
+        <h4 class="text-xl font-bold mb-4 text-orange-600 dark:text-orange-400">Safety Equipment</h4>
+        <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+          <li>• <strong>Safety glasses</strong> - ANSI Z87.1 ($3-8)</li>
+          <li>• <strong>Silicone mat</strong> - Heat resistant ($8-15)</li>
+          <li>• <strong>Brass sponge</strong> - Tip cleaning ($3-5)</li>
+          <li>• <strong>Fume extractor</strong> - Optional ($30-100)</li>
+        </ul>
+      </div>
+      <div class="bg-gradient-to-br from-purple-50 to-white dark:from-gray-900 dark:to-gray-800 p-6 rounded-xl shadow-lg">
+        <h4 class="text-xl font-bold mb-4 text-purple-600 dark:text-purple-400">Workspace Items</h4>
+        <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+          <li>• <strong>Helping hands</strong> - Third hand tool ($8-15)</li>
+          <li>• <strong>Magnifying glass</strong> - LED light ($10-20)</li>
+          <li>• <strong>Tip tinner</strong> - Maintenance ($5-8)</li>
+          <li>• <strong>Isopropyl alcohol</strong> - Cleaning ($5)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-## Equipment Recommendations
+<!-- Organization Tips -->
+<section class="container mx-auto px-4 py-16 max-w-6xl">
+  <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">Organization & Storage</h2>
+  <div class="grid md:grid-cols-3 gap-8">
+    <div class="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg">
+      <div class="text-5xl mb-4">📦</div>
+      <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Transport Cases</h3>
+      <p class="text-gray-600 dark:text-gray-300">Use rugged cases with foam inserts. Label everything clearly.</p>
+    </div>
+    <div class="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg">
+      <div class="text-5xl mb-4">🗂️</div>
+      <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Tool Organization</h3>
+      <p class="text-gray-600 dark:text-gray-300">3D-printed organizers or tackle boxes keep tools accessible.</p>
+    </div>
+    <div class="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg">
+      <div class="text-5xl mb-4">📋</div>
+      <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Inventory System</h3>
+      <p class="text-gray-600 dark:text-gray-300">Track equipment and consumables. Checklist for events.</p>
+    </div>
+  </div>
+</section>
 
-### Soldering Stations
+<!-- Budget Breakdown -->
+<section class="bg-gradient-to-r from-purple-500 to-indigo-500 py-16">
+  <div class="container mx-auto px-4 max-w-5xl">
+    <h2 class="text-3xl font-bold text-center mb-12 text-white">Sample Budget: 10-Station Lab</h2>
+    <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8">
+      <div class="grid md:grid-cols-2 gap-6 text-white">
+        <div class="space-y-3">
+          <div class="flex justify-between border-b border-white/20 pb-2">
+            <span>10x Hakko FX-888D stations</span>
+            <span class="font-bold">$1,100</span>
+          </div>
+          <div class="flex justify-between border-b border-white/20 pb-2">
+            <span>Tools & accessories (10 sets)</span>
+            <span class="font-bold">$600</span>
+          </div>
+          <div class="flex justify-between border-b border-white/20 pb-2">
+            <span>Safety equipment</span>
+            <span class="font-bold">$300</span>
+          </div>
+        </div>
+        <div class="space-y-3">
+          <div class="flex justify-between border-b border-white/20 pb-2">
+            <span>Storage & organization</span>
+            <span class="font-bold">$400</span>
+          </div>
+          <div class="flex justify-between border-b border-white/20 pb-2">
+            <span>Initial consumables</span>
+            <span class="font-bold">$200</span>
+          </div>
+          <div class="flex justify-between border-t-2 border-white pt-3 text-xl font-bold">
+            <span>Total Investment</span>
+            <span>$2,600</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-| Model | Price | Best For | Pros | Cons |
-|-------|-------|----------|------|------|
-| **Hakko FX-888D** | $100-120 | Professional labs | Reliable temp control, fast heat-up, durable | Higher cost |
-| **Weller WES51** | $80-100 | Budget labs | Simple operation, reliable | Less precise control |
-| **Hakko FX-600** | $25-35 | Starter/backup | Low cost, decent quality | No digital display |
+<!-- Lessons Learned -->
+<section class="container mx-auto px-4 py-16 max-w-6xl">
+  <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">Lessons Learned</h2>
+  <div class="grid md:grid-cols-2 gap-8">
+    <div class="bg-green-50 dark:bg-gray-800 p-8 rounded-xl border-l-4 border-green-500">
+      <h3 class="text-xl font-bold mb-4 text-green-700 dark:text-green-400">✅ What Works</h3>
+      <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+        <li>• Invest in quality soldering stations</li>
+        <li>• 3D-printed organizers save time</li>
+        <li>• Backup equipment is essential</li>
+        <li>• Clear labeling prevents confusion</li>
+        <li>• Checklists ensure nothing forgotten</li>
+      </ul>
+    </div>
+    <div class="bg-orange-50 dark:bg-gray-800 p-8 rounded-xl border-l-4 border-orange-500">
+      <h3 class="text-xl font-bold mb-4 text-orange-700 dark:text-orange-400">⚠️ Common Mistakes</h3>
+      <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+        <li>• Buying cheap soldering irons</li>
+        <li>• Insufficient tool organization</li>
+        <li>• No backup consumables</li>
+        <li>• Inadequate storage solutions</li>
+        <li>• Skipping maintenance schedules</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-**Recommended quantity**: 1 station per 1-2 participants
+<!-- CTA Section -->
+<section class="bg-gradient-to-r from-orange-500 to-red-500 py-16">
+  <div class="container mx-auto px-4 text-center max-w-3xl">
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Need Help Getting Started?</h2>
+    <p class="text-xl text-white/95 mb-8">We're happy to share our experience and answer questions</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="/contact/" class="inline-block bg-white text-orange-600 font-bold px-8 py-4 rounded-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all">
+        Contact Us
+      </a>
+      <a href="/services/" class="inline-block bg-orange-700 text-white font-bold px-8 py-4 rounded-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all border-2 border-white">
+        See Our Lab in Action
+      </a>
+    </div>
+  </div>
+</section>
 
-### Essential Tools (Per Station)
-
-#### Cutting and Stripping
-- **Flush cutters** - Xuron 410 or similar ($8-12)
-- **Wire strippers** - For 22-30 AWG wire ($10-15)
-- **Needle-nose pliers** - Small, precision type ($8-12)
-
-#### Soldering Aids
-- **Solder dispenser pen** - Prevents waste, easier for beginners ($3-5)
-- **Flux pen** - Rosin flux for difficult joints ($4-6)
-- **Desoldering braid** - 2-3mm width, rosin core ($3-5)
-- **Solder sucker** - Manual desoldering pump ($5-8)
-
-#### Workspace Tools
-- **PCB holder/vise** - Adjustable for different board sizes ($10-15)
-- **Tweezers** - Fine tip for component placement ($5-10)
-- **Magnifying glass** - LED illuminated preferred ($15-25)
-
-### Consumables and Materials
-
-#### Solder Selection
-**60/40 Rosin Core Solder (0.6mm)**
-- **Quantity**: 1 lb spool serves ~50-100 beginner projects
-- **Cost**: $15-25 per pound
-- **Storage**: Keep in sealed containers to prevent oxidation
-
-**Lead-Free Alternative (SAC305)**
-- **Higher melting point** - Requires temperature adjustment
-- **More expensive** - ~30% higher cost
-- **Consider for**: Schools with strict lead policies
-
-#### Project Components
-**Beginner Project Kits**
-- **Simple LED circuits** - LED, resistor, battery holder
-- **Blinking LED projects** - 555 timer circuits
-- **Cost per kit**: $2-5 depending on complexity
-
-### Organization and Storage
-
-#### Custom 3D Printed Organizers
-**Tool Caddies**
-- **Design files**: Available in our resource library
-- **Print cost**: $3-8 per organizer (depending on size)
-- **Benefits**: Keeps tools organized, reduces setup time
-
-**Solder Dispensers**
-- **Custom holders** for solder spools and flux pens
-- **Prevents tangling** and makes materials accessible
-- **Easy refilling** during workshops
-
-#### Storage Solutions
-**Rolling Tool Carts**
-- **Capacity**: 4-6 complete stations per cart
-- **Mobility**: Easy transport and setup
-- **Security**: Lockable for equipment protection
-
-**Pelican Cases**
-- **Protection**: Excellent for transport and storage
-- **Customizable**: Foam inserts for specific equipment
-- **Cost**: $100-300 depending on size
-
-## Lab Design Considerations
-
-### Workspace Layout
-
-#### Station Spacing
-- **Minimum 24" width** per participant
-- **30" depth** for comfortable working
-- **Power access** within 6 feet of each station
-- **Ventilation** - Natural or mechanical air circulation
-
-#### Safety Zones
-- **Clear pathways** for instructor movement
-- **Emergency access** to power shutoffs
-- **First aid station** clearly marked and accessible
-- **Fire safety** - Appropriate extinguisher nearby
-
-### Electrical Requirements
-
-#### Power Planning
-- **15A circuit** supports 8-10 soldering stations
-- **Multiple circuits** prevent overloading
-- **GFCI protection** recommended for safety
-- **Extension cords** - 12 AWG minimum for multiple stations
-
-#### Grounding Considerations
-- **ESD protection** for sensitive components
-- **Grounded outlets** for all equipment
-- **Anti-static mats** for advanced workshops
-
-### Ventilation and Air Quality
-
-#### Natural Ventilation
-- **Windows and doors** for air circulation
-- **Cross-ventilation** most effective
-- **Outdoor workshops** ideal when weather permits
-
-#### Mechanical Ventilation
-- **Portable fans** for air movement
-- **Fume extractors** for enclosed spaces
-- **HEPA filters** for sensitive environments
-
-## Setup and Operations
-
-### Pre-Event Preparation
-
-#### Equipment Checklist
-- [ ] Test all soldering stations for proper operation
-- [ ] Verify temperature calibration
-- [ ] Check tool condition and sharpness
-- [ ] Inventory consumables and project materials
-- [ ] Prepare backup equipment
-
-#### Logistics Planning
-- [ ] Confirm venue power and space requirements
-- [ ] Plan equipment transport and setup timeline
-- [ ] Prepare volunteer assignments and training
-- [ ] Create participant registration and tracking system
-- [ ] Develop safety briefing materials
-
-### Event Day Operations
-
-#### Setup Process (2-3 hours)
-1. **Space preparation** - Tables, chairs, power distribution
-2. **Equipment deployment** - Stations, tools, materials
-3. **Safety setup** - Ventilation, first aid, emergency procedures
-4. **Testing** - Verify all equipment operation
-5. **Volunteer briefing** - Review procedures and assignments
-
-#### Workshop Management
-- **Safety briefing** - Always start with safety procedures
-- **Skill assessment** - Gauge participant experience levels
-- **Adaptive instruction** - Adjust pace and complexity as needed
-- **Quality control** - Check work and provide feedback
-- **Documentation** - Photos and feedback for improvement
-
-### Post-Event Procedures
-
-#### Equipment Care
-- **Clean all tools** and work surfaces
-- **Inspect for damage** and note needed repairs
-- **Inventory consumables** and restock as needed
-- **Proper storage** to prevent damage and loss
-
-#### Continuous Improvement
-- **Participant feedback** - Surveys and informal comments
-- **Volunteer debrief** - What worked well, what needs improvement
-- **Equipment evaluation** - Performance and reliability notes
-- **Process refinement** - Update procedures based on experience
-
-## Budget Planning
-
-### Initial Investment
-
-#### Minimum Viable Lab (10 stations)
-- **Soldering stations**: $1,000-1,200
-- **Tools and accessories**: $800-1,000
-- **Organization and storage**: $300-500
-- **Initial consumables**: $200-300
-- **Safety equipment**: $200-300
-- **Total**: $2,500-3,300
-
-#### Professional Setup (20 stations)
-- **Soldering stations**: $2,000-2,400
-- **Tools and accessories**: $1,500-2,000
-- **Organization and storage**: $600-1,000
-- **Initial consumables**: $400-600
-- **Safety equipment**: $400-600
-- **Transport solutions**: $500-800
-- **Total**: $5,400-7,400
-
-### Ongoing Costs (Annual)
-- **Consumables**: $300-600 (depending on usage)
-- **Equipment maintenance**: $200-400
-- **Storage costs**: $0-1,200 (if renting space)
-- **Insurance**: $200-500 (liability coverage)
-- **Training and certification**: $100-300
-
-## Funding Strategies
-
-### Grant Opportunities
-- **STEM education grants** from foundations and corporations
-- **Maker education initiatives** from technology companies
-- **Community development funds** from local governments
-- **Educational equipment grants** from service organizations
-
-### Sponsorship and Partnerships
-- **Local businesses** - Electronics stores, maker spaces
-- **Professional organizations** - IEEE, engineering societies
-- **Educational institutions** - Schools, libraries, universities
-- **Corporate sponsors** - Technology companies, manufacturers
-
-### Revenue Generation
-- **Workshop fees** - Cost recovery for materials and expenses
-- **Equipment rental** - Loan setup to other organizations
-- **Training services** - Teach others to build their own labs
-- **Consulting** - Help organizations plan their programs
-
-## Resources and Support
-
-### Design Files and Documentation
-- **3D printer files** for organizers and holders
-- **Equipment specifications** and vendor contacts
-- **Setup procedures** and checklists
-- **Safety protocols** and training materials
-
-### Community Network
-- **Fellowship of the Flux** - Mentorship and advice
-- **Maker education groups** - Shared resources and experiences
-- **Online communities** - Forums and social media groups
-- **Regional networks** - Connect with nearby organizations
-
-### Vendor Relationships
-- **Educational discounts** - Many suppliers offer reduced pricing
-- **Bulk purchasing** - Coordinate with other organizations
-- **Technical support** - Manufacturer assistance and training
-- **Warranty service** - Reliable repair and replacement
-
-## Getting Started
-
-### Phase 1: Planning and Research
-1. **Define your goals** - Target audience, event types, capacity
-2. **Assess resources** - Budget, volunteers, storage space
-3. **Research local needs** - Connect with potential partner organizations
-4. **Visit existing labs** - Learn from others' experiences
-
-### Phase 2: Pilot Program
-1. **Start small** - 5-10 station setup for initial events
-2. **Test and refine** - Learn what works in your environment
-3. **Build volunteer team** - Recruit and train instructors
-4. **Document everything** - Procedures, costs, lessons learned
-
-### Phase 3: Scale and Expand
-1. **Expand capacity** - Add stations based on demand
-2. **Improve systems** - Refine organization and procedures
-3. **Develop partnerships** - Build network of supported organizations
-4. **Share knowledge** - Help others build their own labs
-
----
-
-*Building a soldering lab is an investment in your community's STEM education future. Start with your available resources, learn from experience, and grow your program over time. The Fellowship of the Flux community is here to support your journey!*
-
-## Contact and Support
-
-Need help planning your soldering lab? We're happy to share our experience:
-
-- **Email**: labsetup@fellowshipoftheflux.com
-- **Consultation**: Available for planning and design advice
-- **Resources**: Access to our design files and documentation
-- **Network**: Connect with other lab builders and educators
+</div>
