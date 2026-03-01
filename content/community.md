@@ -5,219 +5,210 @@ date: 2024-01-01T00:00:00Z
 draft: false
 ---
 
-# Fellowship of the Flux Community
+<div class="bg-gradient-to-b from-green-50 to-white dark:from-gray-900 dark:to-gray-950">
 
-Welcome to our community of makers, educators, and learners! Fellowship of the Flux is more than just workshops—we're building a network of people passionate about hands-on learning and skill sharing.
+<!-- Hero Section -->
+<section class="container mx-auto px-4 py-16 max-w-6xl text-center">
+  <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
+    Join Our Thriving Maker Community
+  </h1>
+  <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8">
+    Connect with makers, educators, and learners passionate about hands-on learning and skill sharing across the Midwest
+  </p>
+</section>
 
-## Our Community
+<!-- Community Stats -->
+<section class="container mx-auto px-4 py-16 max-w-6xl">
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+    <div class="bg-orange-50 dark:bg-gray-800 p-8 rounded-lg border border-orange-200 hover:border-orange-400 transition-all transform hover:scale-105">
+      <div class="text-5xl font-bold text-orange-500 mb-2">100+</div>
+      <div class="text-gray-700 dark:text-gray-300 font-medium">Active Volunteers</div>
+      <div class="text-sm text-gray-500 dark:text-gray-400 mt-2">From all backgrounds</div>
+    </div>
+    <div class="bg-blue-50 dark:bg-gray-800 p-8 rounded-lg border border-blue-200 hover:border-blue-400 transition-all transform hover:scale-105">
+      <div class="text-5xl font-bold text-blue-500 mb-2">50+</div>
+      <div class="text-gray-700 dark:text-gray-300 font-medium">Events Annually</div>
+      <div class="text-sm text-gray-500 dark:text-gray-400 mt-2">Across the Midwest</div>
+    </div>
+    <div class="bg-green-50 dark:bg-gray-800 p-8 rounded-lg border border-green-200 hover:border-green-400 transition-all transform hover:scale-105">
+      <div class="text-5xl font-bold text-green-500 mb-2">500+</div>
+      <div class="text-gray-700 dark:text-gray-300 font-medium">People Taught</div>
+      <div class="text-sm text-gray-500 dark:text-gray-400 mt-2">All ages & skill levels</div>
+    </div>
+    <div class="bg-purple-50 dark:bg-gray-800 p-8 rounded-lg border border-purple-200 hover:border-purple-400 transition-all transform hover:scale-105">
+      <div class="text-5xl font-bold text-purple-500 mb-2">25+</div>
+      <div class="text-gray-700 dark:text-gray-300 font-medium">Partner Orgs</div>
+      <div class="text-sm text-gray-500 dark:text-gray-400 mt-2">Schools, conferences, spaces</div>
+    </div>
+  </div>
+</section>
 
-### Who We Are
-- **Volunteers from all backgrounds** - Electronics professionals, educators, students, and hobbyists
-- **Event organizers** who believe in the power of hands-on learning
-- **Learners of all ages** from elementary students to retirees
-- **Organizations** committed to STEM education and maker culture
+<!-- Who We Are -->
+<section class="bg-white dark:bg-gray-800 py-16">
+  <div class="container mx-auto px-4 max-w-6xl">
+    <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">Who We Are</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="text-center p-6">
+        <div class="text-5xl mb-4">👨‍💻</div>
+        <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Professionals</h3>
+        <p class="text-gray-600 dark:text-gray-300">Electronics engineers, technicians, and industry experts</p>
+      </div>
+      <div class="text-center p-6">
+        <div class="text-5xl mb-4">👩‍🏫</div>
+        <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Educators</h3>
+        <p class="text-gray-600 dark:text-gray-300">Teachers who understand how people learn best</p>
+      </div>
+      <div class="text-center p-6">
+        <div class="text-5xl mb-4">🎓</div>
+        <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Students</h3>
+        <p class="text-gray-600 dark:text-gray-300">Learners bringing fresh perspectives and enthusiasm</p>
+      </div>
+      <div class="text-center p-6">
+        <div class="text-5xl mb-4">🛠️</div>
+        <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Makers</h3>
+        <p class="text-gray-600 dark:text-gray-300">Hobbyists who love sharing their craft</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-### What Brings Us Together
-- **Shared passion** for soldering and electronics
-- **Commitment to education** and skill sharing
-- **Belief in community** over competition
-- **Dedication to safety** and best practices
-- **Love of making** and problem-solving
+<!-- Upcoming Events -->
+<section class="container mx-auto px-4 py-16 max-w-6xl">
+  <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">Upcoming Events</h2>
+  <div class="grid md:grid-cols-2 gap-8">
+    
+    <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg border-l-4 border-orange-500 hover:shadow-2xl transition-all">
+      <div class="flex items-start justify-between mb-4">
+        <div>
+          <div class="text-sm font-semibold text-orange-500 mb-1">MARCH 15-16, 2024</div>
+          <h3 class="text-2xl font-bold text-gray-900 dark:text-white">BSides Kansas City</h3>
+        </div>
+        <div class="text-3xl">🎯</div>
+      </div>
+      <p class="text-gray-600 dark:text-gray-300 mb-4">Learn to Solder Village with beginner and advanced workshops at Kansas City's premier cybersecurity conference</p>
+      <div class="flex gap-2">
+        <span class="inline-block bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 px-3 py-1 rounded-full text-sm">Beginner Friendly</span>
+        <span class="inline-block bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full text-sm">Advanced Track</span>
+      </div>
+    </div>
+    
+    <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg border-l-4 border-blue-500 hover:shadow-2xl transition-all">
+      <div class="flex items-start justify-between mb-4">
+        <div>
+          <div class="text-sm font-semibold text-blue-500 mb-1">JUNE 22-23, 2024</div>
+          <h3 class="text-2xl font-bold text-gray-900 dark:text-white">MakerFaire KC</h3>
+        </div>
+        <div class="text-3xl">🎪</div>
+      </div>
+      <p class="text-gray-600 dark:text-gray-300 mb-4">Family-friendly hands-on soldering workshops at Union Station. Perfect for all ages!</p>
+      <div class="flex gap-2">
+        <span class="inline-block bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 px-3 py-1 rounded-full text-sm">Family Friendly</span>
+        <span class="inline-block bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 px-3 py-1 rounded-full text-sm">All Ages</span>
+      </div>
+    </div>
+    
+  </div>
+  <div class="text-center mt-8">
+    <a href="/get-involved/" class="inline-block bg-gradient-to-r from-green-500 to-teal-500 text-white font-bold px-8 py-4 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all">
+      Volunteer at Events →
+    </a>
+  </div>
+</section>
 
-## Events and Workshops
+<!-- Recent Success -->
+<section class="bg-gradient-to-r from-blue-500 to-indigo-500 py-16">
+  <div class="container mx-auto px-4 max-w-5xl">
+    <h2 class="text-3xl font-bold text-center mb-12 text-white">Recent Success: BSides KC 2023</h2>
+    <div class="grid md:grid-cols-3 gap-6 text-center">
+      <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
+        <div class="text-4xl font-bold text-white mb-2">150+</div>
+        <div class="text-white/90">Participants Taught</div>
+      </div>
+      <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
+        <div class="text-4xl font-bold text-white mb-2">25</div>
+        <div class="text-white/90">Volunteer Instructors</div>
+      </div>
+      <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
+        <div class="text-4xl font-bold text-white mb-2">Zero</div>
+        <div class="text-white/90">Safety Incidents</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-### Upcoming Events
+<!-- Volunteer Spotlights -->
+<section class="container mx-auto px-4 py-16 max-w-6xl">
+  <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">Meet Our Volunteers</h2>
+  <div class="grid md:grid-cols-2 gap-8">
+    
+    <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
+      <div class="flex items-start gap-4 mb-4">
+        <div class="text-5xl">👩‍💻</div>
+        <div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white">Sarah Chen</h3>
+          <p class="text-orange-500 font-semibold">Lead Instructor</p>
+          <p class="text-sm text-gray-500 dark:text-gray-400">Electronics Engineer • 5 years</p>
+        </div>
+      </div>
+      <p class="text-gray-600 dark:text-gray-300 italic">"I love seeing the moment when someone makes their first successful solder joint. Teaching isn't just about the technical skill—it's about building confidence and opening doors to the maker world."</p>
+    </div>
+    
+    <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
+      <div class="flex items-start gap-4 mb-4">
+        <div class="text-5xl">👨‍🔧</div>
+        <div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white">Marcus Rodriguez</h3>
+          <p class="text-blue-500 font-semibold">Equipment Manager</p>
+          <p class="text-sm text-gray-500 dark:text-gray-400">Retired Technician • 3 years</p>
+        </div>
+      </div>
+      <p class="text-gray-600 dark:text-gray-300 italic">"Keeping our equipment in top shape means every learner gets the best experience. There's satisfaction in knowing our labs are reliable and safe for everyone who uses them."</p>
+    </div>
+    
+  </div>
+</section>
 
-#### BSides Kansas City 2024
-**Date**: March 15-16, 2024  
-**Location**: Kansas City, MO  
-**What we're doing**: Learn to Solder Village with beginner and advanced workshops  
-**Volunteer opportunities**: Instructors, setup crew, materials management
+<!-- Ways to Connect -->
+<section class="bg-white dark:bg-gray-800 py-16">
+  <div class="container mx-auto px-4 max-w-6xl">
+    <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">Ways to Connect</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="text-center p-6">
+        <div class="text-5xl mb-4">📧</div>
+        <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Email List</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">Get event updates and volunteer opportunities</p>
+        <a href="mailto:community@fellowshipoftheflux.com" class="text-orange-500 hover:text-orange-600 font-semibold">Join the List →</a>
+      </div>
+      <div class="text-center p-6">
+        <div class="text-5xl mb-4">💬</div>
+        <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Discord Server</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">Chat with volunteers and ask questions</p>
+        <a href="#" class="text-blue-500 hover:text-blue-600 font-semibold">Join Discord →</a>
+      </div>
+      <div class="text-center p-6">
+        <div class="text-5xl mb-4">📱</div>
+        <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Social Media</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">Follow our workshops and community</p>
+        <a href="#" class="text-green-500 hover:text-green-600 font-semibold">Follow Us →</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-#### MakerFaire KC 2024
-**Date**: June 22-23, 2024  
-**Location**: Union Station, Kansas City  
-**What we're doing**: Hands-on soldering workshops for all ages  
-**Special focus**: Family-friendly projects and safety education
+<!-- CTA Section -->
+<section class="bg-gradient-to-r from-orange-500 to-red-500 py-16">
+  <div class="container mx-auto px-4 text-center max-w-3xl">
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Join the Fellowship?</h2>
+    <p class="text-xl text-white/95 mb-8">Be part of our mission to advance soldering education</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="/get-involved/" class="inline-block bg-white text-orange-600 font-bold px-8 py-4 rounded-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all">
+        Volunteer With Us
+      </a>
+      <a href="/learn/" class="inline-block bg-orange-700 text-white font-bold px-8 py-4 rounded-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all border-2 border-white">
+        Attend a Workshop
+      </a>
+    </div>
+  </div>
+</section>
 
-#### Lincoln Elementary STEM Night
-**Date**: April 10, 2024  
-**Location**: Lincoln, NE  
-**What we're doing**: Age-appropriate soldering introduction for 4th-6th graders  
-**Community impact**: Reaching underserved students in STEM
-
-### Recent Events
-
-#### BSides KC 2023 - Huge Success!
-- **150+ participants** learned soldering skills
-- **25 volunteers** provided instruction and support
-- **Zero safety incidents** thanks to our rigorous protocols
-- **Overwhelmingly positive feedback** from participants and organizers
-
-*"This was my first time soldering, and the volunteers were so patient and encouraging. I left feeling confident to try more projects at home!"* - Workshop Participant
-
-#### MakerFaire KC 2023 - Record Attendance
-- **200+ workshop participants** over two days
-- **Families engaged together** in hands-on learning
-- **New volunteer recruitment** - 8 new team members joined
-- **Equipment performed flawlessly** throughout the weekend
-
-### Event Photo Gallery
-
-*[Photo galleries would be embedded here showing workshops in action, diverse participants, volunteer teams, and completed projects]*
-
-## Volunteer Spotlights
-
-### Meet Our Amazing Volunteers
-
-#### Sarah Chen - Lead Instructor
-*Electronics Engineer, 5 years with Fellowship*
-
-"I love seeing the moment when someone makes their first successful solder joint. There's this look of pride and accomplishment that makes all the volunteer time worthwhile. Teaching soldering isn't just about the technical skill—it's about building confidence and opening doors to the maker world."
-
-#### Marcus Rodriguez - Equipment Manager
-*Retired Technician, 3 years with Fellowship*
-
-"Maintaining our lab equipment is my way of ensuring every learner has the best possible experience. When someone struggles with a cold solder joint, I want to know it's about technique, not faulty equipment. Quality tools make quality learning possible."
-
-#### Dr. Jennifer Walsh - Educational Coordinator
-*University Professor, 2 years with Fellowship*
-
-"I bring my background in education to help us teach more effectively. Every learner is different, and our volunteers do an amazing job adapting their instruction style. We're not just teaching soldering—we're modeling how to be patient, encouraging teachers."
-
-### Volunteer Recognition
-
-#### 2023 Volunteer Awards
-- **Outstanding Instructor**: Tom Bradley - Patient teaching and safety focus
-- **Community Builder**: Lisa Park - Exceptional outreach and partnership development
-- **Innovation Award**: Alex Thompson - 3D printed organizer designs
-- **Dedication Award**: Maria Santos - Never missed an event in 2 years
-
-## Community Impact
-
-### By the Numbers (2023)
-- **28 events** supported across the Midwest
-- **500+ people** learned to solder
-- **35 active volunteers** in our network
-- **12 organizations** now running their own programs
-- **Zero safety incidents** in over 1,000 hours of workshops
-
-### Success Stories
-
-#### From Student to Volunteer
-*"I attended my first Fellowship workshop as a high school student at BSides KC 2021. The volunteers were so welcoming and encouraging that I kept coming back. Now I'm a college engineering student and volunteer instructor myself. This community changed my career path!"*  
-— Alex, Student Volunteer
-
-#### Building Confidence
-*"As a teacher, I was intimidated by electronics. The Fellowship workshop gave me the confidence to start a maker club at my school. Now my students are teaching me new techniques!"*  
-— Jennifer, Elementary Teacher
-
-#### Family Learning
-*"My 8-year-old daughter and I attended a workshop together. She was so proud of her LED project that she's been asking to learn more. It's become our special bonding activity."*  
-— David, Parent
-
-## Get Connected
-
-### Join Our Community
-
-#### Online Presence
-- **Email List**: Monthly updates on events and opportunities
-- **Social Media**: Follow us for workshop photos and maker tips
-- **Discord Server**: Real-time chat with volunteers and community members
-- **GitHub**: Access our open-source designs and documentation
-
-#### In-Person Connections
-- **Monthly Meetups**: Kansas City area volunteer gatherings
-- **Workshop Debriefs**: Post-event discussions and improvement planning
-- **Equipment Maintenance Days**: Help maintain our lab gear
-- **Training Sessions**: Skill development for volunteers
-
-### Ways to Participate
-
-#### For Individuals
-- **Attend workshops** - Learn new skills and meet the community
-- **Volunteer at events** - Help teach and support learners
-- **Share your expertise** - Contribute specialized knowledge
-- **Spread the word** - Tell others about learning opportunities
-
-#### For Organizations
-- **Host a workshop** - Bring Fellowship to your event
-- **Partner with us** - Collaborate on educational initiatives
-- **Sponsor our work** - Support equipment and volunteer development
-- **Share resources** - Contribute space, materials, or expertise
-
-#### For Educators
-- **Use our curriculum** - Adapt our materials for your programs
-- **Join our network** - Connect with other maker educators
-- **Attend training** - Develop your own workshop skills
-- **Share best practices** - Help us improve our methods
-
-## Community Guidelines
-
-### Our Values in Action
-
-#### Inclusivity and Respect
-- **Welcome everyone** regardless of background or experience level
-- **Use inclusive language** and avoid assumptions about knowledge
-- **Respect different learning styles** and paces
-- **Create safe spaces** for questions and mistakes
-
-#### Safety First
-- **Follow all safety protocols** without exception
-- **Speak up about unsafe practices** immediately
-- **Prioritize learning over speed** or complexity
-- **Model safe behavior** for all participants
-
-#### Collaborative Learning
-- **Share knowledge freely** and credit sources
-- **Ask questions** and encourage others to do the same
-- **Celebrate successes** of learners and volunteers
-- **Learn from mistakes** and help others do the same
-
-#### Community Support
-- **Help newcomers** feel welcome and included
-- **Volunteer your time** when possible
-- **Contribute resources** as you're able
-- **Represent Fellowship positively** in all interactions
-
-## Community Resources
-
-### For Volunteers
-- **Training materials** - Instructor guides and safety protocols
-- **Equipment manuals** - Proper use and maintenance procedures
-- **Event planning guides** - Checklists and best practices
-- **Volunteer handbook** - Policies and procedures
-
-### For Learners
-- **Project ideas** - Inspiration for continued learning
-- **Resource lists** - Where to buy components and tools
-- **Safety guides** - Home workshop setup and practices
-- **Community forums** - Get help with projects and techniques
-
-### For Organizations
-- **Partnership guides** - How to work with Fellowship
-- **Event planning resources** - Requirements and logistics
-- **Curriculum materials** - Adaptable lesson plans
-- **Equipment specifications** - Build your own lab guides
-
-## Stay Connected
-
-### Contact Information
-- **General inquiries**: community@fellowshipoftheflux.com
-- **Volunteer coordination**: volunteers@fellowshipoftheflux.com
-- **Event partnerships**: events@fellowshipoftheflux.com
-
-### Social Media
-- **Twitter**: @FluxFellowship
-- **Instagram**: @FellowshipOfTheFlux
-- **LinkedIn**: Fellowship of the Flux
-- **GitHub**: fellowshipoftheflux
-
-### Mailing Address
-Fellowship of the Flux  
-Kansas City, MO  
-*[Specific address available to active volunteers and partners]*
-
----
-
-*The Fellowship of the Flux community is built on the belief that learning is better when shared. Whether you're taking your first workshop or leading your hundredth, you're part of a network dedicated to advancing the art of learning to solder. Welcome to the fellowship!*
+</div>

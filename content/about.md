@@ -5,128 +5,158 @@ date: 2024-01-01T00:00:00Z
 draft: false
 ---
 
-# About Fellowship of the Flux
+<div class="bg-gradient-to-b from-orange-50 to-white dark:from-gray-900 dark:to-gray-950">
 
-## Our Story
+<!-- Hero Section -->
+<section class="container mx-auto px-4 py-16 max-w-6xl text-center">
+  <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
+    Our Story: Building Connections Through Solder
+  </h1>
+  <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8">
+    What started as volunteer-run workshops at Kansas City conferences has grown into a regional resource for STEM education. Just as flux enables solder to flow and create strong connections, we help knowledge flow between makers and learners.
+  </p>
+</section>
 
-Fellowship of the Flux began in Kansas City with a simple idea: everyone should have the opportunity to learn soldering skills in a supportive, hands-on environment. What started as volunteer-run workshops at local cybersecurity conferences like BSides KC and MakerFaire KC has grown into a regional resource for STEM education.
+<!-- Mission Statement -->
+<section class="bg-gradient-to-r from-orange-500 to-red-500 py-16">
+  <div class="container mx-auto px-4 max-w-4xl text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Our Mission</h2>
+    <p class="text-2xl text-white/95 font-medium">
+      Advancing the art of learning to solder through community outreach, education, and resource sharing
+    </p>
+  </div>
+</section>
 
-Our name playfully references the Fellowship of the Ring, emphasizing our belief that learning is a shared journey. Just as flux enables solder to flow and create strong connections, we help knowledge flow between experienced makers and eager learners, creating lasting connections in our community.
+<!-- What We Do -->
+<section class="container mx-auto px-4 py-16 max-w-6xl">
+  <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">What We Do</h2>
+  <div class="grid md:grid-cols-2 gap-8">
+    <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg border-2 border-orange-500 hover:shadow-2xl transition-all">
+      <div class="text-5xl mb-4">🎪</div>
+      <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Community Workshops</h3>
+      <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+        <li>✓ Cybersecurity conferences (BSides KC)</li>
+        <li>✓ Maker faires and maker spaces</li>
+        <li>✓ STEM education events</li>
+        <li>✓ School and library programs</li>
+        <li>✓ Corporate team-building</li>
+      </ul>
+    </div>
+    
+    <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg border-2 border-blue-500 hover:shadow-2xl transition-all">
+      <div class="text-5xl mb-4">🔧</div>
+      <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Portable Soldering Labs</h3>
+      <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+        <li>✓ 20+ Hakko FX-888 stations</li>
+        <li>✓ Custom 3D-printed organizers</li>
+        <li>✓ Complete tool sets</li>
+        <li>✓ Safety equipment</li>
+        <li>✓ Beginner-friendly kits</li>
+      </ul>
+    </div>
+    
+    <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg border-2 border-green-500 hover:shadow-2xl transition-all">
+      <div class="text-5xl mb-4">📚</div>
+      <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Educational Resources</h3>
+      <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+        <li>✓ Step-by-step tutorials</li>
+        <li>✓ Equipment selection guides</li>
+        <li>✓ Safety protocols</li>
+        <li>✓ Curriculum materials</li>
+        <li>✓ Lab setup guides</li>
+      </ul>
+    </div>
+    
+    <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg border-2 border-purple-500 hover:shadow-2xl transition-all">
+      <div class="text-5xl mb-4">🤝</div>
+      <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Community Building</h3>
+      <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+        <li>✓ Training volunteers</li>
+        <li>✓ Connecting organizations</li>
+        <li>✓ Sharing best practices</li>
+        <li>✓ Supporting maker initiatives</li>
+        <li>✓ Building networks</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-## Our Mission
+<!-- Impact Stats -->
+<section class="bg-white dark:bg-gray-800 py-16">
+  <div class="container mx-auto px-4 max-w-6xl">
+    <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">Our Impact</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+      <div class="bg-orange-50 dark:bg-gray-900 p-8 rounded-lg border border-orange-200">
+        <div class="text-5xl font-bold text-orange-500 mb-2">500+</div>
+        <div class="text-gray-700 dark:text-gray-300 font-medium">People Taught</div>
+      </div>
+      <div class="bg-blue-50 dark:bg-gray-900 p-8 rounded-lg border border-blue-200">
+        <div class="text-5xl font-bold text-blue-500 mb-2">25+</div>
+        <div class="text-gray-700 dark:text-gray-300 font-medium">Events Supported</div>
+      </div>
+      <div class="bg-green-50 dark:bg-gray-900 p-8 rounded-lg border border-green-200">
+        <div class="text-5xl font-bold text-green-500 mb-2">30+</div>
+        <div class="text-gray-700 dark:text-gray-300 font-medium">Volunteers Trained</div>
+      </div>
+      <div class="bg-purple-50 dark:bg-gray-900 p-8 rounded-lg border border-purple-200">
+        <div class="text-5xl font-bold text-purple-500 mb-2">All Ages</div>
+        <div class="text-gray-700 dark:text-gray-300 font-medium">Elementary to Retirement</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-**Advancing the art of learning to solder** through community outreach, education, and resource sharing.
+<!-- Values -->
+<section class="container mx-auto px-4 py-16 max-w-6xl">
+  <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">Our Values</h2>
+  <div class="grid md:grid-cols-3 gap-8">
+    <div class="text-center">
+      <div class="text-5xl mb-4">🌈</div>
+      <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Inclusivity</h3>
+      <p class="text-gray-600 dark:text-gray-300">Accessible to everyone, regardless of background, age, or experience</p>
+    </div>
+    <div class="text-center">
+      <div class="text-5xl mb-4">🛡️</div>
+      <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Safety First</h3>
+      <p class="text-gray-600 dark:text-gray-300">Safe practices and secure environments for experimentation</p>
+    </div>
+    <div class="text-center">
+      <div class="text-5xl mb-4">🤝</div>
+      <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Community Over Competition</h3>
+      <p class="text-gray-600 dark:text-gray-300">Collaboration, knowledge sharing, and lifting each other up</p>
+    </div>
+    <div class="text-center">
+      <div class="text-5xl mb-4">⭐</div>
+      <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Quality Education</h3>
+      <p class="text-gray-600 dark:text-gray-300">Professional-grade equipment and proven teaching methods</p>
+    </div>
+    <div class="text-center">
+      <div class="text-5xl mb-4">❤️</div>
+      <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Volunteer Spirit</h3>
+      <p class="text-gray-600 dark:text-gray-300">Driven by passion for education and community service</p>
+    </div>
+    <div class="text-center">
+      <div class="text-5xl mb-4">🔬</div>
+      <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Hands-On Learning</h3>
+      <p class="text-gray-600 dark:text-gray-300">Real skills through practical, guided experience</p>
+    </div>
+  </div>
+</section>
 
-We believe that soldering is more than a technical skill—it's a gateway to understanding electronics, building confidence in making and repairing, and connecting with a community of creators and problem-solvers.
+<!-- CTA Section -->
+<section class="bg-gradient-to-r from-orange-500 to-red-500 py-16">
+  <div class="container mx-auto px-4 text-center max-w-3xl">
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Join Our Mission?</h2>
+    <p class="text-xl text-white/95 mb-8">Help us make soldering education accessible to everyone</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="/get-involved/" class="inline-block bg-white text-orange-600 font-bold px-8 py-4 rounded-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all">
+        Volunteer With Us
+      </a>
+      <a href="/services/" class="inline-block bg-orange-700 text-white font-bold px-8 py-4 rounded-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all border-2 border-white">
+        Request a Workshop
+      </a>
+    </div>
+  </div>
+</section>
 
-## What We Do
-
-### Community Workshops
-We provide hands-on soldering workshops at:
-- Cybersecurity conferences (BSides KC, regional BSides events)
-- Maker faires and maker spaces
-- STEM education events
-- School and library programs
-- Corporate team-building events
-
-### Portable Soldering Labs
-Our carefully designed portable labs feature:
-- 20+ Hakko FX-888 temperature-controlled soldering stations
-- Custom 3D-printed organizers for tools and components
-- Complete sets of essential tools (flush cutters, solder dispensers, desoldering equipment)
-- Safety equipment and workspace materials
-- Beginner-friendly project kits
-
-### Educational Resources
-We develop and share:
-- Step-by-step soldering tutorials
-- Equipment selection guides
-- Safety protocols and best practices
-- Curriculum materials for educators
-- Lab setup and organization guides
-
-### Community Building
-We foster learning communities by:
-- Training volunteers to lead workshops
-- Connecting organizations with resources
-- Sharing knowledge and best practices
-- Supporting other maker education initiatives
-
-## Our Team
-
-Fellowship of the Flux is powered by passionate volunteers from diverse backgrounds:
-
-- **Electronics professionals** who share their expertise
-- **Educators** who understand how people learn best
-- **Makers and hobbyists** who love sharing their craft
-- **Event organizers** who help coordinate workshops
-- **Students and newcomers** who bring fresh perspectives
-
-### Volunteer Opportunities
-
-Interested in joining our fellowship? We welcome volunteers with all skill levels:
-
-- **Workshop instructors** - Help teach soldering techniques
-- **Event coordinators** - Organize and manage workshop logistics
-- **Content creators** - Develop tutorials and educational materials
-- **Equipment managers** - Maintain and improve our lab setups
-- **Community outreach** - Connect with schools and organizations
-
-## Our Impact
-
-Since our founding, Fellowship of the Flux has:
-
-- **Taught 500+ people** to solder at community events
-- **Supported 25+ conferences** and educational events
-- **Trained 30+ volunteers** to lead their own workshops
-- **Reached learners** from elementary school through retirement
-- **Expanded across the Midwest** with partner organizations
-
-## Our Values
-
-### Inclusivity
-Soldering education should be accessible to everyone, regardless of background, age, or prior experience.
-
-### Safety First
-We prioritize safe practices and create environments where learners feel secure to experiment and make mistakes.
-
-### Community Over Competition
-We believe in collaboration, knowledge sharing, and lifting each other up.
-
-### Quality Education
-We use professional-grade equipment and proven teaching methods to ensure learners develop real skills.
-
-### Volunteer Spirit
-Our work is driven by passion for education and community service, not profit.
-
-## Get Involved
-
-Ready to join the Fellowship of the Flux? Here's how you can get involved:
-
-### For Individuals
-- **Learn with us** - Attend a workshop or use our online resources
-- **Volunteer** - Help teach, organize, or support our events
-- **Spread the word** - Tell others about soldering education opportunities
-
-### For Organizations
-- **Request a workshop** - Bring our portable lab to your event
-- **Partner with us** - Collaborate on educational initiatives
-- **Sponsor our work** - Support equipment and volunteer training
-
-### For Educators
-- **Use our resources** - Access our curriculum and teaching materials
-- **Build your own lab** - Follow our guides to create soldering education programs
-- **Join our network** - Connect with other educators and share best practices
-
-## Contact Us
-
-Ready to advance the art of learning to solder in your community?
-
-- **Email**: info@fellowshipoftheflux.com
-- **Location**: Kansas City, Missouri (serving the Midwest)
-- **Workshop Requests**: [Request Lab Services](/services/)
-- **Volunteer Interest**: [Get Involved](/get-involved/)
-
----
-
-*Fellowship of the Flux is a volunteer-driven organization dedicated to making soldering education accessible, safe, and fun for learners of all ages and backgrounds.*
+</div>

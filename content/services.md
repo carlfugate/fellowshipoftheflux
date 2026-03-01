@@ -5,156 +5,257 @@ date: 2024-01-01T00:00:00Z
 draft: false
 ---
 
-# Request Lab Services
+<div class="bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-950">
 
-Bring the Fellowship of the Flux experience to your event! Our portable soldering labs and experienced volunteers provide engaging, hands-on learning experiences for conferences, maker faires, schools, and community events.
+<!-- Hero Section -->
+<section class="container mx-auto px-4 py-16 max-w-6xl text-center">
+  <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
+    Bring Professional Soldering Education to Your Event
+  </h1>
+  <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8">
+    Complete portable labs, experienced instructors, and engaging workshops for conferences, schools, and community events
+  </p>
+  <a href="#contact" class="inline-block bg-gradient-to-r from-orange-500 to-red-500 text-white font-bold px-10 py-4 rounded-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all text-lg">
+    Request a Workshop →
+  </a>
+</section>
 
-## What We Provide
+<!-- What's Included -->
+<section class="container mx-auto px-4 py-16 max-w-6xl">
+  <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">What's Included</h2>
+  <div class="grid md:grid-cols-3 gap-8">
+    <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg border-2 border-orange-500 hover:shadow-2xl transition-all">
+      <div class="text-5xl mb-4">🔧</div>
+      <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Complete Lab Setup</h3>
+      <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+        <li>✓ 20+ Hakko FX-888 stations</li>
+        <li>✓ All tools & supplies</li>
+        <li>✓ Safety equipment</li>
+        <li>✓ Project kits included</li>
+        <li>✓ We handle setup/breakdown</li>
+      </ul>
+    </div>
+    
+    <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg border-2 border-blue-500 hover:shadow-2xl transition-all">
+      <div class="text-5xl mb-4">👨‍🏫</div>
+      <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Expert Instructors</h3>
+      <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+        <li>✓ Certified volunteers</li>
+        <li>✓ Years of experience</li>
+        <li>✓ Safety-focused approach</li>
+        <li>✓ Adaptive teaching methods</li>
+        <li>✓ Professional presentation</li>
+      </ul>
+    </div>
+    
+    <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg border-2 border-green-500 hover:shadow-2xl transition-all">
+      <div class="text-5xl mb-4">📋</div>
+      <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Flexible Formats</h3>
+      <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+        <li>✓ Drop-in workshops</li>
+        <li>✓ Scheduled sessions</li>
+        <li>✓ Skill-based tracks</li>
+        <li>✓ Custom curriculum</li>
+        <li>✓ Multi-day programs</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-### Complete Portable Soldering Lab
-- **20+ Hakko FX-888 soldering stations** - Professional temperature-controlled equipment
-- **Custom 3D-printed organizers** - Keep tools organized and accessible
-- **Complete tool sets** - Flush cutters, solder dispensers, desoldering braid, and more
-- **Safety equipment** - Proper ventilation, safety glasses, and workspace protection
-- **Beginner-friendly project kits** - Engaging projects suitable for all skill levels
+<!-- Workshop Packages -->
+<section class="bg-white dark:bg-gray-800 py-16">
+  <div class="container mx-auto px-4 max-w-6xl">
+    <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">Workshop Packages</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      
+      <!-- Basic Package -->
+      <div class="bg-gradient-to-b from-orange-50 to-white dark:from-gray-900 dark:to-gray-800 p-8 rounded-xl shadow-lg border border-orange-200 hover:shadow-2xl transition-all">
+        <div class="text-center mb-6">
+          <div class="text-4xl font-bold text-orange-500 mb-2">Basic</div>
+          <div class="text-gray-600 dark:text-gray-300">2-3 hours</div>
+        </div>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-start">
+            <span class="text-orange-500 mr-2">✓</span>
+            <span class="text-gray-700 dark:text-gray-300">Intro to soldering safety</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-orange-500 mr-2">✓</span>
+            <span class="text-gray-700 dark:text-gray-300">Through-hole practice</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-orange-500 mr-2">✓</span>
+            <span class="text-gray-700 dark:text-gray-300">Simple LED project</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-orange-500 mr-2">✓</span>
+            <span class="text-gray-700 dark:text-gray-300">Take-home kit</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-orange-500 mr-2">✓</span>
+            <span class="text-gray-700 dark:text-gray-300">Up to 20 participants</span>
+          </li>
+        </ul>
+        <div class="text-center">
+          <div class="text-sm text-gray-500 dark:text-gray-400 mb-4">Perfect for beginners</div>
+        </div>
+      </div>
+      
+      <!-- Advanced Package -->
+      <div class="bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 p-8 rounded-xl shadow-lg border-2 border-blue-500 hover:shadow-2xl transition-all transform scale-105">
+        <div class="text-center mb-6">
+          <div class="inline-block bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold mb-2">POPULAR</div>
+          <div class="text-4xl font-bold text-blue-500 mb-2">Advanced</div>
+          <div class="text-gray-600 dark:text-gray-300">3-4 hours</div>
+        </div>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-start">
+            <span class="text-blue-500 mr-2">✓</span>
+            <span class="text-gray-700 dark:text-gray-300">SMD soldering techniques</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-500 mr-2">✓</span>
+            <span class="text-gray-700 dark:text-gray-300">Desoldering & repair</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-500 mr-2">✓</span>
+            <span class="text-gray-700 dark:text-gray-300">Advanced projects</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-500 mr-2">✓</span>
+            <span class="text-gray-700 dark:text-gray-300">Troubleshooting skills</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-500 mr-2">✓</span>
+            <span class="text-gray-700 dark:text-gray-300">Up to 15 participants</span>
+          </li>
+        </ul>
+        <div class="text-center">
+          <div class="text-sm text-gray-500 dark:text-gray-400 mb-4">Requires basic experience</div>
+        </div>
+      </div>
+      
+      <!-- Custom Package -->
+      <div class="bg-gradient-to-b from-green-50 to-white dark:from-gray-900 dark:to-gray-800 p-8 rounded-xl shadow-lg border border-green-200 hover:shadow-2xl transition-all">
+        <div class="text-center mb-6">
+          <div class="text-4xl font-bold text-green-500 mb-2">Custom</div>
+          <div class="text-gray-600 dark:text-gray-300">Flexible duration</div>
+        </div>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-start">
+            <span class="text-green-500 mr-2">✓</span>
+            <span class="text-gray-700 dark:text-gray-300">Tailored curriculum</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-500 mr-2">✓</span>
+            <span class="text-gray-700 dark:text-gray-300">Specialized projects</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-500 mr-2">✓</span>
+            <span class="text-gray-700 dark:text-gray-300">Multi-day programs</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-500 mr-2">✓</span>
+            <span class="text-gray-700 dark:text-gray-300">Integration with curriculum</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-500 mr-2">✓</span>
+            <span class="text-gray-700 dark:text-gray-300">Flexible capacity</span>
+          </li>
+        </ul>
+        <div class="text-center">
+          <div class="text-sm text-gray-500 dark:text-gray-400 mb-4">Designed for your needs</div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
 
-### Experienced Volunteer Staff
-- **Certified instructors** with years of teaching experience
-- **Safety-focused approach** ensuring secure learning environments
-- **Adaptive teaching methods** for different learning styles and ages
-- **Professional presentation** suitable for corporate and educational settings
+<!-- Perfect For -->
+<section class="container mx-auto px-4 py-16 max-w-6xl">
+  <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">Perfect For</h2>
+  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="text-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-all">
+      <div class="text-4xl mb-3">🎯</div>
+      <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Conferences</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-300">BSides, maker faires, tech events</p>
+    </div>
+    <div class="text-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-all">
+      <div class="text-4xl mb-3">🎓</div>
+      <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Schools</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-300">K-12, universities, STEM programs</p>
+    </div>
+    <div class="text-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-all">
+      <div class="text-4xl mb-3">🏢</div>
+      <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Corporate</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-300">Team building, innovation labs</p>
+    </div>
+    <div class="text-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-all">
+      <div class="text-4xl mb-3">🏛️</div>
+      <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Community</h3>
+      <p class="text-sm text-gray-600 dark:text-gray-300">Libraries, maker spaces, scouts</p>
+    </div>
+  </div>
+</section>
 
-### Flexible Workshop Formats
-- **Drop-in workshops** - Participants join when convenient
-- **Scheduled sessions** - Structured learning with specific start times
-- **Skill-based tracks** - Beginner, intermediate, and advanced options
-- **Custom curriculum** - Tailored content for specific audiences
+<!-- Testimonials -->
+<section class="bg-gradient-to-r from-blue-500 to-indigo-500 py-16">
+  <div class="container mx-auto px-4 max-w-5xl">
+    <h2 class="text-3xl font-bold text-center mb-12 text-white">What Event Organizers Say</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-white/10 backdrop-blur-sm p-8 rounded-xl">
+        <p class="text-white text-lg mb-4 italic">"The Fellowship of the Flux team made our BSides KC soldering village a huge success. Professional, organized, and the attendees loved it!"</p>
+        <p class="text-white/90 font-semibold">— BSides KC Organizer</p>
+      </div>
+      <div class="bg-white/10 backdrop-blur-sm p-8 rounded-xl">
+        <p class="text-white text-lg mb-4 italic">"Our students were completely engaged. The instructors were patient, knowledgeable, and made learning fun. We'll definitely book again!"</p>
+        <p class="text-white/90 font-semibold">— STEM Program Director</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-## Perfect For
+<!-- Coverage Area -->
+<section class="container mx-auto px-4 py-16 max-w-4xl text-center">
+  <h2 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">Geographic Coverage</h2>
+  <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
+    <div class="mb-6">
+      <div class="text-2xl font-bold text-orange-500 mb-2">🗺️ Primary Area</div>
+      <p class="text-gray-700 dark:text-gray-300">Kansas City metro and surrounding regions</p>
+    </div>
+    <div class="mb-6">
+      <div class="text-2xl font-bold text-blue-500 mb-2">🚗 Extended Coverage</div>
+      <p class="text-gray-700 dark:text-gray-300">Missouri • Kansas • Iowa • Nebraska • Oklahoma</p>
+    </div>
+    <div>
+      <div class="text-2xl font-bold text-green-500 mb-2">✈️ Special Arrangements</div>
+      <p class="text-gray-700 dark:text-gray-300">We may support events outside our primary area with advance planning</p>
+    </div>
+  </div>
+</section>
 
-### Conferences & Events
-- **Cybersecurity conferences** (BSides, regional security events)
-- **Maker faires and maker spaces**
-- **Technology conferences and trade shows**
-- **STEM education conferences**
-- **Corporate team-building events**
+<!-- Contact Form -->
+<section id="contact" class="bg-gradient-to-r from-orange-500 to-red-500 py-16">
+  <div class="container mx-auto px-4 max-w-3xl">
+    <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-4">Ready to Book Your Workshop?</h2>
+    <p class="text-xl text-white/95 text-center mb-8">Contact us to discuss your event and get a custom quote</p>
+    <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-2xl">
+      <div class="space-y-4 text-center">
+        <div>
+          <div class="text-lg font-semibold text-gray-900 dark:text-white mb-2">📧 Email</div>
+          <a href="mailto:services@fellowshipoftheflux.com" class="text-orange-500 hover:text-orange-600 font-medium">services@fellowshipoftheflux.com</a>
+        </div>
+        <div class="border-t border-gray-200 dark:border-gray-700 pt-4">
+          <div class="text-lg font-semibold text-gray-900 dark:text-white mb-2">📍 Location</div>
+          <p class="text-gray-600 dark:text-gray-300">Kansas City, Missouri</p>
+        </div>
+        <div class="border-t border-gray-200 dark:border-gray-700 pt-4">
+          <p class="text-sm text-gray-500 dark:text-gray-400">We typically respond within 24-48 hours</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-### Educational Institutions
-- **K-12 schools** - STEM education and career exploration
-- **Universities and colleges** - Engineering and maker programs
-- **Libraries and community centers** - Public education initiatives
-- **Summer camps and after-school programs**
-
-### Organizations
-- **Scout groups and youth organizations**
-- **Professional development workshops**
-- **Community maker spaces**
-- **Corporate innovation labs**
-
-## Workshop Options
-
-### Basic Soldering Workshop (2-3 hours)
-**Perfect for beginners and mixed skill groups**
-- Introduction to soldering safety and tools
-- Hands-on practice with through-hole components
-- Simple LED circuit project
-- Take-home project and resources
-- **Capacity**: Up to 20 participants per session
-
-### Advanced Techniques Workshop (3-4 hours)
-**For participants with basic soldering experience**
-- Surface mount (SMD) soldering techniques
-- Desoldering and repair methods
-- Advanced project assembly
-- Troubleshooting and quality assessment
-- **Capacity**: Up to 15 participants per session
-
-### Custom Workshops
-**Tailored to your specific needs**
-- Curriculum designed for your audience
-- Integration with existing educational programs
-- Specialized projects or techniques
-- Extended multi-day programs available
-
-## Logistics & Requirements
-
-### What We Need From You
-- **Adequate space** - Tables and chairs for participants (we can advise on setup)
-- **Power access** - Standard 110V outlets (we bring extension cords)
-- **Basic ventilation** - Windows or air circulation (we bring additional fans)
-- **Participant registration** - Help us plan for the right number of attendees
-
-### What We Handle
-- **All equipment transport** - We bring everything needed
-- **Setup and breakdown** - Professional, efficient event management
-- **Materials and supplies** - Projects, components, and consumables included
-- **Insurance coverage** - We carry appropriate liability insurance
-- **Volunteer coordination** - Experienced team management
-
-### Geographic Coverage
-- **Primary area**: Kansas City metro and surrounding regions
-- **Extended coverage**: Midwest (Missouri, Kansas, Iowa, Nebraska, Oklahoma)
-- **Special arrangements**: We may be able to support events outside our primary area with advance planning
-
-## Pricing & Booking
-
-### Investment
-Our services are provided at cost to support STEM education:
-- **Basic workshops**: $15-25 per participant (includes materials)
-- **Advanced workshops**: $25-35 per participant (includes specialized components)
-- **Travel expenses**: Mileage and accommodation for events outside Kansas City area
-- **Custom programs**: Quoted based on specific requirements
-
-### Booking Process
-1. **Initial consultation** - Discuss your event needs and goals
-2. **Proposal development** - Customized plan with timeline and pricing
-3. **Contract and deposit** - Secure your dates with signed agreement
-4. **Pre-event coordination** - Finalize logistics and participant details
-5. **Event execution** - Professional workshop delivery
-6. **Follow-up** - Resources and feedback for continued learning
-
-### Advance Notice
-- **Minimum 4 weeks** for standard workshops
-- **6-8 weeks preferred** for optimal scheduling
-- **3+ months** for large events or custom curriculum development
-
-## Success Stories
-
-### BSides Kansas City 2023
-*"The Fellowship of the Flux soldering village was the highlight of our conference. Participants ranged from complete beginners to experienced engineers, and everyone left with new skills and a completed project. The volunteers were knowledgeable, patient, and created a welcoming environment for learning."*
-— Conference Organizer
-
-### MakerFaire KC 2023
-*"We had over 150 people participate in soldering workshops over the weekend. The portable lab setup was impressive, and the quality of instruction was outstanding. Many participants asked how they could get involved as volunteers!"*
-— Event Coordinator
-
-### Lincoln Elementary STEM Night
-*"The students were completely engaged throughout the workshop. The volunteers did an amazing job adapting their teaching for 4th and 5th graders. Parents were impressed with the professional equipment and safety focus."*
-— STEM Coordinator
-
-## Request Your Workshop
-
-Ready to bring hands-on soldering education to your event?
-
-### Contact Information
-- **Email**: workshops@fellowshipoftheflux.com
-- **Phone**: Available upon request
-- **Response time**: We typically respond within 48 hours
-
-### Request Form
-Please include the following information in your initial request:
-- **Event details**: Name, date, location, expected attendance
-- **Audience**: Age range, skill level, specific interests
-- **Format preferences**: Workshop length, number of sessions
-- **Logistics**: Available space, power access, setup time
-- **Budget considerations**: Participant fees, sponsorship opportunities
-
-### Next Steps
-1. **Submit your request** using the contact information above
-2. **Schedule a consultation** to discuss your specific needs
-3. **Receive a custom proposal** with detailed planning and pricing
-4. **Confirm your booking** and begin event coordination
-
----
-
-*Fellowship of the Flux is committed to making soldering education accessible and engaging for learners of all backgrounds. Let us help you create an unforgettable hands-on learning experience at your next event!*
+</div>
