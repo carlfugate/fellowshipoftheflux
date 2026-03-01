@@ -48,3 +48,27 @@
 - `config.production.yaml` - Removed deprecated caches
 - `layouts/partials/head.html` - Fixed variable shadowing, disabled custom CSS temporarily
 - `themes/tailbliss` - Submodule updated to f27ce79b (duplicate markup fix)
+
+## Pre-Commit Hook (Added 2026-02-28)
+
+### Issue
+CSS formatting was broken on live site because `@import` statements in `custom.css` weren't being processed in production builds.
+
+### Root Cause
+- `custom.css` had `@import "tailwindcss/..."` statements
+- Hugo serves CSS files as-is without PostCSS processing
+- Tests passed locally but site was broken in production
+
+### Solution
+1. **Removed @import statements** - Tailwind already included in main.css
+2. **Added pre-commit hook** - Runs `npm test` before every commit
+3. **Kept only custom styles** - Animations and engagement enhancements
+
+### Pre-Commit Hook Location
+`.git/hooks/pre-commit` - Automatically runs tests before allowing commits
+
+### Benefits
+- ✅ Catches build issues before commit
+- ✅ Prevents broken deployments
+- ✅ No manual testing needed
+- ✅ Can bypass with `--no-verify` if needed
