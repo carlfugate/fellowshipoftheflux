@@ -30,7 +30,8 @@
     "validate:deployment": "bash scripts/validate-deployment.sh",
     "precommit": "npm run validate && npm run build:preview",
     "deploy:test": "npm run build:production && npm run serve:production",
-    "test:deployment": "./scripts/test-deployment.sh"
+    "test:deployment": "./scripts/test-deployment.sh",
+    "verify:live": "npm run test:deployment && echo '\n✅ Live site verified! Visit: https://fellowshipoftheflux.com'"
   },
   "keywords": [
     "hugo",
