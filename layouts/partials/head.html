@@ -62,33 +62,5 @@
 </script>
 
 <!-- CSS Assets -->
-{{ $mainCSS := "" }}
-
-<!-- Check if we have a processed main CSS file -->
-{{ $mainCSSResource := resources.Get "css/main.css" }}
-{{ if $mainCSSResource }}
-{{ $mainCSS = $mainCSSResource.RelPermalink }}
-{{ else }}
-<!-- Fallback: look for static CSS files -->
-{{ $mainCSS = "/css/main.css" }}
-{{ end }}
-
-<!-- Load main CSS -->
-{{ if $mainCSS }}
-<link rel="stylesheet" href="{{ $mainCSS }}">
-{{ else }}
-<!-- Fallback to Hugo PostCSS processing -->
-{{ $styles := resources.Get "css/main.css" }}
-{{ if $styles }}
-{{ $styles := $styles | postCSS }}
-{{ if hugo.IsProduction }}
-{{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
-{{ end }}
-<link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
-{{ end }}
-{{ end }}
-
-<!-- Custom CSS overrides -->
-{{ with resources.Get "css/custom.css" }}
-<link rel="stylesheet" href="{{ .RelPermalink }}" />
-{{ end }}
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/custom.css">
