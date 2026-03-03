@@ -6,17 +6,8 @@
             <!-- Brand/Logo -->
             <a href="/"
                 class="flex items-center text-gray-900 dark:text-gray-100 transition duration-300 ease-in-out group">
-                {{ if .Site.Params.brand.logo }}
-                <img src="{{ .Site.Params.brand.logo }}" width="36" height="36"
-                    class="w-9 h-9 transition-opacity group-hover:opacity-75 group-focus:opacity-70 flex-shrink-0"
-                    alt="{{ .Site.Params.brand.name | default .Site.Title }} Logo" />
-                {{ else }}
-                <img src="/images/site-logo.svg" width="36" height="36"
-                    class="w-9 h-9 transition-opacity group-hover:opacity-75 group-focus:opacity-70 flex-shrink-0"
-                    alt="{{ .Site.Params.brand.name | default .Site.Title }} Logo" />
-                {{ end }}
                 <span
-                    class="ml-3 text-xl font-black tracking-tight uppercase transition-colors group-hover:text-primary-600 dark:group-hover:text-primary-400 whitespace-nowrap">
+                    class="text-xl font-black tracking-tight uppercase transition-colors group-hover:text-primary-600 dark:group-hover:text-primary-400 whitespace-nowrap">
                     {{ .Site.Params.brand.name | default .Site.Title }}
                 </span>
             </a>

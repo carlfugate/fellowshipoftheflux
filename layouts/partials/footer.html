@@ -4,17 +4,6 @@
             <!-- Brand Section -->
             <div class="lg:col-span-2">
                 <div class="flex items-center mb-4">
-                    {{ if .Site.Params.brand.logo }}
-                    <img src="{{ .Site.Params.brand.logo }}" 
-                         width="32" height="32" 
-                         class="w-8 h-8 mr-3" 
-                         alt="{{ .Site.Params.brand.name | default .Site.Title }} Logo">
-                    {{ else }}
-                    <img src="/images/site-logo.svg" 
-                         width="32" height="32" 
-                         class="w-8 h-8 mr-3" 
-                         alt="{{ .Site.Params.brand.name | default .Site.Title }} Logo">
-                    {{ end }}
                     <h3 class="text-xl font-bold text-white">
                         {{ .Site.Params.brand.name | default .Site.Title }}
                     </h3>
