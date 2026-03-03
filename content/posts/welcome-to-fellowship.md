@@ -4,7 +4,6 @@ date: 2024-01-15T10:00:00Z
 draft: false
 description: "Learn about Fellowship of the Flux and our mission to advance soldering education through community outreach and hands-on learning."
 author: "Fellowship Team"
-featured_image: "/images/community/workshop-hero.jpg"
 tags: ["fellowship", "soldering", "community", "education", "STEM"]
 categories: ["Getting Started", "Community"]
 ---

@@ -95,15 +95,14 @@ security:
       - ".*"
 
 # Disable unnecessary features in production
-disableKinds:
-  - "RSS" # Disable if not needed
-  - "404" # Enable if you want custom 404 pages
+# Keep all page kinds enabled
+# disableKinds:
 
 # Production markup settings
 markup:
   goldmark:
     renderer:
-      unsafe: false # More secure for production
+      unsafe: true # Required - content pages use inline HTML
       hardWraps: false
     parser:
       attribute:

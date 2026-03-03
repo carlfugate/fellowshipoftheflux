@@ -28,7 +28,6 @@ skills_practiced:
   - "Basic troubleshooting techniques"
 tags: ["project", "soldering", "555-timer", "led", "beginner"]
 categories: ["projects"]
-featured_image: "/images/projects/led-flasher.jpg"
 project_type: "build"
 progress_tracking: true
 skill_assessment: true

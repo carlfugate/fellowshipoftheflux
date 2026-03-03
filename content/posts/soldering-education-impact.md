@@ -4,7 +4,6 @@ date: 2024-01-10T14:00:00Z
 draft: false
 description: "Exploring how hands-on soldering education builds confidence, technical skills, and community connections for learners of all ages."
 author: "Dr. Jennifer Walsh"
-featured_image: "/images/community/students-learning.jpg"
 tags: ["education", "STEM", "community", "skills", "confidence"]
 categories: ["Education", "Community Impact"]
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Posts"
-description: "Latest articles, tutorials, and insights from our team."
+description: "News, updates, and stories from Fellowship of the Flux — soldering workshops, community events, and maker education."
 ---
 
-Welcome to our blog! Here you'll find the latest articles, tutorials, and insights on web development, Hugo, and modern web technologies.
+News, event recaps, and stories from our community of makers and educators.

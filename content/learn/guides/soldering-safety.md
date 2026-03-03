@@ -7,7 +7,6 @@ guide_type: "reference"
 difficulty: "beginner"
 tags: ["guide", "soldering", "safety", "workspace"]
 categories: ["guides"]
-featured_image: "/images/guides/safety.jpg"
 toc: true
 ---
 

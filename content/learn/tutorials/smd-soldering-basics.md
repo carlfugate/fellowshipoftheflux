@@ -29,7 +29,6 @@ prerequisites:
   - "Basic knowledge of PCB layouts"
 tags: ["tutorial", "soldering", "smd", "surface-mount", "intermediate"]
 categories: ["tutorials"]
-featured_image: "/images/tutorials/smd-soldering.jpg"
 tutorial_type: "step-by-step"
 progress_tracking: true
 skill_assessment: true

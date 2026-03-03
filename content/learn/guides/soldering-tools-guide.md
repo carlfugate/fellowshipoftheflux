@@ -7,7 +7,6 @@ guide_type: "reference"
 difficulty: "beginner"
 tags: ["guide", "soldering", "tools", "equipment"]
 categories: ["guides"]
-featured_image: "/images/guides/soldering-tools.jpg"
 toc: true
 ---
 

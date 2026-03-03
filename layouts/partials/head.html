@@ -33,7 +33,7 @@
 
 <!-- Alpine.js for interactive components -->
 <link href="https://cdn.jsdelivr.net/npm/alpinejs@3.14.9/dist/cdn.min.js"
-  as="script" rel="preconnect" rel="dns-prefetch">
+  as="script" rel="preload">
 
 <!-- Hide Alpine.js [x-cloak] elements until Alpine initializes -->
 <style>
@@ -64,3 +64,6 @@
 <!-- CSS Assets -->
 <link rel="stylesheet" href="/css/main.css?v={{ now.Unix }}">
 <link rel="stylesheet" href="/css/custom.css?v={{ now.Unix }}">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="{{ .Permalink }}" />

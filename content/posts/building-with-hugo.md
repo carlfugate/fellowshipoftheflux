@@ -4,7 +4,6 @@ date: 2024-01-10T14:30:00Z
 draft: false
 description: "How Fellowship of the Flux leverages modern web technologies and educational design principles to create effective online learning experiences."
 author: "Development Team"
-featured_image: "/images/projects/education-platform.jpg"
 tags: ["education", "web development", "learning platforms", "STEM"]
 categories: ["Technology", "Education"]
 ---

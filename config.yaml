@@ -49,7 +49,7 @@ params:
   brand:
     name: "Fellowship of the Flux"
     tagline: "Advancing the art of learning to solder"
-    logo: "/images/fellowship-logo.svg"
+    logo: "/images/site-logo.svg"
     mission: "Community-driven electronics education through hands-on soldering workshops and resource sharing"
 
   # Organization details

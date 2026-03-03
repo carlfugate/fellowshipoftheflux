@@ -4,7 +4,6 @@ date: 2024-03-20T16:00:00Z
 draft: false
 description: "Recap of our most successful BSides Kansas City soldering village yet, with 180+ participants and amazing community engagement."
 author: "Marcus Rodriguez"
-featured_image: "/images/events/bsides-kc-2024.jpg"
 tags: ["BSides", "Kansas City", "workshop", "community", "cybersecurity"]
 categories: ["Events", "Community"]
 ---

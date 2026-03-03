@@ -21,13 +21,13 @@ Connect with makers, educators, and learners passionate about hands-on learning 
 <section class="container mx-auto px-4 py-16 max-w-6xl">
 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
 <div class="bg-orange-50 dark:bg-gray-800 p-8 rounded-lg border border-orange-200 hover:border-orange-400 transition-all transform hover:scale-105">
-<div class="text-5xl font-bold text-orange-500 mb-2">100+</div>
+<div class="text-5xl font-bold text-orange-500 mb-2">30+</div>
 <div class="text-gray-700 dark:text-gray-300 font-medium">Active Volunteers</div>
 <div class="text-sm text-gray-500 dark:text-gray-400 mt-2">From all backgrounds</div>
 </div>
 <div class="bg-blue-50 dark:bg-gray-800 p-8 rounded-lg border border-blue-200 hover:border-blue-400 transition-all transform hover:scale-105">
-<div class="text-5xl font-bold text-blue-500 mb-2">50+</div>
-<div class="text-gray-700 dark:text-gray-300 font-medium">Events Annually</div>
+<div class="text-5xl font-bold text-blue-500 mb-2">25+</div>
+<div class="text-gray-700 dark:text-gray-300 font-medium">Events Supported</div>
 <div class="text-sm text-gray-500 dark:text-gray-400 mt-2">Across the Midwest</div>
 </div>
 <div class="bg-green-50 dark:bg-gray-800 p-8 rounded-lg border border-green-200 hover:border-green-400 transition-all transform hover:scale-105">

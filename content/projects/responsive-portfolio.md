@@ -4,7 +4,6 @@ date: 2024-01-12T09:00:00Z
 draft: false
 description: "Fellowship of the Flux's comprehensive community workshop program bringing hands-on soldering education to diverse audiences across the Midwest."
 project_url: "https://fellowshipoftheflux.com/community/"
-featured_image: "/images/projects/community-workshops.jpg"
 technologies: ["Education", "Community Outreach", "Curriculum Development", "Volunteer Management"]
 status: "active"
 ---

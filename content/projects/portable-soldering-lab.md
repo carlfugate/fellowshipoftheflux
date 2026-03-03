@@ -5,7 +5,6 @@ draft: false
 description: "Design and implementation of Fellowship of the Flux's portable soldering lab system for community workshops and educational events."
 project_url: "https://fellowshipoftheflux.com/lab-setup/"
 github_url: "https://github.com/fellowshipoftheflux/lab-design"
-featured_image: "/images/projects/portable-lab.jpg"
 technologies: ["3D Printing", "Electronics", "Educational Design", "Safety Systems"]
 status: "active"
 ---

@@ -4,7 +4,6 @@ description: "Master the art of soldering with our comprehensive tutorials, guid
 date: 2024-01-01T00:00:00Z
 draft: false
 layout: "learn-hub"
-featured_image: "/images/learn/soldering-hero.jpg"
 ---
 
 # Learn to Solder

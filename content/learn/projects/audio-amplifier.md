@@ -31,7 +31,6 @@ skills_practiced:
   - "Circuit testing and troubleshooting"
 tags: ["project", "soldering", "audio", "amplifier", "lm386", "intermediate"]
 categories: ["projects"]
-featured_image: "/images/projects/audio-amplifier.jpg"
 project_type: "build"
 progress_tracking: true
 skill_assessment: true

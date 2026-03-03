@@ -27,7 +27,6 @@ prerequisites:
   - "Familiarity with safety procedures"
 tags: ["tutorial", "soldering", "through-hole", "beginner"]
 categories: ["tutorials"]
-featured_image: "/images/tutorials/through-hole-soldering.jpg"
 tutorial_type: "step-by-step"
 progress_tracking: true
 skill_assessment: true
