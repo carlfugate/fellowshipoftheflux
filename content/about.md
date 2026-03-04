@@ -8,13 +8,18 @@ draft: false
 <div class="bg-gradient-to-b from-orange-50 to-white dark:from-gray-900 dark:to-gray-950">
 
 <!-- Hero Section -->
-<section class="container mx-auto px-4 py-16 max-w-6xl text-center">
-<h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
+<section class="relative">
+<img src="/images/photos/event-group.jpg" alt="Fellowship of the Flux community" class="w-full h-64 md:h-80 object-cover brightness-50">
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="text-center px-4">
+<h1 class="text-4xl md:text-5xl font-bold mb-6 text-white drop-shadow-lg">
 Our Story: Building Connections Through Solder
 </h1>
-<p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8">
-What started as volunteer-run workshops at Kansas City conferences has grown into a regional resource for STEM education. Just as flux enables solder to flow and create strong connections, we help knowledge flow between makers and learners.
+<p class="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow">
+What started as volunteer-run workshops at Kansas City conferences has grown into a regional resource for STEM education.
 </p>
+</div>
+</div>
 </section>
 
 <!-- Mission Statement -->
@@ -77,6 +82,17 @@ Advancing the art of learning to solder through community outreach, education, a
 <li>✓ Supporting maker initiatives</li>
 <li>✓ Building networks</li>
 </ul>
+</div>
+</div>
+</section>
+
+<!-- Workshop Photo Break -->
+<section class="py-8">
+<div class="container mx-auto px-4 max-w-6xl">
+<div class="grid grid-cols-3 gap-4">
+<img src="/images/photos/workshop-setup.jpg" alt="Workshop setup" class="rounded-lg object-cover w-full h-48">
+<img src="/images/photos/soldering-closeup.jpg" alt="Soldering close-up" class="rounded-lg object-cover w-full h-48">
+<img src="/images/photos/workshop-participants.jpg" alt="Workshop participants" class="rounded-lg object-cover w-full h-48">
 </div>
 </div>
 </section>

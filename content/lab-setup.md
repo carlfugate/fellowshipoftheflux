@@ -8,13 +8,18 @@ draft: false
 <div class="bg-gradient-to-b from-purple-50 to-white dark:from-gray-900 dark:to-gray-950">
 
 <!-- Hero Section -->
-<section class="container mx-auto px-4 py-16 max-w-6xl text-center">
-<h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
+<section class="relative">
+<img src="/images/photos/portable-lab.jpg" alt="Portable soldering lab equipment" class="w-full h-64 md:h-80 object-cover brightness-50">
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="text-center px-4">
+<h1 class="text-4xl md:text-5xl font-bold mb-6 text-white drop-shadow-lg">
 Build Your Own Portable Soldering Lab
 </h1>
-<p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8">
+<p class="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow">
 Learn from our experience building and refining mobile setups for educational workshops. Complete equipment guide, setup tips, and lessons learned.
 </p>
+</div>
+</div>
 </section>
 
 <!-- Why Build a Lab -->

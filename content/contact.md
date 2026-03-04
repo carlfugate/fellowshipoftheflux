@@ -8,6 +8,7 @@ description: "Get in touch with Fellowship of the Flux for workshop requests, vo
 <div class="bg-gradient-to-b from-orange-50 to-white dark:from-gray-900 dark:to-gray-950">
 
 <section class="container mx-auto px-4 py-16 max-w-4xl">
+<img src="/images/photos/event-booth-setup.jpg" alt="Fellowship of the Flux event booth" class="w-full h-48 md:h-64 object-cover rounded-xl mb-10">
 <h1 class="text-4xl md:text-5xl font-bold mb-6 text-center text-gray-900 dark:text-white">Get In Touch</h1>
 <p class="text-xl text-gray-600 dark:text-gray-300 text-center max-w-2xl mx-auto mb-12">
 Whether you want to book a workshop, volunteer, or just learn more about what we do — we'd love to hear from you.

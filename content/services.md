@@ -8,16 +8,18 @@ draft: false
 <div class="bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-950">
 
 <!-- Hero Section -->
-<section class="container mx-auto px-4 py-16 max-w-6xl text-center">
-<h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
+<section class="relative">
+<img src="/images/photos/conference-setup.jpg" alt="Fellowship portable lab at a conference" class="w-full h-64 md:h-80 object-cover brightness-50">
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="text-center px-4">
+<h1 class="text-4xl md:text-5xl font-bold mb-6 text-white drop-shadow-lg">
 Bring Professional Soldering Education to Your Event
 </h1>
-<p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8">
+<p class="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow">
 Complete portable labs, experienced instructors, and engaging workshops for conferences, schools, and community events
 </p>
-<a href="#contact" class="inline-block bg-gradient-to-r from-orange-500 to-red-500 text-white font-bold px-10 py-4 rounded-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all text-lg">
-Request a Workshop →
-</a>
+</div>
+</div>
 </section>
 
 <!-- What's Included -->

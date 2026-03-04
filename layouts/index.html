@@ -6,17 +6,24 @@
   <!-- Animated Circuit Background -->
   <div class="circuit-bg absolute inset-0 opacity-5 dark:opacity-10 pointer-events-none"></div>
   
-  <!-- Hero Section -->
-  <section id="main-content" class="container mx-auto px-4 py-12 sm:py-16 max-w-6xl relative z-10">
-    <h1 class="text-3xl sm:text-4xl lg:text-6xl font-bold text-center mb-4 sm:mb-6 text-gray-900 dark:text-white leading-tight animate-fade-in">
-      From Beginner to Builder in One Workshop
-    </h1>
-    <p class="text-lg sm:text-xl text-center mb-8 sm:mb-12 text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed animate-fade-in-delay">
-      Watch your first LED light up. Feel the satisfaction of creating something with your own hands. 
-      <span class="text-orange-600 dark:text-orange-400 font-semibold">Join Sarah, Mike, and 498 other makers who discovered their spark with us.</span>
-    </p>
+  <!-- Hero Section with Photo -->
+  <section id="main-content" class="relative z-10">
+    <div class="relative">
+      <img src="/images/photos/group-workshop.jpg" alt="Fellowship of the Flux workshop in action" class="w-full h-64 sm:h-80 lg:h-96 object-cover brightness-50">
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div class="text-center px-4">
+          <h1 class="text-3xl sm:text-4xl lg:text-6xl font-bold mb-4 sm:mb-6 text-white leading-tight animate-fade-in drop-shadow-lg">
+            From Beginner to Builder in One Workshop
+          </h1>
+          <p class="text-lg sm:text-xl mb-8 text-white/90 max-w-3xl mx-auto leading-relaxed animate-fade-in-delay drop-shadow">
+            Watch your first LED light up. Feel the satisfaction of creating something with your own hands.
+          </p>
+        </div>
+      </div>
+    </div>
     
     <!-- Three-Column Audience Paths -->
+    <div class="container mx-auto px-4 max-w-6xl -mt-12 relative z-20">
     <div class="grid md:grid-cols-3 gap-6 mb-16">
       <!-- Primary CTA: Learn to Solder -->
       <article class="card-spark bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-xl shadow-md hover:shadow-2xl transition-all transform hover:scale-105 border-2 border-orange-500 ring-2 ring-orange-200 relative overflow-hidden group" role="region" aria-labelledby="learn-heading">
@@ -58,6 +65,7 @@
           Get Involved <span class="inline-block group-hover:translate-x-1 transition-transform">→</span>
         </a>
       </article>
+    </div>
     </div>
   </section>
 
@@ -137,6 +145,24 @@
         <div class="text-5xl font-bold text-purple-500 mb-2" aria-label="100 plus">100+</div>
         <div class="text-gray-700 dark:text-gray-300 font-medium">Active Volunteers</div>
         <div class="text-sm text-gray-500 dark:text-gray-400 mt-2">Passionate about teaching</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Gallery -->
+  <section class="py-16 bg-gray-50 dark:bg-gray-900" aria-labelledby="gallery-heading">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <h2 id="gallery-heading" class="text-3xl font-bold text-center mb-4 text-gray-900 dark:text-white">See What We Do</h2>
+      <p class="text-center text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto">Real workshops, real makers, real community</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <img src="/images/photos/soldering-closeup.jpg" alt="Close-up soldering work" class="rounded-lg object-cover w-full h-48 hover:scale-105 transition-transform">
+        <img src="/images/photos/conference-workshop.jpg" alt="Workshop at a conference" class="rounded-lg object-cover w-full h-48 hover:scale-105 transition-transform">
+        <img src="/images/photos/workshop-stations-wide.jpg" alt="Soldering stations set up for a workshop" class="rounded-lg object-cover w-full h-48 hover:scale-105 transition-transform">
+        <img src="/images/photos/portable-lab.jpg" alt="Portable soldering lab equipment" class="rounded-lg object-cover w-full h-48 hover:scale-105 transition-transform">
+        <img src="/images/photos/event-group.jpg" alt="Group at a Fellowship event" class="rounded-lg object-cover w-full h-48 hover:scale-105 transition-transform">
+        <img src="/images/photos/soldering-instruction.jpg" alt="Soldering instruction in progress" class="rounded-lg object-cover w-full h-48 hover:scale-105 transition-transform">
+        <img src="/images/photos/lab-equipment.jpg" alt="Lab equipment close-up" class="rounded-lg object-cover w-full h-48 hover:scale-105 transition-transform">
+        <img src="/images/photos/community-workshop.jpg" alt="Community workshop participants" class="rounded-lg object-cover w-full h-48 hover:scale-105 transition-transform">
       </div>
     </div>
   </section>
