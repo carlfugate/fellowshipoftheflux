@@ -144,30 +144,40 @@ Volunteer at Events →
 <!-- Volunteer Spotlights -->
 <section class="container mx-auto px-4 py-16 max-w-6xl">
 <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">Meet Our Volunteers</h2>
-<div class="grid md:grid-cols-2 gap-8">
+<div class="grid md:grid-cols-3 gap-8">
 
 <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
 <div class="flex items-start gap-4 mb-4">
-<div class="text-5xl">👩‍💻</div>
+<div class="text-5xl">🔧</div>
 <div>
-<h3 class="text-xl font-bold text-gray-900 dark:text-white">Sarah Chen</h3>
+<h3 class="text-xl font-bold text-gray-900 dark:text-white">Carl Fugate</h3>
 <p class="text-orange-500 font-semibold">Lead Instructor</p>
-<p class="text-sm text-gray-500 dark:text-gray-400">Electronics Engineer • 5 years</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">9 years</p>
 </div>
 </div>
-<p class="text-gray-600 dark:text-gray-300 italic">"I love seeing the moment when someone makes their first successful solder joint. Teaching isn't just about the technical skill—it's about building confidence and opening doors to the maker world."</p>
+<p class="text-gray-600 dark:text-gray-300 italic">"Learn to solder is a gateway to so many different maker and life skills!"</p>
 </div>
 
 <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
 <div class="flex items-start gap-4 mb-4">
-<div class="text-5xl">👨‍🔧</div>
+<div class="text-5xl">🔧</div>
 <div>
-<h3 class="text-xl font-bold text-gray-900 dark:text-white">Marcus Rodriguez</h3>
-<p class="text-blue-500 font-semibold">Equipment Manager</p>
-<p class="text-sm text-gray-500 dark:text-gray-400">Retired Technician • 3 years</p>
+<h3 class="text-xl font-bold text-gray-900 dark:text-white">Kevin Bennett</h3>
+<p class="text-blue-500 font-semibold">Lead Instructor</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">9 years</p>
 </div>
 </div>
-<p class="text-gray-600 dark:text-gray-300 italic">"Keeping our equipment in top shape means every learner gets the best experience. There's satisfaction in knowing our labs are reliable and safe for everyone who uses them."</p>
+</div>
+
+<div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
+<div class="flex items-start gap-4 mb-4">
+<div class="text-5xl">🔧</div>
+<div>
+<h3 class="text-xl font-bold text-gray-900 dark:text-white">Patrick Leikus</h3>
+<p class="text-green-500 font-semibold">Instructor</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">4 years</p>
+</div>
+</div>
 </div>
 
 </div>
