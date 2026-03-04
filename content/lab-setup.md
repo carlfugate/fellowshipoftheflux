@@ -9,7 +9,7 @@ draft: false
 
 <!-- Hero Section -->
 <section class="relative">
-<img src="/images/photos/portable-lab.jpg" alt="Portable soldering lab equipment" class="w-full h-64 md:h-80 object-cover brightness-50">
+<img src="/images/photos/portable-lab.jpg" alt="Portable soldering lab equipment" class="w-full h-64 md:h-80 object-cover object-top brightness-50">
 <div class="absolute inset-0 flex items-center justify-center">
 <div class="text-center px-4">
 <h1 class="text-4xl md:text-5xl font-bold mb-6 text-white drop-shadow-lg">
