@@ -146,38 +146,29 @@ Volunteer at Events →
 <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">Meet Our Volunteers</h2>
 <div class="grid md:grid-cols-3 gap-8">
 
-<div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
-<div class="flex items-start gap-4 mb-4">
-<div class="text-5xl">🔧</div>
-<div>
+<div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg text-center">
+<img src="/images/photos/carl.jpg" alt="Carl Fugate" class="w-28 h-28 rounded-full object-cover mx-auto mb-4 border-4 border-orange-500">
 <h3 class="text-xl font-bold text-gray-900 dark:text-white">Carl Fugate</h3>
 <p class="text-orange-500 font-semibold">Lead Instructor</p>
-<p class="text-sm text-gray-500 dark:text-gray-400">9 years</p>
-</div>
-</div>
-<p class="text-gray-600 dark:text-gray-300 italic">"Learn to solder is a gateway to so many different maker and life skills!"</p>
+<p class="text-sm text-gray-500 dark:text-gray-400 mb-4">9 years</p>
+<p class="text-gray-600 dark:text-gray-300 italic mb-4">"Learn to solder is a gateway to so many different maker and life skills!"</p>
+<a href="https://www.linkedin.com/in/carlfugate/" class="text-blue-500 hover:text-blue-600 text-sm font-semibold" aria-label="Carl Fugate on LinkedIn">LinkedIn →</a>
 </div>
 
-<div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
-<div class="flex items-start gap-4 mb-4">
-<div class="text-5xl">🔧</div>
-<div>
+<div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg text-center">
+<img src="/images/photos/kevin.jpg" alt="Kevin Bennett" class="w-28 h-28 rounded-full object-cover mx-auto mb-4 border-4 border-blue-500">
 <h3 class="text-xl font-bold text-gray-900 dark:text-white">Kevin Bennett</h3>
 <p class="text-blue-500 font-semibold">Lead Instructor</p>
-<p class="text-sm text-gray-500 dark:text-gray-400">9 years</p>
-</div>
-</div>
+<p class="text-sm text-gray-500 dark:text-gray-400 mb-4">9 years</p>
+<a href="https://www.linkedin.com/in/kevin-bennett-leessummit/" class="text-blue-500 hover:text-blue-600 text-sm font-semibold" aria-label="Kevin Bennett on LinkedIn">LinkedIn →</a>
 </div>
 
-<div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
-<div class="flex items-start gap-4 mb-4">
-<div class="text-5xl">🔧</div>
-<div>
-<h3 class="text-xl font-bold text-gray-900 dark:text-white">Patrick Leikus</h3>
+<div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg text-center">
+<img src="/images/photos/patrick.jpg" alt="Patrick Liekhus" class="w-28 h-28 rounded-full object-cover mx-auto mb-4 border-4 border-green-500">
+<h3 class="text-xl font-bold text-gray-900 dark:text-white">Patrick Liekhus</h3>
 <p class="text-green-500 font-semibold">Instructor</p>
-<p class="text-sm text-gray-500 dark:text-gray-400">4 years</p>
-</div>
-</div>
+<p class="text-sm text-gray-500 dark:text-gray-400 mb-4">4 years</p>
+<a href="https://www.linkedin.com/in/patrickliekhus/" class="text-blue-500 hover:text-blue-600 text-sm font-semibold" aria-label="Patrick Liekhus on LinkedIn">LinkedIn →</a>
 </div>
 
 </div>
