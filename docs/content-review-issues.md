@@ -173,6 +173,14 @@ Every item below contains content that was AI-generated without verified facts. 
 - Twitter: `fluxfellowship`
 - **Action needed:** Do these accounts exist?
 
+### Issue 22: Get Involved page needs full redesign
+**File:** `content/get-involved.md`
+- Currently a massive wall of markdown text — no photos, no visual layout
+- Only page without a hero photo header
+- Volunteer roles, training program, donation tiers, email addresses all need verification (see Issues 14, 15, 16)
+- Needs the same inline HTML treatment as other pages (cards, sections, CTAs)
+- **Action needed:** Decide which volunteer roles/programs are real, then rebuild the page with proper visual layout
+
 ---
 
 ## How to Work Through This
