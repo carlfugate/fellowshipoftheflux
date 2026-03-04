@@ -102,7 +102,7 @@ params:
   # Custom parameters
   brand:
     name: 'Project Name'
-    logo: '/images/logo.png'
+    logo: ''
   social:
     github: 'username'
     twitter: 'handle'
@@ -130,7 +130,6 @@ draft: false
 description: "Page description for SEO"
 tags: ["tag1", "tag2"]
 categories: ["category"]
-featured_image: "/images/featured.jpg"
 ---
 ```
 

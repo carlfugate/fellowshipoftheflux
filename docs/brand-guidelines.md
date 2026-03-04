@@ -87,16 +87,10 @@ Born from the maker and cybersecurity communities in Kansas City, Fellowship of 
 
 ### Logo Usage
 
-#### Primary Logo Elements
-- Fellowship of the Flux wordmark
-- Soldering iron icon (when standalone icon needed)
-- Combined logo + tagline for formal usage
-
-#### Logo Guidelines
+The site currently uses a text-only wordmark ("FELLOWSHIP OF THE FLUX") rendered in Inter Bold uppercase. No logo image file is in use. If a logo is designed in the future:
 - Maintain clear space equal to the height of the "F" in Fellowship
-- Use on light backgrounds primarily
-- Dark version available for light backgrounds
-- Single color versions for special applications
+- Provide light and dark background versions
+- Create single-color versions for special applications
 
 ## Content Strategy
 

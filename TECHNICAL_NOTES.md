@@ -1,74 +1,70 @@
-# Fellowship of the Flux - Technical Issues & Solutions
+# Fellowship of the Flux - Technical Notes
 
-## Date: 2026-02-28
+## Architecture Decisions
 
-### Issues Identified
+### Static CSS instead of Hugo Pipes (2026-02-28)
+- Hugo 0.157.0 has stricter resource caching; `resources.PostProcess` causes cache errors
+- CSS is served from `/static/css/` as pre-built files
+- `main.css` is built via PostCSS (`npm run build:css`), `custom.css` is hand-written
+- Cache busting uses `?v={{ now.Unix }}` query strings (per-build, not per-file-change)
 
-1. **Hugo Version Mismatch**
-   - Workflows used Hugo 0.153.3 and 0.128.0
-   - Local had Hugo 0.157.0
-   - **Solution**: Updated all workflows to 0.157.0
+### Goldmark `unsafe: true` required (2026-03-02)
+- Content pages (about, services, community, lab-setup, contact) use inline HTML extensively
+- Setting `unsafe: false` in production would break all these pages
+- Both base and production configs now set `unsafe: true`
 
-2. **Deprecated Cache Configs**
-   - `getcsv` and `getjson` cache types removed in Hugo 0.157.0
-   - **Solution**: Removed from all config files (config.yaml, config.dev.yaml, config.production.yaml)
+### Text-only brand name, no logo (2026-03-03)
+- Logo SVG file was missing/broken and never displayed correctly
+- Removed all logo `<img>` references from nav, footer, and head preload
+- Config `brand.logo` set to empty string
+- Site uses text wordmark "FELLOWSHIP OF THE FLUX" in nav and footer
 
-3. **Theme Duplicate Markup Key**
-   - Tailbliss theme had duplicate `markup:` keys at lines 16 and 199
-   - **Solution**: Fixed in theme submodule commit f27ce79b
+### RSS and 404 pages enabled in production (2026-03-02)
+- Production config previously disabled RSS and 404 via `disableKinds`
+- Footer links to `/index.xml` (RSS), so disabling it caused 404s
+- Both are now enabled in all environments
 
-4. **PostCSS Resource Processing Issue**
-   - `resources.PostProcess` causes cache errors in Hugo 0.157.0
-   - Custom CSS processing fails with "resource not found in file cache"
-   - **Root Cause**: Hugo 0.157.0 has stricter resource caching/processing
-   - **Solution**: Simplified CSS processing, removed PostProcess
+## Issues & Fixes Log
 
-5. **Template Variable Shadowing**
-   - head.html used `:=` for reassignment causing scope issues
-   - **Solution**: Changed to `=` for reassignment
+### 2026-03-02: Site Review Fixes
 
-### Current Status
+1. **Contact page was placeholder** — Rewrote with real Fellowship emails and workshop CTA
+2. **Logo path wrong** — `config.yaml` referenced nonexistent `fellowship-logo.svg`; changed to `site-logo.svg`, later removed entirely
+3. **GitHub Actions missing production config** — Build step now uses `--config config.yaml,config.production.yaml`
+4. **Production disabled RSS/404** — Removed `disableKinds` from production config
+5. **Inconsistent stats** — Aligned community page numbers with about page (30+ volunteers, 25+ events)
+6. **Hardcoded workshop date** — Replaced "March 15th - 3 spots left" with evergreen text
+7. **Posts index boilerplate** — Replaced web dev description with Fellowship-specific text
+8. **Malformed Alpine.js link tag** — Had two `rel` attributes; fixed to single `rel="preload"`
+9. **Missing canonical URL** — Added `<link rel="canonical">` to head partial
+10. **14 broken featured_image references** — Removed from all content front matter (image files never existed)
+11. **Dead theme copy** — Removed `themes/tailbliss-full` directory
+12. **Stale disabled workflow** — Removed `.github/workflows/deploy.yml.disabled`
 
-- Site builds successfully without custom CSS
-- Need to fix custom CSS processing for full functionality
+### 2026-02-28: Initial Setup Fixes
 
-### Recommended Approach
+1. **Hugo version mismatch** — Standardized all workflows to Hugo 0.157.0
+2. **Deprecated cache configs** — Removed `getcsv`/`getjson` cache types (removed in Hugo 0.157.0)
+3. **Theme duplicate markup key** — Fixed in theme submodule commit f27ce79b
+4. **PostCSS resource processing** — Switched to static CSS files
+5. **Template variable shadowing** — Changed `:=` to `=` for reassignment in head.html
+6. **Unprocessed @import in custom.css** — Removed Tailwind @import statements; Tailwind already in main.css
 
-1. Simplify custom CSS - don't use PostCSS pipeline
-2. Or: Use static CSS file in /static/css/ instead of Hugo pipes
-3. Update GitHub Actions to use Hugo 0.157.0 (done)
-4. Keep theme as submodule with our fix
+## Pre-Commit Hook
 
-### Files Modified
+Location: `.git/hooks/pre-commit`
 
-- `.github/workflows/deploy.yml` - Hugo version update
-- `.github/workflows/hugo.yml` - Hugo version update  
-- `config.yaml` - Removed deprecated caches, fixed markup duplication
-- `config.dev.yaml` - Removed deprecated caches
-- `config.production.yaml` - Removed deprecated caches
-- `layouts/partials/head.html` - Fixed variable shadowing, disabled custom CSS temporarily
-- `themes/tailbliss` - Submodule updated to f27ce79b (duplicate markup fix)
+Runs `npm test` before every commit, which:
+- Builds the site with Hugo
+- Checks critical files exist
+- Validates homepage content
+- Checks git cleanliness
 
-## Pre-Commit Hook (Added 2026-02-28)
+Bypass with `git commit --no-verify` if needed.
 
-### Issue
-CSS formatting was broken on live site because `@import` statements in `custom.css` weren't being processed in production builds.
+## Build & Deploy
 
-### Root Cause
-- `custom.css` had `@import "tailwindcss/..."` statements
-- Hugo serves CSS files as-is without PostCSS processing
-- Tests passed locally but site was broken in production
-
-### Solution
-1. **Removed @import statements** - Tailwind already included in main.css
-2. **Added pre-commit hook** - Runs `npm test` before every commit
-3. **Kept only custom styles** - Animations and engagement enhancements
-
-### Pre-Commit Hook Location
-`.git/hooks/pre-commit` - Automatically runs tests before allowing commits
-
-### Benefits
-- ✅ Catches build issues before commit
-- ✅ Prevents broken deployments
-- ✅ No manual testing needed
-- ✅ Can bypass with `--no-verify` if needed
+- Local dev: `npm run dev` (port 1313)
+- Production build: `npm run build` (uses PostCSS + Hugo with minification)
+- Deploy: Push to `master` → GitHub Actions builds with production config → GitHub Pages
+- Post-deploy test: `scripts/test-deployment.sh` runs automatically in CI
