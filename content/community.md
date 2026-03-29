@@ -80,17 +80,16 @@ Connect with makers, educators, and learners passionate about hands-on learning 
 <!-- Upcoming Events -->
 <section class="container mx-auto px-4 py-16 max-w-6xl">
 <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">Upcoming Events</h2>
-<div class="grid md:grid-cols-2 gap-8">
+<div class="grid md:grid-cols-3 gap-8">
 
 <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg border-l-4 border-orange-500 hover:shadow-2xl transition-all">
 <div class="flex items-start justify-between mb-4">
 <div>
-<div class="text-sm font-semibold text-orange-500 mb-1">MARCH 15-16, 2024</div>
+<div class="text-sm font-semibold text-orange-500 mb-1">APRIL 25, 2026</div>
 <h3 class="text-2xl font-bold text-gray-900 dark:text-white">BSides Kansas City</h3>
 </div>
-<div class="text-3xl">🎯</div>
 </div>
-<p class="text-gray-600 dark:text-gray-300 mb-4">Learn to Solder Village with beginner and advanced workshops at Kansas City's premier cybersecurity conference</p>
+<p class="text-gray-600 dark:text-gray-300 mb-4">Learn to Solder Village at KC's premier cybersecurity conference — Kansas City Kansas Community College</p>
 <div class="flex gap-2">
 <span class="inline-block bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 px-3 py-1 rounded-full text-sm">Beginner Friendly</span>
 <span class="inline-block bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full text-sm">Advanced Track</span>
@@ -100,15 +99,28 @@ Connect with makers, educators, and learners passionate about hands-on learning 
 <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg border-l-4 border-blue-500 hover:shadow-2xl transition-all">
 <div class="flex items-start justify-between mb-4">
 <div>
-<div class="text-sm font-semibold text-blue-500 mb-1">JUNE 22-23, 2024</div>
-<h3 class="text-2xl font-bold text-gray-900 dark:text-white">MakerFaire KC</h3>
+<div class="text-sm font-semibold text-blue-500 mb-1">JUNE 13, 2026</div>
+<h3 class="text-2xl font-bold text-gray-900 dark:text-white">BSides Des Moines</h3>
 </div>
-<div class="text-3xl">🎪</div>
 </div>
-<p class="text-gray-600 dark:text-gray-300 mb-4">Family-friendly hands-on soldering workshops at Union Station. Perfect for all ages!</p>
+<p class="text-gray-600 dark:text-gray-300 mb-4">Soldering village at Iowa's community-driven cybersecurity conference — FFA Center, Ankeny, IA</p>
 <div class="flex gap-2">
-<span class="inline-block bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 px-3 py-1 rounded-full text-sm">Family Friendly</span>
-<span class="inline-block bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 px-3 py-1 rounded-full text-sm">All Ages</span>
+<span class="inline-block bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 px-3 py-1 rounded-full text-sm">Beginner Friendly</span>
+<span class="inline-block bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 px-3 py-1 rounded-full text-sm">Hands-On</span>
+</div>
+</div>
+
+<div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg border-l-4 border-green-500 hover:shadow-2xl transition-all">
+<div class="flex items-start justify-between mb-4">
+<div>
+<div class="text-sm font-semibold text-green-500 mb-1">OCTOBER 24, 2026</div>
+<h3 class="text-2xl font-bold text-gray-900 dark:text-white">OzSec</h3>
+</div>
+</div>
+<p class="text-gray-600 dark:text-gray-300 mb-4">Soldering village at Wichita's premier infosec conference — Hyatt Regency Wichita, KS</p>
+<div class="flex gap-2">
+<span class="inline-block bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 px-3 py-1 rounded-full text-sm">Beginner Friendly</span>
+<span class="inline-block bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full text-sm">Villages</span>
 </div>
 </div>
 
