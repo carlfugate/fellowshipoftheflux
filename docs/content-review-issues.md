@@ -26,5 +26,5 @@ Status as of 2026-11-22. This repository-local record accompanies PR #27 and the
 ## Release tracking
 
 - Local branch: `redesign/workshop-field-guide`.
-- Draft PR: [#27 — Redesign as a soldering field guide](https://github.com/carlfugate/fellowshipoftheflux/pull/27). The last remote CI run predates the latest local commits.
+- Draft PR: [#27 — Redesign as a soldering field guide](https://github.com/carlfugate/fellowshipoftheflux/pull/27). CI passed on commit `27de647` with Hugo 0.157.0 and Ubuntu 24.04; local build, link and responsive/a11y journeys also passed.
 - GitHub owner-account write access is available for updating issue #26 and pushing the release branch. Do not merge or deploy until the owner and instructor checks above are complete.
