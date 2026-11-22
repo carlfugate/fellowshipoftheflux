@@ -85,6 +85,7 @@ async function run() {
     await page.locator('.start-assessment').click();
     assert.ok(await page.getByRole('dialog').isVisible());
     assert.equal(await page.locator(':focus').textContent(), 'Question 1 of 3');
+    assert.equal(await page.locator('.question p').textContent(), 'What should determine the station setting for a soldering task?');
     const dialogBounds = await page.locator('dialog').boundingBox();
     const questionTextBounds = await page.locator('.question p').boundingBox();
     await page.mouse.move(questionTextBounds.x + 4, questionTextBounds.y + 4);
@@ -97,6 +98,9 @@ async function run() {
     assert.equal(await page.locator('.start-assessment').evaluate(el => el === document.activeElement), true);
     await page.locator('.start-assessment').click();
     for (let question = 0; question < 3; question++) {
+      if (question === 2) {
+        assert.equal(await page.locator('.question p').textContent(), 'What is a useful first visual check of a through-hole joint?');
+      }
       await page.locator('.option input').nth(1).check();
       await page.locator(question === 2 ? '.submit-assessment' : '.next-question').click();
       if (question < 2) assert.equal(await page.locator(':focus').textContent(), `Question ${question + 2} of 3`);
@@ -144,13 +148,15 @@ async function run() {
     }
     await page.goto('/get-involved/');
     assert.ok(await page.getByText('Volunteer roles and the steps to get started will be listed here after the team confirms them.').isVisible());
+    await page.goto('/contact/');
+    assert.ok(await page.getByText('Workshop, volunteer and general inquiry addresses are being checked.').isVisible());
     const noJS = await browser.newPage({ baseURL, javaScriptEnabled: false, viewport: { width: 390, height: 844 } });
     await noJS.goto('/');
     assert.ok(await noJS.getByRole('navigation', { name: 'Main navigation' }).getByText('Learn to solder').isVisible());
     assert.deepEqual(errors, []);
     const routes = [
       '/', '/learn/', '/services/', '/community/', '/about/', '/contact/', '/get-involved/',
-      '/learn/tutorials/basic-through-hole-soldering/', '/learn/guides/soldering-tools-guide/',
+      '/learn/tutorials/basic-through-hole-soldering/', '/learn/tutorials/smd-soldering-basics/', '/learn/guides/soldering-tools-guide/',
       '/learn/projects/', '/projects/', '/posts/', '/lab-setup/'
     ];
     const viewports = [{ width: 1440, height: 900 }, { width: 820, height: 1024 }, { width: 390, height: 844 }];
@@ -177,7 +183,7 @@ async function run() {
       }
     }
     assert.deepEqual([...violations.keys()], [], `axe-core reported violations:\n${[...violations].map(([key, count]) => `${key} (${count} scans)`).join('\n')}`);
-    console.log(`Keyboard navigation, workshop info, lesson supplies, saved learning state, supported quiz, unpublished unsafe content, catalog filters, contact placeholder, theme persistence, script-free navigation, axe-core (39 route/view checks), no email CTAs, mobile overflow and CLS ${cls.toFixed(3)} passed.`);
+    console.log(`Keyboard navigation, workshop info, lesson supplies, saved learning state, supported quiz, unpublished unsafe content, catalog filters, workshop placeholders, theme persistence, script-free navigation, axe-core (${routes.length * viewports.length} route/view checks), no email CTAs, mobile overflow and homepage CLS ${cls.toFixed(3)} passed.`);
   } finally {
     await browser?.close();
     server?.kill('SIGTERM');

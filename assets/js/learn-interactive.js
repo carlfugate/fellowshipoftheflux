@@ -143,10 +143,15 @@ class LearnTracker {
                 title: 'Basic Soldering Assessment',
                 questions: [
                     {
-                        question: 'What temperature should you set for leaded solder?',
-                        options: ['250°C', '350°C', '450°C', '550°C'],
+                        question: 'What should determine the station setting for a soldering task?',
+                        options: [
+                            'A single temperature used for every soldering job',
+                            'The station, tip, solder and component instructions, with instructor guidance',
+                            'The temperature printed on the solder spool alone',
+                            'The highest setting available on the station'
+                        ],
                         correct: 1,
-                        explanation: '350°C (660°F) is the optimal temperature for leaded solder.'
+                        explanation: 'The suitable setting depends on the equipment, tip, solder and components. Check their instructions with the instructor.'
                     },
                     {
                         question: 'Why do you tin the soldering iron tip?',
@@ -160,15 +165,15 @@ class LearnTracker {
                         explanation: 'Tinning improves heat transfer and prevents tip oxidation.'
                     },
                     {
-                        question: 'What indicates a good solder joint?',
+                        question: 'What is a useful first visual check of a through-hole joint?',
                         options: [
-                            'Dull, grainy surface',
-                            'Shiny, smooth concave fillet',
-                            'Large blob of solder',
-                            'Minimal solder coverage'
+                            'Judge the joint by whether it looks shiny',
+                            'Look for visible wetting on the pad and lead, check adjacent pads, then ask the instructor to assess it against project criteria',
+                            'Add a large blob to cover the pad',
+                            'Assume a dull joint is always defective'
                         ],
                         correct: 1,
-                        explanation: 'A good joint has a shiny, smooth surface with a concave fillet shape.'
+                        explanation: 'Visible wetting and adjacent-pad checks are useful clues, but surface gloss alone cannot establish whether a joint meets the project criteria.'
                     }
                 ]
             }

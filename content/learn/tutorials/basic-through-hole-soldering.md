@@ -5,21 +5,19 @@ draft: false
 description: "Learn the fundamentals of through-hole soldering with this comprehensive step-by-step tutorial"
 difficulty: "beginner"
 duration: "45 minutes"
-tools_required: 
-  - "Soldering station and solder selected for the project"
-  - "Flux paste"
-  - "Desoldering braid"
-  - "Wire strippers"
+tools_required:
+  - "Soldering station, iron and stand selected for the project"
   - "Safety glasses"
+  - "Purpose-designed fume extractor or venue local exhaust"
+  - "Hand tools selected by the instructor for the board and components"
 materials_required:
-  - "Perfboard or breadboard"
-  - "Through-hole resistors (various values)"
-  - "Through-hole LEDs"
-  - "22 AWG solid core wire"
+  - "Perfboard or solderable prototyping board"
+  - "Components and layout selected by the instructor"
+  - "Solder and flux selected for the board and components"
 learning_objectives:
   - "Choose a station setting with the equipment instructions and instructor"
-  - "Create strong, reliable solder joints"
-  - "Identify and fix common soldering problems"
+  - "Practice making solder joints with instructor guidance"
+  - "Recognize visible problems and know when to ask for help"
   - "Practice component placement and orientation"
 prerequisites:
   - "Basic understanding of electronic components"
@@ -33,14 +31,14 @@ skill_assessment: true
 
 ## Overview
 
-Through-hole soldering is the foundation of electronics assembly. In this tutorial, you'll learn to create professional-quality solder joints that are both mechanically and electrically sound.
+Through-hole soldering is a common electronics assembly method. This introduction gives you a guided first practice with components, tools and joints on a board approved by your instructor.
 
 ## Learning Objectives
 
 By the end of this tutorial, you will be able to:
 - Set up your soldering station properly
-- Create consistent, reliable solder joints
-- Identify and correct common soldering defects
+- Practice making consistent joints with instructor guidance
+- Recognize visible problems and ask for help before rework
 - Solder various through-hole components safely
 
 ## Prerequisites
@@ -55,7 +53,9 @@ Before starting this tutorial, you should:
 
 - Use a purpose-designed solder fume extractor or local exhaust selected for the materials and room. Position and operate it according to its maker and your instructor; a room fan is not a substitute for source capture.
 - Wear eye protection and keep the hot iron in its stable stand whenever it is not in use.
-- If materials contain lead, keep food and drinks out of the work area, avoid touching your face while working, and wash your hands with soap and water when finished. Follow the venue's cleanup and waste procedures.
+- Keep food and drinks out of the work area, avoid touching your face while working, and wash your hands with soap and water after soldering. Follow the venue's cleanup and waste procedures.
+- Freshly soldered leads and boards can remain hot after the iron is removed. Do not touch them until the instructor confirms they have cooled.
+- If materials contain lead, follow the instructor's lead-handling and waste instructions.
 - Check the solder and flux safety data, station instructions and venue procedures with your instructor before starting. Stop if the extraction or work area is not set up as instructed.
 
 These are general reminders, not a site-specific safety plan. Your instructor and venue procedures take precedence. See [RPI's soldering safety guidance](https://ehs.rpi.edu/lab-research-shop-safety/soldering-safety-guidelines) and the [EPA's lead-exposure precautions for hobbies](https://www.epa.gov/lead/reduce-risk-lead-exposure-home).
@@ -69,7 +69,7 @@ Set up the station and source-capture equipment as directed by your instructor a
 1. **Position your soldering iron** in its stand
 2. **Clean the work surface** and remove any flammable materials
 3. **Arrange your tools** within easy reach
-4. **Put on safety glasses** and ensure good lighting
+4. **Put on safety glasses**, ensure good lighting, and check with the instructor that the board is disconnected from power before soldering
 
 **Tip:** A good workspace setup prevents accidents and improves soldering quality.
 
@@ -89,7 +89,7 @@ Proper iron preparation is crucial for good solder joints:
 Before soldering, prepare your components properly:
 
 1. **Bend component leads** to fit the board holes
-2. **Insert components** from the component side
+2. Check each component's identity and orientation against the instructor-provided layout, then **insert components** from the component side
 3. **Bend leads slightly** on the solder side to hold components
 4. Follow the instructor's board-specific directions for securing and trimming leads.
 
@@ -104,9 +104,11 @@ Now for the actual soldering technique:
 
 **The key:** Heat the joint, not the solder!
 
+If solder does not flow as demonstrated, stop and ask the instructor rather than continuing to heat the joint.
+
 ### Step 5: Inspect Your Work
 
-For a first visual check, look for solder that has wetted both the pad and lead and formed a continuous fillet. Check neighboring pads for an unintended solder connection. A joint's finish can range from satin to bright, so gloss alone does not show whether it is sound. Visual inspection cannot confirm hidden hole fill or electrical continuity; have the instructor check the board using the project criteria. See the [NASA Student Handbook for Hand Soldering](https://s3vi.ndc.nasa.gov/ssri-kb/static/resources/NASA%20Student%20Handbook%20for%20Hand%20Soldering.pdf) for example inspection characteristics. Those aerospace criteria are a reference, not a substitute for the instructor's requirements for this project.
+Wait until the board is cool and disconnected from power. With good lighting and the magnification your instructor recommends, look for solder that visibly wets both the pad and lead and forms a continuous fillet. Check neighboring pads for an unintended connection and confirm component orientation against the layout. Surface appearance varies with solder alloy and board design; gloss alone is not a pass/fail test. A visual check cannot establish electrical continuity or isolation, component condition, or the integrity of an internal plated barrel when the board has one. Ask the instructor to inspect the work against the criteria for this project before power is connected.
 
 ### Step 6: Practice Different Components
 
@@ -114,15 +116,14 @@ Try soldering various components to build your skills:
 
 1. **Resistors** - Start with these as they're forgiving
 2. **LEDs** - Practice polarity awareness
-3. **Capacitors** - Learn about heat-sensitive components
-4. **IC sockets** - Develop precision for multiple pins
+3. **Other components** selected for the exercise, following their orientation and handling instructions; ask the instructor to confirm polarity before soldering any marked or polarized part
 
 ## Troubleshooting
 
 ### Common Problems and Solutions
 
-**Cold Solder Joint**
-- *What to check:* Look for solder that has not visibly wetted the pad or lead, or for a crack or void. Do not diagnose a joint from its shine alone.
+**Poor wetting, cracks, or other joint concerns**
+- *What to check:* Once the board is cool and disconnected from power, look for solder that has not visibly wetted the pad or lead, or for a crack. Do not diagnose a joint from its shine alone.
 - *Next step:* Ask the instructor to inspect it and direct any rework.
 
 **Solder Bridge**
@@ -133,12 +134,15 @@ Try soldering various components to build your skills:
 - *What to check:* Stop if a copper pad appears loose or separated from the board.
 - *Next step:* Keep the board unpowered and have the instructor assess it. A jumper repair needs a verified circuit path and an experienced instructor.
 
+## End the session
+
+Return the iron to its stand, then turn off the station using its instructions and the venue procedure. Let the board and components cool before handling or storing them.
+
 ## Practice Exercises
 
-1. **Solder 10 resistors** to perfboard in a neat row
+1. **Solder 10 resistors** to an instructor-approved solderable board in a neat row
 2. **Place components** on a practice board using the instructor-provided layout
-3. **Practice desoldering** and component replacement
-4. **Practice replacing a component** using the instructor's board and procedure
+3. **With instructor direction, observe or practice component removal and replacement** using the approved board and procedure
 
 ## Next Steps
 
@@ -156,4 +160,4 @@ Test your understanding:
 3. What are the characteristics of a good solder joint?
 4. What should you do if a joint appears not to have wetted the pad or lead?
 
-*Answers available after completing the tutorial.*
+*Use these prompts for a review with your instructor. The interactive quiz below checks a separate set of questions.*

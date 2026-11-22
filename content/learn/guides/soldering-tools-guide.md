@@ -166,7 +166,7 @@ Flux fumes can irritate or sensitize. Have the venue or a qualified instructor s
 **Safety planning:**
 - Identify the venue's first-aid and emergency procedures before work begins.
 - Ask the venue's responsible person to select and locate fire-safety equipment for the room and activity.
-- Keep food and drinks out of the soldering area. If using lead-containing materials, avoid touching the face and wash hands with soap and water afterward; follow venue cleanup and waste procedures. See the [EPA's lead-exposure precautions for hobbies](https://www.epa.gov/lead/reduce-risk-lead-exposure-home).
+- Keep food and drinks out of the soldering area, avoid touching the face while working, and wash hands with soap and water after soldering. Follow the instructor's cleanup and waste procedures. If using lead-containing materials, follow the instructor's lead-handling instructions. See the [EPA's lead-exposure precautions for hobbies](https://www.epa.gov/lead/reduce-risk-lead-exposure-home).
 
 ## Plan a setup
 
