@@ -2,6 +2,8 @@
 
 The homepage leads directly to the first lesson. The library supports topic search and skill-level filtering. Lesson pages expose materials, bookmarks, completion and a keyboard-operable quiz. Hosts can compare the three workshop packages or email the team from the introduction. The community calendar labels dates by year. Site navigation, articles, resource indexes and information pages share a local design system.
 
+The Community page now groups its three documented 2026 event entries under an annual history, with date markers, city labels and a compact soldering-village format label. It does not add attendance figures or quotes. The desktop/mobile browser preview could not be captured in this session: the local Playwright CLI is not installed, and the available Firefox automation did not display the local page. Recheck the rendered Community page when browser automation is available.
+
 ## Browser evidence
 
 | View | Before | After |
@@ -18,7 +20,7 @@ The homepage leads directly to the first lesson. The library supports topic sear
 
 ## Validation
 
-- Production build and repository smoke tests passed on local Hugo 0.170.1. Pages CI pins 0.157.0. The hosted workflow was not run.
+- Production build and repository smoke tests passed on local Hugo 0.170.1 after the event archive update. Pages CI pins 0.157.0. The hosted workflow was not rerun for this update.
 - The generated-site crawl verified all 123 HTML files, internal links, fragment targets and referenced local assets in the crawl. Every baseline HTML route exists.
 - Playwright completed keyboard skip navigation, menu open and Escape, workshop and volunteer mailto handoffs, supplies disclosure, persistent bookmarks and completion, quiz submission and retake, search empty state and recovery, legacy level query, dark-mode persistence and mobile navigation without JavaScript. No uncaught page errors in those journeys. No email was sent.
 - Each version was scanned with axe-core on 12 routes at 1440 × 900, 820 × 1024 and 390 × 844. Scans reporting a WCAG A/AA violation fell from 36 to 0 of 36. Page-level horizontal overflow fell from 12 to 0 of 36. Automated checks do not establish full accessibility conformance.

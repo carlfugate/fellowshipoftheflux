@@ -12,15 +12,23 @@ action_url: "/get-involved/"
 action_text: "Volunteer with us"
 ---
 
-<section class="manual-section">
-<h2 id="past-events">Past events</h2>
-<p>Our volunteers bring hands-on soldering activities to technology conferences across the region.</p>
+<section class="manual-section event-archive" aria-labelledby="past-events">
+<div class="event-archive-heading">
+<div>
+<p class="eyebrow">Out in the community</p>
+<h2 id="past-events">Event history</h2>
+<p>A record of the conferences where we’ve brought hands-on soldering to the community.</p>
+</div>
+<a class="event-archive-action" href="mailto:community@fellowshipoftheflux.com">Ask about future events <span aria-hidden="true">↗</span></a>
+</div>
+<div class="event-year">
+<h3><span>2026</span><span class="event-year-rule" aria-hidden="true"></span></h3>
 <ol class="event-history">
-<li><time datetime="2026-10-24">October 24, 2026</time><h3>OzSec</h3><p>Wichita, Kansas</p></li>
-<li><time datetime="2026-06-13">June 13, 2026</time><h3>BSides Des Moines</h3><p>Ankeny, Iowa</p></li>
-<li><time datetime="2026-04-25">April 25, 2026</time><h3>BSides Kansas City</h3><p>Kansas City, Kansas</p></li>
+<li><time datetime="2026-04-25"><span>APR</span><strong>25</strong></time><div><h4>BSides Kansas City</h4><p>Kansas City, Kansas</p><span class="event-format">Soldering village</span></div><span class="event-index" aria-hidden="true">01</span></li>
+<li><time datetime="2026-06-13"><span>JUN</span><strong>13</strong></time><div><h4>BSides Des Moines</h4><p>Ankeny, Iowa</p><span class="event-format">Soldering village</span></div><span class="event-index" aria-hidden="true">02</span></li>
+<li><time datetime="2026-10-24"><span>OCT</span><strong>24</strong></time><div><h4>OzSec</h4><p>Wichita, Kansas</p><span class="event-format">Soldering village</span></div><span class="event-index" aria-hidden="true">03</span></li>
 </ol>
-<p><a href="mailto:community@fellowshipoftheflux.com">Ask about upcoming events</a>.</p>
+</div>
 </section>
 
 

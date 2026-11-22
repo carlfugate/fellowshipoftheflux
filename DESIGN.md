@@ -8,6 +8,7 @@ The visual reference is a dog-eared electronics field manual. The homepage intro
 - Give each introduction one filled action. Use a plain underlined link for a secondary action. Use arrows to indicate a destination, a visible underline for the current section, and text labels on controls. Keep focus rings visible, controls at least 44 px tall and body contrast at least 4.5:1.
 - Collapse split layouts at 760 px and navigation at 920 px. Stack text before photography on phones. Keep the host action accessible inside the mobile menu. Preserve semantic headings, keyboard access, system theme preference and a manual theme toggle.
 - Use short color transitions for hover. Avoid motion on initial paint. Honor reduced motion and let all navigation and content work without external scripts.
+- Keep upcoming announcements separate from a year-grouped event archive. Archive entries use a date marker, event name, city and concise workshop format; publish attendance, quotes and partner details only when sourced. Stack archive entries on narrow screens.
 
 ## Visual design for lessons and workshops
 
