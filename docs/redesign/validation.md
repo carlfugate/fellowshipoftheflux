@@ -28,7 +28,7 @@ The Community page groups its three confirmed 2026 events under an annual histor
 - axe-core reported zero WCAG A/AA violations across 13 routes at 1440 × 900, 820 × 1024 and 390 × 844 (39 route/view checks). The earlier baseline recorded 36 violating scans across its 36 checks. Automated checks do not establish full accessibility conformance.
 - HTML/CSS validation did not run because the machine has no Java runtime for vnu-jar.
 - The rendered review led to replacing a sideways About photograph, prioritizing the featured lesson photograph, collapsing lengthy mobile outlines, simplifying package markup, and giving the scrollable equipment table keyboard focus and a name. The About gallery was reduced from eight to two images; its Lighthouse transfer fell from about 2.24 MB to 390 KB.
-- A second read-only Agy review identified unverified soldering temperatures, incomplete lead-hygiene reminders, and a misleading generic-fan ventilation suggestion. The public lessons now defer settings to the equipment maker and instructor, use source-capture guidance, cite EPA and RPI EHS sources, and avoid unsupported thresholds. The standalone safety guide remains draft; qualified instructor review is still required before launch.
+- A second read-only Agy review identified unverified soldering temperatures, incomplete lead-hygiene reminders, and a misleading generic-fan ventilation suggestion. The public lessons now defer settings and flux-cleanup choices to the equipment maker and instructor, use source-capture guidance, cite EPA and RPI EHS sources, and avoid unsupported thresholds. The standalone safety guide remains draft; qualified instructor review is still required before launch.
 
 ## Lighthouse
 

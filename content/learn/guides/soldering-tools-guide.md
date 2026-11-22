@@ -43,30 +43,7 @@ Select solder for the components, application and applicable rules. Lead-contain
 
 ### Flux and Cleaning
 
-#### Flux Types
-
-**Rosin Flux**
-- **Characteristics:** Mildly corrosive, easy cleanup
-- **Applications:** General electronics work
-- **Cleanup:** Isopropyl alcohol
-
-**No-Clean Flux**
-- **Characteristics:** Minimal residue, no cleanup required
-- **Applications:** Production environments
-- **Cleanup:** Optional with specialized solvents
-
-**Water-Soluble Flux**
-- **Characteristics:** Highly active, requires thorough cleaning
-- **Applications:** Difficult joints, repair work
-- **Cleanup:** Deionized water
-
-#### Cleaning Supplies
-
-- **Isopropyl Alcohol (99%)**: General cleaning and flux removal
-- **Flux Remover**: Specialized solvents for stubborn residues
-- **Cotton Swabs**: Precision cleaning
-- **Lint-Free Wipes**: Surface cleaning without contamination
-- **Ultrasonic Cleaner**: Professional-grade cleaning for complex assemblies
+Flux chemistry and residue requirements vary by product and application. Select the flux specified for the project, then follow its manufacturer's safety data and cleaning instructions. Do not assume a residue can be left in place or that a general-purpose solvent is compatible with a board, coating or component. Confirm the cleanup method with the instructor before use.
 
 ### Desoldering Tools
 
