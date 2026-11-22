@@ -1,6 +1,6 @@
 # Redesign validation
 
-The homepage leads directly to the first lesson. The library supports topic search and skill-level filtering. Lesson pages expose materials, bookmarks, completion and a keyboard-operable quiz. Hosts can compare the three workshop packages or email the team from the introduction. The community calendar labels dates by year. Site navigation, articles, resource indexes and information pages share a local design system.
+The homepage leads directly to the first lesson. The library supports topic search and skill-level filtering. Lesson pages expose materials, bookmarks, completion and a keyboard-operable quiz. Workshop details and volunteer opportunities explain which facts and contact routes are still being confirmed. The community page records the three confirmed 2026 events. Site navigation, resource indexes and information pages share a local design system.
 
 The Community page groups its three confirmed 2026 events under an annual history, with date markers, city labels and a compact soldering-village format label. It does not add attendance figures or quotes. Desktop and mobile screenshots are included below.
 
@@ -23,29 +23,27 @@ The Community page groups its three confirmed 2026 events under an annual histor
 ## Validation
 
 - Production build, repository smoke tests and Hugo route/template validation passed on local Hugo 0.170.1. Hugo reported existing deprecated config keys and unused templates. Pages CI pins 0.157.0; hosted CI was not rerun.
-- The local link checker verified all 123 generated HTML files, their internal links, fragment targets and referenced local assets.
-- Playwright with Firefox completed skip navigation, mobile menu keyboard behavior and resize closing, mailto handoffs, supplies disclosure, persistent bookmarks and completion, quiz submission/retake/focus/backdrop handling, code copying, event history, catalog search and filters, theme persistence, and no-JavaScript navigation. No uncaught page errors. CLS was 0.000 on mobile, with no horizontal overflow at 39 route/view combinations.
+- The local link checker verified all 56 generated HTML files, their internal links, fragment targets and referenced local assets. The production build contains 58 pages; unsupported posts and projects are excluded as drafts.
+- Playwright with Firefox completed skip navigation, mobile menu keyboard behavior and resize closing, supplies disclosure, persistent bookmarks and completion, quiz submission/retake/focus/backdrop handling, event history, catalog search and filters, theme persistence, the contact placeholder, and no-JavaScript navigation. It also confirmed no direct email CTAs in the tested public routes and no broken project links. No uncaught page errors. CLS was 0.000 on mobile, with no horizontal overflow at 39 route/view combinations.
 - axe-core reported zero WCAG A/AA violations across 13 routes at 1440 × 900, 820 × 1024 and 390 × 844 (39 route/view checks). The earlier baseline recorded 36 violating scans across its 36 checks. Automated checks do not establish full accessibility conformance.
 - HTML/CSS validation did not run because the machine has no Java runtime for vnu-jar.
-- The rendered review led to replacing a sideways About photograph, prioritizing the featured lesson photograph, collapsing lengthy mobile outlines, simplifying package markup, and giving the scrollable equipment table keyboard focus and a name.
+- The rendered review led to replacing a sideways About photograph, prioritizing the featured lesson photograph, collapsing lengthy mobile outlines, simplifying package markup, and giving the scrollable equipment table keyboard focus and a name. The About gallery was reduced from eight to two images; its Lighthouse transfer fell from about 2.24 MB to 390 KB.
 
 ## Lighthouse
 
-The baseline and redesign were tested as local production builds. Current figures are medians of three desktop Lighthouse runs on each of ten routes. Lighthouse executed with Chrome after an escalated run outside the workspace sandbox; launching Chrome inside the sandbox repeatedly failed. These are lab measurements, not field data. Current results include the About page's large photography payload, which remains an optimization opportunity.
+The redesign was tested as a local production build with Lighthouse 13.6.0 mobile emulation, three runs on each of ten routes. Lighthouse executed with Chrome outside the workspace sandbox after its launch failed inside the sandbox. These are lab measurements, not field data.
 
-| Metric | Before | After |
-|---|---:|---:|
 | Route | Performance | Accessibility | Best practices | SEO | LCP | Transfer | CLS |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| Home | 100 | 100 | 100 | 100 | 1.50 s | 248 KB | 0.000 |
-| About | 99 | 100 | 100 | 100 | 1.95 s | 2,240 KB | 0.000 |
+| Home | 100 | 100 | 100 | 100 | 1.50 s | 226 KB | 0.000 |
+| About | 100 | 100 | 100 | 100 | 1.73 s | 390 KB | 0.000 |
 | Posts | 100 | 100 | 100 | 100 | 0.90 s | 39 KB | 0.000 |
 | Projects | 100 | 100 | 100 | 100 | 0.90 s | 43 KB | 0.000 |
-| Services | 100 | 100 | 100 | 100 | 1.65 s | 122 KB | 0.000 |
-| Contact | 100 | 100 | 100 | 100 | 0.90 s | 39 KB | 0.000 |
+| Services | 100 | 100 | 100 | 100 | 1.65 s | 121 KB | 0.000 |
+| Contact | 100 | 100 | 100 | 100 | 1.80 s | 155 KB | 0.000 |
 | Learn | 100 | 100 | 100 | 100 | 1.80 s | 129 KB | 0.000 |
 | Tutorials index | 100 | 100 | 100 | 100 | 0.90 s | 43 KB | 0.000 |
 | Guides index | 100 | 100 | 100 | 100 | 0.90 s | 43 KB | 0.000 |
 | Projects index | 100 | 100 | 100 | 100 | 0.90 s | 43 KB | 0.000 |
 
-The baseline Lighthouse accessibility engine could not parse an OKLCH color, so its accessibility score is unavailable. Lighthouse CI was configured to upload reports to temporary public storage during the first completed run; the config now writes reports to local filesystem only. Reports from that run were uploaded by LHCI and their temporary report links were emitted in the command output. No production deployment, field performance data, screen-reader user study or external inbox delivery verification was performed. Tool licenses and dependency status are recorded in [tooling and cost](tooling.md).
+The earlier baseline recorded 58 performance, 9.44 s LCP, 2,547,541 transferred bytes and 0.000 CLS for Home. Its Lighthouse 10.1.0 accessibility engine could not parse an OKLCH color. The current Home run recorded 100 performance, 1.50 s LCP, 225,553 bytes and 0.000 CLS. Lighthouse versions differ, so treat the score comparison as indicative. Lighthouse CI uploaded reports to temporary public storage on the first completed run; its config now writes local reports only. No production deployment, field performance data, screen-reader user study or external inbox delivery check was performed. Tool licenses and dependency status are recorded in [tooling and cost](tooling.md).

@@ -1,7 +1,7 @@
 ---
 title: "The Impact of Hands-On Soldering Education"
 date: 2024-01-10T14:00:00Z
-draft: false
+draft: true
 description: "Exploring how hands-on soldering education builds confidence, technical skills, and community connections for learners of all ages."
 author: "Dr. Jennifer Walsh"
 tags: ["education", "STEM", "community", "skills", "confidence"]

@@ -1,7 +1,7 @@
 ---
 title: "Essential Soldering Techniques and Best Practices"
 date: 2024-01-05T16:00:00Z
-draft: false
+draft: true
 description: "Master essential soldering techniques with practical tips and best practices from Fellowship of the Flux instructors and experienced makers."
 author: "Sarah Chen"
 tags: ["soldering", "techniques", "best practices", "education"]

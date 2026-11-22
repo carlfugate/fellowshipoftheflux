@@ -1,7 +1,7 @@
 ---
 title: "Simple Audio Amplifier"
 date: 2024-01-01T00:00:00Z
-draft: false
+draft: true
 description: "Build a simple audio amplifier using the LM386 IC - perfect for learning analog circuit construction"
 difficulty: "intermediate"
 duration: "3 hours"

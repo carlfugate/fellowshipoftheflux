@@ -1,7 +1,7 @@
 ---
 title: "Welcome to Fellowship of the Flux"
 date: 2024-01-15T10:00:00Z
-draft: false
+draft: true
 description: "Learn about Fellowship of the Flux and our mission to advance soldering education through community outreach and hands-on learning."
 author: "Fellowship Team"
 tags: ["fellowship", "soldering", "community", "education", "STEM"]

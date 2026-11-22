@@ -41,10 +41,6 @@
 {{ else }}
 <meta name="twitter:image" content="{{ "/images/photos/soldering-instruction.jpg" | absURL }}" />
 {{ end }}
-{{ if .Site.Params.social.twitter }}
-<meta name="twitter:site" content="@{{ .Site.Params.social.twitter }}" />
-<meta name="twitter:creator" content="@{{ .Site.Params.social.twitter }}" />
-{{ end }}
 
 <!-- Additional Meta -->
 <meta itemprop="name" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}" />

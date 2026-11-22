@@ -2,20 +2,20 @@
 <div class="frame">
 <section class="opening">
 <div class="intro">
-<p class="eyeline"><span class="signal"></span> Kansas City · Volunteer-run</p>
+<p class="eyeline"><span class="signal"></span> Hands-on soldering education</p>
 <h1>Learn to<br><em>solder.</em></h1>
-<p class="lead">Build your first circuit with people who love to teach. We bring hands-on soldering workshops to communities across the Midwest.</p>
-<div class="actions"><a class="action" href="/learn/tutorials/basic-through-hole-soldering/">Start your first lesson <span aria-hidden="true">→</span></a><a class="quiet" href="/services/">Host a workshop</a></div>
+<p class="lead">Build practical skills with clear lessons, useful guides and room to practice.</p>
+<div class="actions"><a class="action" href="/learn/tutorials/basic-through-hole-soldering/">Start your first lesson <span aria-hidden="true">→</span></a><a class="quiet" href="/services/">Workshop information</a></div>
 </div>
 <figure class="cover">{{ partial "photo.html" (dict "name" "soldering-instruction" "alt" "Hands guiding a soldering iron over a circuit board at the workbench" "priority" true) }}<figcaption><span>At the workbench</span><span>Through-hole soldering</span></figcaption></figure>
 </section>
 <section class="library-preview">
 <div class="section-head"><div><p class="eyeline">Workshop resources</p><h2>The field guide</h2></div><a class="quiet" href="/learn/">Browse the library <span aria-hidden="true">→</span></a></div>
 <div class="feature-grid">
-{{ range slice (dict "name" "lab-equipment" "alt" "Soldering tools laid out on a work mat" "label" "Equipment guide" "title" "Set up your bench" "url" "/learn/guides/soldering-tools-guide/") (dict "name" "workshop-activity" "alt" "A small circuit board held up for inspection" "label" "Beginner project" "title" "Build an LED flasher" "url" "/learn/projects/simple-led-flasher/") (dict "name" "group-workshop" "alt" "Volunteers and learners gathered around a workshop table" "label" "Volunteering" "title" "Teach alongside us" "url" "/get-involved/") }}
+{{ range slice (dict "name" "lab-equipment" "alt" "Soldering tools laid out on a work mat" "label" "Equipment guide" "title" "Set up your bench" "url" "/learn/guides/soldering-tools-guide/") (dict "name" "soldering-instruction" "alt" "Hands guiding a soldering iron over a circuit board" "label" "Start here" "title" "Make your first solder joints" "url" "/learn/tutorials/basic-through-hole-soldering/") (dict "name" "group-workshop" "alt" "People gathered around a workshop table" "label" "Event history" "title" "See the Fellowship in the community" "url" "/community/") }}
 <a class="feature" href="{{ .url }}">{{ partial "photo.html" (merge . (dict "sizes" "(max-width: 760px) 100vw, 32vw")) }}<span class="eyeline">{{ .label }}</span><strong>{{ .title }} <span aria-hidden="true">↗</span></strong></a>
 {{ end }}
 </div></section>
-<section class="invitation"><div><p class="eyeline">Portable soldering lab</p><h2>Bring the bench<br>to your event.</h2></div><div><p>We pack the stations, kits and safety gear. Our volunteers set up, teach and help participants take home a working circuit.</p><a class="action" href="/services/">Explore workshop formats <span aria-hidden="true">→</span></a></div></section>
+<section class="invitation"><div><p class="eyeline">Workshop planning</p><h2>Bring soldering<br>to your event.</h2></div><div><p>Workshop formats and availability are being confirmed. See the information for organizers and the recent event history.</p><a class="action" href="/services/">Explore workshop information <span aria-hidden="true">→</span></a></div></section>
 </div>
 {{ end }}

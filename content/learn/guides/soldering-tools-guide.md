@@ -12,7 +12,7 @@ toc: true
 
 ## Introduction
 
-Choosing the right soldering tools is crucial for successful electronics work. This comprehensive guide covers everything from basic starter kits to professional-grade equipment, helping you make informed decisions based on your needs and budget.
+Choose tools around the work, the components and the instructions for the equipment. Product specifications, availability and prices change; check current manufacturer and supplier information before buying.
 
 ## Essential Soldering Tools
 
@@ -22,46 +22,17 @@ The heart of any soldering setup, your iron choice affects every joint you make.
 
 #### Temperature-Controlled Stations
 
-**Recommended for:** All skill levels
-**Price Range:** $50-300
-
-- **Weller WES51**: Excellent beginner station with reliable temperature control
-- **Hakko FX-888D**: Professional favorite with quick heat-up and precise control
-- **JBC CD-2SE**: Premium option with superior tip technology
-
-**Key Features to Look For:**
-- Temperature range: 200-450°C (390-840°F)
-- Quick heat-up time (under 60 seconds)
-- Temperature stability (±5°C)
-- Interchangeable tips
-- ESD-safe design
+Compare stations by the temperature range and tips required by your components, how the station controls temperature, the available replacement tips and handpieces, the maker's instructions, and the support available for maintenance. Do not select equipment by a single specification such as wattage or heat-up time.
 
 #### Basic Soldering Irons
 
-**Recommended for:** Occasional use, tight budgets
-**Price Range:** $15-50
-
-- **Weller SP25NUS**: Simple, reliable 25W iron
-- **Hakko FX-600**: Adjustable temperature without digital display
-
-**Limitations:**
-- No precise temperature control
-- Longer heat-up times
-- Less consistent performance
+An iron without a separate station may suit some work, but check how its temperature is controlled and which tips are compatible. Use it only in a setup that meets the equipment maker's instructions and the venue's safety requirements.
 
 ### Solder Selection
 
 #### Leaded vs. Lead-Free
 
-**Leaded Solder (60/40 or 63/37)**
-- **Pros:** Lower melting point, easier to work with, better flow
-- **Cons:** Health concerns, environmental restrictions
-- **Best for:** Learning, hobby projects, repairs
-
-**Lead-Free Solder (SAC305, etc.)**
-- **Pros:** Environmentally friendly, RoHS compliant
-- **Cons:** Higher melting point, requires more skill
-- **Best for:** Commercial products, professional work
+Select solder for the components, application and applicable rules. Lead-containing and lead-free products have different handling and disposal requirements. Review the product safety information and the venue's procedures before use; do not treat either category as universally suitable.
 
 #### Wire Diameter
 
@@ -246,34 +217,9 @@ The heart of any soldering setup, your iron choice affects every joint you make.
 - Fire extinguisher (appropriate type)
 - Emergency contact information
 
-## Budget Considerations
+## Plan a setup
 
-### Starter Kit ($50-100)
-
-**Essential items:**
-- Basic temperature-controlled iron (Weller WES51)
-- Rosin-core solder (60/40, 0.6mm)
-- Flux paste
-- Desoldering braid
-- Basic hand tools
-
-### Intermediate Setup ($200-500)
-
-**Upgrades:**
-- Better soldering station (Hakko FX-888D)
-- Hot air station
-- Fume extractor
-- Precision tools
-- Component storage system
-
-### Professional Setup ($500+)
-
-**Advanced equipment:**
-- High-end soldering station (JBC, Metcal)
-- Desoldering station
-- Preheater
-- Microscope or magnification system
-- Complete test equipment
+Start with the components and techniques in the project. Then compare the current cost of compatible stations and tips, solder and flux, hand tools, protective equipment, ventilation, storage, maintenance and replacement parts. For a workshop, account for the venue, the number of people who can be supervised safely, and the space and power available. There is no single price or tool list that fits every setup.
 
 ## Buying Recommendations
 

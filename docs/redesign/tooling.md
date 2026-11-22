@@ -15,6 +15,7 @@ No paid subscription, paid API, or marketplace component was used. AI inference 
 | Repository link checker | Local HTML link, fragment and asset crawl | Project-owned, no new dependency | $0 | Checks generated files offline; no external link requests. |
 | UI UX Pro Max | Design-system exploration | MIT, upstream repository | $0 | Source guidance reviewed locally; no installed service. |
 | Impeccable | Critique and refinement rubric | Apache-2.0, upstream repository | $0 | Written guidance used. Did not run its download/agent launcher or privileged live-editing. |
+| Agy with Claude Sonnet 5.5 High | Read-only pre-launch content-risk review | No separate tool license surfaced in the connected environment; model service terms apply | No separate purchase; 95,425 model tokens consumed from the user's existing provider quota | The reviewer was asked not to edit files or run commands. Model quota limits apply; no extra agent or model subscription was enabled. |
 | Git, GitHub CLI, curl | Repository, CI and upstream metadata inspection | GPL-2.0, MIT, curl license | $0 | GitHub API rate limits apply to metadata. Current GitHub account lacks repository write permission. |
 
 `npm audit --audit-level=high` reports zero vulnerabilities after removing unused/abandoned packages, updating the PostCSS stack and Lighthouse CI, and overriding the vulnerable transitive selector parser. No new frontend framework or component library was introduced. 21st.dev was not used.

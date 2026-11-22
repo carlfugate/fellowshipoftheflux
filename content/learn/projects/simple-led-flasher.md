@@ -1,7 +1,7 @@
 ---
 title: "Simple LED Flasher Circuit"
 date: 2024-01-01T00:00:00Z
-draft: false
+draft: true
 description: "Build a simple LED flasher circuit - a perfect first soldering project for beginners"
 difficulty: "beginner"
 duration: "1.5 hours"

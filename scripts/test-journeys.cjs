@@ -67,9 +67,9 @@ async function run() {
     await page.locator('header .brand').click();
     assert.equal(await menu.getAttribute('aria-expanded'), 'false');
     await menu.click();
-    await page.getByRole('navigation', { name: 'Main navigation' }).getByText('Host a workshop').click();
+    await page.getByRole('navigation', { name: 'Main navigation' }).getByText('Workshop info').click();
     assert.equal(await page.locator('h1').textContent(), 'Host a workshop');
-    assert.equal(await page.getByText('Email the workshop team').getAttribute('href'), 'mailto:services@fellowshipoftheflux.com');
+    assert.ok(await page.getByText('Workshop requests are not open yet').isVisible());
     await page.goto('/');
     await page.getByText('Start your first lesson').click();
     await page.locator('.kit summary').click();
@@ -111,22 +111,17 @@ async function run() {
     assert.equal(await page.locator('.start-assessment').evaluate(el => el === document.activeElement), true);
     await page.goto('/learn/tutorials/smd-soldering-basics/');
     assert.equal(await page.locator('.start-assessment').count(), 0);
-    await page.goto('/learn/projects/audio-amplifier/');
-    const copyCode = page.locator('.copy-code-button').first();
-    assert.ok(await copyCode.isVisible());
-    assert.ok((await copyCode.boundingBox()).height >= 44);
-    await copyCode.click();
-    await page.locator('.copy-status').waitFor({ state: 'visible' });
-    assert.match(await page.locator('.copy-status').textContent(), /copied|Could not copy/i);
+    assert.equal((await page.goto('/learn/projects/simple-led-flasher/'))?.status(), 404);
+    assert.equal((await page.goto('/learn/projects/audio-amplifier/'))?.status(), 404);
     await page.goto('/community/');
     assert.equal(await page.locator('.event-history > li').count(), 3);
     await page.goto('/learn/');
-    assert.equal(await page.locator('.entry:visible').count(), 6);
+    assert.equal(await page.locator('.entry:visible').count(), 4);
     await page.getByLabel('Search resources').fill('no-such-tool');
     await page.locator('#no-results').waitFor({ state: 'visible' });
     await page.getByLabel('Search resources').fill('flasher');
-    await page.getByRole('link', { name: /Simple LED Flasher Circuit/ }).waitFor();
-    assert.equal(await page.locator('.entry:visible').count(), 1);
+    await page.locator('#no-results').waitFor({ state: 'visible' });
+    assert.equal(await page.locator('.entry:visible').count(), 0);
     await page.goto('/learn/tutorials/?level=beginner');
     assert.equal(await page.locator('.entry:visible').count(), 1);
     await page.getByRole('button', { name: 'Dark mode' }).click();
@@ -143,7 +138,7 @@ async function run() {
       await page.screenshot({ path: path.join(screenshotDir, 'after-community-mobile.jpg'), type: 'jpeg', quality: 84, fullPage: true });
     }
     await page.goto('/get-involved/');
-    assert.equal(await page.getByText('Email the volunteer team').getAttribute('href'), 'mailto:volunteers@fellowshipoftheflux.com');
+    assert.ok(await page.getByText('Volunteer roles and the steps to get started will be listed here after the team confirms them.').isVisible());
     const noJS = await browser.newPage({ baseURL, javaScriptEnabled: false, viewport: { width: 390, height: 844 } });
     await noJS.goto('/');
     assert.ok(await noJS.getByRole('navigation', { name: 'Main navigation' }).getByText('Learn to solder').isVisible());
@@ -151,7 +146,7 @@ async function run() {
     const routes = [
       '/', '/learn/', '/services/', '/community/', '/about/', '/contact/', '/get-involved/',
       '/learn/tutorials/basic-through-hole-soldering/', '/learn/guides/soldering-safety/',
-      '/learn/projects/simple-led-flasher/', '/learn/projects/audio-amplifier/', '/posts/', '/lab-setup/'
+      '/learn/projects/', '/projects/', '/posts/', '/lab-setup/'
     ];
     const viewports = [{ width: 1440, height: 900 }, { width: 820, height: 1024 }, { width: 390, height: 844 }];
     const axePath = require.resolve('axe-core/axe.min.js');
@@ -161,6 +156,7 @@ async function run() {
       for (const route of routes) {
         const response = await page.goto(route);
         assert.equal(response?.status(), 200, `Expected ${route} to load at ${viewport.width}px`);
+        assert.equal(await page.locator('a[href^="mailto:"]').count(), 0, `No email CTA should appear at ${route}`);
         await page.addScriptTag({ path: axePath });
         const results = await page.evaluate(async () => axe.run(document, {
           runOnly: { type: 'tag', values: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'] }
@@ -174,7 +170,7 @@ async function run() {
       }
     }
     assert.deepEqual([...violations.keys()], [], `axe-core reported violations:\n${[...violations].map(([key, count]) => `${key} (${count} scans)`).join('\n')}`);
-    console.log(`Keyboard navigation, email handoffs, lesson supplies, saved learning state, supported quiz, catalog filters, theme persistence, script-free navigation, axe-core (39 route/view checks), mobile overflow and CLS ${cls.toFixed(3)} passed.`);
+    console.log(`Keyboard navigation, workshop info, lesson supplies, saved learning state, supported quiz, unpublished unsafe projects, catalog filters, contact placeholder, theme persistence, script-free navigation, axe-core (39 route/view checks), no email CTAs, mobile overflow and CLS ${cls.toFixed(3)} passed.`);
   } finally {
     await browser?.close();
     server?.kill('SIGTERM');

@@ -1,6 +1,9 @@
 ---
-title: "Posts"
-description: "News, updates, and stories from Fellowship of the Flux — soldering workshops, community events, and maker education."
+title: "Workshop journal"
+description: "Notes and stories from Fellowship of the Flux."
 ---
 
-News, event recaps, and stories from our community of makers and educators.
+New journal entries will appear here after their authorship and details are confirmed. In the meantime, browse the published soldering lessons and the confirmed event history.
+
+- [Browse soldering lessons](/learn/)
+- [View event history](/community/)
