@@ -150,6 +150,23 @@ async function run() {
       await page.setViewportSize({ width: 390, height: 844 });
       await page.screenshot({ path: path.join(screenshotDir, 'after-community-mobile.jpg'), type: 'jpeg', quality: 84, fullPage: true });
     }
+    if (process.argv.includes('--capture-lessons')) {
+      const screenshotDir = path.join(__dirname, '..', 'docs', 'redesign');
+      await page.goto('/');
+      await page.evaluate(() => localStorage.removeItem('color-theme'));
+      await page.reload();
+      for (const [route, slug] of [
+        ['/learn/tutorials/basic-through-hole-soldering/', 'lesson'],
+        ['/learn/tutorials/smd-soldering-basics/', 'smd-lesson']
+      ]) {
+        for (const [size, width, height] of [['desktop', 1440, 900], ['mobile', 390, 844]]) {
+          await page.setViewportSize({ width, height });
+          await page.goto(route, { waitUntil: 'networkidle' });
+          await page.evaluate(() => document.fonts.ready);
+          await page.screenshot({ path: path.join(screenshotDir, `after-${slug}-${size}.jpg`), type: 'jpeg', quality: 84, fullPage: true });
+        }
+      }
+    }
     await page.goto('/get-involved/');
     assert.ok(await page.getByText('Volunteer roles and the steps to get started will be listed here after the team confirms them.').isVisible());
     await page.goto('/contact/');
