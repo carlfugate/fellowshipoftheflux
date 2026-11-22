@@ -44,7 +44,7 @@ class LearnTracker {
             element.classList.toggle('completed', isCompleted);
             this.updateProgressDisplay(element);
 
-            element.addEventListener('click', () => {
+            element.querySelector('.progress-btn')?.addEventListener('click', () => {
                 this.toggleProgress(itemId, element);
             });
         });
@@ -111,15 +111,11 @@ class LearnTracker {
     }
 
     showProgressFeedback(element, type) {
-        const feedback = document.createElement('div');
-        feedback.className = `progress-feedback ${type === 'completed' ? 'success' : 'info'}`;
+        const feedback = element.querySelector('.progress-feedback');
+        if (!feedback) return;
+        clearTimeout(feedback.feedbackTimer);
         feedback.textContent = type === 'completed' ? 'Great job! ✓' : 'Progress reset';
-
-        element.appendChild(feedback);
-
-        setTimeout(() => {
-            feedback.remove();
-        }, 2000);
+        feedback.feedbackTimer = setTimeout(() => { feedback.textContent = ''; }, 2000);
     }
 
     // Skill Assessment System
@@ -129,14 +125,14 @@ class LearnTracker {
         assessmentButtons.forEach(button => {
             button.addEventListener('click', (e) => {
                 const assessmentId = button.dataset.assessmentId;
-                this.startAssessment(assessmentId);
+                this.startAssessment(assessmentId, button);
             });
         });
     }
 
-    startAssessment(assessmentId) {
+    startAssessment(assessmentId, trigger = document.activeElement) {
         const assessmentData = this.getAssessmentQuestions(assessmentId);
-        this.showAssessmentModal(assessmentData);
+        this.showAssessmentModal(assessmentData, trigger);
     }
 
     getAssessmentQuestions(assessmentId) {
@@ -181,29 +177,34 @@ class LearnTracker {
         return assessments[assessmentId] || null;
     }
 
-    showAssessmentModal(assessmentData) {
+    showAssessmentModal(assessmentData, trigger) {
         if (!assessmentData) return;
 
-        const modal = this.createAssessmentModal(assessmentData);
+        const modal = this.createAssessmentModal(assessmentData, trigger);
         document.body.appendChild(modal);
 
         // Show modal with animation
         modal.classList.add('show');
         modal.showModal();
+        modal.querySelector('.question h4')?.focus();
     }
 
-    createAssessmentModal(assessmentData) {
+    createAssessmentModal(assessmentData, trigger) {
         const modal = document.createElement('dialog');
+        modal.returnFocusElement = trigger;
         modal.setAttribute('aria-label', assessmentData.title);
-        modal.dataset.assessmentId = document.querySelector('.start-assessment')?.dataset.assessmentId || 'basic-soldering';
-        modal.addEventListener('close', () => modal.remove());
+        modal.dataset.assessmentId = trigger?.dataset.assessmentId || 'basic-soldering';
+        modal.addEventListener('close', () => {
+            modal.remove();
+            if (modal.returnValue !== 'retake') trigger?.focus();
+        });
         modal.className = 'assessment-modal';
         modal.innerHTML = `
       <div class="modal-overlay">
         <div class="modal-content">
           <div class="modal-header">
-            <h3>${assessmentData.title}</h3>
-            <button class="close-modal" aria-label="Close quiz">&times;</button>
+          <h3>${assessmentData.title}</h3>
+          <button type="button" class="close-modal" aria-label="Close quiz">&times;</button>
           </div>
           <div class="modal-body">
             <div class="assessment-progress">
@@ -213,9 +214,9 @@ class LearnTracker {
               <!-- Questions will be inserted here -->
             </div>
             <div class="assessment-controls">
-              <button class="prev-question" disabled>Previous</button>
-              <button class="next-question">Next</button>
-              <button class="submit-assessment" style="display: none;">Submit</button>
+              <button type="button" class="prev-question" disabled>Previous</button>
+              <button type="button" class="next-question">Next</button>
+              <button type="button" class="submit-assessment" style="display: none;">Submit</button>
             </div>
           </div>
         </div>
@@ -241,7 +242,7 @@ class LearnTracker {
             const question = assessmentData.questions[index];
             questionContainer.innerHTML = `
         <div class="question">
-          <h4>Question ${index + 1} of ${assessmentData.questions.length}</h4>
+          <h4 tabindex="-1">Question ${index + 1} of ${assessmentData.questions.length}</h4>
           <p>${question.question}</p>
           <div class="options">
             ${question.options.map((option, i) => `
@@ -268,6 +269,7 @@ class LearnTracker {
             prevBtn.disabled = index === 0;
             nextBtn.style.display = index === assessmentData.questions.length - 1 ? 'none' : 'block';
             submitBtn.style.display = index === assessmentData.questions.length - 1 ? 'block' : 'none';
+            if (modal.open) questionContainer.querySelector('h4')?.focus();
         };
 
         const saveAnswer = () => {
@@ -303,10 +305,17 @@ class LearnTracker {
             modal.close();
         });
 
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal.querySelector('.modal-overlay')) {
-                modal.close();
-            }
+        let pointerStartedOnBackdrop = false;
+        modal.addEventListener('pointerdown', (event) => {
+            const rect = modal.getBoundingClientRect();
+            pointerStartedOnBackdrop = event.target === modal && (
+                event.clientX < rect.left || event.clientX > rect.right ||
+                event.clientY < rect.top || event.clientY > rect.bottom
+            );
+        });
+        modal.addEventListener('click', (event) => {
+            if (pointerStartedOnBackdrop && event.target === modal && event.detail > 0) modal.close();
+            pointerStartedOnBackdrop = false;
         });
 
         // Show first question
@@ -360,7 +369,7 @@ class LearnTracker {
         modalBody.innerHTML = `
       <div class="assessment-results">
         <div class="results-header">
-          <h3>Assessment Complete!</h3>
+          <h3 tabindex="-1">Assessment Complete!</h3>
           <div class="score-display">
             <div class="score-circle ${results.percentage >= 70 ? 'pass' : 'fail'}">
               <span class="score">${results.percentage}%</span>
@@ -402,16 +411,18 @@ class LearnTracker {
         </div>
         
         <div class="results-actions">
-          <button class="retake-assessment">Retake Assessment</button>
-          <button class="close-results">Close</button>
+          <button type="button" class="retake-assessment">Retake Assessment</button>
+          <button type="button" class="close-results">Close</button>
         </div>
       </div>
     `;
 
+        modal.querySelector('.results-header h3')?.focus();
+
         // Setup result actions
         modal.querySelector('.retake-assessment').addEventListener('click', () => {
-            modal.close();
-            this.startAssessment(modal.dataset.assessmentId);
+            modal.close('retake');
+            this.startAssessment(modal.dataset.assessmentId, modal.returnFocusElement);
         });
 
         modal.querySelector('.close-results').addEventListener('click', () => {

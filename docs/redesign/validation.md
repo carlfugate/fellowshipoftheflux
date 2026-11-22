@@ -2,7 +2,7 @@
 
 The homepage leads directly to the first lesson. The library supports topic search and skill-level filtering. Lesson pages expose materials, bookmarks, completion and a keyboard-operable quiz. Hosts can compare the three workshop packages or email the team from the introduction. The community calendar labels dates by year. Site navigation, articles, resource indexes and information pages share a local design system.
 
-The Community page now groups its three documented 2026 event entries under an annual history, with date markers, city labels and a compact soldering-village format label. It does not add attendance figures or quotes. The desktop/mobile browser preview could not be captured in this session: the local Playwright CLI is not installed, and the available Firefox automation did not display the local page. Recheck the rendered Community page when browser automation is available.
+The Community page groups its three confirmed 2026 events under an annual history, with date markers, city labels and a compact soldering-village format label. It does not add attendance figures or quotes. Desktop and mobile screenshots are included below.
 
 ## Browser evidence
 
@@ -17,27 +17,35 @@ The Community page now groups its three documented 2026 event entries under an a
 | Host · desktop | [Before](before-host-desktop.jpg) | [After](after-host-desktop.jpg) |
 | Host · tablet | [Before](before-host-tablet.jpg) | [After](after-host-tablet.jpg) |
 | Host · mobile | [Before](before-host-mobile.jpg) | [After](after-host-mobile.jpg) |
+| Community · desktop | — | [After](after-community-desktop.jpg) |
+| Community · mobile | — | [After](after-community-mobile.jpg) |
 
 ## Validation
 
-- Production build and repository smoke tests passed on local Hugo 0.170.1 after the event archive update. Pages CI pins 0.157.0. The hosted workflow was not rerun for this update.
-- The generated-site crawl verified all 123 HTML files, internal links, fragment targets and referenced local assets in the crawl. Every baseline HTML route exists.
-- Playwright completed keyboard skip navigation, menu open and Escape, workshop and volunteer mailto handoffs, supplies disclosure, persistent bookmarks and completion, quiz submission and retake, search empty state and recovery, legacy level query, dark-mode persistence and mobile navigation without JavaScript. No uncaught page errors in those journeys. No email was sent.
-- Each version was scanned with axe-core on 12 routes at 1440 × 900, 820 × 1024 and 390 × 844. Scans reporting a WCAG A/AA violation fell from 36 to 0 of 36. Page-level horizontal overflow fell from 12 to 0 of 36. Automated checks do not establish full accessibility conformance.
+- Production build, repository smoke tests and Hugo route/template validation passed on local Hugo 0.170.1. Hugo reported existing deprecated config keys and unused templates. Pages CI pins 0.157.0; hosted CI was not rerun.
+- The local link checker verified all 123 generated HTML files, their internal links, fragment targets and referenced local assets.
+- Playwright with Firefox completed skip navigation, mobile menu keyboard behavior and resize closing, mailto handoffs, supplies disclosure, persistent bookmarks and completion, quiz submission/retake/focus/backdrop handling, code copying, event history, catalog search and filters, theme persistence, and no-JavaScript navigation. No uncaught page errors. CLS was 0.000 on mobile, with no horizontal overflow at 39 route/view combinations.
+- axe-core reported zero WCAG A/AA violations across 13 routes at 1440 × 900, 820 × 1024 and 390 × 844 (39 route/view checks). The earlier baseline recorded 36 violating scans across its 36 checks. Automated checks do not establish full accessibility conformance.
+- HTML/CSS validation did not run because the machine has no Java runtime for vnu-jar.
 - The rendered review led to replacing a sideways About photograph, prioritizing the featured lesson photograph, collapsing lengthy mobile outlines, simplifying package markup, and giving the scrollable equipment table keyboard focus and a name.
 
 ## Lighthouse
 
-One mobile simulation per version on the same machine against locally served production builds. These are lab measurements. The baseline retained its external script request. Local hosting can affect timing and how the old site handles absolute production links.
+The baseline and redesign were tested as local production builds. Current figures are medians of three desktop Lighthouse runs on each of ten routes. Lighthouse executed with Chrome after an escalated run outside the workspace sandbox; launching Chrome inside the sandbox repeatedly failed. These are lab measurements, not field data. Current results include the About page's large photography payload, which remains an optimization opportunity.
 
 | Metric | Before | After |
 |---|---:|---:|
-| Performance | 58 | 95 |
-| Accessibility | Unavailable | 100 |
-| Best-Practices | 100 | 100 |
-| Seo | 100 | 100 |
-| Largest contentful paint | 9.44 s | 1.81 s |
-| Transferred bytes | 2,547,541 | 340,034 |
-| Cumulative layout shift | 0.000 | 0.120 |
+| Route | Performance | Accessibility | Best practices | SEO | LCP | Transfer | CLS |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Home | 100 | 100 | 100 | 100 | 1.50 s | 248 KB | 0.000 |
+| About | 99 | 100 | 100 | 100 | 1.95 s | 2,240 KB | 0.000 |
+| Posts | 100 | 100 | 100 | 100 | 0.90 s | 39 KB | 0.000 |
+| Projects | 100 | 100 | 100 | 100 | 0.90 s | 43 KB | 0.000 |
+| Services | 100 | 100 | 100 | 100 | 1.65 s | 122 KB | 0.000 |
+| Contact | 100 | 100 | 100 | 100 | 0.90 s | 39 KB | 0.000 |
+| Learn | 100 | 100 | 100 | 100 | 1.80 s | 129 KB | 0.000 |
+| Tutorials index | 100 | 100 | 100 | 100 | 0.90 s | 43 KB | 0.000 |
+| Guides index | 100 | 100 | 100 | 100 | 0.90 s | 43 KB | 0.000 |
+| Projects index | 100 | 100 | 100 | 100 | 0.90 s | 43 KB | 0.000 |
 
-The bundled Lighthouse accessibility engine could not parse a baseline OKLCH color, so the baseline accessibility score is unavailable. No production deployment, field performance data, screen-reader user study or external inbox delivery verification was performed. The existing toolchain advisories are recorded in [tooling and cost](tooling.md).
+The baseline Lighthouse accessibility engine could not parse an OKLCH color, so its accessibility score is unavailable. Lighthouse CI was configured to upload reports to temporary public storage during the first completed run; the config now writes reports to local filesystem only. Reports from that run were uploaded by LHCI and their temporary report links were emitted in the command output. No production deployment, field performance data, screen-reader user study or external inbox delivery verification was performed. Tool licenses and dependency status are recorded in [tooling and cost](tooling.md).

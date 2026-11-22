@@ -1,5 +1,5 @@
 {{ define "main" }}
 <article class="frame interior"><p class="eyeline">Fellowship of the Flux</p><h1>{{ .Title }}</h1>
 {{ if eq .RelPermalink "/get-involved/" }}<p class="lead">Teach at the bench, help set up a lab or support a workshop behind the scenes.</p><a class="action" href="mailto:volunteers@fellowshipoftheflux.com">Email the volunteer team →</a>{{ end }}
-<div class="reading"><aside><details open><summary>On this page</summary>{{ .TableOfContents }}</details></aside><div class="copy">{{ .Content }}</div></div></article>
+<div class="reading"><aside><details><summary>On this page</summary>{{ .TableOfContents }}</details></aside><div class="copy">{{ .Content }}</div></div></article>
 {{ end }}

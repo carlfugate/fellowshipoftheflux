@@ -1,20 +1,32 @@
 const menu = document.querySelector('#primary-nav');
 const menuButton = document.querySelector('.menu-switch');
-menuButton.hidden = false;
-menu.classList.add('collapsible');
 function setMenu(open) {
     menuButton.setAttribute('aria-expanded', String(open));
     menu.classList.toggle('open', open);
 }
 menuButton.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
+document.addEventListener('pointerdown', event => {
+    if (menu.classList.contains('open') && !menu.contains(event.target) && event.target !== menuButton) setMenu(false);
+});
+menu.addEventListener('focusout', event => {
+    if (menu.classList.contains('open') && !menu.contains(event.relatedTarget)) setMenu(false);
+});
 document.addEventListener('keydown', event => {
-    if (event.key === 'Escape' && menu.classList.contains('open')) {
+    const focusIsInNavigation = event.target === menuButton || menu.contains(event.target);
+    const menuButtonIsVisible = menuButton.offsetParent !== null;
+    const dialogIsOpen = document.querySelector('dialog[open]');
+    if (event.key === 'Escape' && menuButtonIsVisible && menu.classList.contains('open') && !dialogIsOpen) {
         setMenu(false);
-        menuButton.focus();
+        if (focusIsInNavigation) menuButton.focus();
     }
 });
+matchMedia('(min-width:921px)').addEventListener('change', event => {
+    if (event.matches && menu.classList.contains('open')) setMenu(false);
+});
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 920 && menu.classList.contains('open')) setMenu(false);
+});
 const theme = document.querySelector('#theme-toggle');
-theme.hidden = false;
 theme.setAttribute('aria-pressed', String(document.documentElement.classList.contains('dark')));
 theme.addEventListener('click', () => {
     const dark = document.documentElement.classList.toggle('dark');
@@ -25,37 +37,38 @@ theme.addEventListener('click', () => {
     const codeBlocks = document.querySelectorAll('pre code');
     codeBlocks.forEach(codeBlock => {
         const pre = codeBlock.parentElement;
+        const wrapper = document.createElement('div');
+        wrapper.className = 'code-block';
+        const toolbar = document.createElement('div');
+        toolbar.className = 'code-toolbar';
+        const status = document.createElement('span');
+        status.className = 'copy-status';
+        status.setAttribute('role', 'status');
+        status.setAttribute('aria-live', 'polite');
         const button = document.createElement('button');
-        button.className = 'absolute top-2 right-2 bg-gray-700 hover:bg-gray-600 text-white px-3 py-1 rounded text-sm transition-colors duration-200';
-        button.textContent = 'Copy';
-        button.setAttribute('aria-label', 'Copy code to clipboard');
-        
-        // Make pre element relative for absolute positioning
-        pre.style.position = 'relative';
-        pre.appendChild(button);
-        
+        button.className = 'copy-code-button';
+        button.textContent = 'Copy code';
+        button.type = 'button';
+        pre.before(wrapper);
+        wrapper.append(toolbar, pre);
+        toolbar.append(status, button);
+
         button.addEventListener('click', async () => {
+            clearTimeout(button.feedbackTimer);
             try {
                 await navigator.clipboard.writeText(codeBlock.textContent);
                 button.textContent = 'Copied!';
-                button.classList.add('bg-green-600');
-                
-                setTimeout(() => {
-                    button.textContent = 'Copy';
-                    button.classList.remove('bg-green-600');
-                }, 2000);
-            } catch (err) {
-                console.error('Failed to copy text: ', err);
-                button.textContent = 'Failed';
-                
-                setTimeout(() => {
-                    button.textContent = 'Copy';
-                }, 2000);
+                button.classList.add('copied');
+                status.textContent = 'Code copied to clipboard.';
+            } catch {
+                button.textContent = 'Copy failed';
+                button.classList.remove('copied');
+                status.textContent = 'Could not copy code. Select it and copy manually.';
             }
+            button.feedbackTimer = setTimeout(() => {
+                button.textContent = 'Copy code';
+                button.classList.remove('copied');
+                status.textContent = '';
+            }, 2500);
         });
     });
-    
-
-if (matchMedia('(max-width:760px)').matches) {
-    document.querySelectorAll('.reading aside details').forEach(outline => { outline.open = false; });
-}

@@ -3,7 +3,7 @@
 <h1>{{ .Title }}</h1><p class="lead">{{ .Description }}</p>
 <div class="lesson-bar">{{ with .Params.difficulty }}<span>{{ . | title }}</span>{{ end }}{{ with .Params.duration }}<span>{{ . }}</span>{{ end }}{{ with .Params.cost }}<span>{{ . }}</span>{{ end }}
 <button type="button" class="bookmark-btn" data-item-id="{{ .RelPermalink }}">Bookmark</button>
-{{ if .Params.progress_tracking }}<span data-progress-item="{{ .RelPermalink }}" aria-live="polite"><button class="progress-btn" type="button">Mark complete</button></span>{{ end }}</div>
+{{ if .Params.progress_tracking }}<div data-progress-item="{{ .RelPermalink }}"><button class="progress-btn" type="button">Mark complete</button><span class="progress-feedback" role="status" aria-live="polite"></span></div>{{ end }}</div>
 <div class="reading"><aside><details open><summary>On this page</summary>{{ .TableOfContents }}</details></aside>
 <div class="copy">
 {{ if or .Params.tools_required .Params.materials_required }}
@@ -12,6 +12,6 @@
 {{ with .Params.materials_required }}<h2>Materials</h2><ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
 </details>{{ end }}
 {{ .Content }}
-{{ if .Params.skill_assessment }}<h2>Check your understanding</h2><button class="action start-assessment" data-assessment-id="{{ if eq .File.BaseFileName "basic-through-hole-soldering" }}basic-soldering{{ else }}{{ .File.BaseFileName }}{{ end }}">Take the soldering quiz</button>{{ end }}
+{{ if and .Params.skill_assessment (eq .File.BaseFileName "basic-through-hole-soldering") }}<h2>Check your understanding</h2><button type="button" class="action start-assessment" data-assessment-id="basic-soldering">Take the soldering quiz</button>{{ end }}
 </div></div></article>
 {{ end }}

@@ -238,4 +238,4 @@ Test your SMD knowledge:
 4. What are the advantages of pre-tinning one pad?
 5. How do you remove solder bridges safely?
 
-Practice these techniques before taking the soldering quiz.
+Practice these techniques after reviewing the fundamentals in the [through-hole soldering lesson](/learn/tutorials/basic-through-hole-soldering/).

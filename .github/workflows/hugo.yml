@@ -15,14 +15,11 @@ on:
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+# Keep pull requests separate from production deployments; cancel stale PR validations only.
 concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  group: pages-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 # Default to bash
 defaults:
@@ -34,6 +31,8 @@ jobs:
   validate:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     env:
       HUGO_VERSION: 0.157.0
     steps:
@@ -50,7 +49,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
       - name: Install dependencies
         run: npm ci --ignore-scripts
@@ -60,11 +59,25 @@ jobs:
         env:
           HUGO_ENVIRONMENT: production
         run: hugo --minify --gc --cleanDestinationDir --config config.yaml,config.production.yaml
+      - name: Validate Hugo routes and templates
+        run: npm run validate
+      - name: Audit npm dependencies
+        run: npm audit --audit-level=high
+      - name: Smoke test production build
+        run: npm test
+      - name: Install Playwright Firefox
+        run: npx playwright install --with-deps firefox
+      - name: Test critical journeys
+        run: npm run test:journeys
 
   # Build job
   build:
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     env:
       HUGO_VERSION: 0.157.0
     steps:
@@ -81,8 +94,13 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
       - name: Install Node.js dependencies
-        run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+        run: npm ci --ignore-scripts
       - name: Build CSS with PostCSS
         run: npm run build:css
       - name: Build with Hugo
@@ -104,6 +122,9 @@ jobs:
   # Deployment job
   deploy:
     if: github.event_name != 'pull_request'
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -117,6 +138,8 @@ jobs:
   # Test deployment
   test:
     if: github.event_name != 'pull_request'
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
     needs: deploy
     steps:

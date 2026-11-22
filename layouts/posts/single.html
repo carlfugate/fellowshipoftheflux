@@ -3,7 +3,7 @@
 <p class="eyeline">{{ .Date.Format "January 2, 2006" }} · {{ .ReadingTime }} min read {{ with .Params.author }}· {{ . }}{{ end }}</p>
 {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
 {{ with .Params.featured_image }}<img src="{{ . }}" alt="">{{ end }}
-<div class="reading"><aside><details open><summary>On this page</summary>{{ .TableOfContents }}</details></aside><div class="copy">{{ .Content }}
+<div class="reading"><aside><details><summary>On this page</summary>{{ .TableOfContents }}</details></aside><div class="copy">{{ .Content }}
 <nav class="inline-links" aria-label="Topics">{{ range .GetTerms "tags" }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}{{ range .GetTerms "categories" }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}</nav>
 <nav class="inline-links" aria-label="Share article"><a href="https://twitter.com/intent/tweet?url={{ .Permalink }}&amp;text={{ .Title }}">Share on Twitter</a><a href="https://www.linkedin.com/sharing/share-offsite/?url={{ .Permalink }}">Share on LinkedIn</a></nav>
 <nav class="inline-links" aria-label="More articles">{{ with .PrevInSection }}<a href="{{ .RelPermalink }}">← {{ .Title }}</a>{{ end }}{{ with .NextInSection }}<a href="{{ .RelPermalink }}">{{ .Title }} →</a>{{ end }}</nav></div></div>

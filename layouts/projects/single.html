@@ -1,3 +1,3 @@
 {{ define "main" }}<article class="frame interior"><a class="eyeline back" href="/projects/">← Fellowship projects</a><h1>{{ .Title }}</h1><p class="lead">{{ .Description }}</p>
 <div class="lesson-bar">{{ with .Params.status }}<span>{{ . }}</span>{{ end }}<button class="bookmark-btn" data-item-id="{{ .RelPermalink }}">Bookmark</button>{{ with .Params.project_url }}<a class="quiet" href="{{ . }}">Visit project →</a>{{ end }}{{ with .Params.github_url }}<a class="quiet" href="{{ . }}">GitHub →</a>{{ end }}</div>
-<div class="reading"><aside><details open><summary>On this page</summary>{{ .TableOfContents }}</details></aside><div class="copy">{{ .Content }}</div></div></article>{{ end }}
+<div class="reading"><aside><details><summary>On this page</summary>{{ .TableOfContents }}</details></aside><div class="copy">{{ .Content }}</div></div></article>{{ end }}
