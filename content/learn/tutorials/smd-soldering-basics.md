@@ -2,27 +2,25 @@
 title: "SMD Soldering Basics"
 date: 2024-01-01T00:00:00Z
 draft: false
-description: "Learn surface mount device (SMD) soldering techniques for modern electronics"
+description: "Practice surface mount device (SMD) soldering with instructor guidance"
 difficulty: "intermediate"
 duration: "60 minutes"
-tools_required: 
-  - "Temperature-controlled soldering iron"
-  - "Fine-tip soldering iron tips"
-  - "Flux paste"
-  - "Solder wick or desoldering braid"
+tools_required:
+  - "Temperature-controlled soldering station, iron and stand"
+  - "Safety glasses and task-appropriate fume extraction"
+  - "Iron tip selected by the instructor for the task"
   - "Tweezers (fine-tip)"
   - "Magnifying glass or microscope"
 materials_required:
   - "SMD practice board"
-  - "0603 and 0805 resistors"
-  - "SOIC-8 IC"
-  - "Fine solder (0.4mm or smaller)"
-  - "Flux paste"
+  - "Components selected by the instructor for the practice board"
+  - "Solder selected for the board and components with the instructor"
+  - "Flux selected for the board, components and solder"
 learning_objectives:
-  - "Master SMD component handling techniques"
-  - "Learn drag soldering for fine-pitch components"
-  - "Understand flux application for SMD work"
-  - "Develop skills for component placement and alignment"
+  - "Practice handling and placing instructor-selected SMD components"
+  - "Observe or practice instructor-demonstrated soldering techniques"
+  - "Follow the approved flux and cleanup instructions for the materials"
+  - "Recognize visible concerns and ask for instructor guidance"
 prerequisites:
   - "Proficiency with through-hole soldering"
   - "Understanding of component polarity"
@@ -31,7 +29,6 @@ tags: ["tutorial", "soldering", "smd", "surface-mount", "intermediate"]
 categories: ["tutorials"]
 tutorial_type: "step-by-step"
 progress_tracking: true
-skill_assessment: true
 ---
 
 ## Overview
@@ -41,11 +38,10 @@ Surface Mount Device (SMD) soldering is essential for modern electronics. This t
 ## Learning Objectives
 
 By the end of this tutorial, you will be able to:
-- Handle and place SMD components accurately
-- Solder 0603 and 0805 passive components
-- Use drag soldering technique for SOIC packages
+- Handle and place SMD components selected for the exercise
+- Practice the demonstrated technique with instructor guidance
+- Recognize visible concerns and ask for instructor guidance before rework
 - Apply flux effectively for SMD work
-- Troubleshoot common SMD soldering problems
 
 ## Prerequisites
 
@@ -56,12 +52,15 @@ Before starting this tutorial, you should:
 
 ## Safety Considerations
 
-⚠️ **Important Safety Information:**
-- Use proper magnification to avoid eye strain
-- Ensure excellent ventilation - SMD work requires more flux
-- Use ESD protection when handling sensitive components
-- Work in a well-lit environment
-- Take regular breaks to prevent fatigue
+### Before you begin
+
+- Follow the project, solder and station makers' instructions and your venue's safety procedures. Ask an instructor to confirm the setup before starting.
+- Use purpose-designed fume extraction or local exhaust selected for the materials and room; position it as directed by its maker. Do not rely on a room fan as a substitute for source capture.
+- Wear eye protection, use the iron's stable stand, and keep food and drinks out of the work area. Avoid touching your face while working and wash your hands with soap and water after soldering. Follow the venue's cleanup and waste procedures. If lead-containing materials are present, follow the instructor's lead-handling instructions.
+- Freshly soldered leads and boards can remain hot after the iron is removed. Do not touch them until the instructor confirms they have cooled.
+- Review the material safety information and venue cleanup and waste procedures with your instructor.
+
+See [RPI's soldering safety guidance](https://ehs.rpi.edu/lab-research-shop-safety/soldering-safety-guidelines) and the [EPA's lead-exposure precautions for hobbies](https://www.epa.gov/lead/reduce-risk-lead-exposure-home). These general sources do not replace instruction for the specific room and materials.
 
 ## Step-by-Step Instructions
 
@@ -69,11 +68,12 @@ Before starting this tutorial, you should:
 
 Set up your workspace for precision SMD work:
 
-1. **Position magnification** - Use 2-4x magnification minimum
+1. **Set up magnification** as recommended by the instructor for the component and board
 2. **Optimize lighting** - Bright, shadow-free illumination
 3. **Organize components** - Use component trays or tape
-4. **Prepare flux** - Have flux paste readily available
-5. **Set iron temperature** - 320-340°C for lead-free solder
+4. **Prepare the project-specified flux** according to its maker and instructor
+5. **Choose the station setting** with the instructor, using the station, tip, solder and component makers' instructions. Do not assume a single setting works for every combination.
+6. **Confirm the board is disconnected from power** before soldering.
 
 **Pro tip:** Good lighting and magnification are crucial for SMD success.
 
@@ -81,10 +81,10 @@ Set up your workspace for precision SMD work:
 
 Learn to handle tiny SMD components safely:
 
-1. **Use proper tweezers** - Fine-tip, non-magnetic preferred
+1. **Use tweezers** selected for the components and task
 2. **Pick up components** by the body, not the terminations
 3. **Practice placement** without solder first
-4. **Use component orientation** - note polarity markers
+4. **Use component orientation** - note polarity markers and follow the manufacturer and instructor handling instructions for sensitive ICs
 5. **Work slowly** - rushing leads to dropped components
 
 **Component sizes:**
@@ -96,7 +96,7 @@ Learn to handle tiny SMD components safely:
 
 Prepare PCB pads for component placement:
 
-1. **Clean the pads** with isopropyl alcohol
+1. **Prepare the pads** using only the method approved by the board and material makers and your instructor
 2. **Apply thin flux layer** to all pads
 3. **Pre-tin one pad** of each component footprint
 4. **Use minimal solder** - just enough to coat the pad
@@ -112,7 +112,7 @@ Place and secure your first SMD component:
 2. **Slide component into position** using tweezers
 3. **Remove iron while holding component** in place
 4. **Check alignment** before proceeding
-5. **Adjust if necessary** by reheating the joint
+5. **Ask the instructor before adjusting**; do not reheat until directed
 
 **Alignment tips:**
 - Component should be centered on pads
@@ -123,119 +123,104 @@ Place and secure your first SMD component:
 
 Solder the remaining termination:
 
-1. **Apply flux** to the unsolderd pad
+1. **Apply flux** to the unsoldered pad, as specified for the materials
 2. **Heat pad and component** simultaneously
 3. **Feed solder** to create proper joint
 4. **Remove solder first**, then iron
 5. **Inspect joint** under magnification
+6. **Ask the instructor to check both terminations** and direct any touch-up
 
-**Good SMD joint characteristics:**
-- Smooth, concave fillet
-- Solder wets both pad and component
-- No bridges or excess solder
-- Component remains properly aligned
+If solder does not flow as demonstrated, stop and ask the instructor rather than continuing to heat the joint.
+
+For a first visual check, look for solder that visibly wets the pad and component termination, and check for unintended connections between adjacent pads. Expected appearance depends on the solder alloy, component and board design; do not use gloss alone as a pass/fail test. Follow the instructor's project-specific acceptance criteria.
 
 ### Step 6: Drag Soldering Technique
 
 Learn drag soldering for fine-pitch ICs:
 
-1. **Apply flux generously** to all pads
-2. **Tin the iron tip** with fresh solder
-3. **Start at one corner** of the IC
-4. **Drag iron across pins** in smooth motion
-5. **Let surface tension** distribute solder
+This is an instructor-led technique. Follow the process and tip demonstrated for the specific IC and board.
 
-**Drag soldering benefits:**
-- Faster than individual pin soldering
-- Self-correcting for bridges
-- Works well with proper flux
-- Professional technique for production
+1. **Have the instructor identify the IC pin-one mark and matching board orientation** before placement
+2. **Align the leads and have the instructor confirm the placement**
+3. **With the instructor's setup and demonstration, tack opposite corner pins** to hold the IC in position
+4. **Return the iron to its stand** while the instructor checks alignment
+5. **Apply the project-specified flux to the remaining pin row**, then tin the approved tip immediately before the drag pass
+6. **With the instructor's demonstration, drag the iron across the remaining pins** using the approved process
+
+Drag soldering can leave bridges or other defects. Inspect each connection under the magnification recommended by the instructor and ask for a check before powering the board.
 
 ### Step 7: Cleaning and Inspection
 
 Complete your work with proper finishing:
 
-1. **Clean flux residue** with isopropyl alcohol
+1. **Clean flux residue only if needed**, using a method approved for the flux, board and components by their makers and your instructor
 2. **Inspect all joints** under magnification
 3. **Check for bridges** between adjacent pins
 4. **Verify component orientation** and placement
-5. **Test continuity** if possible
+5. **Check continuity only as directed by the instructor**, with the board disconnected from power
 
 ## Troubleshooting
 
 ### Common SMD Problems and Solutions
 
 **Solder Bridges**
-- *Cause:* Too much solder or insufficient flux
-- *Solution:* Use solder wick with flux to remove excess
-- *Prevention:* Use less solder, more flux
+- *What to check:* Look for an unintended connection between adjacent pads or leads.
+- *Next step:* Keep the board disconnected from power and ask the instructor to assess and direct any repair.
 
 **Tombstoning**
-- *Cause:* Uneven heating of component pads
-- *Solution:* Reheat both pads simultaneously
-- *Prevention:* Pre-tin only one pad, heat evenly
+- *What to check:* One end of a component may lift from its pad.
+- *Next step:* Ask the instructor to assess it and direct any rework.
 
 **Component Drift**
-- *Cause:* Component moves during soldering
-- *Solution:* Hold firmly with tweezers until cool
-- *Prevention:* Tack one end first, then solder other
+- *What to check:* A component may no longer align with its pads.
+- *Next step:* Ask the instructor to assess it before reheating or repositioning.
 
-**Cold Joints**
-- *Cause:* Insufficient heat or contaminated surfaces
-- *Solution:* Clean and reheat with fresh flux
-- *Prevention:* Proper temperature, clean surfaces
+**Poor wetting, cracks, or other joint concerns**
+- *What to check:* Look for poor visible wetting or a crack; appearance alone cannot establish cause or reliability.
+- *Next step:* Ask the instructor to assess the joint and direct any rework.
 
 **Lifted Pads**
-- *Cause:* Excessive heat or mechanical stress
-- *Solution:* Use jumper wire if trace is damaged
-- *Prevention:* Proper temperature, gentle handling
+- *What to check:* Stop if a copper pad looks loose or separated.
+- *Next step:* Keep the board disconnected from power and have the instructor assess it. A jumper repair requires a verified circuit path and experienced direction.
+
+## End the session
+
+Return the iron to its stand, then turn off the station using its instructions and the venue procedure. Let the board and components cool before handling or storing them.
 
 ## Advanced Techniques
 
 ### Hot Air Soldering
 
-Using hot air for SMD work:
-
-1. **Apply solder paste** to pads
-2. **Place components** accurately
-3. **Heat with hot air** station
-4. **Watch for solder reflow**
-5. **Allow to cool** before moving
+Hot-air work involves additional burn, fire, fume and component-damage risks. Learn and perform it only with an instructor, purpose-built equipment and the approved process for the board and materials.
 
 ### Reflow Soldering
 
-Professional reflow techniques:
-
-1. **Stencil application** of solder paste
-2. **Pick and place** component placement
-3. **Reflow oven** or hot plate heating
-4. **Temperature profile** control
-5. **Quality inspection** procedures
+Reflow work requires an approved process and equipment selected for the materials and assembly. It is outside this introductory lesson; follow qualified instruction and the manufacturers' process guidance.
 
 ## Practice Exercises
 
-1. **Solder 10 resistors** (0805 size) to practice board
-2. **Try different component sizes** (0603, then 0402)
-3. **Practice SOIC-8 IC** using drag soldering
-4. **Attempt QFP package** for advanced challenge
-5. **Build simple SMD circuit** (LED flasher in SMD)
+1. **Solder 10 resistors** in the package size selected by the instructor for the practice board
+2. **Try another component size** only after the instructor approves the board and technique
+3. **Practice an SOIC-8 IC** using the instructor-approved method
+4. **Attempt finer-pitch packages** only with instructor approval and suitable equipment
+5. **Build an instructor-approved simple SMD circuit**
 
 ## Next Steps
 
 After mastering SMD basics:
-- Try [Advanced SMD Techniques](/learn/tutorials/advanced-smd/)
-- Build [SMD Practice Projects](/learn/projects/smd-practice-board/)
-- Learn about [Reflow Soldering](/learn/tutorials/reflow-soldering/)
-- Explore [PCB Design for SMD](/learn/guides/pcb-design-smd/)
+- Try Advanced SMD Techniques
+- Build SMD Practice Projects
+- Learn about Reflow Soldering
+- Explore PCB Design for SMD
 
 ## Assessment Questions
 
 Test your SMD knowledge:
 
-1. Why is flux more critical for SMD soldering than through-hole?
-2. What causes tombstoning and how do you prevent it?
-3. Describe the drag soldering technique for fine-pitch ICs.
-4. What are the advantages of pre-tinning one pad?
-5. How do you remove solder bridges safely?
+1. Why should magnification be selected for the component and board?
+2. What should you do before soldering if component alignment or orientation is uncertain?
+3. What can visible wetting and an adjacent-pad check tell you, and what can they not establish?
+4. Why might one pad be pre-tinned during the demonstrated placement process?
+5. What should you do if you see a solder bridge?
 
-*Complete the hands-on exercises to unlock the assessment.*
+Practice these techniques after reviewing the fundamentals in the [through-hole soldering lesson](/learn/tutorials/basic-through-hole-soldering/).

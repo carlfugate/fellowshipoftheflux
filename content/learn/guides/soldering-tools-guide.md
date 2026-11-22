@@ -12,7 +12,7 @@ toc: true
 
 ## Introduction
 
-Choosing the right soldering tools is crucial for successful electronics work. This comprehensive guide covers everything from basic starter kits to professional-grade equipment, helping you make informed decisions based on your needs and budget.
+Choose tools around the work, the components and the instructions for the equipment. Product specifications, availability and prices change; check current manufacturer and supplier information before buying.
 
 ## Essential Soldering Tools
 
@@ -22,46 +22,17 @@ The heart of any soldering setup, your iron choice affects every joint you make.
 
 #### Temperature-Controlled Stations
 
-**Recommended for:** All skill levels
-**Price Range:** $50-300
-
-- **Weller WES51**: Excellent beginner station with reliable temperature control
-- **Hakko FX-888D**: Professional favorite with quick heat-up and precise control
-- **JBC CD-2SE**: Premium option with superior tip technology
-
-**Key Features to Look For:**
-- Temperature range: 200-450°C (390-840°F)
-- Quick heat-up time (under 60 seconds)
-- Temperature stability (±5°C)
-- Interchangeable tips
-- ESD-safe design
+Compare stations by the temperature range and tips required by your components, how the station controls temperature, the available replacement tips and handpieces, the maker's instructions, and the support available for maintenance. Do not select equipment by a single specification such as wattage or heat-up time.
 
 #### Basic Soldering Irons
 
-**Recommended for:** Occasional use, tight budgets
-**Price Range:** $15-50
-
-- **Weller SP25NUS**: Simple, reliable 25W iron
-- **Hakko FX-600**: Adjustable temperature without digital display
-
-**Limitations:**
-- No precise temperature control
-- Longer heat-up times
-- Less consistent performance
+An iron without a separate station may suit some work, but check how its temperature is controlled and which tips are compatible. Use it only in a setup that meets the equipment maker's instructions and the venue's safety requirements.
 
 ### Solder Selection
 
 #### Leaded vs. Lead-Free
 
-**Leaded Solder (60/40 or 63/37)**
-- **Pros:** Lower melting point, easier to work with, better flow
-- **Cons:** Health concerns, environmental restrictions
-- **Best for:** Learning, hobby projects, repairs
-
-**Lead-Free Solder (SAC305, etc.)**
-- **Pros:** Environmentally friendly, RoHS compliant
-- **Cons:** Higher melting point, requires more skill
-- **Best for:** Commercial products, professional work
+Select solder for the components, application and applicable rules. Lead-containing and lead-free products have different handling and disposal requirements. Review the product safety information and the venue's procedures before use; do not treat either category as universally suitable.
 
 #### Wire Diameter
 
@@ -72,30 +43,7 @@ The heart of any soldering setup, your iron choice affects every joint you make.
 
 ### Flux and Cleaning
 
-#### Flux Types
-
-**Rosin Flux**
-- **Characteristics:** Mildly corrosive, easy cleanup
-- **Applications:** General electronics work
-- **Cleanup:** Isopropyl alcohol
-
-**No-Clean Flux**
-- **Characteristics:** Minimal residue, no cleanup required
-- **Applications:** Production environments
-- **Cleanup:** Optional with specialized solvents
-
-**Water-Soluble Flux**
-- **Characteristics:** Highly active, requires thorough cleaning
-- **Applications:** Difficult joints, repair work
-- **Cleanup:** Deionized water
-
-#### Cleaning Supplies
-
-- **Isopropyl Alcohol (99%)**: General cleaning and flux removal
-- **Flux Remover**: Specialized solvents for stubborn residues
-- **Cotton Swabs**: Precision cleaning
-- **Lint-Free Wipes**: Surface cleaning without contamination
-- **Ultrasonic Cleaner**: Professional-grade cleaning for complex assemblies
+Flux chemistry and residue requirements vary by product and application. Select the flux specified for the project, then follow its manufacturer's safety data and cleaning instructions. Do not assume a residue can be left in place or that a general-purpose solvent is compatible with a board, coating or component. Confirm the cleanup method with the instructor before use.
 
 ### Desoldering Tools
 
@@ -131,7 +79,7 @@ The heart of any soldering setup, your iron choice affects every joint you make.
 - Paint removal
 
 **Key Features:**
-- Temperature range: 100-500°C
+- A temperature range and controls suitable for the project and the materials, as verified in the maker's documentation
 - Airflow control
 - Multiple nozzle sizes
 - Digital display
@@ -158,9 +106,9 @@ The heart of any soldering setup, your iron choice affects every joint you make.
 
 **Weekly Care:**
 1. **Inspect tip condition** for wear or damage
-2. **Clean iron body** and cord
-3. **Check temperature calibration**
-4. **Verify stand stability**
+2. **Clean iron body** and cord using the maker's directions
+3. **Follow the maker's maintenance and inspection schedule**
+4. **Check that the stand is stable**
 
 #### Tip Replacement
 
@@ -180,34 +128,17 @@ The heart of any soldering setup, your iron choice affects every joint you make.
 
 #### Temperature Verification
 
-**Equipment needed:**
-- Tip thermometer or thermocouple
-- Known good solder (for melting point test)
-
-**Procedure:**
-1. Heat iron to set temperature
-2. Measure actual tip temperature
-3. Adjust calibration if necessary
-4. Document calibration date
+Use the station maker's inspection and calibration procedure with compatible equipment. Ask the instructor or equipment supplier to check the station if its displayed setting and performance do not agree.
 
 #### Performance Testing
 
-**Heat-up time test:**
-- Measure time from power-on to working temperature
-- Should be under 60 seconds for most stations
-
-**Temperature stability test:**
-- Monitor temperature over 30-minute period
-- Variation should be ±5°C or less
+Follow the station maker's checks for heat-up, stability, maintenance and replacement parts. Acceptable performance depends on the specific station and work.
 
 ## Workspace Setup
 
 ### Lighting
 
-**Requirements:**
-- Minimum 1000 lux at work surface
-- Color temperature 5000-6500K (daylight)
-- Minimal shadows and glare
+Provide enough even light to see the work clearly, with glare and shadows controlled. Select magnification and lighting for the task and the people using the bench.
 
 **Solutions:**
 - LED desk lamps with adjustable arms
@@ -216,16 +147,7 @@ The heart of any soldering setup, your iron choice affects every joint you make.
 
 ### Ventilation
 
-**Health considerations:**
-- Solder flux produces potentially harmful fumes
-- Lead-based solders pose additional risks
-- Proper ventilation is essential
-
-**Ventilation options:**
-- **Fume extractors**: Portable, flexible positioning
-- **Bench-top fans**: Simple, inexpensive solution
-- **Room ventilation**: Whole-room air exchange
-- **Downdraft tables**: Professional solution for production
+Flux fumes can irritate or sensitize. Have the venue or a qualified instructor select a purpose-designed fume extractor or local exhaust for the actual materials and room, and verify its placement and maintenance instructions. A general-purpose bench fan can move contaminants across the workspace and is not a substitute for source capture. See [RPI's soldering safety guidance](https://ehs.rpi.edu/lab-research-shop-safety/soldering-safety-guidelines).
 
 ### Organization
 
@@ -241,39 +163,14 @@ The heart of any soldering setup, your iron choice affects every joint you make.
 - Clear labeling system
 - Easy access to common components
 
-**Safety equipment:**
-- First aid kit with burn treatment
-- Fire extinguisher (appropriate type)
-- Emergency contact information
+**Safety planning:**
+- Identify the venue's first-aid and emergency procedures before work begins.
+- Ask the venue's responsible person to select and locate fire-safety equipment for the room and activity.
+- Keep food and drinks out of the soldering area, avoid touching the face while working, and wash hands with soap and water after soldering. Follow the instructor's cleanup and waste procedures. If using lead-containing materials, follow the instructor's lead-handling instructions. See the [EPA's lead-exposure precautions for hobbies](https://www.epa.gov/lead/reduce-risk-lead-exposure-home).
 
-## Budget Considerations
+## Plan a setup
 
-### Starter Kit ($50-100)
-
-**Essential items:**
-- Basic temperature-controlled iron (Weller WES51)
-- Rosin-core solder (60/40, 0.6mm)
-- Flux paste
-- Desoldering braid
-- Basic hand tools
-
-### Intermediate Setup ($200-500)
-
-**Upgrades:**
-- Better soldering station (Hakko FX-888D)
-- Hot air station
-- Fume extractor
-- Precision tools
-- Component storage system
-
-### Professional Setup ($500+)
-
-**Advanced equipment:**
-- High-end soldering station (JBC, Metcal)
-- Desoldering station
-- Preheater
-- Microscope or magnification system
-- Complete test equipment
+Start with the components and techniques in the project. Then compare the current cost of compatible stations and tips, solder and flux, hand tools, protective equipment, ventilation, storage, maintenance and replacement parts. For a workshop, account for the venue, the number of people who can be supervised safely, and the space and power available. There is no single price or tool list that fits every setup.
 
 ## Buying Recommendations
 
@@ -314,7 +211,7 @@ Investing in quality soldering tools pays dividends in improved work quality, re
 
 ## Related Resources
 
-- [Soldering Safety Guide](/learn/guides/soldering-safety/)
+- Confirm safety procedures with a qualified instructor for the activity and venue.
 - [Basic Through-Hole Soldering Tutorial](/learn/tutorials/basic-through-hole-soldering/)
-- [Workspace Setup Guide](/learn/guides/workspace-setup/)
-- [Tool Maintenance Schedule](/learn/guides/maintenance-schedule/)
+- [Build a soldering lab](/lab-setup/)
+- [Tool Maintenance Schedule](/learn/guides/soldering-tools-guide/#tool-maintenance)

@@ -17,17 +17,19 @@ class LearnTracker {
 
     // Data persistence
     loadData() {
-        const stored = localStorage.getItem(this.storageKey);
-        return stored ? JSON.parse(stored) : {
+        let stored;
+        try { stored = JSON.parse(localStorage.getItem(this.storageKey)); } catch {}
+        return {
             progress: {},
             bookmarks: [],
             assessments: {},
-            preferences: {}
+            preferences: {},
+            ...stored
         };
     }
 
     saveData() {
-        localStorage.setItem(this.storageKey, JSON.stringify(this.data));
+        try { localStorage.setItem(this.storageKey, JSON.stringify(this.data)); } catch {}
     }
 
     // Progress Tracking System
@@ -39,12 +41,10 @@ class LearnTracker {
             const itemId = element.dataset.progressItem;
             const isCompleted = this.data.progress[itemId] || false;
 
-            if (isCompleted) {
-                element.classList.add('completed');
-                this.updateProgressDisplay(element);
-            }
+            element.classList.toggle('completed', isCompleted);
+            this.updateProgressDisplay(element);
 
-            element.addEventListener('click', () => {
+            element.querySelector('.progress-btn')?.addEventListener('click', () => {
                 this.toggleProgress(itemId, element);
             });
         });
@@ -75,6 +75,7 @@ class LearnTracker {
         const isCompleted = element.classList.contains('completed');
 
         if (button) {
+            button.setAttribute('aria-pressed', String(isCompleted));
             button.textContent = isCompleted ? 'Completed ✓' : 'Mark Complete';
             button.className = isCompleted ?
                 'progress-btn bg-green-600 text-white px-4 py-2 rounded-lg' :
@@ -110,15 +111,11 @@ class LearnTracker {
     }
 
     showProgressFeedback(element, type) {
-        const feedback = document.createElement('div');
-        feedback.className = `progress-feedback ${type === 'completed' ? 'success' : 'info'}`;
+        const feedback = element.querySelector('.progress-feedback');
+        if (!feedback) return;
+        clearTimeout(feedback.feedbackTimer);
         feedback.textContent = type === 'completed' ? 'Great job! ✓' : 'Progress reset';
-
-        element.appendChild(feedback);
-
-        setTimeout(() => {
-            feedback.remove();
-        }, 2000);
+        feedback.feedbackTimer = setTimeout(() => { feedback.textContent = ''; }, 2000);
     }
 
     // Skill Assessment System
@@ -128,14 +125,14 @@ class LearnTracker {
         assessmentButtons.forEach(button => {
             button.addEventListener('click', (e) => {
                 const assessmentId = button.dataset.assessmentId;
-                this.startAssessment(assessmentId);
+                this.startAssessment(assessmentId, button);
             });
         });
     }
 
-    startAssessment(assessmentId) {
+    startAssessment(assessmentId, trigger = document.activeElement) {
         const assessmentData = this.getAssessmentQuestions(assessmentId);
-        this.showAssessmentModal(assessmentData);
+        this.showAssessmentModal(assessmentData, trigger);
     }
 
     getAssessmentQuestions(assessmentId) {
@@ -146,10 +143,15 @@ class LearnTracker {
                 title: 'Basic Soldering Assessment',
                 questions: [
                     {
-                        question: 'What temperature should you set for leaded solder?',
-                        options: ['250°C', '350°C', '450°C', '550°C'],
+                        question: 'What should determine the station setting for a soldering task?',
+                        options: [
+                            'A single temperature used for every soldering job',
+                            'The station, tip, solder and component instructions, with instructor guidance',
+                            'The temperature printed on the solder spool alone',
+                            'The highest setting available on the station'
+                        ],
                         correct: 1,
-                        explanation: '350°C (660°F) is the optimal temperature for leaded solder.'
+                        explanation: 'The suitable setting depends on the equipment, tip, solder and components. Check their instructions with the instructor.'
                     },
                     {
                         question: 'Why do you tin the soldering iron tip?',
@@ -163,15 +165,15 @@ class LearnTracker {
                         explanation: 'Tinning improves heat transfer and prevents tip oxidation.'
                     },
                     {
-                        question: 'What indicates a good solder joint?',
+                        question: 'What is a useful first visual check of a through-hole joint?',
                         options: [
-                            'Dull, grainy surface',
-                            'Shiny, smooth concave fillet',
-                            'Large blob of solder',
-                            'Minimal solder coverage'
+                            'Judge the joint by whether it looks shiny',
+                            'Look for visible wetting on the pad and lead, check adjacent pads, then ask the instructor to assess it against project criteria',
+                            'Add a large blob to cover the pad',
+                            'Assume a dull joint is always defective'
                         ],
                         correct: 1,
-                        explanation: 'A good joint has a shiny, smooth surface with a concave fillet shape.'
+                        explanation: 'Visible wetting and adjacent-pad checks are useful clues, but surface gloss alone cannot establish whether a joint meets the project criteria.'
                     }
                 ]
             }
@@ -180,25 +182,34 @@ class LearnTracker {
         return assessments[assessmentId] || null;
     }
 
-    showAssessmentModal(assessmentData) {
+    showAssessmentModal(assessmentData, trigger) {
         if (!assessmentData) return;
 
-        const modal = this.createAssessmentModal(assessmentData);
+        const modal = this.createAssessmentModal(assessmentData, trigger);
         document.body.appendChild(modal);
 
         // Show modal with animation
-        setTimeout(() => modal.classList.add('show'), 10);
+        modal.classList.add('show');
+        modal.showModal();
+        modal.querySelector('.question h4')?.focus();
     }
 
-    createAssessmentModal(assessmentData) {
-        const modal = document.createElement('div');
+    createAssessmentModal(assessmentData, trigger) {
+        const modal = document.createElement('dialog');
+        modal.returnFocusElement = trigger;
+        modal.setAttribute('aria-label', assessmentData.title);
+        modal.dataset.assessmentId = trigger?.dataset.assessmentId || 'basic-soldering';
+        modal.addEventListener('close', () => {
+            modal.remove();
+            if (modal.returnValue !== 'retake') trigger?.focus();
+        });
         modal.className = 'assessment-modal';
         modal.innerHTML = `
       <div class="modal-overlay">
         <div class="modal-content">
           <div class="modal-header">
-            <h3>${assessmentData.title}</h3>
-            <button class="close-modal">&times;</button>
+          <h3>${assessmentData.title}</h3>
+          <button type="button" class="close-modal" aria-label="Close quiz">&times;</button>
           </div>
           <div class="modal-body">
             <div class="assessment-progress">
@@ -208,9 +219,9 @@ class LearnTracker {
               <!-- Questions will be inserted here -->
             </div>
             <div class="assessment-controls">
-              <button class="prev-question" disabled>Previous</button>
-              <button class="next-question">Next</button>
-              <button class="submit-assessment" style="display: none;">Submit</button>
+              <button type="button" class="prev-question" disabled>Previous</button>
+              <button type="button" class="next-question">Next</button>
+              <button type="button" class="submit-assessment" style="display: none;">Submit</button>
             </div>
           </div>
         </div>
@@ -236,7 +247,7 @@ class LearnTracker {
             const question = assessmentData.questions[index];
             questionContainer.innerHTML = `
         <div class="question">
-          <h4>Question ${index + 1} of ${assessmentData.questions.length}</h4>
+          <h4 tabindex="-1">Question ${index + 1} of ${assessmentData.questions.length}</h4>
           <p>${question.question}</p>
           <div class="options">
             ${question.options.map((option, i) => `
@@ -263,6 +274,7 @@ class LearnTracker {
             prevBtn.disabled = index === 0;
             nextBtn.style.display = index === assessmentData.questions.length - 1 ? 'none' : 'block';
             submitBtn.style.display = index === assessmentData.questions.length - 1 ? 'block' : 'none';
+            if (modal.open) questionContainer.querySelector('h4')?.focus();
         };
 
         const saveAnswer = () => {
@@ -295,13 +307,20 @@ class LearnTracker {
         });
 
         closeBtn.addEventListener('click', () => {
-            modal.remove();
+            modal.close();
         });
 
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal.querySelector('.modal-overlay')) {
-                modal.remove();
-            }
+        let pointerStartedOnBackdrop = false;
+        modal.addEventListener('pointerdown', (event) => {
+            const rect = modal.getBoundingClientRect();
+            pointerStartedOnBackdrop = event.target === modal && (
+                event.clientX < rect.left || event.clientX > rect.right ||
+                event.clientY < rect.top || event.clientY > rect.bottom
+            );
+        });
+        modal.addEventListener('click', (event) => {
+            if (pointerStartedOnBackdrop && event.target === modal && event.detail > 0) modal.close();
+            pointerStartedOnBackdrop = false;
         });
 
         // Show first question
@@ -355,7 +374,7 @@ class LearnTracker {
         modalBody.innerHTML = `
       <div class="assessment-results">
         <div class="results-header">
-          <h3>Assessment Complete!</h3>
+          <h3 tabindex="-1">Assessment Complete!</h3>
           <div class="score-display">
             <div class="score-circle ${results.percentage >= 70 ? 'pass' : 'fail'}">
               <span class="score">${results.percentage}%</span>
@@ -397,20 +416,22 @@ class LearnTracker {
         </div>
         
         <div class="results-actions">
-          <button class="retake-assessment">Retake Assessment</button>
-          <button class="close-results">Close</button>
+          <button type="button" class="retake-assessment">Retake Assessment</button>
+          <button type="button" class="close-results">Close</button>
         </div>
       </div>
     `;
 
+        modal.querySelector('.results-header h3')?.focus();
+
         // Setup result actions
         modal.querySelector('.retake-assessment').addEventListener('click', () => {
-            modal.remove();
-            // Restart assessment logic would go here
+            modal.close('retake');
+            this.startAssessment(modal.dataset.assessmentId, modal.returnFocusElement);
         });
 
         modal.querySelector('.close-results').addEventListener('click', () => {
-            modal.remove();
+            modal.close();
         });
     }
 
@@ -444,6 +465,7 @@ class LearnTracker {
     }
 
     updateBookmarkButton(button, isBookmarked) {
+        button.setAttribute('aria-pressed', String(isBookmarked));
         button.textContent = isBookmarked ? 'Bookmarked ★' : 'Bookmark ☆';
         button.className = isBookmarked ?
             'bookmark-btn bookmarked px-4 py-2 bg-yellow-500 text-white rounded-lg' :
@@ -461,6 +483,11 @@ class LearnTracker {
             }, 300));
         }
 
+        const level = document.getElementById('level');
+        if (level) {
+            level.value = new URLSearchParams(location.search).get('level') || '';
+            this.applyFilters();
+        }
         filterSelects.forEach(select => {
             select.addEventListener('change', () => {
                 this.applyFilters();
@@ -506,7 +533,7 @@ class LearnTracker {
                 }
             });
 
-            item.style.display = show ? 'block' : 'none';
+            item.hidden = !show;
             if (show) visibleCount++;
         });
 
@@ -564,247 +591,3 @@ class LearnTracker {
 document.addEventListener('DOMContentLoaded', () => {
     window.learnTracker = new LearnTracker();
 });
-
-// CSS for interactive elements (to be added to main CSS file)
-const interactiveStyles = `
-.assessment-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1000;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-}
-
-.assessment-modal.show {
-  opacity: 1;
-  visibility: visible;
-}
-
-.modal-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-
-.modal-content {
-  background: white;
-  border-radius: 8px;
-  max-width: 600px;
-  width: 100%;
-  max-height: 90vh;
-  overflow-y: auto;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-}
-
-.modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.close-modal {
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  color: #6b7280;
-}
-
-.modal-body {
-  padding: 20px;
-}
-
-.assessment-progress {
-  width: 100%;
-  height: 8px;
-  background: #e5e7eb;
-  border-radius: 4px;
-  margin-bottom: 20px;
-  overflow: hidden;
-}
-
-.assessment-progress .progress-bar {
-  height: 100%;
-  background: #3b82f6;
-  transition: width 0.3s ease;
-}
-
-.question {
-  margin-bottom: 20px;
-}
-
-.options {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 15px;
-}
-
-.option {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  border: 2px solid #e5e7eb;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.option:hover {
-  border-color: #3b82f6;
-  background: #f8fafc;
-}
-
-.option input[type="radio"] {
-  margin-right: 10px;
-}
-
-.assessment-controls {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-}
-
-.assessment-controls button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 500;
-  transition: all 0.2s ease;
-}
-
-.prev-question {
-  background: #6b7280;
-  color: white;
-}
-
-.prev-question:disabled {
-  background: #d1d5db;
-  cursor: not-allowed;
-}
-
-.next-question, .submit-assessment {
-  background: #3b82f6;
-  color: white;
-}
-
-.next-question:hover, .submit-assessment:hover {
-  background: #2563eb;
-}
-
-.assessment-results {
-  text-align: center;
-}
-
-.score-circle {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 20px auto;
-  border: 8px solid;
-}
-
-.score-circle.pass {
-  border-color: #10b981;
-  background: #ecfdf5;
-  color: #065f46;
-}
-
-.score-circle.fail {
-  border-color: #ef4444;
-  background: #fef2f2;
-  color: #991b1b;
-}
-
-.score {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.label {
-  font-size: 14px;
-  opacity: 0.8;
-}
-
-.results-details {
-  text-align: left;
-  margin-top: 30px;
-}
-
-.question-result {
-  margin-bottom: 20px;
-  padding: 15px;
-  border-radius: 6px;
-  border-left: 4px solid;
-}
-
-.question-result.correct {
-  border-color: #10b981;
-  background: #ecfdf5;
-}
-
-.question-result.incorrect {
-  border-color: #ef4444;
-  background: #fef2f2;
-}
-
-.progress-feedback {
-  position: absolute;
-  top: -30px;
-  right: 0;
-  padding: 5px 10px;
-  border-radius: 4px;
-  font-size: 12px;
-  font-weight: 500;
-  animation: fadeInOut 2s ease;
-}
-
-.progress-feedback.success {
-  background: #10b981;
-  color: white;
-}
-
-.progress-feedback.info {
-  background: #3b82f6;
-  color: white;
-}
-
-@keyframes fadeInOut {
-  0%, 100% { opacity: 0; transform: translateY(-10px); }
-  20%, 80% { opacity: 1; transform: translateY(0); }
-}
-
-.filterable-item {
-  transition: all 0.3s ease;
-}
-
-.bookmark-btn.bookmarked {
-  background: #fbbf24 !important;
-  color: white !important;
-}
-`;
-
-// Add styles to document
-if (typeof document !== 'undefined') {
-    const styleSheet = document.createElement('style');
-    styleSheet.textContent = interactiveStyles;
-    document.head.appendChild(styleSheet);
-}

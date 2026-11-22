@@ -1,7 +1,7 @@
 ---
 title: "Simple Audio Amplifier"
 date: 2024-01-01T00:00:00Z
-draft: false
+draft: true
 description: "Build a simple audio amplifier using the LM386 IC - perfect for learning analog circuit construction"
 difficulty: "intermediate"
 duration: "3 hours"
@@ -104,7 +104,6 @@ Power: 9V Battery
       +V     GND    GND
 ```
 
-*Note: Complete schematic with pin numbers available in downloadable PDF*
 
 ## Project Instructions
 
@@ -371,19 +370,9 @@ After completing this amplifier project:
 1. **Experiment with modifications** to understand circuit behavior
 2. **Build stereo version** for enhanced capability
 3. **Try different amplifier ICs** (LM380, TDA2030, etc.)
-4. **Learn about** [Audio Circuit Design](/learn/guides/audio-circuits/)
-5. **Progress to** [Power Amplifier Projects](/learn/projects/power-amplifier/)
+4. **Learn about** Audio Circuit Design
+5. **Progress to** Power Amplifier Projects
 
-## Project Files
+## Share your build
 
-- **Complete Schematic (PDF)**: [Download with component values and pin numbers]
-- **PCB Layout (Gerber)**: [Professional PCB design files]
-- **Parts List (CSV)**: [Complete BOM with supplier part numbers]
-- **Assembly Guide (PDF)**: [Step-by-step photos and diagrams]
-- **Test Procedures (PDF)**: [Detailed testing and measurement guide]
-
-## Community Builds
-
-Share your completed amplifier and see builds from other makers! Upload photos and audio samples to be featured in our community gallery.
-
-*What modifications did you make? How does it sound? Share your experience!*
+Tell the [Fellowship community](mailto:carl@fellowshipoftheflux.com?subject=Project%20question) what you built, what you changed and how it worked.

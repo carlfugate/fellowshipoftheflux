@@ -1,0 +1,10 @@
+<div class="frame interior"><p class="eyeline">Fellowship of the Flux</p><h1>{{ if eq .Section "posts" }}Workshop journal{{ else }}{{ .Title }}{{ end }}</h1>
+{{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
+{{ if eq .Section "posts" }}<nav class="inline-links" aria-label="Post categories">{{ range site.Taxonomies.categories }}<a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>{{ end }}</nav>{{ end }}
+<div class="catalog">{{ range .Paginator.Pages }}
+<div class="entry"><div class="entry-body"><span class="eyeline">{{ with .Params.status }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Date.Format "Jan 2, 2006" }} · {{ .ReadingTime }} min read{{ else }}Collection{{ end }}{{ end }}</span><strong><a href="{{ .RelPermalink }}">{{ .Title }}</a></strong>{{ with .Description }}<p>{{ . }}</p>{{ end }}
+{{ with .Params.project_url }}<a class="quiet" href="{{ . }}">Visit project →</a>{{ end }} {{ with .Params.github_url }}<a class="quiet" href="{{ . }}">Source on GitHub →</a>{{ end }}
+{{ with .Params.technologies }}<p>{{ delimit . " · " }}</p>{{ end }}</div><span aria-hidden="true">↗</span></div>
+{{ else }}<p>No entries yet. <a class="quiet" href="/learn/">Explore the learning library</a>.</p>{{ end }}</div>
+{{ if gt .Paginator.TotalPages 1 }}<nav class="inline-links" aria-label="Page navigation">{{ range .Paginator.Pagers }}<a href="{{ .URL }}" {{ if eq . $.Paginator }}aria-current="page"{{ end }}>Page {{ .PageNumber }}</a>{{ end }}</nav>{{ end }}
+</div>

@@ -151,7 +151,7 @@
         const noResults = document.getElementById('no-results');
         const loading = document.getElementById('search-loading');
 
-        // Sample content data - in a real implementation, this would come from an API
+        // Published resources listed in this search view.
         const contentData = [
             {
                 title: "Basic Through-Hole Soldering",
@@ -174,19 +174,7 @@
                 url: "/learn/guides/soldering-tools-guide/",
                 date: "2024-01-01",
                 featured_image: "/images/guides/soldering-tools.jpg"
-            },
-            {
-                title: "Simple LED Flasher Circuit",
-                description: "Build a simple LED flasher circuit - a perfect first soldering project for beginners",
-                type: "project",
-                difficulty: "beginner",
-                duration: "1.5 hours",
-                tags: ["project", "555-timer", "led", "circuit"],
-                url: "/learn/projects/simple-led-flasher/",
-                date: "2024-01-01",
-                featured_image: "/images/projects/led-flasher.jpg"
             }
-            // More content would be added here
         ];
 
         let filteredResults = [...contentData];

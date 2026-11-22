@@ -1,0 +1,7 @@
+# Initial assessment
+
+The site publishes Markdown and inline HTML through Hugo, Tailbliss and a PostCSS/Tailwind build to GitHub Pages. Workshop requests, volunteering and partnerships use email. Learning preferences, completion and bookmarks use browser storage. There is no account service, booking API or server database in the repository.
+
+The strongest assets are the original workshop photographs, practical lessons, documented workshop formats and a portable lab guide. On desktop seven navigation choices compete with three equally weighted homepage cards. On mobile even the menu depends on externally hosted Alpine. The Learn page repeats its title, promotes an unbuilt tools route and offers paths before showing the actual lessons. The through-hole article renders without its specialized template. Workshop organizers scroll past the packages to find an email address. Expired dates are still labeled upcoming. The homepage and About page disagree on volunteer counts.
+
+Use a printed workshop manual as the visual reference. Put a real task in each primary action. Bring the equipment, instructor and learner into view with original photography. Give the learning library an actual catalog, let organizers compare packages near the top, and place an email action beside each decision. Keep existing routes, stored learning keys, package details, published contact channels, feeds and Pages deployment.

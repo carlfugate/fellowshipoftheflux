@@ -1,199 +1,33 @@
-# Content Accuracy Review — Issues to Resolve
+# Release content review
 
-Every item below contains content that was AI-generated without verified facts. Each needs your input to confirm, correct, or remove.
+Status as of 2026-11-22. This repository-local record accompanies PR #27 and the remote launch roadmap in issue #26.
 
----
+## Resolved for the current public build
 
-## 🔴 CRITICAL — Fabricated People, Quotes & Events
+- The Community page records the three 2026 events; the site owner confirmed that all three entries are events the Fellowship attended.
+- Invented volunteer profiles, testimonials, event statistics, author biographies, sponsor claims and participant quotes are no longer in the public build. The old journal articles remain in source as drafts.
+- The old project case studies and the LED-flasher and audio-amplifier builds are drafts. The LED-flasher schematic had an incorrect timer circuit and timing explanation; the audio build also had an incomplete schematic. Their links are removed from the published catalog.
+- Unverified workshop capacities, packages, service regions, equipment counts, certifications, background-check promises, donation tiers and response-time promises were removed from public pages.
+- The owner confirmed `carl@fellowshipoftheflux.com` as the public contact inbox. Contact, volunteer, workshop and project inquiry links use that address; no other public email address is used.
+- The through-hole and SMD lessons now direct joint acceptance and rework to the instructor and project criteria. They do not use surface gloss alone as a pass/fail rule or give general-purpose cleaning or jumper-repair instructions. The through-hole interactive quiz now reinforces project-specific station settings and symptom-based visual checks rather than fixed temperature or shine rules.
+- The listed GitHub and Twitter profile URLs returned 404 during a read-only check. Those profile links and account metadata are removed from the public site.
+- The project index no longer contains unrelated web-development boilerplate. The Get Involved and workshop pages now offer the confirmed contact route while keeping role availability, workshop format and travel details case-specific.
+- Equipment budget estimates and price claims were removed; the lab-planning guide now directs readers to current manufacturer or authorized-supplier information.
+- The through-hole and SMD lessons defer station settings, material-specific handling, acceptance criteria and rework decisions to the instructor and equipment/project instructions. Food and drinks stay out of work areas and handwashing follows soldering regardless of solder alloy. The tools guide defers flux cleanup to its maker and does not recommend a general-purpose fan. The standalone safety guide remains a draft pending instructor review.
 
-### Issue 1: Fake volunteer profiles on Community page
-**File:** `content/community.md`
-- "Sarah Chen" — Lead Instructor, Electronics Engineer, 5 years
-- "Marcus Rodriguez" — Equipment Manager, Retired Technician, 3 years
-- **Action needed:** Replace with real volunteers (with permission) or remove the section entirely
+## Owner or specialist review required before launch
 
-### Issue 2: Fake testimonials on Services page
-**File:** `content/services.md`
-- "The Fellowship of the Flux team made our BSides KC soldering village a huge success..." — BSides KC Organizer
-- "Our students were completely engaged..." — STEM Program Director
-- **Action needed:** Get real quotes or remove
+- The owner confirmed publication rights for the current photo set and confirmed source records for the three 2026 event entries. The first-lesson comparison still needs three matching close-up photos of real joints; existing photos do not show diagnostic joint details, so new bench photos and instructor-reviewed captions are required.
+- The standalone soldering safety guide is kept in draft until a qualified instructor reviews its ventilation, PPE, fire and first-aid claims. Have an instructor review both published technical lessons and approve the visual joint criteria and comparison figure, including lead handling, station settings, component values, procedures and venue-specific extraction. A model review is not expert sign-off.
+- Keep organization location and service availability claims unpublished until verified; current workshop information stays case-specific.
+- Review the draft journal and project content before any item is published; restore only verified names, citations, dates, partners, numbers and technical instructions.
+- Confirm any public social account URLs before restoring profile links.
 
-### Issue 3: Fake testimonial on Homepage
-**File:** `layouts/index.html`
-- "I went from being intimidated by electronics to building my own LED badge in just 2 hours!" — Sarah M., First-Time Maker
-- **Action needed:** Real quote or remove
+## Release tracking
 
-### Issue 4: Fake author names on blog posts
-**Files:** `content/posts/`
-- "Marcus Rodriguez" on BSides KC recap
-- "Dr. Jennifer Walsh" on education impact post
-- "Sarah Chen" on soldering techniques post
-- "Development Team" on building platforms post
-- **Action needed:** Attribute to real authors or use "Fellowship Team"
-
-### Issue 5: Fabricated BSides KC 2023 stats on Community page
-**File:** `content/community.md`
-- "150+ Participants Taught"
-- "25 Volunteer Instructors"
-- "Zero Safety Incidents"
-- **Action needed:** Verify actual numbers or remove
-
----
-
-## 🟡 IMPORTANT — Unverified Numbers & Claims
-
-### Issue 6: Impact statistics used across multiple pages
-**Files:** `content/about.md`, `content/community.md`, `layouts/index.html`
-- 500+ People Taught
-- 25+ Events Supported
-- 30+ Volunteers Trained
-- 20+ Partner Organizations
-- 100+ Active Volunteers (homepage still says this)
-- **Action needed:** What are the real numbers? They don't need to be exact — ballpark is fine
-
-### Issue 7: BSides KC 2024 recap post claims "180+ participants"
-**File:** `content/posts/bsides-kc-2024-recap.md`
-- Title says "Record-Breaking Soldering Village"
-- Description claims "180+ participants"
-- **Action needed:** Verify. Did this event happen? What were actual numbers?
-
-### Issue 8: Organization founded date
-**File:** `config.yaml`
-- `founded: "2020"`
-- **Action needed:** Is this correct?
-
-### Issue 9: Equipment specifics
-**Files:** `content/about.md`, `content/services.md`, `content/lab-setup.md`
-- "20+ Hakko FX-888 stations" — Is this the right model? Right quantity?
-- "Custom 3D-printed organizers" — Do these exist?
-- **Action needed:** Confirm equipment details
-
-### Issue 10: Lab setup budget numbers
-**File:** `content/lab-setup.md`
-- 10x Hakko FX-888D at $1,100
-- Tools & accessories at $600
-- Total $2,600 for 10-station lab
-- Individual tool prices (Xuron 410 at $8-12, etc.)
-- **Action needed:** Are these prices/recommendations accurate to your experience?
-
----
-
-## 🟠 MODERATE — Unverified Programs & Offerings
-
-### Issue 11: Workshop packages on Services page
-**File:** `content/services.md`
-- "Basic" (2-3 hours, up to 20 participants)
-- "Advanced" (3-4 hours, SMD, up to 15 participants)
-- "Custom" (flexible)
-- **Action needed:** Do you actually offer these tiers? What do you really offer?
-
-### Issue 12: Geographic coverage claims
-**File:** `content/services.md`
-- Primary: Kansas City metro
-- Extended: Missouri, Kansas, Iowa, Nebraska, Oklahoma
-- Special arrangements for outside area
-- **Action needed:** Where do you actually serve?
-
-### Issue 13: Upcoming events are stale/fake
-**File:** `content/community.md`
-- "MARCH 15-16, 2024" BSides Kansas City
-- "JUNE 22-23, 2024" MakerFaire KC
-- Both dates are in the past and may not be accurate
-- **Action needed:** Replace with actual upcoming events or remove section
-
-### Issue 14: Volunteer training program details
-**File:** `content/get-involved.md`
-- "4-6 hours initial certification"
-- "Monthly training sessions"
-- "Background check" process
-- "Safety certification"
-- **Action needed:** Is there a formal training program? What does it actually look like?
-
-### Issue 15: Donation tiers
-**File:** `content/get-involved.md`
-- $25 supplies for one participant
-- $50 complete tool set
-- $500 complete workstation
-- $1,000 sponsor full workshop
-- **Action needed:** Are you set up to accept donations? Are these amounts accurate?
-
-### Issue 16: Email addresses — do they all work?
-**Files:** Multiple
-- info@fellowshipoftheflux.com
-- workshops@fellowshipoftheflux.com
-- volunteers@fellowshipoftheflux.com
-- services@fellowshipoftheflux.com
-- community@fellowshipoftheflux.com
-- instruction@fellowshipoftheflux.com
-- events@fellowshipoftheflux.com
-- equipment@fellowshipoftheflux.com
-- content@fellowshipoftheflux.com
-- outreach@fellowshipoftheflux.com
-- partnerships@fellowshipoftheflux.com
-- education@fellowshipoftheflux.com
-- support@fellowshipoftheflux.com
-- **Action needed:** Which of these actually exist? Remove the rest.
-
----
-
-## 🔵 LOWER PRIORITY — Content That Needs Rewriting
-
-### Issue 17: Blog posts are largely AI-generated content
-**Files:** All posts in `content/posts/`
-- `bsides-kc-2024-recap.md` — Detailed event recap that may not match reality
-- `soldering-education-impact.md` — Cites "research" and "studies" without sources, attributed to "Dr. Jennifer Walsh"
-- `tailwind-css-tips.md` — Soldering techniques post (filename still says tailwind)
-- `building-with-hugo.md` — Education platform post
-- `welcome-to-fellowship.md` — Intro post
-- **Action needed:** Rewrite with real stories, or mark as draft until you can
-
-### Issue 18: Learn section tutorials/guides/projects
-**Files:** `content/learn/tutorials/`, `content/learn/guides/`, `content/learn/projects/`
-- Through-hole soldering tutorial
-- SMD soldering tutorial
-- Safety guide
-- Tools guide
-- LED flasher project
-- Audio amplifier project
-- **Action needed:** Are these technically accurate? Review for correctness. The technical content may be mostly fine but should be verified by someone who teaches this.
-
-### Issue 19: Projects section still has web dev boilerplate
-**File:** `content/projects/_index.md`
-- "contributions to the open-source community. Each project demonstrates different aspects of modern web development"
-- **Action needed:** Rewrite to match org focus
-
-### Issue 20: Discord server link is a dead `#` link
-**File:** `content/community.md`
-- "Join Discord →" links to `#`
-- **Action needed:** Add real link or remove
-
-### Issue 21: Social media links may not exist
-**File:** `config.yaml`
-- GitHub: `fellowshipoftheflux`
-- Twitter: `fluxfellowship`
-- **Action needed:** Do these accounts exist?
-
-### Issue 22: Get Involved page needs full redesign
-**File:** `content/get-involved.md`
-- Currently a massive wall of markdown text — no photos, no visual layout
-- Only page without a hero photo header
-- Volunteer roles, training program, donation tiers, email addresses all need verification (see Issues 14, 15, 16)
-- Needs the same inline HTML treatment as other pages (cards, sections, CTAs)
-- **Action needed:** Decide which volunteer roles/programs are real, then rebuild the page with proper visual layout
-
----
-
-## How to Work Through This
-
-I'd suggest going in order:
-1. **Red items first** — fake people/quotes are the most damaging to credibility
-2. **Yellow items** — get the real numbers in place
-3. **Orange items** — confirm what you actually offer
-4. **Blue items** — clean up as time allows
-
-For each issue, just tell me:
-- **Correct info** to replace it with, OR
-- **Remove it** if it's not real, OR
-- **Mark as draft** if you want to come back to it later
-
-We can batch the updates once you've gone through the list.
+- Local branch: `redesign/workshop-field-guide`.
+- Draft PR: [#27 — Redesign as a soldering field guide](https://github.com/carlfugate/fellowshipoftheflux/pull/27). Latest pushed commit: `fb5cd67`.
+- Actions run [45080946628](https://github.com/carlfugate/fellowshipoftheflux/actions/runs/45080946628) passed on the latest commit. The validate job used Hugo 0.157.0 and Ubuntu 24.04 and passed production build, route/template validation, npm audit, smoke tests and critical Playwright journeys. The journey suite verified the confirmed inbox and direct-contact paths across 48 route/view checks. Separate build, test and deploy jobs are skipped for PRs.
+- Local `npm test` and `npm run check:links` passed after the contact update; the link checker verified all 50 generated HTML files. No local browser launch was used for this update.
+- Owner waived manual screen-reader review on 2026-11-22. Automated axe-core and keyboard journey checks remain documented; no manual screen-reader result is claimed.
+- Owner confirmed current photo publication rights and event source records, and approved merge/deploy after the remaining gates clear. PR #27 remains a draft until technical review and the requested original joint photos are complete; no production deployment occurred.

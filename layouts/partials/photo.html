@@ -1,0 +1,4 @@
+{{ $photo := resources.Get (printf "workshop/%s.jpg" .name) }}
+{{ $large := $photo.Resize "1100x webp q80" }}
+{{ $small := $photo.Resize "580x webp q78" }}
+<img src="{{ $large.RelPermalink }}" srcset="{{ $small.RelPermalink }} 580w, {{ $large.RelPermalink }} 1100w" sizes="{{ .sizes | default "(max-width: 760px) 100vw, 50vw" }}" width="{{ $large.Width }}" height="{{ $large.Height }}" alt="{{ .alt }}" {{ if .priority }}fetchpriority="high"{{ else }}loading="lazy"{{ end }}>

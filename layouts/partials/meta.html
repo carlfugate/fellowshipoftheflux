@@ -15,8 +15,8 @@
 <meta property="og:image" content="{{ .Params.featured_image | absURL }}" />
 <meta property="og:image:secure_url" content="{{ .Params.featured_image | absURL }}" />
 {{ else }}
-<meta property="og:image" content="{{ "/images/tailbliss-cover.png" | absURL }}" />
-<meta property="og:image:secure_url" content="{{ "/images/tailbliss-cover.png" | absURL }}" />
+<meta property="og:image" content="{{ "/images/photos/soldering-instruction.jpg" | absURL }}" />
+<meta property="og:image:secure_url" content="{{ "/images/photos/soldering-instruction.jpg" | absURL }}" />
 {{ end }}
 
 {{ if .IsPage }}
@@ -39,11 +39,7 @@
 {{ if .Params.featured_image }}
 <meta name="twitter:image" content="{{ .Params.featured_image | absURL }}" />
 {{ else }}
-<meta name="twitter:image" content="{{ "/images/tailbliss-cover.png" | absURL }}" />
-{{ end }}
-{{ if .Site.Params.social.twitter }}
-<meta name="twitter:site" content="@{{ .Site.Params.social.twitter }}" />
-<meta name="twitter:creator" content="@{{ .Site.Params.social.twitter }}" />
+<meta name="twitter:image" content="{{ "/images/photos/soldering-instruction.jpg" | absURL }}" />
 {{ end }}
 
 <!-- Additional Meta -->

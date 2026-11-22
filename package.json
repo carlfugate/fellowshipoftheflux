@@ -19,19 +19,24 @@
     "update:deps": "npm update",
     "serve": "npm run build && npx http-server public -p 8080 -c-1",
     "serve:production": "npm run build:production && npx http-server public -p 8080 -g",
-    "validate": "hugo --printPathWarnings --printUnusedTemplates --environment production",
+    "validate": "hugo --printPathWarnings --printUnusedTemplates --environment production --config config.yaml,config.production.yaml",
     "validate:html": "npm run build:production && java -jar node_modules/vnu-jar/build/dist/vnu.jar --skip-non-html --also-check-css --format text ./public/",
-    "check:links": "npm run build:production && npm run serve & sleep 5 && npx broken-link-checker http://localhost:8080 --recursive --ordered --exclude-external --filter-level 3; kill %1 2>/dev/null || true",
-    "test:lighthouse": "npm run build:production && npx @lhci/cli@0.12.x autorun",
+    "check:links": "npm run build:production && node scripts/check-links.cjs",
+    "test:lighthouse": "npm run build:production && lhci autorun",
     "lint": "echo 'Linting not configured - consider adding markdownlint or similar'",
     "test": "./scripts/test.sh",
-    "test:all": "npm run test && npm run check:links && npm run test:lighthouse",
+    "test:journeys": "node scripts/test-journeys.cjs",
+    "test:all": "npm run test && npm run test:journeys && npm run check:links && npm run test:lighthouse",
     "test:performance": "bash scripts/performance-test.sh",
     "validate:deployment": "bash scripts/validate-deployment.sh",
     "precommit": "npm run validate && npm run build:preview",
     "deploy:test": "npm run build:production && npm run serve:production",
     "test:deployment": "./scripts/test-deployment.sh",
-    "verify:live": "npm run test:deployment && echo '\n✅ Live site verified! Visit: https://fellowshipoftheflux.com'"
+    "verify:live": "npm run test:deployment && echo '\n✅ Live site verified! Visit: https://fellowshipoftheflux.com'",
+    "predev": "npm run build:css",
+    "predev:fast": "npm run build:css",
+    "predev:network": "npm run build:css",
+    "prebuild:production": "npm run build:css"
   },
   "keywords": [
     "hugo",
@@ -42,20 +47,25 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^5.0.0",
-    "@lhci/cli": "^0.12.0",
+    "@lhci/cli": "0.16.1",
     "@tailwindcss/typography": "^0.5.10",
-    "autoprefixer": "^10.4.16",
-    "broken-link-checker": "^0.7.8",
+    "autoprefixer": "10.7.0",
+    "axe-core": "4.14.1",
     "cssnano": "^6.0.1",
     "http-server": "^14.1.1",
-    "postcss": "^8.4.32",
+    "playwright": "1.60.0",
+    "postcss": "8.5.33",
     "postcss-cli": "^11.0.0",
     "tailwindcss": "^3.3.6",
-    "vnu-jar": "^23.4.11"
+    "vnu-jar": "26.11.20"
   },
   "engines": {
-    "node": ">=18.0.0",
+    "node": ">=22.19.0",
     "npm": ">=9.0.0"
+  },
+  "overrides": {
+    "@tailwindcss/typography": {
+      "postcss-selector-parser": "6.1.6"
+    }
   }
 }

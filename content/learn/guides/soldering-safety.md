@@ -1,7 +1,7 @@
 ---
 title: "Soldering Safety Guide"
 date: 2024-01-01T00:00:00Z
-draft: false
+draft: true
 description: "Essential safety practices for soldering - protect yourself and create a safe workspace"
 guide_type: "reference"
 difficulty: "beginner"
@@ -296,6 +296,6 @@ Remember: **When in doubt, stop and seek guidance.** No project is worth risking
 ## Related Resources
 
 - [Complete Soldering Tools Guide](/learn/guides/soldering-tools-guide/)
-- [Workspace Setup Guide](/learn/guides/workspace-setup/)
-- [Emergency Contact Template](/learn/guides/emergency-contacts/)
-- [Safety Training Checklist](/learn/guides/safety-checklist/)
+- [Workspace Setup Guide](/learn/guides/soldering-safety/#workspace-safety)
+- [Emergency procedures](#emergency-procedures)
+- [Safety training](#training-and-competency)

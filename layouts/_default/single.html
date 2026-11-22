@@ -1,3 +1,4 @@
 {{ define "main" }}
-{{ .Content }}
+<article class="frame interior"><p class="eyeline">Fellowship of the Flux</p><h1>{{ .Title }}</h1>
+<div class="reading"><aside><details><summary>On this page</summary>{{ .TableOfContents }}</details></aside><div class="copy">{{ .Content }}</div></div></article>
 {{ end }}

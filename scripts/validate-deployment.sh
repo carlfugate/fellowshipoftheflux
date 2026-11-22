@@ -79,23 +79,23 @@ validate_configs() {
 validate_workflow() {
     print_status "Validating GitHub Actions workflow..."
     
-    if [ -f ".github/workflows/deploy.yml" ]; then
+    if [ -f ".github/workflows/hugo.yml" ]; then
         print_success "✓ GitHub Actions workflow exists"
         
         # Check for key workflow elements
-        if grep -q "NODE_ENV.*production" .github/workflows/deploy.yml; then
+        if grep -q "NODE_ENV.*production" .github/workflows/hugo.yml; then
             print_success "✓ Production environment configured"
         else
             print_warning "⚠ Production environment may not be configured"
         fi
         
-        if grep -q "config.production.yaml" .github/workflows/deploy.yml; then
+        if grep -q "config.production.yaml" .github/workflows/hugo.yml; then
             print_success "✓ Production config referenced in workflow"
         else
             print_warning "⚠ Production config not referenced in workflow"
         fi
         
-        if grep -q "cache:" .github/workflows/deploy.yml; then
+        if grep -q "cache:" .github/workflows/hugo.yml; then
             print_success "✓ Caching configured in workflow"
         else
             print_warning "⚠ No caching configured in workflow"

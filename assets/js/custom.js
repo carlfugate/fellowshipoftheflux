@@ -1,212 +1,74 @@
-// Custom JavaScript for enhanced functionality
-
-// Smooth scrolling for anchor links
-document.addEventListener('DOMContentLoaded', function() {
-    // Add smooth scrolling to all anchor links
-    const anchorLinks = document.querySelectorAll('a[href^="#"]');
-    
-    anchorLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            
-            // Skip if it's just "#"
-            if (href === '#') return;
-            
-            const target = document.querySelector(href);
-            if (target) {
-                e.preventDefault();
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-                
-                // Update URL without jumping
-                history.pushState(null, null, href);
-            }
-        });
-    });
-    
-    // Add fade-in animation to elements when they come into view
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-fade-in');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-    
-    // Observe elements with fade-in class
-    const fadeElements = document.querySelectorAll('.fade-on-scroll');
-    fadeElements.forEach(el => observer.observe(el));
-    
-    // Add loading states to forms
-    const forms = document.querySelectorAll('form');
-    forms.forEach(form => {
-        form.addEventListener('submit', function() {
-            const submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
-            if (submitBtn) {
-                submitBtn.disabled = true;
-                const originalText = submitBtn.textContent || submitBtn.value;
-                submitBtn.textContent = 'Loading...';
-                submitBtn.value = 'Loading...';
-                
-                // Re-enable after 5 seconds as fallback
-                setTimeout(() => {
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = originalText;
-                    submitBtn.value = originalText;
-                }, 5000);
-            }
-        });
-    });
-    
+const menu = document.querySelector('#primary-nav');
+const menuButton = document.querySelector('.menu-switch');
+function setMenu(open) {
+    menuButton.setAttribute('aria-expanded', String(open));
+    menu.classList.toggle('open', open);
+}
+menuButton.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
+document.addEventListener('pointerdown', event => {
+    if (menu.classList.contains('open') && !menu.contains(event.target) && event.target !== menuButton) setMenu(false);
+});
+menu.addEventListener('focusout', event => {
+    if (menu.classList.contains('open') && !menu.contains(event.relatedTarget)) setMenu(false);
+});
+document.addEventListener('keydown', event => {
+    const focusIsInNavigation = event.target === menuButton || menu.contains(event.target);
+    const menuButtonIsVisible = menuButton.offsetParent !== null;
+    const dialogIsOpen = document.querySelector('dialog[open]');
+    if (event.key === 'Escape' && menuButtonIsVisible && menu.classList.contains('open') && !dialogIsOpen) {
+        setMenu(false);
+        if (focusIsInNavigation) menuButton.focus();
+    }
+});
+matchMedia('(min-width:921px)').addEventListener('change', event => {
+    if (event.matches && menu.classList.contains('open')) setMenu(false);
+});
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 920 && menu.classList.contains('open')) setMenu(false);
+});
+const theme = document.querySelector('#theme-toggle');
+theme.setAttribute('aria-pressed', String(document.documentElement.classList.contains('dark')));
+theme.addEventListener('click', () => {
+    const dark = document.documentElement.classList.toggle('dark');
+    theme.setAttribute('aria-pressed', String(dark));
+    try { localStorage.setItem('color-theme', dark ? 'dark' : 'light'); } catch {}
+});
     // Add copy to clipboard functionality for code blocks
     const codeBlocks = document.querySelectorAll('pre code');
     codeBlocks.forEach(codeBlock => {
         const pre = codeBlock.parentElement;
+        const wrapper = document.createElement('div');
+        wrapper.className = 'code-block';
+        const toolbar = document.createElement('div');
+        toolbar.className = 'code-toolbar';
+        const status = document.createElement('span');
+        status.className = 'copy-status';
+        status.setAttribute('role', 'status');
+        status.setAttribute('aria-live', 'polite');
         const button = document.createElement('button');
-        button.className = 'absolute top-2 right-2 bg-gray-700 hover:bg-gray-600 text-white px-3 py-1 rounded text-sm transition-colors duration-200';
-        button.textContent = 'Copy';
-        button.setAttribute('aria-label', 'Copy code to clipboard');
-        
-        // Make pre element relative for absolute positioning
-        pre.style.position = 'relative';
-        pre.appendChild(button);
-        
+        button.className = 'copy-code-button';
+        button.textContent = 'Copy code';
+        button.type = 'button';
+        pre.before(wrapper);
+        wrapper.append(toolbar, pre);
+        toolbar.append(status, button);
+
         button.addEventListener('click', async () => {
+            clearTimeout(button.feedbackTimer);
             try {
                 await navigator.clipboard.writeText(codeBlock.textContent);
                 button.textContent = 'Copied!';
-                button.classList.add('bg-green-600');
-                
-                setTimeout(() => {
-                    button.textContent = 'Copy';
-                    button.classList.remove('bg-green-600');
-                }, 2000);
-            } catch (err) {
-                console.error('Failed to copy text: ', err);
-                button.textContent = 'Failed';
-                
-                setTimeout(() => {
-                    button.textContent = 'Copy';
-                }, 2000);
+                button.classList.add('copied');
+                status.textContent = 'Code copied to clipboard.';
+            } catch {
+                button.textContent = 'Copy failed';
+                button.classList.remove('copied');
+                status.textContent = 'Could not copy code. Select it and copy manually.';
             }
+            button.feedbackTimer = setTimeout(() => {
+                button.textContent = 'Copy code';
+                button.classList.remove('copied');
+                status.textContent = '';
+            }, 2500);
         });
     });
-    
-    // Add keyboard navigation for dropdown menus
-    const dropdownButtons = document.querySelectorAll('[x-data*="open"]');
-    dropdownButtons.forEach(button => {
-        button.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                // Close dropdown on Escape key
-                const event = new CustomEvent('click');
-                document.dispatchEvent(event);
-            }
-        });
-    });
-    
-    // Add focus management for modals and dropdowns
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Tab') {
-            // Trap focus within open dropdowns/modals
-            const openDropdown = document.querySelector('[x-show="open"][style*="display: block"], [x-show="open"]:not([style*="display: none"])');
-            if (openDropdown) {
-                const focusableElements = openDropdown.querySelectorAll(
-                    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-                );
-                const firstElement = focusableElements[0];
-                const lastElement = focusableElements[focusableElements.length - 1];
-                
-                if (e.shiftKey) {
-                    if (document.activeElement === firstElement) {
-                        e.preventDefault();
-                        lastElement.focus();
-                    }
-                } else {
-                    if (document.activeElement === lastElement) {
-                        e.preventDefault();
-                        firstElement.focus();
-                    }
-                }
-            }
-        }
-    });
-    
-    // Add scroll-to-top functionality
-    const scrollToTopBtn = document.createElement('button');
-    scrollToTopBtn.innerHTML = `
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
-        </svg>
-    `;
-    scrollToTopBtn.className = 'fixed bottom-8 right-8 bg-primary-600 hover:bg-primary-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 opacity-0 pointer-events-none z-50';
-    scrollToTopBtn.setAttribute('aria-label', 'Scroll to top');
-    document.body.appendChild(scrollToTopBtn);
-    
-    // Show/hide scroll to top button
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-            scrollToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
-        } else {
-            scrollToTopBtn.classList.add('opacity-0', 'pointer-events-none');
-        }
-    });
-    
-    scrollToTopBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-    
-    // Add external link indicators
-    const externalLinks = document.querySelectorAll('a[href^="http"]:not([href*="' + window.location.hostname + '"])');
-    externalLinks.forEach(link => {
-        link.setAttribute('target', '_blank');
-        link.setAttribute('rel', 'noopener noreferrer');
-        
-        // Add external link icon
-        const icon = document.createElement('span');
-        icon.innerHTML = ' <svg class="inline w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>';
-        icon.setAttribute('aria-label', '(opens in new tab)');
-        link.appendChild(icon);
-    });
-});
-
-// Performance optimization: Lazy load images
-if ('IntersectionObserver' in window) {
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.classList.remove('lazy');
-                imageObserver.unobserve(img);
-            }
-        });
-    });
-    
-    document.querySelectorAll('img[data-src]').forEach(img => {
-        imageObserver.observe(img);
-    });
-}
-
-// Add print styles optimization
-window.addEventListener('beforeprint', () => {
-    // Expand all collapsed sections for printing
-    document.querySelectorAll('[x-show]').forEach(el => {
-        el.style.display = 'block';
-    });
-});
-
-window.addEventListener('afterprint', () => {
-    // Restore original state after printing
-    window.location.reload();
-});

@@ -1,0 +1,3 @@
+{{ define "main" }}
+<div class="frame interior"><a class="eyeline back" href="/learn/">← Learning library</a><h1>{{ .Title }}</h1><p class="lead">{{ .Description }}</p>{{ partial "catalog.html" (dict "title" "Browse resources" "pages" .RegularPages) }}</div>
+{{ end }}

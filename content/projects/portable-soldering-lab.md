@@ -1,15 +1,13 @@
 ---
 title: "Portable Soldering Lab Design"
 date: 2024-01-15T12:00:00Z
-draft: false
+draft: true
 description: "Design and implementation of Fellowship of the Flux's portable soldering lab system for community workshops and educational events."
 project_url: "https://fellowshipoftheflux.com/lab-setup/"
 github_url: "https://github.com/fellowshipoftheflux/lab-design"
 technologies: ["3D Printing", "Electronics", "Educational Design", "Safety Systems"]
 status: "active"
 ---
-
-# Portable Soldering Lab Design
 
 ## Project Overview
 

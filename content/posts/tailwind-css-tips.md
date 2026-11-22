@@ -1,14 +1,12 @@
 ---
 title: "Essential Soldering Techniques and Best Practices"
 date: 2024-01-05T16:00:00Z
-draft: false
+draft: true
 description: "Master essential soldering techniques with practical tips and best practices from Fellowship of the Flux instructors and experienced makers."
 author: "Sarah Chen"
 tags: ["soldering", "techniques", "best practices", "education"]
 categories: ["Education", "Techniques"]
 ---
-
-# Essential Soldering Techniques and Best Practices
 
 After five years of teaching soldering workshops with Fellowship of the Flux, I've seen every mistake imaginable and learned what techniques consistently produce the best results. Whether you're just starting out or looking to refine your skills, these tips will help you create reliable, professional-quality solder joints.
 
