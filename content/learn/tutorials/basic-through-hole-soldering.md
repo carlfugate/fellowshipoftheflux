@@ -91,7 +91,7 @@ Before soldering, prepare your components properly:
 1. **Bend component leads** to fit the board holes
 2. **Insert components** from the component side
 3. **Bend leads slightly** on the solder side to hold components
-4. **Trim excess lead length** to about 2-3mm
+4. Follow the instructor's board-specific directions for securing and trimming leads.
 
 ### Step 4: Create Your First Solder Joint
 
@@ -100,17 +100,13 @@ Now for the actual soldering technique:
 1. **Heat both the pad and component lead** simultaneously
 2. **Apply solder to the joint** (not the iron tip)
 3. **Remove solder first**, then the iron
-4. **Hold the joint steady** until it cools (2-3 seconds)
+4. **Keep the joint undisturbed** while it cools, as demonstrated by the instructor.
 
 **The key:** Heat the joint, not the solder!
 
 ### Step 5: Inspect Your Work
 
-A good solder joint should have:
-- **Shiny, smooth surface** (not dull or grainy)
-- **Concave fillet shape** around the component lead
-- **Complete coverage** of both pad and lead
-- **No cold solder joints** or bridges
+For a first visual check, look for solder that has wetted both the pad and lead and formed a continuous fillet. Check neighboring pads for an unintended solder connection. A joint's finish can range from satin to bright, so gloss alone does not show whether it is sound. Visual inspection cannot confirm hidden hole fill or electrical continuity; have the instructor check the board using the project criteria. See the [NASA Student Handbook for Hand Soldering](https://s3vi.ndc.nasa.gov/ssri-kb/static/resources/NASA%20Student%20Handbook%20for%20Hand%20Soldering.pdf) for example inspection characteristics. Those aerospace criteria are a reference, not a substitute for the instructor's requirements for this project.
 
 ### Step 6: Practice Different Components
 
@@ -126,19 +122,16 @@ Try soldering various components to build your skills:
 ### Common Problems and Solutions
 
 **Cold Solder Joint**
-- *Symptoms:* Dull, grainy appearance
-- *Cause:* Insufficient heat or movement during cooling
-- *Solution:* Reheat and allow proper cooling
+- *What to check:* Look for solder that has not visibly wetted the pad or lead, or for a crack or void. Do not diagnose a joint from its shine alone.
+- *Next step:* Ask the instructor to inspect it and direct any rework.
 
 **Solder Bridge**
-- *Symptoms:* Solder connecting adjacent pins
-- *Cause:* Too much solder or poor technique
-- *Solution:* Use desoldering braid to remove excess
+- *What to check:* Look for an unintended solder connection between neighboring pads or leads.
+- *Next step:* Keep the board unpowered and ask the instructor to direct repair.
 
 **Lifted Pad**
-- *Symptoms:* PCB pad separates from board
-- *Cause:* Excessive heat or mechanical stress
-- *Solution:* Use jumper wire to restore connection
+- *What to check:* Stop if a copper pad appears loose or separated from the board.
+- *Next step:* Keep the board unpowered and have the instructor assess it. A jumper repair needs a verified circuit path and an experienced instructor.
 
 ## Practice Exercises
 
@@ -161,6 +154,6 @@ Test your understanding:
 1. Which instructions and materials determine the station setting for a soldering task?
 2. Why do you tin the soldering iron tip?
 3. What are the characteristics of a good solder joint?
-4. How do you fix a cold solder joint?
+4. What should you do if a joint appears not to have wetted the pad or lead?
 
 *Answers available after completing the tutorial.*
