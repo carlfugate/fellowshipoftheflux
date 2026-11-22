@@ -86,6 +86,7 @@ async function run() {
     assert.ok(await page.getByRole('dialog').isVisible());
     assert.equal(await page.locator(':focus').textContent(), 'Question 1 of 3');
     assert.equal(await page.locator('.question p').textContent(), 'What should determine the station setting for a soldering task?');
+    assert.match(await page.locator('.option span').nth(1).textContent(), /station, tip, solder and component instructions/);
     const dialogBounds = await page.locator('dialog').boundingBox();
     const questionTextBounds = await page.locator('.question p').boundingBox();
     await page.mouse.move(questionTextBounds.x + 4, questionTextBounds.y + 4);
@@ -100,12 +101,15 @@ async function run() {
     for (let question = 0; question < 3; question++) {
       if (question === 2) {
         assert.equal(await page.locator('.question p').textContent(), 'What is a useful first visual check of a through-hole joint?');
+        assert.match(await page.locator('.option span').nth(1).textContent(), /visible wetting on the pad and lead/);
       }
       await page.locator('.option input').nth(1).check();
       await page.locator(question === 2 ? '.submit-assessment' : '.next-question').click();
       if (question < 2) assert.equal(await page.locator(':focus').textContent(), `Question ${question + 2} of 3`);
     }
     assert.ok(await page.locator('.results-details').isVisible());
+    assert.equal(await page.locator('.score').textContent(), '100%');
+    assert.equal(await page.locator('.score-circle .label').textContent(), '3/3');
     assert.equal(await page.locator(':focus').textContent(), 'Assessment Complete!');
     await page.locator('.retake-assessment').click();
     assert.ok(await page.getByText('Question 1 of 3').isVisible());
@@ -157,7 +161,7 @@ async function run() {
     const routes = [
       '/', '/learn/', '/services/', '/community/', '/about/', '/contact/', '/get-involved/',
       '/learn/tutorials/basic-through-hole-soldering/', '/learn/tutorials/smd-soldering-basics/', '/learn/guides/soldering-tools-guide/',
-      '/learn/projects/', '/projects/', '/posts/', '/lab-setup/'
+      '/learn/tutorials/', '/learn/guides/', '/learn/projects/', '/projects/', '/posts/', '/lab-setup/'
     ];
     const viewports = [{ width: 1440, height: 900 }, { width: 820, height: 1024 }, { width: 390, height: 844 }];
     const axePath = require.resolve('axe-core/axe.min.js');

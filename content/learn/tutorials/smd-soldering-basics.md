@@ -29,7 +29,6 @@ tags: ["tutorial", "soldering", "smd", "surface-mount", "intermediate"]
 categories: ["tutorials"]
 tutorial_type: "step-by-step"
 progress_tracking: true
-skill_assessment: true
 ---
 
 ## Overview
@@ -72,7 +71,7 @@ Set up your workspace for precision SMD work:
 1. **Set up magnification** as recommended by the instructor for the component and board
 2. **Optimize lighting** - Bright, shadow-free illumination
 3. **Organize components** - Use component trays or tape
-4. **Prepare flux** - Have flux paste readily available
+4. **Prepare the project-specified flux** according to its maker and instructor
 5. **Choose the station setting** with the instructor, using the station, tip, solder and component makers' instructions. Do not assume a single setting works for every combination.
 6. **Confirm the board is disconnected from power** before soldering.
 
@@ -141,11 +140,12 @@ Learn drag soldering for fine-pitch ICs:
 
 This is an instructor-led technique. Follow the process and tip demonstrated for the specific IC and board.
 
-1. **Apply flux generously** to all pads
-2. **Tin the iron tip** with fresh solder
-3. **Have the instructor identify the IC pin-one mark and matching board orientation** before placement
-4. **Align the leads and have the instructor tack opposite corner pins**, then check alignment before continuing
-5. **With the instructor's demonstration, drag the iron across the remaining pins** using the approved tip and process
+1. **Have the instructor identify the IC pin-one mark and matching board orientation** before placement
+2. **Align the leads and have the instructor confirm the placement**
+3. **With the instructor's setup and demonstration, tack opposite corner pins** to hold the IC in position
+4. **Return the iron to its stand** while the instructor checks alignment
+5. **Apply the project-specified flux to the remaining pin row**, then tin the approved tip immediately before the drag pass
+6. **With the instructor's demonstration, drag the iron across the remaining pins** using the approved process
 
 Drag soldering can leave bridges or other defects. Inspect each connection under the magnification recommended by the instructor and ask for a check before powering the board.
 
