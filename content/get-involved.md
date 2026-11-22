@@ -8,7 +8,7 @@ display_title: "Get involved"
 cover: "group-workshop"
 cover_alt: "People gathered around a soldering workshop table"
 intro: "Email the Fellowship to ask about volunteering and current opportunities."
-action_url: "mailto:carlfugate@gmail.com?subject=Volunteer%20inquiry"
+action_url: "mailto:carl@fellowshipoftheflux.com?subject=Volunteer%20inquiry"
 action_text: "Ask about volunteering"
 ---
 
@@ -17,7 +17,7 @@ action_text: "Ask about volunteering"
 <div class="fact-grid">
 <article><h3>Learn</h3><p>Use the soldering tutorials and guides to build practical skills at your own pace.</p><a href="/learn/">Browse learning resources <span aria-hidden="true">↗</span></a></article>
 <article><h3>Visit an event</h3><p>See the recorded event history and the places where the Fellowship has taken part.</p><a href="/community/">View event history <span aria-hidden="true">↗</span></a></article>
-<article><h3>Volunteer</h3><p>Ask about current opportunities and the steps to get started.</p><a href="mailto:carlfugate@gmail.com?subject=Volunteer%20inquiry">Email about volunteering <span aria-hidden="true">↗</span></a></article>
+<article><h3>Volunteer</h3><p>Ask about current opportunities and the steps to get started.</p><a href="mailto:carl@fellowshipoftheflux.com?subject=Volunteer%20inquiry">Email about volunteering <span aria-hidden="true">↗</span></a></article>
 </div>
 </section>
 

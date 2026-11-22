@@ -8,7 +8,7 @@ display_title: "Contact"
 cover: "participants-learning"
 cover_alt: "A participant learning at a soldering workshop"
 intro: "For workshop, volunteer and general inquiries, email the Fellowship."
-action_url: "mailto:carlfugate@gmail.com?subject=Fellowship%20inquiry"
+action_url: "mailto:carl@fellowshipoftheflux.com?subject=Fellowship%20inquiry"
 action_text: "Email the Fellowship"
 ---
 

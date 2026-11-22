@@ -375,4 +375,4 @@ After completing this amplifier project:
 
 ## Share your build
 
-Tell the [Fellowship community](mailto:carlfugate@gmail.com?subject=Project%20question) what you built, what you changed and how it worked.
+Tell the [Fellowship community](mailto:carl@fellowshipoftheflux.com?subject=Project%20question) what you built, what you changed and how it worked.

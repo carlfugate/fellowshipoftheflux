@@ -194,7 +194,7 @@ async function run() {
         const overflows = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth || document.body.scrollWidth > window.innerWidth);
         assert.equal(overflows, false, `Expected ${route} not to overflow at ${viewport.width}px`);
         const mailtoHrefs = await page.locator('a[href^="mailto:"]').evaluateAll(links => links.map(link => link.getAttribute('href')));
-        assert.ok(mailtoHrefs.every(href => href.startsWith('mailto:carlfugate@gmail.com')), `Expected ${route} to use only the confirmed public inbox`);
+        assert.ok(mailtoHrefs.every(href => href.startsWith('mailto:carl@fellowshipoftheflux.com')), `Expected ${route} to use only the confirmed public inbox`);
         if (['/services/', '/community/', '/contact/', '/get-involved/'].includes(route)) {
           assert.ok(mailtoHrefs.length > 0, `Expected a direct contact path at ${route}`);
         }

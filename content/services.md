@@ -8,7 +8,7 @@ display_title: "Host a workshop"
 cover: "workshop-stations-wide"
 cover_alt: "A portable soldering workshop table"
 intro: "Email the Fellowship to discuss hosting a hands-on soldering workshop."
-action_url: "mailto:carlfugate@gmail.com?subject=Workshop%20inquiry"
+action_url: "mailto:carl@fellowshipoftheflux.com?subject=Workshop%20inquiry"
 action_text: "Ask about hosting a workshop"
 ---
 

@@ -15,4 +15,4 @@ This site brings together practical soldering lessons, equipment references and 
 - [Plan a soldering workspace](/lab-setup/)
 - [See the event history](/community/)
 
-For workshop, volunteer and general inquiries, [email the Fellowship](mailto:carlfugate@gmail.com).
+For workshop, volunteer and general inquiries, [email the Fellowship](mailto:carl@fellowshipoftheflux.com).
