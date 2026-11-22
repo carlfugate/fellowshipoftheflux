@@ -161,6 +161,8 @@ async function run() {
       for (const route of routes) {
         const response = await page.goto(route);
         assert.equal(response?.status(), 200, `Expected ${route} to load at ${viewport.width}px`);
+        const overflows = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth || document.body.scrollWidth > window.innerWidth);
+        assert.equal(overflows, false, `Expected ${route} not to overflow at ${viewport.width}px`);
         assert.equal(await page.locator('a[href^="mailto:"]').count(), 0, `No email CTA should appear at ${route}`);
         await page.addScriptTag({ path: axePath });
         const results = await page.evaluate(async () => axe.run(document, {
