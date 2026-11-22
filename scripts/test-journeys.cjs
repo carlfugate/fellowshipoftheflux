@@ -111,12 +111,13 @@ async function run() {
     assert.equal(await page.locator('.start-assessment').evaluate(el => el === document.activeElement), true);
     await page.goto('/learn/tutorials/smd-soldering-basics/');
     assert.equal(await page.locator('.start-assessment').count(), 0);
+    assert.equal((await page.goto('/learn/guides/soldering-safety/'))?.status(), 404);
     assert.equal((await page.goto('/learn/projects/simple-led-flasher/'))?.status(), 404);
     assert.equal((await page.goto('/learn/projects/audio-amplifier/'))?.status(), 404);
     await page.goto('/community/');
     assert.equal(await page.locator('.event-history > li').count(), 3);
     await page.goto('/learn/');
-    assert.equal(await page.locator('.entry:visible').count(), 4);
+    assert.equal(await page.locator('.entry:visible').count(), 3);
     await page.getByLabel('Search resources').fill('no-such-tool');
     await page.locator('#no-results').waitFor({ state: 'visible' });
     await page.getByLabel('Search resources').fill('flasher');
@@ -145,7 +146,7 @@ async function run() {
     assert.deepEqual(errors, []);
     const routes = [
       '/', '/learn/', '/services/', '/community/', '/about/', '/contact/', '/get-involved/',
-      '/learn/tutorials/basic-through-hole-soldering/', '/learn/guides/soldering-safety/',
+      '/learn/tutorials/basic-through-hole-soldering/', '/learn/guides/soldering-tools-guide/',
       '/learn/projects/', '/projects/', '/posts/', '/lab-setup/'
     ];
     const viewports = [{ width: 1440, height: 900 }, { width: 820, height: 1024 }, { width: 390, height: 844 }];
@@ -170,7 +171,7 @@ async function run() {
       }
     }
     assert.deepEqual([...violations.keys()], [], `axe-core reported violations:\n${[...violations].map(([key, count]) => `${key} (${count} scans)`).join('\n')}`);
-    console.log(`Keyboard navigation, workshop info, lesson supplies, saved learning state, supported quiz, unpublished unsafe projects, catalog filters, contact placeholder, theme persistence, script-free navigation, axe-core (39 route/view checks), no email CTAs, mobile overflow and CLS ${cls.toFixed(3)} passed.`);
+    console.log(`Keyboard navigation, workshop info, lesson supplies, saved learning state, supported quiz, unpublished unsafe content, catalog filters, contact placeholder, theme persistence, script-free navigation, axe-core (39 route/view checks), no email CTAs, mobile overflow and CLS ${cls.toFixed(3)} passed.`);
   } finally {
     await browser?.close();
     server?.kill('SIGTERM');

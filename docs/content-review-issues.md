@@ -17,7 +17,7 @@ Status as of 2026-11-22. This is the repository-local record for PR #27; the con
 
 - Confirm the monitored public inboxes. Until then, all public mailto links remain absent by design.
 - Confirm photo ownership/permission and event source records for the 2026 dates and locations.
-- Have a soldering instructor review the published technical lessons and safety guide, including ventilation, lead handling, temperatures, component values and soldering procedures. A model review is not expert sign-off.
+- The standalone soldering safety guide is kept in draft until a qualified instructor reviews its ventilation, PPE, fire and first-aid claims. Have an instructor review the published technical lessons too, including lead handling, temperatures, component values and procedures. A model review is not expert sign-off.
 - Confirm organization location and service availability before restoring geographic claims or accepting workshop requests.
 - Review the draft journal and project content before any item is published; restore only verified names, citations, dates, partners, numbers and technical instructions.
 - Confirm any public social account URLs before restoring profile links.

@@ -1,7 +1,7 @@
 ---
 title: "Soldering Safety Guide"
 date: 2024-01-01T00:00:00Z
-draft: false
+draft: true
 description: "Essential safety practices for soldering - protect yourself and create a safe workspace"
 guide_type: "reference"
 difficulty: "beginner"

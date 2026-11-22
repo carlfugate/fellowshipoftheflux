@@ -41,7 +41,7 @@ action_text: "Start with the checklist"
 <li>Check that the layout, signage and instructions work for the people attending.</li>
 <li>Record what needs to be packed, replenished or maintained afterward.</li>
 </ol>
-<p>For soldering hazards and personal protective equipment, read the <a href="/learn/guides/soldering-safety/">soldering safety guide</a> and have the guidance reviewed for your setting.</p>
+<p>Before use, have a qualified instructor review soldering hazards, protective equipment and emergency procedures for the materials, activity and venue.</p>
 </section>
 
 <section class="manual-section" aria-labelledby="cost-planning">

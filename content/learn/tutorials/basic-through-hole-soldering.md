@@ -49,7 +49,7 @@ By the end of this tutorial, you will be able to:
 Before starting this tutorial, you should:
 - Have basic knowledge of electronic components
 - Understand electrical safety principles
-- Have read our [Soldering Safety Guide](/learn/guides/soldering-safety/)
+- Review the activity and venue safety requirements with a qualified instructor before soldering
 
 ## Safety Considerations
 
@@ -151,7 +151,7 @@ Try soldering various components to build your skills:
 
 After mastering through-hole soldering:
 - Try [Surface Mount Soldering](/learn/tutorials/smd-soldering-basics/)
-- Read the [soldering safety guide](/learn/guides/soldering-safety/)
+- Review the activity and venue safety requirements with a qualified instructor before soldering
 - Learn about [Soldering Iron Maintenance](/learn/guides/soldering-tools-guide/#tip-maintenance)
 
 ## Assessment Questions
