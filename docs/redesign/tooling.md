@@ -7,8 +7,8 @@ No new subscription, API purchase, or marketplace component was introduced. AI i
 | Hugo Extended, Tailbliss | Static site build and image processing | Apache-2.0; theme LICENSE | $0 | Hugo version used locally: 0.170.1. CI remains pinned to 0.157.0. |
 | Node.js, npm | Existing JavaScript tooling | MIT; Artistic-2.0 | $0 | Dependency installs used `--ignore-scripts`; Node engine is now >=22.19 for LHCI. |
 | PostCSS, Tailwind CSS, Autoprefixer, cssnano | Existing CSS pipeline | MIT | $0 | No component marketplace or remote build service. |
-| Playwright 1.60.0 | Firefox keyboard journeys, responsive checks, screenshots | Apache-2.0 | $0 | Local package and official browser download. No subscription or usage quota. Browser launch required execution outside the workspace sandbox. |
-| Firefox for Playwright | Browser engine for journeys | MPL-2.0 and bundled third-party licenses | $0 | Local only; no browser binary is shipped with the site. |
+| Playwright 1.60.0 | Firefox keyboard journeys, responsive checks, screenshots | Apache-2.0 | $0 | Local package and official browser download. No subscription or usage quota. On this macOS workspace, use hosted CI for browser runs: sandboxed local Nightly launches have intermittently aborted during app registration. |
+| Firefox for Playwright | Browser engine for journeys | MPL-2.0 and bundled third-party licenses | $0 | No browser binary is shipped with the site. Hosted CI is the reliable validation environment in this session; avoid further local launch attempts. |
 | axe-core 4.14.1 | WCAG A/AA automated checks | MPL-2.0 | $0 | Local package; no hosted service or quota. |
 | Lighthouse CI 0.16.1 and Lighthouse | Lab performance, accessibility, best-practice and SEO audits | Apache-2.0 | $0 | Local Chrome. LHCI initially uploaded reports to its configured temporary public storage; configuration is now filesystem-only. |
 | vnu-jar 26.11.20 | HTML and CSS validation | MIT | $0 | Cannot run on this machine without Java. |
