@@ -88,7 +88,7 @@ echo "  ✓ All key pages accessible"
 
 # Test 8: Check meta tags
 echo "✓ Checking meta tags..."
-if ! echo "$content" | grep -q "Kansas City-based volunteer organization"; then
+if ! echo "$content" | grep -q "Hands-on soldering tutorials, practical guides and a record of community events from Fellowship of the Flux."; then
     echo "  ✗ Missing description meta tag"
     exit 1
 fi
