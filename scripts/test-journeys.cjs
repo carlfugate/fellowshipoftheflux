@@ -120,6 +120,10 @@ async function run() {
     assert.equal(await page.locator('.entry:visible').count(), 3);
     await page.getByLabel('Search resources').fill('no-such-tool');
     await page.locator('#no-results').waitFor({ state: 'visible' });
+    assert.doesNotMatch(await page.locator('#no-results').textContent(), /safety/i);
+    await page.getByLabel('Search resources').fill('safety');
+    await page.locator('#no-results').waitFor({ state: 'visible' });
+    assert.equal(await page.locator('.entry:visible').count(), 0);
     await page.getByLabel('Search resources').fill('flasher');
     await page.locator('#no-results').waitFor({ state: 'visible' });
     assert.equal(await page.locator('.entry:visible').count(), 0);

@@ -102,7 +102,7 @@ Select solder for the components, application and applicable rules. Lead-contain
 - Paint removal
 
 **Key Features:**
-- Temperature range: 100-500°C
+- A temperature range and controls suitable for the project and the materials, as verified in the maker's documentation
 - Airflow control
 - Multiple nozzle sizes
 - Digital display
@@ -129,9 +129,9 @@ Select solder for the components, application and applicable rules. Lead-contain
 
 **Weekly Care:**
 1. **Inspect tip condition** for wear or damage
-2. **Clean iron body** and cord
-3. **Check temperature calibration**
-4. **Verify stand stability**
+2. **Clean iron body** and cord using the maker's directions
+3. **Follow the maker's maintenance and inspection schedule**
+4. **Check that the stand is stable**
 
 #### Tip Replacement
 
@@ -151,34 +151,17 @@ Select solder for the components, application and applicable rules. Lead-contain
 
 #### Temperature Verification
 
-**Equipment needed:**
-- Tip thermometer or thermocouple
-- Known good solder (for melting point test)
-
-**Procedure:**
-1. Heat iron to set temperature
-2. Measure actual tip temperature
-3. Adjust calibration if necessary
-4. Document calibration date
+Use the station maker's inspection and calibration procedure with compatible equipment. Ask the instructor or equipment supplier to check the station if its displayed setting and performance do not agree.
 
 #### Performance Testing
 
-**Heat-up time test:**
-- Measure time from power-on to working temperature
-- Should be under 60 seconds for most stations
-
-**Temperature stability test:**
-- Monitor temperature over 30-minute period
-- Variation should be ±5°C or less
+Follow the station maker's checks for heat-up, stability, maintenance and replacement parts. Acceptable performance depends on the specific station and work.
 
 ## Workspace Setup
 
 ### Lighting
 
-**Requirements:**
-- Minimum 1000 lux at work surface
-- Color temperature 5000-6500K (daylight)
-- Minimal shadows and glare
+Provide enough even light to see the work clearly, with glare and shadows controlled. Select magnification and lighting for the task and the people using the bench.
 
 **Solutions:**
 - LED desk lamps with adjustable arms
@@ -187,16 +170,7 @@ Select solder for the components, application and applicable rules. Lead-contain
 
 ### Ventilation
 
-**Health considerations:**
-- Solder flux produces potentially harmful fumes
-- Lead-based solders pose additional risks
-- Proper ventilation is essential
-
-**Ventilation options:**
-- **Fume extractors**: Portable, flexible positioning
-- **Bench-top fans**: Simple, inexpensive solution
-- **Room ventilation**: Whole-room air exchange
-- **Downdraft tables**: Professional solution for production
+Flux fumes can irritate or sensitize. Have the venue or a qualified instructor select a purpose-designed fume extractor or local exhaust for the actual materials and room, and verify its placement and maintenance instructions. A general-purpose bench fan can move contaminants across the workspace and is not a substitute for source capture. See [RPI's soldering safety guidance](https://ehs.rpi.edu/lab-research-shop-safety/soldering-safety-guidelines).
 
 ### Organization
 
@@ -212,10 +186,10 @@ Select solder for the components, application and applicable rules. Lead-contain
 - Clear labeling system
 - Easy access to common components
 
-**Safety equipment:**
-- First aid kit with burn treatment
-- Fire extinguisher (appropriate type)
-- Emergency contact information
+**Safety planning:**
+- Identify the venue's first-aid and emergency procedures before work begins.
+- Ask the venue's responsible person to select and locate fire-safety equipment for the room and activity.
+- Keep food and drinks out of the soldering area. If using lead-containing materials, avoid touching the face and wash hands with soap and water afterward; follow venue cleanup and waste procedures. See the [EPA's lead-exposure precautions for hobbies](https://www.epa.gov/lead/reduce-risk-lead-exposure-home).
 
 ## Plan a setup
 

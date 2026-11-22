@@ -56,12 +56,14 @@ Before starting this tutorial, you should:
 
 ## Safety Considerations
 
-⚠️ **Important Safety Information:**
-- Use proper magnification to avoid eye strain
-- Ensure excellent ventilation - SMD work requires more flux
-- Use ESD protection when handling sensitive components
-- Work in a well-lit environment
-- Take regular breaks to prevent fatigue
+### Before you begin
+
+- Follow the project, solder and station makers' instructions and your venue's safety procedures. Ask an instructor to confirm the setup before starting.
+- Use purpose-designed fume extraction or local exhaust selected for the materials and room; position it as directed by its maker. Do not rely on a room fan as a substitute for source capture.
+- Wear eye protection, use the iron's stable stand, and keep food and drinks out of the work area. If lead-containing materials are present, avoid touching your face while working and wash your hands with soap and water afterward.
+- Review the material safety information and venue cleanup and waste procedures with your instructor.
+
+See [RPI's soldering safety guidance](https://ehs.rpi.edu/lab-research-shop-safety/soldering-safety-guidelines) and the [EPA's lead-exposure precautions for hobbies](https://www.epa.gov/lead/reduce-risk-lead-exposure-home). These general sources do not replace instruction for the specific room and materials.
 
 ## Step-by-Step Instructions
 
@@ -73,7 +75,7 @@ Set up your workspace for precision SMD work:
 2. **Optimize lighting** - Bright, shadow-free illumination
 3. **Organize components** - Use component trays or tape
 4. **Prepare flux** - Have flux paste readily available
-5. **Set iron temperature** - 320-340°C for lead-free solder
+5. **Choose the station setting** with the instructor, using the station, tip, solder and component makers' instructions. Do not assume a single setting works for every combination.
 
 **Pro tip:** Good lighting and magnification are crucial for SMD success.
 

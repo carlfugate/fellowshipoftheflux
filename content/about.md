@@ -50,7 +50,7 @@ Advancing the art of learning to solder through accessible instruction and share
 <ul>
 <li>Step-by-step tutorials</li>
 <li>Equipment selection guides</li>
-<li>Safety information</li>
+<li>Safety references for planning soldering activities</li>
 <li>Learning projects are being reviewed</li>
 <li>Guides for setting up a workspace</li>
 </ul>

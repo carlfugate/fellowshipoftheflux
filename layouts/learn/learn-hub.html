@@ -1,7 +1,7 @@
 {{ define "main" }}
 <div class="frame interior">
 <p class="eyeline">Fellowship field guide</p><h1>Learning library</h1>
-<p class="lead">From setting up a safe bench to soldering your first circuit board.</p>
+<p class="lead">Browse practical equipment guidance and beginner soldering lessons. Review the project and venue safety procedures with an instructor before starting.</p>
 <div class="first-lesson"><div><p class="eyeline">First lesson · 45 minutes</p><h2>Through-hole soldering</h2><p>Practice placing components and making a reliable solder joint.</p><a class="action" href="/learn/tutorials/basic-through-hole-soldering/">Start this lesson →</a></div>{{ partial "photo.html" (dict "name" "soldering-closeup" "priority" true "alt" "A volunteer watching a learner practice soldering") }}</div>
 <nav class="inline-links" aria-label="Browse by format">{{ range .Sections.ByTitle }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}</nav>
 {{ partial "catalog.html" (dict "title" "All resources" "pages" .RegularPagesRecursive) }}</div>

@@ -1,6 +1,6 @@
 # Release content review
 
-Status as of 2026-11-22. This is the repository-local record for PR #27; the connected GitHub account could not update the remote issue log.
+Status as of 2026-11-22. This repository-local record accompanies PR #27 and the remote launch roadmap in issue #26.
 
 ## Resolved for the current public build
 
@@ -12,6 +12,7 @@ Status as of 2026-11-22. This is the repository-local record for PR #27; the con
 - The listed GitHub and Twitter profile URLs returned 404 during a read-only check. Those profile links and account metadata are removed from the public site.
 - The project index no longer contains unrelated web-development boilerplate. The Get Involved and workshop information pages now state what is being confirmed.
 - Equipment budget estimates and price claims were removed; the lab-planning guide now directs readers to current manufacturer or authorized-supplier information.
+- Public lessons now avoid universal iron-temperature settings and distinguish purpose-designed fume extraction from general room fans. Lead-hygiene reminders cite EPA guidance; extraction references cite RPI Environmental Health & Safety. The standalone safety guide remains a draft pending instructor review.
 
 ## Owner or specialist review required before launch
 
@@ -26,4 +27,4 @@ Status as of 2026-11-22. This is the repository-local record for PR #27; the con
 
 - Local branch: `redesign/workshop-field-guide`.
 - Draft PR: [#27 — Redesign as a soldering field guide](https://github.com/carlfugate/fellowshipoftheflux/pull/27). The last remote CI run predates the latest local commits.
-- Remote issue tracking and PR updates are pending repository write access. Do not merge or deploy until the owner and instructor checks above are complete.
+- GitHub owner-account write access is available for updating issue #26 and pushing the release branch. Do not merge or deploy until the owner and instructor checks above are complete.

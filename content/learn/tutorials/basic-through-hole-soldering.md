@@ -6,8 +6,7 @@ description: "Learn the fundamentals of through-hole soldering with this compreh
 difficulty: "beginner"
 duration: "45 minutes"
 tools_required: 
-  - "Soldering iron (25-40W)"
-  - "Rosin-core solder (0.6-0.8mm)"
+  - "Soldering station and solder selected for the project"
   - "Flux paste"
   - "Desoldering braid"
   - "Wire strippers"
@@ -18,7 +17,7 @@ materials_required:
   - "Through-hole LEDs"
   - "22 AWG solid core wire"
 learning_objectives:
-  - "Understand proper soldering iron temperature and technique"
+  - "Choose a station setting with the equipment instructions and instructor"
   - "Create strong, reliable solder joints"
   - "Identify and fix common soldering problems"
   - "Practice component placement and orientation"
@@ -48,23 +47,24 @@ By the end of this tutorial, you will be able to:
 
 Before starting this tutorial, you should:
 - Have basic knowledge of electronic components
-- Understand electrical safety principles
-- Review the activity and venue safety requirements with a qualified instructor before soldering
+- Review the project, material safety information, and venue procedures with a qualified instructor before soldering
 
 ## Safety Considerations
 
-⚠️ **Important Safety Information:**
-- Always wear safety glasses when soldering
-- Ensure adequate ventilation or use a fume extractor
-- Keep your workspace clean and organized
-- Never touch the soldering iron tip with bare hands
-- Always return the iron to its stand when not in use
+### Before you begin
+
+- Use a purpose-designed solder fume extractor or local exhaust selected for the materials and room. Position and operate it according to its maker and your instructor; a room fan is not a substitute for source capture.
+- Wear eye protection and keep the hot iron in its stable stand whenever it is not in use.
+- If materials contain lead, keep food and drinks out of the work area, avoid touching your face while working, and wash your hands with soap and water when finished. Follow the venue's cleanup and waste procedures.
+- Check the solder and flux safety data, station instructions and venue procedures with your instructor before starting. Stop if the extraction or work area is not set up as instructed.
+
+These are general reminders, not a site-specific safety plan. Your instructor and venue procedures take precedence. See [RPI's soldering safety guidance](https://ehs.rpi.edu/lab-research-shop-safety/soldering-safety-guidelines) and the [EPA's lead-exposure precautions for hobbies](https://www.epa.gov/lead/reduce-risk-lead-exposure-home).
 
 ## Step-by-Step Instructions
 
 ### Step 1: Prepare Your Workspace
 
-Set up your soldering station in a well-lit, ventilated area:
+Set up the station and source-capture equipment as directed by your instructor and the equipment makers:
 
 1. **Position your soldering iron** in its stand
 2. **Clean the work surface** and remove any flammable materials
@@ -77,10 +77,10 @@ Set up your soldering station in a well-lit, ventilated area:
 
 Proper iron preparation is crucial for good solder joints:
 
-1. **Heat the iron** to 350°C (660°F) for leaded solder
-2. **Clean the tip** with a damp sponge
-3. **Tin the tip** by applying a small amount of solder
-4. **Wipe excess solder** leaving a thin, shiny coating
+1. **Select the setting** with your instructor using the station, tip, solder and component makers' instructions; there is no single setting for every combination.
+2. **Clean the tip** using the station maker's method
+3. **Tin the tip** as directed by the station maker
+4. **Return the iron to its stand** before pausing
 
 **Why tin the tip?** Tinning improves heat transfer and prevents oxidation.
 
@@ -143,9 +143,9 @@ Try soldering various components to build your skills:
 ## Practice Exercises
 
 1. **Solder 10 resistors** to perfboard in a neat row
-2. **Create a simple LED circuit** with current-limiting resistor
+2. **Place components** on a practice board using the instructor-provided layout
 3. **Practice desoldering** and component replacement
-4. **Build a small project** like a simple flasher circuit
+4. **Practice replacing a component** using the instructor's board and procedure
 
 ## Next Steps
 
@@ -158,7 +158,7 @@ After mastering through-hole soldering:
 
 Test your understanding:
 
-1. What temperature should you set for leaded solder?
+1. Which instructions and materials determine the station setting for a soldering task?
 2. Why do you tin the soldering iron tip?
 3. What are the characteristics of a good solder joint?
 4. How do you fix a cold solder joint?
