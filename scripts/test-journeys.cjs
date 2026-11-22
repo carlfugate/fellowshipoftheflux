@@ -170,10 +170,10 @@ async function run() {
     }
     await page.goto('/get-involved/');
     assert.ok(await page.getByText('Current roles, training, safety procedures and eligibility are confirmed individually.').isVisible());
-    assert.match(await page.getByRole('link', { name: /Ask about volunteering/ }).getAttribute('href'), /^mailto:carlfugate@gmail\.com\?/);
+    assert.match(await page.getByRole('link', { name: /Ask about volunteering/ }).getAttribute('href'), /^mailto:carl@fellowshipoftheflux\.com\?/);
     await page.goto('/contact/');
     assert.ok(await page.getByText('Use the email link above for workshop, volunteer and general inquiries.').isVisible());
-    assert.match(await page.getByRole('link', { name: /Email the Fellowship/ }).getAttribute('href'), /^mailto:carlfugate@gmail\.com\?/);
+    assert.match(await page.getByRole('link', { name: /Email the Fellowship/ }).getAttribute('href'), /^mailto:carl@fellowshipoftheflux\.com\?/);
     const noJS = await browser.newPage({ baseURL, javaScriptEnabled: false, viewport: { width: 390, height: 844 } });
     await noJS.goto('/');
     assert.ok(await noJS.getByRole('navigation', { name: 'Main navigation' }).getByText('Learn to solder').isVisible());
