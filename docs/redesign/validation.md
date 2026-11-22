@@ -24,7 +24,7 @@ The Community page groups its three confirmed 2026 events under an annual histor
 
 - Production build, repository smoke tests and Hugo route/template validation passed on local Hugo 0.170.1. Hugo reported existing deprecated config keys and unused templates. Pages CI pins 0.157.0; hosted CI was not rerun.
 - The local link checker verified all 50 generated HTML files, their internal links, fragment targets and referenced local assets. The production build contains 53 pages; unsupported posts, projects and the unreviewed safety guide are excluded as drafts.
-- Playwright with a separate headless Firefox process completed skip navigation, mobile menu keyboard behavior and resize closing, supplies disclosure, persistent bookmarks and completion, quiz submission/retake/focus/backdrop handling, event history, catalog search and filters, theme persistence, the contact placeholder, and no-JavaScript navigation. It confirmed that the unreviewed safety guide and unsupported projects return 404, and there are no direct email CTAs in the tested public routes. No uncaught page errors. CLS was 0.000 on mobile; no horizontal overflow was found at the tested viewport sizes.
+- Playwright with a separate headless Firefox process completed skip navigation, mobile menu keyboard behavior and resize closing, supplies disclosure, persistent bookmarks and completion, quiz submission/retake/focus/backdrop handling, event history, catalog search and filters, theme persistence, the contact placeholder, and no-JavaScript navigation. It confirmed that the unreviewed safety guide and unsupported projects return 404, and there are no direct email CTAs or horizontal overflow across 13 routes at three viewport sizes (39 route/view checks). No uncaught page errors. CLS was 0.000 on mobile.
 - axe-core reported zero WCAG A/AA violations across 13 routes at 1440 × 900, 820 × 1024 and 390 × 844 (39 route/view checks). The earlier baseline recorded 36 violating scans across its 36 checks. Automated checks do not establish full accessibility conformance.
 - HTML/CSS validation did not run because the machine has no Java runtime for vnu-jar.
 - The rendered review led to replacing a sideways About photograph, prioritizing the featured lesson photograph, collapsing lengthy mobile outlines, simplifying package markup, and giving the scrollable equipment table keyboard focus and a name. The About gallery was reduced from eight to two images; its Lighthouse transfer fell from about 2.24 MB to 390 KB.
@@ -32,7 +32,7 @@ The Community page groups its three confirmed 2026 events under an annual histor
 
 ## Lighthouse
 
-The redesign was tested as a local production build with Lighthouse 13.6.0 mobile emulation, three runs on each of ten routes. Lighthouse executed with Chrome outside the workspace sandbox after its launch failed inside the sandbox. These are lab measurements, not field data.
+The redesign was tested as a local production build with Lighthouse 13.6.0 mobile emulation, three runs on each of ten routes. Lighthouse executed with Chrome outside the workspace sandbox after its launch failed inside the sandbox. These are lab measurements, not field data. The scores were captured before the latest content-only safety edits; CSS, images and layout rules have not changed since, but generated transfer sizes may differ slightly.
 
 | Route | Performance | Accessibility | Best practices | SEO | LCP | Transfer | CLS |
 |---|---:|---:|---:|---:|---:|---:|---:|
