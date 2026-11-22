@@ -1,0 +1,6 @@
+{{ define "main" }}
+<div class="frame interior manual">
+<div class="manual-intro"><div><p class="eyeline">Fellowship of the Flux</p><h1>{{ .Params.display_title }}</h1><p class="lead">{{ .Params.intro }}</p><a class="action" href="{{ .Params.action_url | safeURL }}">{{ .Params.action_text }} →</a></div>{{ partial "photo.html" (dict "name" .Params.cover "alt" .Params.cover_alt "priority" true) }}</div>
+{{ .Content }}
+</div>
+{{ end }}

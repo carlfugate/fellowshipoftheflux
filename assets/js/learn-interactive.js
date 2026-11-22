@@ -17,17 +17,19 @@ class LearnTracker {
 
     // Data persistence
     loadData() {
-        const stored = localStorage.getItem(this.storageKey);
-        return stored ? JSON.parse(stored) : {
+        let stored;
+        try { stored = JSON.parse(localStorage.getItem(this.storageKey)); } catch {}
+        return {
             progress: {},
             bookmarks: [],
             assessments: {},
-            preferences: {}
+            preferences: {},
+            ...stored
         };
     }
 
     saveData() {
-        localStorage.setItem(this.storageKey, JSON.stringify(this.data));
+        try { localStorage.setItem(this.storageKey, JSON.stringify(this.data)); } catch {}
     }
 
     // Progress Tracking System
@@ -39,10 +41,8 @@ class LearnTracker {
             const itemId = element.dataset.progressItem;
             const isCompleted = this.data.progress[itemId] || false;
 
-            if (isCompleted) {
-                element.classList.add('completed');
-                this.updateProgressDisplay(element);
-            }
+            element.classList.toggle('completed', isCompleted);
+            this.updateProgressDisplay(element);
 
             element.addEventListener('click', () => {
                 this.toggleProgress(itemId, element);
@@ -75,6 +75,7 @@ class LearnTracker {
         const isCompleted = element.classList.contains('completed');
 
         if (button) {
+            button.setAttribute('aria-pressed', String(isCompleted));
             button.textContent = isCompleted ? 'Completed ✓' : 'Mark Complete';
             button.className = isCompleted ?
                 'progress-btn bg-green-600 text-white px-4 py-2 rounded-lg' :
@@ -187,18 +188,22 @@ class LearnTracker {
         document.body.appendChild(modal);
 
         // Show modal with animation
-        setTimeout(() => modal.classList.add('show'), 10);
+        modal.classList.add('show');
+        modal.showModal();
     }
 
     createAssessmentModal(assessmentData) {
-        const modal = document.createElement('div');
+        const modal = document.createElement('dialog');
+        modal.setAttribute('aria-label', assessmentData.title);
+        modal.dataset.assessmentId = document.querySelector('.start-assessment')?.dataset.assessmentId || 'basic-soldering';
+        modal.addEventListener('close', () => modal.remove());
         modal.className = 'assessment-modal';
         modal.innerHTML = `
       <div class="modal-overlay">
         <div class="modal-content">
           <div class="modal-header">
             <h3>${assessmentData.title}</h3>
-            <button class="close-modal">&times;</button>
+            <button class="close-modal" aria-label="Close quiz">&times;</button>
           </div>
           <div class="modal-body">
             <div class="assessment-progress">
@@ -295,12 +300,12 @@ class LearnTracker {
         });
 
         closeBtn.addEventListener('click', () => {
-            modal.remove();
+            modal.close();
         });
 
         modal.addEventListener('click', (e) => {
             if (e.target === modal.querySelector('.modal-overlay')) {
-                modal.remove();
+                modal.close();
             }
         });
 
@@ -405,12 +410,12 @@ class LearnTracker {
 
         // Setup result actions
         modal.querySelector('.retake-assessment').addEventListener('click', () => {
-            modal.remove();
-            // Restart assessment logic would go here
+            modal.close();
+            this.startAssessment(modal.dataset.assessmentId);
         });
 
         modal.querySelector('.close-results').addEventListener('click', () => {
-            modal.remove();
+            modal.close();
         });
     }
 
@@ -444,6 +449,7 @@ class LearnTracker {
     }
 
     updateBookmarkButton(button, isBookmarked) {
+        button.setAttribute('aria-pressed', String(isBookmarked));
         button.textContent = isBookmarked ? 'Bookmarked ★' : 'Bookmark ☆';
         button.className = isBookmarked ?
             'bookmark-btn bookmarked px-4 py-2 bg-yellow-500 text-white rounded-lg' :
@@ -461,6 +467,11 @@ class LearnTracker {
             }, 300));
         }
 
+        const level = document.getElementById('level');
+        if (level) {
+            level.value = new URLSearchParams(location.search).get('level') || '';
+            this.applyFilters();
+        }
         filterSelects.forEach(select => {
             select.addEventListener('change', () => {
                 this.applyFilters();
@@ -506,7 +517,7 @@ class LearnTracker {
                 }
             });
 
-            item.style.display = show ? 'block' : 'none';
+            item.hidden = !show;
             if (show) visibleCount++;
         });
 
@@ -564,247 +575,3 @@ class LearnTracker {
 document.addEventListener('DOMContentLoaded', () => {
     window.learnTracker = new LearnTracker();
 });
-
-// CSS for interactive elements (to be added to main CSS file)
-const interactiveStyles = `
-.assessment-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1000;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-}
-
-.assessment-modal.show {
-  opacity: 1;
-  visibility: visible;
-}
-
-.modal-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-
-.modal-content {
-  background: white;
-  border-radius: 8px;
-  max-width: 600px;
-  width: 100%;
-  max-height: 90vh;
-  overflow-y: auto;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-}
-
-.modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.close-modal {
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  color: #6b7280;
-}
-
-.modal-body {
-  padding: 20px;
-}
-
-.assessment-progress {
-  width: 100%;
-  height: 8px;
-  background: #e5e7eb;
-  border-radius: 4px;
-  margin-bottom: 20px;
-  overflow: hidden;
-}
-
-.assessment-progress .progress-bar {
-  height: 100%;
-  background: #3b82f6;
-  transition: width 0.3s ease;
-}
-
-.question {
-  margin-bottom: 20px;
-}
-
-.options {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 15px;
-}
-
-.option {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  border: 2px solid #e5e7eb;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.option:hover {
-  border-color: #3b82f6;
-  background: #f8fafc;
-}
-
-.option input[type="radio"] {
-  margin-right: 10px;
-}
-
-.assessment-controls {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-}
-
-.assessment-controls button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 500;
-  transition: all 0.2s ease;
-}
-
-.prev-question {
-  background: #6b7280;
-  color: white;
-}
-
-.prev-question:disabled {
-  background: #d1d5db;
-  cursor: not-allowed;
-}
-
-.next-question, .submit-assessment {
-  background: #3b82f6;
-  color: white;
-}
-
-.next-question:hover, .submit-assessment:hover {
-  background: #2563eb;
-}
-
-.assessment-results {
-  text-align: center;
-}
-
-.score-circle {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 20px auto;
-  border: 8px solid;
-}
-
-.score-circle.pass {
-  border-color: #10b981;
-  background: #ecfdf5;
-  color: #065f46;
-}
-
-.score-circle.fail {
-  border-color: #ef4444;
-  background: #fef2f2;
-  color: #991b1b;
-}
-
-.score {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.label {
-  font-size: 14px;
-  opacity: 0.8;
-}
-
-.results-details {
-  text-align: left;
-  margin-top: 30px;
-}
-
-.question-result {
-  margin-bottom: 20px;
-  padding: 15px;
-  border-radius: 6px;
-  border-left: 4px solid;
-}
-
-.question-result.correct {
-  border-color: #10b981;
-  background: #ecfdf5;
-}
-
-.question-result.incorrect {
-  border-color: #ef4444;
-  background: #fef2f2;
-}
-
-.progress-feedback {
-  position: absolute;
-  top: -30px;
-  right: 0;
-  padding: 5px 10px;
-  border-radius: 4px;
-  font-size: 12px;
-  font-weight: 500;
-  animation: fadeInOut 2s ease;
-}
-
-.progress-feedback.success {
-  background: #10b981;
-  color: white;
-}
-
-.progress-feedback.info {
-  background: #3b82f6;
-  color: white;
-}
-
-@keyframes fadeInOut {
-  0%, 100% { opacity: 0; transform: translateY(-10px); }
-  20%, 80% { opacity: 1; transform: translateY(0); }
-}
-
-.filterable-item {
-  transition: all 0.3s ease;
-}
-
-.bookmark-btn.bookmarked {
-  background: #fbbf24 !important;
-  color: white !important;
-}
-`;
-
-// Add styles to document
-if (typeof document !== 'undefined') {
-    const styleSheet = document.createElement('style');
-    styleSheet.textContent = interactiveStyles;
-    document.head.appendChild(styleSheet);
-}

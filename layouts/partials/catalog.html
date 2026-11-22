@@ -1,0 +1,9 @@
+<section class="catalog" aria-label="Learning resources">
+<div class="catalog-head"><h2>{{ .title }}</h2><div class="catalog-controls"><label>Skill level<select class="filter-select" data-filter="difficulty" id="level"><option value="">All levels</option>{{ range slice "beginner" "intermediate" "advanced" }}<option value="{{ . }}">{{ . | title }}</option>{{ end }}</select></label><label>Search resources<input id="search-input" type="search" placeholder="Search by topic"></label></div></div>
+{{ range .pages.ByTitle }}
+<a class="entry filterable-item" data-difficulty="{{ .Params.difficulty }}" data-title="{{ .Title }}" data-description="{{ .Description }}" data-tags="{{ delimit (.Params.tags | default slice) " " }}" href="{{ .RelPermalink }}">
+<span class="entry-body"><span class="eyeline">{{ .Parent.Title }}{{ with .Params.duration }} · {{ . }}{{ end }}</span><strong>{{ .Title }}</strong><span>{{ .Description }}</span></span><span aria-hidden="true">↗</span>
+</a>
+{{ end }}
+<p id="no-results" role="status" style="display:none">No matching resources. Try “safety”, “tools” or “soldering”.</p>
+</section>

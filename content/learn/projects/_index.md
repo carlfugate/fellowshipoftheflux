@@ -3,6 +3,7 @@ title: "Soldering Projects"
 description: "Hands-on projects to practice and apply your soldering skills"
 date: 2024-01-01T00:00:00Z
 draft: false
+aliases: ["/learn/projects/page/1/"]
 layout: "project-gallery"
 ---
 

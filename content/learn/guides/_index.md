@@ -3,6 +3,7 @@ title: "Soldering Guides"
 description: "Comprehensive guides covering tools, techniques, safety, and best practices for soldering"
 date: 2024-01-01T00:00:00Z
 draft: false
+aliases: ["/learn/guides/page/1/"]
 layout: "guide-list"
 ---
 

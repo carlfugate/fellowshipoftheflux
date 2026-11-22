@@ -8,8 +8,6 @@ tags: ["soldering", "techniques", "best practices", "education"]
 categories: ["Education", "Techniques"]
 ---
 
-# Essential Soldering Techniques and Best Practices
-
 After five years of teaching soldering workshops with Fellowship of the Flux, I've seen every mistake imaginable and learned what techniques consistently produce the best results. Whether you're just starting out or looking to refine your skills, these tips will help you create reliable, professional-quality solder joints.
 
 ## Fundamental Principles

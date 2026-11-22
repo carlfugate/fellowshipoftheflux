@@ -8,8 +8,6 @@ technologies: ["Education", "Community Outreach", "Curriculum Development", "Vol
 status: "active"
 ---
 
-# Community Workshop Program
-
 ## Project Overview
 
 The Fellowship of the Flux Community Workshop Program represents our core mission in action: bringing hands-on soldering education directly to communities across the Midwest. Through partnerships with conferences, schools, maker spaces, and community organizations, we've created a scalable model for electronics education that serves learners from age 8 to 80+.

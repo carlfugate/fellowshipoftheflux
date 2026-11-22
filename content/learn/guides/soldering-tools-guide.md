@@ -316,5 +316,5 @@ Investing in quality soldering tools pays dividends in improved work quality, re
 
 - [Soldering Safety Guide](/learn/guides/soldering-safety/)
 - [Basic Through-Hole Soldering Tutorial](/learn/tutorials/basic-through-hole-soldering/)
-- [Workspace Setup Guide](/learn/guides/workspace-setup/)
-- [Tool Maintenance Schedule](/learn/guides/maintenance-schedule/)
+- [Workspace Setup Guide](/learn/guides/soldering-safety/#workspace-safety)
+- [Tool Maintenance Schedule](/learn/guides/soldering-tools-guide/#tool-maintenance)

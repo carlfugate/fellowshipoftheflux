@@ -3,6 +3,7 @@ title: "Soldering Tutorials"
 description: "Step-by-step tutorials for learning soldering techniques from beginner to advanced levels"
 date: 2024-01-01T00:00:00Z
 draft: false
+aliases: ["/learn/tutorials/page/1/"]
 layout: "tutorial-list"
 ---
 

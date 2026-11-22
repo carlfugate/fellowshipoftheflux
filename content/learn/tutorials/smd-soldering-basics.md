@@ -223,10 +223,10 @@ Professional reflow techniques:
 ## Next Steps
 
 After mastering SMD basics:
-- Try [Advanced SMD Techniques](/learn/tutorials/advanced-smd/)
-- Build [SMD Practice Projects](/learn/projects/smd-practice-board/)
-- Learn about [Reflow Soldering](/learn/tutorials/reflow-soldering/)
-- Explore [PCB Design for SMD](/learn/guides/pcb-design-smd/)
+- Try Advanced SMD Techniques
+- Build SMD Practice Projects
+- Learn about Reflow Soldering
+- Explore PCB Design for SMD
 
 ## Assessment Questions
 
@@ -238,4 +238,4 @@ Test your SMD knowledge:
 4. What are the advantages of pre-tinning one pad?
 5. How do you remove solder bridges safely?
 
-*Complete the hands-on exercises to unlock the assessment.*
+Practice these techniques before taking the soldering quiz.

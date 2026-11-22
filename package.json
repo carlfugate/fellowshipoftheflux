@@ -31,7 +31,11 @@
     "precommit": "npm run validate && npm run build:preview",
     "deploy:test": "npm run build:production && npm run serve:production",
     "test:deployment": "./scripts/test-deployment.sh",
-    "verify:live": "npm run test:deployment && echo '\n✅ Live site verified! Visit: https://fellowshipoftheflux.com'"
+    "verify:live": "npm run test:deployment && echo '\n\u2705 Live site verified! Visit: https://fellowshipoftheflux.com'",
+    "predev": "npm run build:css",
+    "predev:fast": "npm run build:css",
+    "predev:network": "npm run build:css",
+    "prebuild:production": "npm run build:css"
   },
   "keywords": [
     "hugo",

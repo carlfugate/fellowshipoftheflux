@@ -90,7 +90,6 @@ The LED will flash approximately once per second with these component values.
         GND
 ```
 
-*Note: Full schematic with pin numbers available in downloadable PDF*
 
 ## Project Instructions
 
@@ -305,23 +304,15 @@ After completing this project successfully:
 1. **Try variations** listed above to deepen your understanding
 2. **Build a second flasher** to practice your skills
 3. **Move to more complex projects** like:
-   - [Traffic Light Controller](/learn/projects/traffic-light/)
+   - Traffic Light Controller
    - [Simple Audio Amplifier](/learn/projects/audio-amplifier/)
-   - [Digital Clock Display](/learn/projects/digital-clock/)
+   - Digital Clock Display
 
 4. **Learn new techniques**:
-   - [Surface Mount Soldering](/learn/tutorials/smd-basics/)
-   - [PCB Design Basics](/learn/tutorials/pcb-design/)
-   - [Microcontroller Programming](/learn/tutorials/arduino-basics/)
+   - [Surface Mount Soldering](/learn/tutorials/smd-soldering-basics/)
+   - PCB Design Basics
+   - Microcontroller Programming
 
-## Project Files
+## Share your build
 
-- **Schematic (PDF)**: [Download complete schematic with pin numbers]
-- **Parts List (CSV)**: [Downloadable parts list with supplier information]
-- **Layout Guide (PDF)**: [Suggested component placement diagram]
-
-## Community Gallery
-
-Share your completed project and see builds from other makers! Upload photos of your LED flasher to be featured in our community gallery.
-
-*Upload your build photos using the form below or tag us on social media with #LearnToSolder*
+Tell the [Fellowship community](mailto:community@fellowshipoftheflux.com) what you built, what you changed and how it worked.

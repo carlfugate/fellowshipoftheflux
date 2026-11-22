@@ -9,8 +9,6 @@ technologies: ["3D Printing", "Electronics", "Educational Design", "Safety Syste
 status: "active"
 ---
 
-# Portable Soldering Lab Design
-
 ## Project Overview
 
 The Fellowship of the Flux portable soldering lab represents years of iterative design and real-world testing to create the ideal mobile electronics education platform. Our system supports 20+ simultaneous learners with professional-grade equipment while maintaining safety, organization, and portability.

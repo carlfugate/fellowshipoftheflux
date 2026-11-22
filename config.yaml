@@ -4,7 +4,7 @@ title: "Fellowship of the Flux"
 theme: "tailbliss"
 
 # Performance and SEO optimizations
-enableRobotsTXT: true
+enableRobotsTXT: false
 enableGitInfo: false
 enableEmoji: true
 
@@ -179,3 +179,10 @@ security:
       - ".*"
 ignoreFiles:
   - 'themes/tailbliss/content/.*'
+
+module:
+  mounts:
+    - source: assets
+      target: assets
+    - source: static/images/photos
+      target: assets/workshop

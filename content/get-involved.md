@@ -5,8 +5,6 @@ date: 2024-01-01T00:00:00Z
 draft: false
 ---
 
-# Get Involved with Fellowship of the Flux
-
 Ready to help advance the art of learning to solder? There are many ways to get involved with Fellowship of the Flux, whether you have five minutes or five hours to spare.
 
 ## Volunteer Opportunities
@@ -208,7 +206,7 @@ Ready to help advance the art of learning to solder? There are many ways to get 
 
 ### Step 1: Reach Out
 **Contact us to discuss your interests**
-- **Email**: volunteers@fellowshipoftheflux.com
+- **Email**: <volunteers@fellowshipoftheflux.com>
 - **Phone**: Available upon request
 - **In-person**: Attend one of our workshops or community events
 
@@ -256,20 +254,20 @@ Ready to help advance the art of learning to solder? There are many ways to get 
 ## Contact Information
 
 ### General Volunteer Inquiries
-- **Email**: volunteers@fellowshipoftheflux.com
+- **Email**: <volunteers@fellowshipoftheflux.com>
 - **Subject line**: "Volunteer Interest - [Your Name]"
 
 ### Specific Opportunities
-- **Workshop instruction**: instruction@fellowshipoftheflux.com
-- **Event coordination**: events@fellowshipoftheflux.com
-- **Equipment management**: equipment@fellowshipoftheflux.com
-- **Content creation**: content@fellowshipoftheflux.com
-- **Community outreach**: outreach@fellowshipoftheflux.com
+- **Workshop instruction**: <instruction@fellowshipoftheflux.com>
+- **Event coordination**: <events@fellowshipoftheflux.com>
+- **Equipment management**: <equipment@fellowshipoftheflux.com>
+- **Content creation**: <content@fellowshipoftheflux.com>
+- **Community outreach**: <outreach@fellowshipoftheflux.com>
 
 ### Partnership and Support
-- **Corporate partnerships**: partnerships@fellowshipoftheflux.com
-- **Educational collaborations**: education@fellowshipoftheflux.com
-- **Donations and sponsorship**: support@fellowshipoftheflux.com
+- **Corporate partnerships**: <partnerships@fellowshipoftheflux.com>
+- **Educational collaborations**: <education@fellowshipoftheflux.com>
+- **Donations and sponsorship**: <support@fellowshipoftheflux.com>
 
 ### Response Time
 We typically respond to volunteer inquiries within 48 hours. If you don't hear from us, please follow up - we want to make sure we connect with everyone interested in our mission!

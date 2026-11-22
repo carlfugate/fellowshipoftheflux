@@ -20,7 +20,7 @@ echo "  ✓ Site accessible (200 OK)"
 # Test 2: Homepage has correct content
 echo "✓ Checking homepage content..."
 content=$(curl -s -L "$SITE_URL")
-if ! echo "$content" | grep -q "From Beginner to Builder"; then
+if ! echo "$content" | grep -q "Start your first lesson"; then
     echo "  ✗ Homepage missing main heading"
     exit 1
 fi
@@ -51,16 +51,16 @@ if echo "$custom_css" | grep -q "@import.*tailwindcss"; then
     echo "  ✗ custom.css contains unprocessed @import statements"
     exit 1
 fi
-if ! echo "$custom_css" | grep -q "animate-fade-in"; then
-    echo "  ✗ custom.css missing animation definitions"
+if ! echo "$custom_css" | grep -q -- "--paper:"; then
+    echo "  ✗ custom.css missing design tokens"
     exit 1
 fi
 echo "  ✓ CSS properly processed"
 
 # Test 5: Tailwind classes present in HTML
 echo "✓ Checking Tailwind classes..."
-if ! echo "$content" | grep -q "class=\".*text-.*\""; then
-    echo "  ✗ No Tailwind classes found in HTML"
+if ! echo "$content" | grep -q "class=frame"; then
+    echo "  ✗ No content classes found in HTML"
     exit 1
 fi
 echo "  ✓ Tailwind classes present"

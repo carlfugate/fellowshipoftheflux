@@ -152,7 +152,7 @@ Try soldering various components to build your skills:
 After mastering through-hole soldering:
 - Try [Surface Mount Soldering](/learn/tutorials/smd-soldering-basics/)
 - Build your first [LED Flasher Project](/learn/projects/simple-led-flasher/)
-- Learn about [Soldering Iron Maintenance](/learn/guides/iron-maintenance/)
+- Learn about [Soldering Iron Maintenance](/learn/guides/soldering-tools-guide/#tip-maintenance)
 
 ## Assessment Questions
 
