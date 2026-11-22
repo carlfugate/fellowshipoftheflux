@@ -70,7 +70,7 @@ async function run() {
     await page.getByRole('navigation', { name: 'Main navigation' }).getByText('Workshop info').click();
     assert.equal(await page.locator('h1').textContent(), 'Host a workshop');
     assert.ok(await page.getByText('Availability, format and travel are confirmed for each event.').isVisible());
-    assert.match(await page.getByRole('link', { name: /Ask about hosting a workshop/ }).getAttribute('href'), /^mailto:carlfugate@gmail\.com\?/);
+    assert.match(await page.getByRole('link', { name: /Ask about hosting a workshop/ }).getAttribute('href'), /^mailto:carl@fellowshipoftheflux\.com\?/);
     await page.goto('/');
     await page.getByText('Start your first lesson').click();
     await page.locator('.kit summary').click();
