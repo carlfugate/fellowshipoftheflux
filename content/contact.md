@@ -1,20 +1,20 @@
 ---
 title: "Contact"
-description: "Contact details for Fellowship of the Flux will be published when the public inboxes are confirmed."
+description: "Contact Fellowship of the Flux about workshops, volunteering and general questions."
 date: 2024-01-01T00:00:00Z
 draft: false
 layout: "manual"
 display_title: "Contact"
 cover: "participants-learning"
 cover_alt: "A participant learning at a soldering workshop"
-intro: "We are confirming which public inboxes are monitored before opening direct inquiries."
-action_url: "/community/"
-action_text: "Browse the event history"
+intro: "For workshop, volunteer and general inquiries, email the Fellowship."
+action_url: "mailto:carlfugate@gmail.com?subject=Fellowship%20inquiry"
+action_text: "Email the Fellowship"
 ---
 
 <section class="manual-section" aria-labelledby="contact-status">
-<h2 id="contact-status">Public contact details</h2>
-<p>Workshop, volunteer and general inquiry addresses are being checked. We will publish the right contact route here once it is confirmed.</p>
+<h2 id="contact-status">Get in touch</h2>
+<p>Use the email link above for workshop, volunteer and general inquiries. Include the event date, location, audience and learning goals when asking about a workshop.</p>
 </section>
 
 <section class="manual-section" aria-labelledby="while-you-wait">

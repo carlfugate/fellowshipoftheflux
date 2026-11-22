@@ -69,7 +69,8 @@ async function run() {
     await menu.click();
     await page.getByRole('navigation', { name: 'Main navigation' }).getByText('Workshop info').click();
     assert.equal(await page.locator('h1').textContent(), 'Host a workshop');
-    assert.ok(await page.getByText('Workshop requests are not open yet').isVisible());
+    assert.ok(await page.getByText('Availability, format and travel are confirmed for each event.').isVisible());
+    assert.match(await page.getByRole('link', { name: /Ask about hosting a workshop/ }).getAttribute('href'), /^mailto:carlfugate@gmail\.com\?/);
     await page.goto('/');
     await page.getByText('Start your first lesson').click();
     await page.locator('.kit summary').click();
@@ -168,9 +169,11 @@ async function run() {
       }
     }
     await page.goto('/get-involved/');
-    assert.ok(await page.getByText('Volunteer roles and the steps to get started will be listed here after the team confirms them.').isVisible());
+    assert.ok(await page.getByText('Current roles, training, safety procedures and eligibility are confirmed individually.').isVisible());
+    assert.match(await page.getByRole('link', { name: /Ask about volunteering/ }).getAttribute('href'), /^mailto:carlfugate@gmail\.com\?/);
     await page.goto('/contact/');
-    assert.ok(await page.getByText('Workshop, volunteer and general inquiry addresses are being checked.').isVisible());
+    assert.ok(await page.getByText('Use the email link above for workshop, volunteer and general inquiries.').isVisible());
+    assert.match(await page.getByRole('link', { name: /Email the Fellowship/ }).getAttribute('href'), /^mailto:carlfugate@gmail\.com\?/);
     const noJS = await browser.newPage({ baseURL, javaScriptEnabled: false, viewport: { width: 390, height: 844 } });
     await noJS.goto('/');
     assert.ok(await noJS.getByRole('navigation', { name: 'Main navigation' }).getByText('Learn to solder').isVisible());
@@ -190,7 +193,11 @@ async function run() {
         assert.equal(response?.status(), 200, `Expected ${route} to load at ${viewport.width}px`);
         const overflows = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth || document.body.scrollWidth > window.innerWidth);
         assert.equal(overflows, false, `Expected ${route} not to overflow at ${viewport.width}px`);
-        assert.equal(await page.locator('a[href^="mailto:"]').count(), 0, `No email CTA should appear at ${route}`);
+        const mailtoHrefs = await page.locator('a[href^="mailto:"]').evaluateAll(links => links.map(link => link.getAttribute('href')));
+        assert.ok(mailtoHrefs.every(href => href.startsWith('mailto:carlfugate@gmail.com')), `Expected ${route} to use only the confirmed public inbox`);
+        if (['/services/', '/community/', '/contact/', '/get-involved/'].includes(route)) {
+          assert.ok(mailtoHrefs.length > 0, `Expected a direct contact path at ${route}`);
+        }
         await page.addScriptTag({ path: axePath });
         const results = await page.evaluate(async () => axe.run(document, {
           runOnly: { type: 'tag', values: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'] }
@@ -204,7 +211,7 @@ async function run() {
       }
     }
     assert.deepEqual([...violations.keys()], [], `axe-core reported violations:\n${[...violations].map(([key, count]) => `${key} (${count} scans)`).join('\n')}`);
-    console.log(`Keyboard navigation, workshop info, lesson supplies, saved learning state, supported quiz, unpublished unsafe content, catalog filters, workshop placeholders, theme persistence, script-free navigation, axe-core (${routes.length * viewports.length} route/view checks), no email CTAs, mobile overflow and homepage CLS ${cls.toFixed(3)} passed.`);
+    console.log(`Keyboard navigation, workshop info, lesson supplies, saved learning state, supported quiz, unpublished unsafe content, catalog filters, confirmed contact inbox, theme persistence, script-free navigation, axe-core (${routes.length * viewports.length} route/view checks), mobile overflow and homepage CLS ${cls.toFixed(3)} passed.`);
   } finally {
     await browser?.close();
     server?.kill('SIGTERM');

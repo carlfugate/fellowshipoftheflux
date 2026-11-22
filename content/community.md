@@ -43,7 +43,7 @@ action_text: "Volunteer information"
 </div>
 <div>
 <h3>Get involved</h3>
-<p>Volunteer details and public contact routes are being confirmed.</p>
+<p>For volunteer inquiries, <a href="mailto:carlfugate@gmail.com?subject=Volunteer%20inquiry">email the Fellowship</a>.</p>
 <a href="/get-involved/">See current information <span aria-hidden="true">↗</span></a>
 </div>
 </div>

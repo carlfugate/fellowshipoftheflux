@@ -7,15 +7,15 @@ layout: "manual"
 display_title: "Host a workshop"
 cover: "workshop-stations-wide"
 cover_alt: "A portable soldering workshop table"
-intro: "We're confirming current availability, formats and contact details before opening workshop requests."
-action_url: "/community/"
-action_text: "See recent events"
+intro: "Email the Fellowship to discuss hosting a hands-on soldering workshop."
+action_url: "mailto:carlfugate@gmail.com?subject=Workshop%20inquiry"
+action_text: "Ask about hosting a workshop"
 ---
 
 <section class="manual-section" aria-labelledby="planning-a-workshop">
 <h2 id="planning-a-workshop">Planning a workshop</h2>
-<p>Workshop size, duration, equipment and travel depend on the event. The Fellowship is verifying those details before publishing packages or accepting requests.</p>
-<p>When current contact details are available, organizers can share their event date, location, audience and learning goals so the team can confirm whether a format is a fit.</p>
+<p>Workshop size, duration, equipment and travel depend on the event. The Fellowship confirms those details for each inquiry rather than offering fixed packages.</p>
+<p>Organizers can share their event date, location, audience and learning goals so the team can discuss whether a format is a fit. Availability, format and travel are confirmed for each event.</p>
 </section>
 
 <section class="manual-section" aria-labelledby="what-is-confirmed">
@@ -28,5 +28,5 @@ action_text: "See recent events"
 
 <section class="manual-section" aria-labelledby="request-status">
 <h2 id="request-status">Workshop requests</h2>
-<p>Public inquiry channels are being confirmed. Workshop requests are not open yet; this page will be updated when the details are ready.</p>
+<p>To start a conversation, email the Fellowship using the link at the top of this page. Availability and workshop details are confirmed for each event.</p>
 </section>
