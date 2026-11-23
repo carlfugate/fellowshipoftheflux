@@ -1,6 +1,6 @@
 ---
 title: "About Fellowship of the Flux"
-description: "Explore Fellowship of the Flux soldering resources and event history."
+description: "Meet Fellowship of the Flux volunteer soldering instructors and explore practical learning resources and event history."
 date: 2024-01-01T00:00:00Z
 draft: false
 layout: "manual"
@@ -18,6 +18,34 @@ action_text: "Explore the learning library"
 <p>
 Advancing the art of learning to solder through accessible instruction and shared learning resources.
 </p>
+</div>
+</section>
+
+<section class="manual-section">
+<h2 id="our-instructors">Our Instructors</h2>
+<p>Meet the volunteer instructors who share soldering skills at Fellowship events.</p>
+<div class="fact-grid">
+<article>
+<img class="portrait" loading="lazy" src="/images/photos/carl.jpg" alt="Carl Fugate">
+<h3>Carl Fugate</h3>
+<p class="eyeline">Lead Instructor</p>
+<p>9 years</p>
+<a href="https://www.linkedin.com/in/carlfugate/" aria-label="LinkedIn profile for Carl Fugate">LinkedIn profile <span aria-hidden="true">↗</span></a>
+</article>
+<article>
+<img class="portrait" loading="lazy" src="/images/photos/kevin.jpg" alt="Kevin Bennett">
+<h3>Kevin Bennett</h3>
+<p class="eyeline">Lead Instructor</p>
+<p>9 years</p>
+<a href="https://www.linkedin.com/in/kevin-bennett-leessummit/" aria-label="LinkedIn profile for Kevin Bennett">LinkedIn profile <span aria-hidden="true">↗</span></a>
+</article>
+<article>
+<img class="portrait" loading="lazy" src="/images/photos/patrick.jpg" alt="Patrick Liekhus">
+<h3>Patrick Liekhus</h3>
+<p class="eyeline">Instructor</p>
+<p>4 years</p>
+<a href="https://www.linkedin.com/in/patrickliekhus/" aria-label="LinkedIn profile for Patrick Liekhus">LinkedIn profile <span aria-hidden="true">↗</span></a>
+</article>
 </div>
 </section>
 
