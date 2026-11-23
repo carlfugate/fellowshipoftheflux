@@ -30,21 +30,21 @@ Advancing the art of learning to solder through accessible instruction and share
 <h3>Carl Fugate</h3>
 <p class="eyeline">Lead Instructor</p>
 <p>9 years</p>
-<a href="https://www.linkedin.com/in/carlfugate/" aria-label="Carl Fugate on LinkedIn">LinkedIn profile <span aria-hidden="true">↗</span></a>
+<a href="https://www.linkedin.com/in/carlfugate/" aria-label="LinkedIn profile for Carl Fugate">LinkedIn profile <span aria-hidden="true">↗</span></a>
 </article>
 <article>
 <img class="portrait" loading="lazy" src="/images/photos/kevin.jpg" alt="Kevin Bennett">
 <h3>Kevin Bennett</h3>
 <p class="eyeline">Lead Instructor</p>
 <p>9 years</p>
-<a href="https://www.linkedin.com/in/kevin-bennett-leessummit/" aria-label="Kevin Bennett on LinkedIn">LinkedIn profile <span aria-hidden="true">↗</span></a>
+<a href="https://www.linkedin.com/in/kevin-bennett-leessummit/" aria-label="LinkedIn profile for Kevin Bennett">LinkedIn profile <span aria-hidden="true">↗</span></a>
 </article>
 <article>
 <img class="portrait" loading="lazy" src="/images/photos/patrick.jpg" alt="Patrick Liekhus">
 <h3>Patrick Liekhus</h3>
 <p class="eyeline">Instructor</p>
 <p>4 years</p>
-<a href="https://www.linkedin.com/in/patrickliekhus/" aria-label="Patrick Liekhus on LinkedIn">LinkedIn profile <span aria-hidden="true">↗</span></a>
+<a href="https://www.linkedin.com/in/patrickliekhus/" aria-label="LinkedIn profile for Patrick Liekhus">LinkedIn profile <span aria-hidden="true">↗</span></a>
 </article>
 </div>
 </section>
